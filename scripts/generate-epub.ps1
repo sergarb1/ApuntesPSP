@@ -65,6 +65,7 @@ foreach ($u in $units) {
     $content = $content -replace '(?ms)^---.*?^---\s*', ''
     $content = $content.Trim()
     $content = $content -replace '/ApuntesPSP/cc-by-sa\.png', 'public/cc-by-sa.png'
+    $content = $content -replace '/diagrams/', 'public/diagrams/'
 
     $null = $sb.AppendLine("# $title")
     $null = $sb.AppendLine("")
@@ -92,6 +93,7 @@ foreach ($u in $units) {
       $eContent = $eContent -replace '(?ms)^---.*?^---\s*', ''
       $eContent = $eContent.Trim()
       $eContent = $eContent -replace '/ApuntesPSP/cc-by-sa\.png', 'public/cc-by-sa.png'
+      $eContent = $eContent -replace '/diagrams/', 'public/diagrams/'
 
       $eContent = $eContent -replace '(?m)^(#+)', '#$1'
 
