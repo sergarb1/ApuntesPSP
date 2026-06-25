@@ -1,0 +1,20 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="1600" viewBox="0 0 1200 1600">
+  <defs>
+    <linearGradient id="bg" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#0a1e30"/>
+      <stop offset="40%" style="stop-color:#1a4060"/>
+      <stop offset="100%" style="stop-color:#306998"/>
+    </linearGradient>
+    <linearGradient id="line" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" style="stop-color:#306998"/>
+      <stop offset="100%" style="stop-color:#4ecdc4"/>
+    </linearGradient>
+  </defs>
+  <rect width="1200" height="1600" fill="url(#bg)"/>
+  <text x="600" y="700" font-family="Arial,sans-serif" font-size="120" font-weight="bold" fill="white" text-anchor="middle">🐍</text>
+  <text x="600" y="850" font-family="Arial,sans-serif" font-size="72" font-weight="800" fill="white" text-anchor="middle" letter-spacing="-2">Programación de</text>
+  <text x="600" y="940" font-family="Arial,sans-serif" font-size="72" font-weight="800" fill="white" text-anchor="middle" letter-spacing="-2">Servicios y Procesos</text>
+  <text x="600" y="1010" font-family="Arial,sans-serif" font-size="36" fill="rgba(255,255,255,0.85)" text-anchor="middle">Python — DAM / DAW</text>
+  <rect x="560" y="1050" width="80" height="4" rx="2" fill="url(#line)"/>
+  <text x="600" y="1100" font-family="Arial,sans-serif" font-size="22" fill="rgba(255,255,255,0.6)" text-anchor="middle">Sergi Garcia Barea — CC BY-SA 4.0</text>
+</svg>

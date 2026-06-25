@@ -1,0 +1,7 @@
+# TCP 3-way handshake — sequence diagram
+shape: sequence_diagram
+client, server
+
+client -> server: SYN (seq=x)  "Quiero conectar"
+server -> client: SYN-ACK (seq=y, ack=x+1)  "OK, estoy listo"
+client -> server: ACK (ack=y+1)  "Recibido, conectamos"

@@ -1,0 +1,9 @@
+# Cifrado híbrido: RSA + AES
+direction: right
+
+Cliente -> Servidor: "1. Genera par RSA\nEnvía clave pública"
+Servidor -> Servidor: "2. Genera clave AES"
+Servidor -> Cliente: "3. Clave AES cifrada con RSA"
+Cliente -> Cliente: "4. Descifra clave AES\ncon RSA privada"
+Cliente -> Servidor: "5. Mensajes cifrados con AES"
+Servidor -> Cliente: "6. Respuestas cifradas con AES"

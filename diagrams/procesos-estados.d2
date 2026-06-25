@@ -1,0 +1,9 @@
+# States of a process
+direction: right
+
+Nuevo -> Listo: "Admitido"
+Listo -> Ejecución: "Planificador asigna CPU"
+Ejecución -> Listo: "Quantum agotado / interrupción"
+Ejecución -> Bloqueado: "Espera E/S, recurso"
+Bloqueado -> Listo: "E/S completada, recurso libre"
+Ejecución -> Terminado: "Proceso finaliza"

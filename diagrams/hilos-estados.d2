@@ -1,0 +1,9 @@
+# Thread states
+direction: right
+
+Nuevo -> Runnable: "start()"
+Runnable -> Running: "Planificador asigna CPU"
+Running -> Runnable: "yield() / quantum agotado"
+Running -> Waiting: "sleep(), join(), lock"
+Waiting -> Runnable: "timeout / notify() / unlock"
+Running -> Terminado: "run() finaliza"
