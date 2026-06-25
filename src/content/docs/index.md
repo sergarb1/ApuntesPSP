@@ -4,7 +4,7 @@ description: Apuntes de Programación de Servicios y Procesos — Python. CC BY-
 ---
 
 <div align="center">
-  <img src="https://sergarb1.github.io/ApuntesPSP/portada.png" alt="🐍 Programación de Servicios y Procesos — Python. Curso completo con teoría, prácticas y boletines. Diseño premium, modo oscuro y buscador integrado." style="max-width:100%;height:auto;border-radius:12px;margin:0 0 1.5rem;box-shadow:0 8px 40px rgba(0,0,0,0.15);">
+  <img src="/ApuntesPSP/portada.png" alt="🐍 Programación de Servicios y Procesos — Python. Curso completo con teoría, prácticas y boletines. Diseño premium, modo oscuro y buscador integrado." style="max-width:100%;height:auto;border-radius:12px;margin:0 0 1.5rem;box-shadow:0 8px 40px rgba(0,0,0,0.15);">
 </div>
 
 <div align="center" style="margin-bottom:2rem;">

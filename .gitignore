@@ -32,11 +32,10 @@ site/
 # Temp scripts
 split_exercises.py
 
-# Generated PDF / EPUB / PNG
-public/pdf/
-public/epub/
+# Generated PNGs (keep portada.png, exclude others)
 public/*.png
 *.png
+!public/portada.png
 
 # D2 SVG output in source dir (should only be in public/diagrams/)
 diagrams/*.svg
