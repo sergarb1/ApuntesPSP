@@ -20,9 +20,7 @@ organizados en **11 microtemas**. Cada tema incluye teoría y **5 niveles de eje
 
 ## 🌐 Acceso web (GitHub Pages)
 
-```
-https://sergarb1.github.io/ApuntesPSP
-```
+👉 **[https://sergarb1.github.io/ApuntesPSP](https://sergarb1.github.io/ApuntesPSP)** 👈
 
 Tema **Astro + Starlight** con buscador Pagefind, modo oscuro, diseño premium azul Python (#306998) + teal (#4ecdc4), fuente Geist Sans. Descarga PDF/EPUB desde la propia web.
 
@@ -48,14 +46,14 @@ PSP/
 │
 ├── src/styles/custom.css                 ← CSS premium (gradientes, cards, animaciones)
 ├── public/
-│   ├── portada.svg                       ← Portada para web, PDF y EPUB
+│   ├── portada.png                       ← Portada para web, PDF y EPUB
 │   ├── favicon.svg
 │   ├── diagrams/                         ← SVG generados con D2
 │   ├── pdf/                              ← PDFs generados (ApuntesPSP.pdf)
 │   └── epub/                             ← EPUBs generados (ApuntesPSP.epub)
 │
 ├── scripts/                              ← Generación PDF/EPUB
-│   ├── pdf-cover.html                    ← Portada del PDF (SVG directo)
+│   ├── pdf-cover.html                    ← Portada del PDF (portada.png)
 │   ├── pdf-header.html                   ← Header vacío (sin hora)
 │   ├── pdf-footer.html                   ← Pie con número de página
 │   ├── generate-epub.ps1                 ← Genera EPUB con Pandoc
@@ -116,7 +114,7 @@ Los conceptos clave se ilustran con **diagramas SVG** generados con [D2](https:/
 | **Externas** | `pycryptodome` (AES, RSA, PKCS1_OAEP), `openai` (GPT), `requests` / `httpx` (HTTP), `python-dotenv` (.env) |
 | **Web** | Astro 7 + Starlight 0.41, Node.js 24, Geist Sans (Vercel), Pagefind (buscador) |
 | **Diagramas** | D2 v0.7.1 → SVG vectoriales |
-| **Generación PDF** | `starlight-to-pdf` (Puppeteer, portada SVG) |
+| **Generación PDF** | `starlight-to-pdf` (Puppeteer, portada PNG) |
 | **Generación EPUB** | Pandoc + pygments (sintaxis coloreada) |
 
 ---

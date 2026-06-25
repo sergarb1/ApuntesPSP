@@ -31,16 +31,17 @@ PSP/
 │       └── custom.css                   ← CSS premium (azul Python #306998 + teal)
 │
 ├── public/
-│   ├── portada.svg                      ← portada para web, PDF y EPUB
+│   ├── portada.png                      ← portada para web, PDF y EPUB
 │   ├── favicon.svg
 │   ├── diagrams/                        ← SVG generados automáticamente
 │   ├── pdf/                             ← PDFs generados (ApuntesPSP.pdf)
 │   └── epub/                            ← EPUBs generados (ApuntesPSP.epub)
 │
 ├── scripts/
-│   ├── pdf-cover.html                   ← portada del PDF (SVG directo)
+│   ├── pdf-cover.html                   ← portada del PDF (portada.png)
 │   ├── pdf-header.html                  ← header vacío (elimina hora impresión)
 │   ├── pdf-footer.html                  ← pie con número de página + línea decorativa
+│   ├── generate-pdf.ps1                 ← genera PDF con Puppeteer + servidor local
 │   ├── generate-epub.ps1                ← genera EPUB con Pandoc
 │   └── epub.css                         ← CSS para bloques de código en EPUB
 │
@@ -108,12 +109,14 @@ d2 archivo.d2 ../public/diagrams/archivo.svg --pad 20
 - **Framework:** [Astro](https://astro.build/) + [Starlight](https://starlight.astro.build/) v0.41
 - **Tema:** Azul Python (#306998) + teal (#4ecdc4) + Geist Sans
 - **Buscador:** Pagefind integrado (Starlight)
-- **PDF:** `starlight-to-pdf` (generar PDF completo del sitio con portada)
-- **EPUB:** Pandoc (generar EPUB con sintaxis coloreada y portada SVG)
+- **PDF:** `starlight-to-pdf` (Puppeteer, portada PNG desde servidor local)
+- **EPUB:** Pandoc (sintaxis coloreada con Pygments, portada PNG)
 - **Fuente:** Geist Sans (Vercel)
 - **Despliegue:** GitHub Actions → GitHub Pages (master branch)
 - **URL:** `https://sergarb1.github.io/ApuntesPSP`
-- **Portada:** `public/portada.svg` (gradiente azul, usada en web, PDF y EPUB)
+- **Portada:** `public/portada.png` (gradiente azul, generado desde SVG vía Puppeteer, usada en web, PDF y EPUB)
+- **PDF/EPUB:** generados localmente (`npm run pdf`, `npm run epub`) y commiteados al repo; Astro los copia a `dist/` durante el build para que estén disponibles en GitHub Pages
+- **.gitignore:** `public/*.png` excluye PNGs genéricos pero `!public/portada.png` lo re-incluye
 
 ## Apuntes (MD por TEMA)
 
