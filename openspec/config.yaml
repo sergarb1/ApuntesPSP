@@ -1,0 +1,19 @@
+schema: spec-driven
+
+context: |
+  Proyecto: Apuntes PSP (Programación de Servicios y Procesos). CFGS DAM/DAW.
+  Stack: Astro 7 + Starlight 0.41, castellano, GitHub Pages, base path /ApuntesPSP.
+  Contenido: 11 unidades didácticas (U01-U11), cada unidad ampliada como "libro":
+    un fichero Markdown por punto de teoría (src/content/docs/<unidad>/<nn>-<punto>.md)
+    más una página índice de unidad (src/content/docs/<unidad>.md).
+    Secciones obligatorias Head First: Sé el Código/Proceso/Hilo/Socket, Fireside Chat,
+    ¿Quién Soy?, CONRAD VS EL MUNDO, Laboratorio de Tortura (con fallo intencionado),
+    Atrévete a Pensar, Crucigrama de Bits, Entrevista de trabajo, No hay preguntas tontas,
+    Post-Créditos. Soluciones SIEMPRE en <details>.
+    Boletines en src/content/docs/boletines/ con patrón inicial/avanzado + -resuelto
+    (boletin-UXX-{inicial,avanzado}[-resuelto].md), mínimo 8 ejercicios por boletín.
+    PDF por starlight-to-pdf, EPUB por Pandoc.
+  Norma de contenido: nivel de entrada cero, explicaciones con analogías cotidianas,
+  mínimo ~120-200 líneas por punto de teoría, cada ejercicio con solución y cada
+  laboratorio con un fallo intencionado. Lenguaje: Python 3.10/3.11 (threading, socket,
+  subprocess, hashlib, pycryptodome, requests, asyncio). Comentarios y salidas en español.

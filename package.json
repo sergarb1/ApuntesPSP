@@ -21,6 +21,7 @@
     "sharp": "^0.34.5"
   },
   "devDependencies": {
+    "js-yaml": "^4.3.1",
     "starlight-to-pdf": "^1.4.0"
   }
 }

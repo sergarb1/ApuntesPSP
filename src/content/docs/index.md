@@ -145,7 +145,9 @@ description: Apuntes de Programación de Servicios y Procesos — Python. CC BY-
 
 </div>
 
-## 📝 Ejercicios
+## 📝 Boletines de ejercicios
+
+Cada unidad tiene **4 boletines** (44 en total): inicial y avanzado, con y sin solución.
 
 <div class="unit-grid">
 
@@ -154,11 +156,10 @@ description: Apuntes de Programación de Servicios y Procesos — Python. CC BY-
     <span class="num">Unidad 1</span>
   </div>
   <div class="ejercicio-links">
-    <a href="/ApuntesPSP/inicial-resuelto-01-procesos-y-subprocess" class="elink">✅ Inicial resuelto</a>
-    <a href="/ApuntesPSP/inicial-01-procesos-y-subprocess" class="elink">🟢 Inicial por resolver</a>
-    <a href="/ApuntesPSP/intermedio-resuelto-01-procesos-y-subprocess" class="elink">💪 Intermedio resuelto</a>
-    <a href="/ApuntesPSP/intermedio-01-procesos-y-subprocess" class="elink">📝 Intermedio por resolver</a>
-    <a href="/ApuntesPSP/extra-01-procesos-y-subprocess" class="elink">⭐ Avanzado</a>
+    <a href="/ApuntesPSP/boletines/boletin-u1-inicial-resuelto" class="elink">✅ Inicial resuelto</a>
+    <a href="/ApuntesPSP/boletines/boletin-u1-inicial" class="elink">🟢 Inicial por resolver</a>
+    <a href="/ApuntesPSP/boletines/boletin-u1-avanzado-resuelto" class="elink">💪 Avanzado resuelto</a>
+    <a href="/ApuntesPSP/boletines/boletin-u1-avanzado" class="elink">⭐ Avanzado por resolver</a>
   </div>
 </div>
 
@@ -167,11 +168,10 @@ description: Apuntes de Programación de Servicios y Procesos — Python. CC BY-
     <span class="num">Unidad 2</span>
   </div>
   <div class="ejercicio-links">
-    <a href="/ApuntesPSP/inicial-resuelto-02-hilos-fundamentos" class="elink">✅ Inicial resuelto</a>
-    <a href="/ApuntesPSP/inicial-02-hilos-fundamentos" class="elink">🟢 Inicial por resolver</a>
-    <a href="/ApuntesPSP/intermedio-resuelto-02-hilos-fundamentos" class="elink">💪 Intermedio resuelto</a>
-    <a href="/ApuntesPSP/intermedio-02-hilos-fundamentos" class="elink">📝 Intermedio por resolver</a>
-    <a href="/ApuntesPSP/extra-02-hilos-fundamentos" class="elink">⭐ Avanzado</a>
+    <a href="/ApuntesPSP/boletines/boletin-u2-inicial-resuelto" class="elink">✅ Inicial resuelto</a>
+    <a href="/ApuntesPSP/boletines/boletin-u2-inicial" class="elink">🟢 Inicial por resolver</a>
+    <a href="/ApuntesPSP/boletines/boletin-u2-avanzado-resuelto" class="elink">💪 Avanzado resuelto</a>
+    <a href="/ApuntesPSP/boletines/boletin-u2-avanzado" class="elink">⭐ Avanzado por resolver</a>
   </div>
 </div>
 
@@ -180,11 +180,10 @@ description: Apuntes de Programación de Servicios y Procesos — Python. CC BY-
     <span class="num">Unidad 3</span>
   </div>
   <div class="ejercicio-links">
-    <a href="/ApuntesPSP/inicial-resuelto-03-sincronizacion-entre-hilos" class="elink">✅ Inicial resuelto</a>
-    <a href="/ApuntesPSP/inicial-03-sincronizacion-entre-hilos" class="elink">🟢 Inicial por resolver</a>
-    <a href="/ApuntesPSP/intermedio-resuelto-03-sincronizacion-entre-hilos" class="elink">💪 Intermedio resuelto</a>
-    <a href="/ApuntesPSP/intermedio-03-sincronizacion-entre-hilos" class="elink">📝 Intermedio por resolver</a>
-    <a href="/ApuntesPSP/extra-03-sincronizacion-entre-hilos" class="elink">⭐ Avanzado</a>
+    <a href="/ApuntesPSP/boletines/boletin-u3-inicial-resuelto" class="elink">✅ Inicial resuelto</a>
+    <a href="/ApuntesPSP/boletines/boletin-u3-inicial" class="elink">🟢 Inicial por resolver</a>
+    <a href="/ApuntesPSP/boletines/boletin-u3-avanzado-resuelto" class="elink">💪 Avanzado resuelto</a>
+    <a href="/ApuntesPSP/boletines/boletin-u3-avanzado" class="elink">⭐ Avanzado por resolver</a>
   </div>
 </div>
 
@@ -193,11 +192,10 @@ description: Apuntes de Programación de Servicios y Procesos — Python. CC BY-
     <span class="num">Unidad 4</span>
   </div>
   <div class="ejercicio-links">
-    <a href="/ApuntesPSP/inicial-resuelto-04-sockets-tcp" class="elink">✅ Inicial resuelto</a>
-    <a href="/ApuntesPSP/inicial-04-sockets-tcp" class="elink">🟢 Inicial por resolver</a>
-    <a href="/ApuntesPSP/intermedio-resuelto-04-sockets-tcp" class="elink">💪 Intermedio resuelto</a>
-    <a href="/ApuntesPSP/intermedio-04-sockets-tcp" class="elink">📝 Intermedio por resolver</a>
-    <a href="/ApuntesPSP/extra-04-sockets-tcp" class="elink">⭐ Avanzado</a>
+    <a href="/ApuntesPSP/boletines/boletin-u4-inicial-resuelto" class="elink">✅ Inicial resuelto</a>
+    <a href="/ApuntesPSP/boletines/boletin-u4-inicial" class="elink">🟢 Inicial por resolver</a>
+    <a href="/ApuntesPSP/boletines/boletin-u4-avanzado-resuelto" class="elink">💪 Avanzado resuelto</a>
+    <a href="/ApuntesPSP/boletines/boletin-u4-avanzado" class="elink">⭐ Avanzado por resolver</a>
   </div>
 </div>
 
@@ -206,11 +204,10 @@ description: Apuntes de Programación de Servicios y Procesos — Python. CC BY-
     <span class="num">Unidad 5</span>
   </div>
   <div class="ejercicio-links">
-    <a href="/ApuntesPSP/inicial-resuelto-05-sockets-udp-y-protocolos" class="elink">✅ Inicial resuelto</a>
-    <a href="/ApuntesPSP/inicial-05-sockets-udp-y-protocolos" class="elink">🟢 Inicial por resolver</a>
-    <a href="/ApuntesPSP/intermedio-resuelto-05-sockets-udp-y-protocolos" class="elink">💪 Intermedio resuelto</a>
-    <a href="/ApuntesPSP/intermedio-05-sockets-udp-y-protocolos" class="elink">📝 Intermedio por resolver</a>
-    <a href="/ApuntesPSP/extra-05-sockets-udp-y-protocolos" class="elink">⭐ Avanzado</a>
+    <a href="/ApuntesPSP/boletines/boletin-u5-inicial-resuelto" class="elink">✅ Inicial resuelto</a>
+    <a href="/ApuntesPSP/boletines/boletin-u5-inicial" class="elink">🟢 Inicial por resolver</a>
+    <a href="/ApuntesPSP/boletines/boletin-u5-avanzado-resuelto" class="elink">💪 Avanzado resuelto</a>
+    <a href="/ApuntesPSP/boletines/boletin-u5-avanzado" class="elink">⭐ Avanzado por resolver</a>
   </div>
 </div>
 
@@ -219,11 +216,10 @@ description: Apuntes de Programación de Servicios y Procesos — Python. CC BY-
     <span class="num">Unidad 6</span>
   </div>
   <div class="ejercicio-links">
-    <a href="/ApuntesPSP/inicial-resuelto-06-apis-rest-y-http" class="elink">✅ Inicial resuelto</a>
-    <a href="/ApuntesPSP/inicial-06-apis-rest-y-http" class="elink">🟢 Inicial por resolver</a>
-    <a href="/ApuntesPSP/intermedio-resuelto-06-apis-rest-y-http" class="elink">💪 Intermedio resuelto</a>
-    <a href="/ApuntesPSP/intermedio-06-apis-rest-y-http" class="elink">📝 Intermedio por resolver</a>
-    <a href="/ApuntesPSP/extra-06-apis-rest-y-http" class="elink">⭐ Avanzado</a>
+    <a href="/ApuntesPSP/boletines/boletin-u6-inicial-resuelto" class="elink">✅ Inicial resuelto</a>
+    <a href="/ApuntesPSP/boletines/boletin-u6-inicial" class="elink">🟢 Inicial por resolver</a>
+    <a href="/ApuntesPSP/boletines/boletin-u6-avanzado-resuelto" class="elink">💪 Avanzado resuelto</a>
+    <a href="/ApuntesPSP/boletines/boletin-u6-avanzado" class="elink">⭐ Avanzado por resolver</a>
   </div>
 </div>
 
@@ -232,11 +228,10 @@ description: Apuntes de Programación de Servicios y Procesos — Python. CC BY-
     <span class="num">Unidad 7</span>
   </div>
   <div class="ejercicio-links">
-    <a href="/ApuntesPSP/inicial-resuelto-07-apis-comerciales" class="elink">✅ Inicial resuelto</a>
-    <a href="/ApuntesPSP/inicial-07-apis-comerciales" class="elink">🟢 Inicial por resolver</a>
-    <a href="/ApuntesPSP/intermedio-resuelto-07-apis-comerciales" class="elink">💪 Intermedio resuelto</a>
-    <a href="/ApuntesPSP/intermedio-07-apis-comerciales" class="elink">📝 Intermedio por resolver</a>
-    <a href="/ApuntesPSP/extra-07-apis-comerciales" class="elink">⭐ Avanzado</a>
+    <a href="/ApuntesPSP/boletines/boletin-u7-inicial-resuelto" class="elink">✅ Inicial resuelto</a>
+    <a href="/ApuntesPSP/boletines/boletin-u7-inicial" class="elink">🟢 Inicial por resolver</a>
+    <a href="/ApuntesPSP/boletines/boletin-u7-avanzado-resuelto" class="elink">💪 Avanzado resuelto</a>
+    <a href="/ApuntesPSP/boletines/boletin-u7-avanzado" class="elink">⭐ Avanzado por resolver</a>
   </div>
 </div>
 
@@ -245,11 +240,10 @@ description: Apuntes de Programación de Servicios y Procesos — Python. CC BY-
     <span class="num">Unidad 8</span>
   </div>
   <div class="ejercicio-links">
-    <a href="/ApuntesPSP/inicial-resuelto-08-hash-y-cifrado-clasico" class="elink">✅ Inicial resuelto</a>
-    <a href="/ApuntesPSP/inicial-08-hash-y-cifrado-clasico" class="elink">🟢 Inicial por resolver</a>
-    <a href="/ApuntesPSP/intermedio-resuelto-08-hash-y-cifrado-clasico" class="elink">💪 Intermedio resuelto</a>
-    <a href="/ApuntesPSP/intermedio-08-hash-y-cifrado-clasico" class="elink">📝 Intermedio por resolver</a>
-    <a href="/ApuntesPSP/extra-08-hash-y-cifrado-clasico" class="elink">⭐ Avanzado</a>
+    <a href="/ApuntesPSP/boletines/boletin-u8-inicial-resuelto" class="elink">✅ Inicial resuelto</a>
+    <a href="/ApuntesPSP/boletines/boletin-u8-inicial" class="elink">🟢 Inicial por resolver</a>
+    <a href="/ApuntesPSP/boletines/boletin-u8-avanzado-resuelto" class="elink">💪 Avanzado resuelto</a>
+    <a href="/ApuntesPSP/boletines/boletin-u8-avanzado" class="elink">⭐ Avanzado por resolver</a>
   </div>
 </div>
 
@@ -258,11 +252,10 @@ description: Apuntes de Programación de Servicios y Procesos — Python. CC BY-
     <span class="num">Unidad 9</span>
   </div>
   <div class="ejercicio-links">
-    <a href="/ApuntesPSP/inicial-resuelto-09-cifrado-moderno" class="elink">✅ Inicial resuelto</a>
-    <a href="/ApuntesPSP/inicial-09-cifrado-moderno" class="elink">🟢 Inicial por resolver</a>
-    <a href="/ApuntesPSP/intermedio-resuelto-09-cifrado-moderno" class="elink">💪 Intermedio resuelto</a>
-    <a href="/ApuntesPSP/intermedio-09-cifrado-moderno" class="elink">📝 Intermedio por resolver</a>
-    <a href="/ApuntesPSP/extra-09-cifrado-moderno" class="elink">⭐ Avanzado</a>
+    <a href="/ApuntesPSP/boletines/boletin-u9-inicial-resuelto" class="elink">✅ Inicial resuelto</a>
+    <a href="/ApuntesPSP/boletines/boletin-u9-inicial" class="elink">🟢 Inicial por resolver</a>
+    <a href="/ApuntesPSP/boletines/boletin-u9-avanzado-resuelto" class="elink">💪 Avanzado resuelto</a>
+    <a href="/ApuntesPSP/boletines/boletin-u9-avanzado" class="elink">⭐ Avanzado por resolver</a>
   </div>
 </div>
 
@@ -271,11 +264,10 @@ description: Apuntes de Programación de Servicios y Procesos — Python. CC BY-
     <span class="num">Unidad 10</span>
   </div>
   <div class="ejercicio-links">
-    <a href="/ApuntesPSP/inicial-resuelto-10-servidores-concurrentes" class="elink">✅ Inicial resuelto</a>
-    <a href="/ApuntesPSP/inicial-10-servidores-concurrentes" class="elink">🟢 Inicial por resolver</a>
-    <a href="/ApuntesPSP/intermedio-resuelto-10-servidores-concurrentes" class="elink">💪 Intermedio resuelto</a>
-    <a href="/ApuntesPSP/intermedio-10-servidores-concurrentes" class="elink">📝 Intermedio por resolver</a>
-    <a href="/ApuntesPSP/extra-10-servidores-concurrentes" class="elink">⭐ Avanzado</a>
+    <a href="/ApuntesPSP/boletines/boletin-u10-inicial-resuelto" class="elink">✅ Inicial resuelto</a>
+    <a href="/ApuntesPSP/boletines/boletin-u10-inicial" class="elink">🟢 Inicial por resolver</a>
+    <a href="/ApuntesPSP/boletines/boletin-u10-avanzado-resuelto" class="elink">💪 Avanzado resuelto</a>
+    <a href="/ApuntesPSP/boletines/boletin-u10-avanzado" class="elink">⭐ Avanzado por resolver</a>
   </div>
 </div>
 
@@ -284,14 +276,12 @@ description: Apuntes de Programación de Servicios y Procesos — Python. CC BY-
     <span class="num">Unidad 11</span>
   </div>
   <div class="ejercicio-links">
-    <a href="/ApuntesPSP/inicial-resuelto-11-asyncio-y-disponibilidad" class="elink">✅ Inicial resuelto</a>
-    <a href="/ApuntesPSP/inicial-11-asyncio-y-disponibilidad" class="elink">🟢 Inicial por resolver</a>
-    <a href="/ApuntesPSP/intermedio-resuelto-11-asyncio-y-disponibilidad" class="elink">💪 Intermedio resuelto</a>
-    <a href="/ApuntesPSP/intermedio-11-asyncio-y-disponibilidad" class="elink">📝 Intermedio por resolver</a>
-    <a href="/ApuntesPSP/extra-11-asyncio-y-disponibilidad" class="elink">⭐ Avanzado</a>
+    <a href="/ApuntesPSP/boletines/boletin-u11-inicial-resuelto" class="elink">✅ Inicial resuelto</a>
+    <a href="/ApuntesPSP/boletines/boletin-u11-inicial" class="elink">🟢 Inicial por resolver</a>
+    <a href="/ApuntesPSP/boletines/boletin-u11-avanzado-resuelto" class="elink">💪 Avanzado resuelto</a>
+    <a href="/ApuntesPSP/boletines/boletin-u11-avanzado" class="elink">⭐ Avanzado por resolver</a>
   </div>
 </div>
-
 
 </div>
 

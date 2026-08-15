@@ -12,7 +12,8 @@
 ---
 
 Apuntes del módulo de **Programación de Servicios y Procesos** (Python),  
-organizados en **11 microtemas**. Cada tema incluye teoría y **5 niveles de ejercicios**.
+organizados en **11 unidades**. Cada unidad se lee como un **libro**: índice + 9 capítulos de teoría  
++ **4 boletines de ejercicios** (inicial y avanzado, con y sin solución).
 
 </div>
 
@@ -34,14 +35,17 @@ PSP/
 ├── package.json / astro.config.mjs       ← Config Astro + Starlight
 ├── .github/workflows/deploy.yml          ← GitHub Actions → gh-pages
 │
-├── src/content/docs/                     ← 67 archivos de apuntes (MD)
+├── src/content/docs/                     ← 155 archivos de apuntes (MD)
 │   ├── index.md                          ← Landing page con cards y descargas
-│   ├── 01-procesos-y-subprocess.md       ← Teoría (11 temas)
-│   ├── inicial-resuelto-01-*.md          ← ✅ Inicial CON solución (3 ejercicios)
-│   ├── inicial-01-*.md                   ← 🟢 Inicial SIN resolver (3 ejercicios)
-│   ├── intermedio-resuelto-01-*.md       ← 💪 Intermedio CON solución (3 ejercicios)
-│   ├── intermedio-01-*.md                ← 📝 Intermedio SIN resolver (3 ejercicios)
-│   ├── extra-01-*.md                     ← ⭐ Avanzado SIN resolver (con pistas)
+│   ├── 01-procesos-y-subprocess.md       ← Índice de la unidad (11 unidades)
+│   ├── 01-procesos-y-subprocess/         ← 9 capítulos por unidad
+│   │   ├── 01-*.md … 08-*.md             ← Teoría en progresión
+│   │   └── 09-head-first.md              ← Cierre práctico (Head First)
+│   ├── boletines/                        ← 44 boletines (4 × 11 unidades)
+│   │   ├── boletin-U01-inicial.md        ← 🟢 Inicial SIN resolver
+│   │   ├── boletin-U01-inicial-resuelto.md ← ✅ Inicial CON solución
+│   │   ├── boletin-U01-avanzado.md       ← 💪 Avanzado SIN resolver
+│   │   └── boletin-U01-avanzado-resuelto.md ← ⭐ Avanzado CON solución
 │   └── … hasta unidad 11
 │
 ├── src/styles/custom.css                 ← CSS premium (gradientes, cards, animaciones)
@@ -89,17 +93,19 @@ PSP/
 
 ## 🎯 Estilo de los apuntes
 
-Cada tema combina teoría y práctica con secciones dinámicas:
+Cada unidad combina teoría y práctica con secciones dinámicas:
 
 | Sección | Descripción |
 |---------|-------------|
 | **🎭 Be the code, my friend** | Traza paso a paso del código. "Sé el hilo, sé el socket, sé el cifrado…" |
-| **🥊 El ring de los conceptos** | Diálogos comparativos (TCP vs UDP, Lock vs Semáforo, Threads vs Asyncio) |
-| **🧩 Pool Puzzle** | Ordenar líneas de código desordenadas (en T03, T04, T06, T08, T10) |
-| **⏱ Benchmark** | Comparativa de rendimiento (T10: secuencial vs hilos vs ThreadPool) |
+| **🥊 El ring de los conceptos** | Diálogos comparativos → 🔥 Fireside Chat (TCP vs UDP, Lock vs Semáforo, Threads vs Asyncio) |
+| **🧩 Pool Puzzle** | Ordenar líneas de código desordenadas |
+| **⏱ Benchmark** | Comparativa de rendimiento (U10: secuencial vs hilos vs ThreadPool) |
 | **❓ Preguntas tontas** | FAQ con respuestas directas y sin tecnicismos |
 | **✏️ Aprieta el lápiz** | Ejercicios incrustados en la teoría |
-| **📋 Criterios de evaluación** | Checklist RA al final de cada tema con referencias cruzadas |
+| **🧠 Mini-chequeo** | Autoevaluación rápida con respuestas en `<details>` |
+| **📋 Criterios de evaluación** | Checklist RA en cada unidad con referencias cruzadas |
+| **🏁 Head First** | Cierre de unidad: Sé el Código, Fireside Chat, Laboratorio de Tortura, Crucigrama de Bits, Entrevista de trabajo |
 
 Los conceptos clave se ilustran con **diagramas SVG** generados con [D2](https://d2lang.com/): estados de proceso/hilo, handshake TCP, TCP vs UDP, cifrado híbrido, etc.
 
@@ -119,19 +125,18 @@ Los conceptos clave se ilustran con **diagramas SVG** generados con [D2](https:/
 
 ---
 
-## 📦 Progresión de ejercicios por tema
+## 📦 Progresión de ejercicios por unidad
 
-Cada tema tiene **5 niveles** de ejercicios (55 archivos en total):
+Cada unidad tiene **4 boletines** (44 boletines en total) en `src/content/docs/boletines/`:
 
 ```
-Nivel 🟢  →  inicial-NN-*.md              (inicial SIN resolver — 3 ejercicios)
-Nivel ✅  →  inicial-resuelto-NN-*.md      (inicial CON solución — mismos 3)
-Nivel 📝  →  intermedio-NN-*.md            (intermedio SIN resolver — 3 ejercicios)
-Nivel 💪  →  intermedio-resuelto-NN-*.md   (intermedio CON solución — mismos 3)
-Nivel ⭐  →  extra-NN-*.md                 (avanzado SIN solución — 6 ejercicios con pistas)
+Boletín 🟢  →  boletin-UXX-inicial.md               (inicial SIN resolver)
+Boletín ✅  →  boletin-UXX-inicial-resuelto.md       (inicial CON solución)
+Boletín 💪  →  boletin-UXX-avanzado.md               (avanzado SIN resolver, con pistas)
+Boletín ⭐  →  boletin-UXX-avanzado-resuelto.md      (avanzado CON solución)
 ```
 
-**Total: 165 ejercicios** (33 iniciales + 33 intermedios resueltos, 66 sin resolver, 66 avanzados con pistas)
+**Total: ~180 ejercicios** repartidos en 44 boletines (≈8 iniciales + ≥8 avanzados por unidad), más los incrustados en la teoría (✏️ Aprieta el lápiz, 🧠 Mini-chequeo, ⚡ Laboratorio de Tortura).
 
 ---
 

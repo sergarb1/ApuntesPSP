@@ -1,326 +1,90 @@
 ﻿---
-title: "TEMA 11 — Asyncio y Disponibilidad"
+title: U11 — asyncio y Disponibilidad
+description: "Cerrar el viaje: asincronía, latidos y servicios siempre disponibles ⏱️"
 nav_order: 11
 ---
 
-## TEMA 11 — Asyncio y Disponibilidad (RA4e-g)
+<p><small>Cerrar el viaje: asincronía, latidos y servicios siempre disponibles ⏱️</small></p>
+
+> 🗺️ **Ruta del viaje:** 🚀 Proceso → 🔀 Hilo → 🔒 Sincronización → 🔌 TCP → 📡 UDP → 🌐 API REST → 🧪 APIs comerciales → 🔐 Hash → 🧬 Cifrado → 🏗️ Servidores → ⏱️ **asyncio y Disponibilidad**
+
+---
 
 > "Asyncio es como un cocinero que, mientras espera a que hierva el agua, corta verduras. En vez de quedarse mirando la olla, hace otras cosas."
 
----
+En la U10 construiste servidores concurrentes con hilos: un hilo por cliente o un ThreadPool. Funcionan, pero cada hilo cuesta memoria y contexto de sistema. En esta unidad cambiarás de modelo: **asyncio**, un solo hilo que coordina miles de tareas cooperativas, y las herramientas de **disponibilidad** (heartbeat, timeouts y backoff) que mantienen un servicio vivo cuando todo falla alrededor.
 
-## Índice
+También aprenderás a que un servidor **nunca se cuelgue** con un cliente mudo (timeout), a que **avise** de que sigue vivo (heartbeat) y a que **reintente** con cabeza cuando un servicio se cae (backoff). El siguiente tema ya no existe: esta es la última unidad del viaje, y cierras con un servidor asyncio robusto que no se bloquea, se vigila solo y se recupera.
 
-1. [El problema de esperar](#el-problema-de-esperar)
-2. [Asyncio — fundamentos](#asyncio--fundamentos)
-3. [Corrutinas y event loop](#corrutinas-y-event-loop)
-4. [Servidor con asyncio](#servidor-con-asyncio)
-5. [Be the code, my friend, my friend — Asyncio paso a paso](#be-the-code-my-friend-my-friend--asyncio-paso-a-paso)
-6. [Disponibilidad — heartbeat](#disponibilidad--heartbeat)
-7. [Reintentos con backoff](#reintentos-con-backoff)
-8. [Timeout en servidor](#timeout-en-servidor)
-9. [🥊 El ring de los conceptos — Threads vs Asyncio](#el-ring-de-los-conceptos--threads-vs-asyncio)
-10. [Preguntas tontas — Asyncio](#preguntas-tontas--asyncio)
-11. [✏️ Aprieta el lápiz](#✏-aprieta-el-lápiz)
-12. [RAs cubiertos y criterios de evaluación](#ras-cubiertos-y-criterios-de-evaluación)
+Esta unidad se lee como un **libro de 9 capítulos**: los 8 primeros son teoría en progresión y el 9º aterriza todo en la práctica.
 
 ---
 
-## El problema de esperar
+## 🎯 Objetivo de la unidad
 
-Un servidor que usa `accept()` y `recv()` se **bloquea** mientras espera. No puede hacer nada más.
+Al terminar, serás capaz de:
 
-```python
-# ❌ Esto bloquea TODO el programa
-datos = conn.recv(1024)  # El programa se para aquí hasta que lleguen datos
-```
-
-**Solución 1**: Hilos (TEMA 10) — caros si hay muchos clientes.
-
-**Solución 2**: Asyncio — un solo hilo, pero cambia de tarea cuando una espera.
-
----
-
-## Asyncio — fundamentos
-
-```python
-import asyncio
-
-async def saludar():
-    print("Hola")
-    await asyncio.sleep(1)  # "Oye, mientras duermo, haz otras cosas"
-    print("Mundo")
-
-asyncio.run(saludar())
-```
-
-| Concepto | Qué es |
-|----------|--------|
-| `async def` | Define una **corrutina** (función que puede pausarse) |
-| `await` | Pausa la corrutina hasta que algo termine |
-| `asyncio.run()` | Crea el event loop y ejecuta la corrutina principal |
-
-> `await = "Oye, esto va a tardar. Mientras, ocúpate de otras cosas."`
+- Explicar qué es el **event loop** y cómo coordina tareas asíncronas sin bloquear.
+- Definir y usar **corrutinas** con `async def` y `await`.
+- Lanzar tareas concurrentes con `asyncio.create_task` y `asyncio.gather`.
+- Evitar que un servicio se cuelgue usando **timeouts** con `asyncio.wait_for`.
+- Implementar **heartbeats** que verifiquen que un servidor sigue vivo.
+- Diseñar **reintentos con backoff exponencial** para conectar ante fallos transitorios.
+- Comparar **hilos vs asyncio** y decidir cuál usar en cada escenario.
+- Montar un **monitor de servicio** que combine heartbeat, timeout y backoff.
+- Aplicar los mecanismos de disponibilidad (RA4e), los servidores asyncio (RA4f) y la comparativa de modelos (RA4g).
 
 ---
 
-## Corrutinas y event loop
+## 🗺️ Mapa de la unidad
 
-El **event loop** es el gestor. Decide qué corrutina ejecuta en cada momento.
+| Punto | Qué aprenderás | Nivel |
+|---|---|---|
+| [01 · Event Loop](/ApuntesPSP/11-asyncio-y-disponibilidad/01-event-loop) | El gestor de tareas que no se bloquea nunca | Todos |
+| [02 · Corrutinas](/ApuntesPSP/11-asyncio-y-disponibilidad/02-corrutinas) | `async def`, `await` y la función que sabe esperar | Todos |
+| [03 · create_task y gather](/ApuntesPSP/11-asyncio-y-disponibilidad/03-create-task-y-gather) | Lanzar varias tareas "a la vez" de verdad | Todos |
+| [04 · Timeouts](/ApuntesPSP/11-asyncio-y-disponibilidad/04-timeouts) | `wait_for` para que nada se cuelgue para siempre | Todos |
+| [05 · Heartbeat](/ApuntesPSP/11-asyncio-y-disponibilidad/05-heartbeat) | El latido que confirma que el servicio sigue vivo | Todos |
+| [06 · Backoff](/ApuntesPSP/11-asyncio-y-disponibilidad/06-backoff) | Reintentos con espera exponencial (1, 2, 4, 8…) | Todos |
+| [07 · Threads vs asyncio](/ApuntesPSP/11-asyncio-y-disponibilidad/07-threads-vs-asyncio) | La comparativa definitiva de modelos de concurrencia | Todos |
+| [08 · Disponibilidad y práctica](/ApuntesPSP/11-asyncio-y-disponibilidad/08-disponibilidad-y-practica) | El monitor de servicio completo y Aprieta el lápiz | Todos |
+| [09 · Head First (cierre)](/ApuntesPSP/11-asyncio-y-disponibilidad/09-head-first) | Sé la Corrutina, Fireside, Laboratorio de Tortura… | Todos |
 
-```python
-import asyncio
-
-async def tarea(nombre, segundos):
-    print(f"  {nombre} empieza")
-    await asyncio.sleep(segundos)
-    print(f"  {nombre} termina ({segundos}s)")
-
-async def main():
-    # Lanzar 3 tareas "a la vez"
-    await asyncio.gather(
-        tarea("A", 3),
-        tarea("B", 1),
-        tarea("C", 2)
-    )
-
-asyncio.run(main())
-```
-
-**Salida**:
-```
-  A empieza
-  B empieza
-  C empieza
-  B termina (1s)
-  C termina (2s)
-  A termina (3s)
-```
-
-> Las 3 empiezan a la vez. B termina primero (solo 1s). El event loop aprovecha los `await` de otras para avanzar.
+> 📖 **Flujo de lectura:** los 8 primeros puntos son teoría en progresión. El 9º es el aterrizaje práctico: léelo justo después del 8º y antes de abrir los boletines.
 
 ---
 
-## Servidor con asyncio
+## 📝 Boletines de la unidad
 
-```python
-import asyncio
+> Practica con los pares del curso: empezar siempre el resuelto para ver el estilo y luego intentar el por-resolver.
 
-async def atender(reader, writer):
-    addr = writer.get_extra_info('peername')
-    print(f"[+] Cliente {addr} conectado")
-
-    datos = await reader.read(1024)
-    print(f"    Recibido: {datos.decode()}")
-
-    writer.write(b"OK: " + datos)
-    await writer.drain()  # Espera a que se envíe
-
-    writer.close()
-    await writer.wait_closed()
-    print(f"[-] Cliente {addr} desconectado")
-
-async def main():
-    servidor = await asyncio.start_server(atender, "127.0.0.1", 5000)
-    print("🚀 Servidor ASYNCIO en 127.0.0.1:5000")
-
-    async with servidor:
-        await servidor.serve_forever()
-
-asyncio.run(main())
-```
-
-> Con asyncio, un solo hilo puede atender miles de conexiones. Cada `await` es una oportunidad para atender a otro cliente.
+<div class="ejercicio-links">
+  <a href="/ApuntesPSP/boletines/boletin-u11-inicial-resuelto" class="elink">✅ Inicial resuelto</a>
+  <a href="/ApuntesPSP/boletines/boletin-u11-inicial" class="elink">🟢 Inicial por resolver</a>
+  <a href="/ApuntesPSP/boletines/boletin-u11-avanzado-resuelto" class="elink">💪 Avanzado resuelto</a>
+  <a href="/ApuntesPSP/boletines/boletin-u11-avanzado" class="elink">⭐ Avanzado por resolver</a>
+</div>
 
 ---
 
-## Be the code, my friend, my friend — Asyncio paso a paso
+## ✅ Criterios de evaluación cubiertos (RA4e-g)
 
-> "Sé el event loop. Tu trabajo es coordinar corrutinas sin bloquear ni un milisegundo."
+**RA4: Implementa servicios en red, desarrollando mecanismos de disponibilidad y servidores asíncronos.**
 
-```
-Event Loop arranca
-│
-├── 1. Ejecuta main()
-│      ├── Crea servidor TCP
-│      └── Registra atender() para nuevos clientes
-│
-├── 2. Event Loop: "Espero eventos... (I/O, timers, etc.)"
-│
-├── [Cliente-1 conecta]
-│  3. Event Loop: "¡Cliente nuevo! Ejecuto atender(cliente1)"
-│  4. atender(cliente1) empieza
-│  5. await reader.read() → "No hay datos aún"
-│  6. atender(cliente1) se pausa (cede el control)
-│
-├── [Cliente-2 conecta mientras cliente1 espera]
-│  7. Event Loop: "¡Otro cliente! Ejecuto atender(cliente2)"
-│  8. atender(cliente2) empieza
-│  9. await reader.read() → "Tampoco hay datos"
-│ 10. atender(cliente2) se pausa
-│
-├── [Cliente-1 envía datos]
-│ 11. Event Loop: "Cliente1 tiene datos → reanudo atender(cliente1)"
-│ 12. atender(cliente1) recibe los datos
-│ 13. writer.write() → escribe buffer
-│ 14. await writer.drain() → espera envío → se pausa
-│
-├── [Cliente-2 envía datos]
-│ 15. Event Loop: "Cliente2 tiene datos → reanudo atender(cliente2)"
-│ 16. atender(cliente2) recibe, responde, termina 🏁
-│
-├── [writer.drain() de cliente1 listo]
-│ 17. Event Loop: "Cliente1 puede finalizar"
-│ 18. atender(cliente1) termina 🏁
-│
-└── Event Loop sigue esperando más clientes...
-```
+| CE | Criterio | Dónde se cubre |
+|---|---|---|
+| e) | Implementa mecanismos de disponibilidad (heartbeat, reintentos, timeout) | ✅ Puntos 4-6 y 8 + ⚡ Laboratorio (punto 9) |
+| f) | Desarrolla servidores con asyncio | ✅ Puntos 1-3 y 8 + ⚡ Laboratorio (punto 9) |
+| g) | Compara modelos de concurrencia (hilos vs asyncio) | ✅ Punto 7 + 🔥 Fireside Chat (punto 9) |
 
-> Nunca hay espera activa. Cuando una corrutina espera, otra aprovecha. **Un solo hilo, miles de conexiones.**
+> RA4c (servidores concurrentes con hilos) y RA4d (ThreadPool) se cubren en la **U10 · Servidores Concurrentes**.
 
 ---
 
-## Disponibilidad — heartbeat
+## 🚪 ¿Por dónde empiezo?
 
-Un **heartbeat** (latido) es un mensaje periódico para verificar que el servidor sigue vivo.
+¿Vienes de la U10 y dominas los servidores concurrentes? Perfecto, ese es el trampolín ideal: repasa la [U10 · Servidores Concurrentes](/ApuntesPSP/10-servidores-concurrentes) para tener frescos el hilo por cliente, el ThreadPool y el problema del bloqueo, y arranca en el [punto 1](/ApuntesPSP/11-asyncio-y-disponibilidad/01-event-loop), que parte justo del problema de la espera que dejaste planteado.
 
-```python
-import asyncio
+¿Ya sabes qué es asyncio y solo quieres la disponibilidad? Ve directo al [punto 4](/ApuntesPSP/11-asyncio-y-disponibilidad/04-timeouts) y de ahí a los puntos 5 y 6. Pero si vienes de cero, no te saltes los puntos 1 a 3: el event loop y las corrutinas son la base de todo lo demás.
 
-async def heartbeat(intervalo=5):
-    while True:
-        print("💓 Heartbeat: servidor vivo")
-        await asyncio.sleep(intervalo)
-
-async def servidor_con_heartbeat():
-    # Lanzar heartbeat en segundo plano
-    asyncio.create_task(heartbeat())
-
-    servidor = await asyncio.start_server(
-        lambda r, w: None, "127.0.0.1", 5000
-    )
-    async with servidor:
-        await servidor.serve_forever()
-
-asyncio.run(servidor_con_heartbeat())
-```
-
----
-
-## Reintentos con backoff
-
-```python
-import asyncio
-
-async def conectar_con_backoff(host, port, max_intentos=5):
-    for intento in range(max_intentos):
-        try:
-            reader, writer = await asyncio.wait_for(
-                asyncio.open_connection(host, port),
-                timeout=3
-            )
-            print(f"✅ Conectado a {host}:{port}")
-            return reader, writer
-        except (asyncio.TimeoutError, ConnectionRefusedError):
-            espera = 2 ** intento  # 1, 2, 4, 8, 16 segundos
-            print(f"⚠️ Intento {intento+1} fallido. Esperando {espera}s...")
-            await asyncio.sleep(espera)
-
-    raise Exception("No se pudo conectar")
-```
-
-> El **backoff exponencial** evita saturar un servidor que ya está teniendo problemas.
-
----
-
-## Timeout en servidor
-
-```python
-import asyncio
-
-async def atender_con_timeout(reader, writer):
-    try:
-        # Esperar datos con timeout de 10 segundos
-        datos = await asyncio.wait_for(reader.read(1024), timeout=10)
-        writer.write(b"OK: " + datos)
-        await writer.drain()
-    except asyncio.TimeoutError:
-        writer.write(b"⏱ Timeout: conexión cerrada por inactividad\n")
-        await writer.drain()
-    finally:
-        writer.close()
-        await writer.wait_closed()
-```
-
----
-
-## 🥊 El ring de los conceptos — Threads vs Asyncio
-
-**Thread**: "Yo soy multitarea de verdad. Tengo mi propia pila, mi propio contexto. El SO me gestiona."
-
-**Asyncio**: "Yo soy multitarea cooperativa. Un solo hilo, pero cambio de tarea cuando una espera."
-
-**Thread**: "Si tengo 10.000 clientes, creo 10.000 hilos. El sistema sufre."
-
-**Asyncio**: "Yo con 10.000 clientes uso un hilo y 10.000 corrutinas. Mucho más ligero."
-
-**Thread**: "Pero mis operaciones son bloqueantes de verdad. Si llamo a `time.sleep()`, otro hilo ejecuta."
-
-**Asyncio**: "Mis operaciones son `await` — nunca bloqueo. El event loop decide qué toca."
-
-**Thread**: "Para servidores pequeños (<100 clientes), soy más simple."
-
-**Asyncio**: "Para servidores con mucho I/O y muchas conexiones, soy imbatible."
-
-| Característica | Threads | Asyncio |
-|----------------|---------|---------|
-| Nº de hilos | Varios (gestión del SO) | 1 (event loop) |
-| Cambio de contexto | Gestionado por el SO | Cooperativo (en await) |
-| Escalabilidad | Media (límite de hilos) | Alta (miles de conexiones) |
-| Complejidad | Baja (simple) | Media (curva de aprendizaje) |
-| CPU-bound | No sirve (GIL) | No sirve |
-| I/O-bound | Sí funciona | Excelente |
-
----
-
-## Preguntas tontas — Asyncio
-
-**❓ ¿Asyncio es más rápido que threads?**
-Para I/O-bound tasks, sí, porque no hay cambio de contexto del SO. Para CPU-bound, no hay diferencia (ambos limitados por el GIL).
-
-**❓ ¿Puedo mezclar código síncrono con asyncio?**
-Sí, con `loop.run_in_executor()`. Pero mejor si todo es asyncio.
-
-**❓ ¿Qué es una corrutina?**
-Una función declarada con `async def` que puede pausarse con `await` y reanudarse después. No es un hilo, es una función que sabe esperar.
-
-**❓ ¿`await` bloquea el hilo?**
-No. `await` le dice al event loop: "ahora no necesito CPU, ocúpate de otras corrutinas". Es **cooperativo**.
-
-**❓ ¿Cuándo usar threads y cuándo asyncio?**
-- Threads: proyectos pequeños, librerías bloqueantes, simplicidad
-- Asyncio: muchos clientes concurrentes, mucho I/O, escalabilidad
-
----
-
-## ✏️ Aprieta el lápiz
-
-1. **Asyncio básico**: Crea 3 corrutinas que esperen 1, 2 y 3 segundos. Lánzalas con `gather` y mide el tiempo total.
-2. **Servidor asyncio**: Convierte el servidor TCP del TEMA 10 a asyncio.
-3. **Heartbeat**: Añade un heartbeat que imprima "💓 vivo" cada 3s mientras el servidor funciona.
-4. **Backoff**: Crea un cliente que intente conectarse 3 veces con backoff exponencial.
-5. **Comparativa**: Mide el tiempo de atender 100 clientes con threads vs asyncio (simula 0.1s de I/O).
-
----
-
-## RAs cubiertos y criterios de evaluación
-
-### RA4 — Servicios en red (e-g)
-
-| Criterio | Descripción | Cubierto |
-|----------|-------------|----------|
-| RA4e | Implementa mecanismos de disponibilidad (heartbeat, reintentos, timeout) | ✅ |
-| RA4f | Desarrolla servidores con asyncio | ✅ |
-| RA4g | Compara modelos de concurrencia (hilos vs asyncio) | ✅ |
-
-> RA4c (servidores concurrentes con hilos) y RA4d (ThreadPool) se cubren en el **TEMA 10**.
+**📍 Primer punto:** [01 · Event Loop](/ApuntesPSP/11-asyncio-y-disponibilidad/01-event-loop)

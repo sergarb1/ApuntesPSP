@@ -39,3 +39,7 @@ public/*.png
 
 # D2 SVG output in source dir (should only be in public/diagrams/)
 diagrams/*.svg
+
+# Tooling local del agente (no va al repo)
+.opencode/
+.serena/

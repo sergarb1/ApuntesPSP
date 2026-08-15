@@ -26,7 +26,8 @@ try {
     --footer "scripts/pdf-footer.html" `
     --header "scripts/pdf-header.html" `
     --preceding-html "scripts/pdf-cover.html" `
-    --print-bg
+    --print-bg `
+    --timeout 600000
 
   if ($LASTEXITCODE -eq 0) {
     Write-Host "✅ PDF generated: $OutDir/$OutFile.pdf" -ForegroundColor Green

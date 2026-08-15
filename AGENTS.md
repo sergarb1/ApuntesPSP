@@ -18,14 +18,17 @@ PSP/
 │
 ├── src/
 │   ├── content.config.ts                ← configuración colección Starlight
-│   ├── content/docs/                    ← 67 archivos de apuntes (MD)
+│   ├── content/docs/                    ← 155 archivos de apuntes (MD)
 │   │   ├── index.md                     ← landing page (cards, descargas, licencia)
-│   │   ├── 01-procesos-y-subprocess.md  ← teoría (11 temas)
-│   │   ├── inicial-resuelto-01-*.md    ← ✅ inicial CON solución (3 ejercicios)
-│   │   ├── inicial-01-*.md             ← 🟢 inicial SIN resolver (3 ejercicios distintos)
-│   │   ├── intermedio-resuelto-01-*.md ← 💪 intermedio CON solución (3 ejercicios)
-│   │   ├── intermedio-01-*.md          ← 📝 intermedio SIN resolver (3 ejercicios distintos)
-│   │   ├── extra-01-*.md               ← ⭐ avanzado SIN resolver (con pistas)
+│   │   ├── 01-procesos-y-subprocess.md  ← índice de la unidad (11 unidades)
+│   │   ├── 01-procesos-y-subprocess/    ← 9 capítulos por unidad
+│   │   │   ├── 01-*.md … 08-*.md        ← teoría en progresión
+│   │   │   └── 09-head-first.md         ← cierre práctico (Head First)
+│   │   ├── boletines/                   ← 44 boletines (4 × 11 unidades)
+│   │   │   ├── boletin-U01-inicial.md       ← 🟢 inicial SIN resolver
+│   │   │   ├── boletin-U01-inicial-resuelto.md ← ✅ inicial CON solución
+│   │   │   ├── boletin-U01-avanzado.md       ← 💪 avanzado SIN resolver
+│   │   │   └── boletin-U01-avanzado-resuelto.md ← ⭐ avanzado CON solución
 │   │   └── ... hasta unidad 11
 │   └── styles/
 │       └── custom.css                   ← CSS premium (azul Python #306998 + teal)
@@ -118,32 +121,86 @@ d2 archivo.d2 ../public/diagrams/archivo.svg --pad 20
 - **PDF/EPUB:** generados localmente (`npm run pdf`, `npm run epub`) y commiteados al repo; Astro los copia a `dist/` durante el build para que estén disponibles en GitHub Pages
 - **.gitignore:** `public/*.png` excluye PNGs genéricos pero `!public/portada.png` lo re-incluye
 
-## Apuntes (MD por TEMA)
+## Apuntes (MD por unidad)
 
-~3.500 líneas en 11 archivos de teoría + 55 archivos de ejercicios (5 por tema) + 6 diagramas D2 = 72 archivos. Cada tema indica al final qué RAs cubre.
+Estructura "libro" por unidad (formato replicado de ApuntesRedes): índice + 9 capítulos en subcarpeta + 4 boletines en `boletines/`. Total 155 ficheros MD (~10.000+ líneas). Cada unidad indica al final qué RAs cubre.
 
-Secciones:
-- 🎭 **Be the code, my friend** / **Sé el código** (trazas paso a paso)
-- 🥊 **El ring de los conceptos** (diálogos comparativos)
-- ❓ **Preguntas tontas** (FAQ)
-- ✏️ **Aprieta el lápiz** (ejercicios)
-- 🧩 **Pool Puzzle** (reordenar código) — T03, T04, T06, T08, T10
-- ⏱ **Benchmark** — comparativa rendimiento (T10)
-- 📋 **Criterios de evaluación** al final de cada TEMA
-- Diagramas SVG en `public/diagrams/` generados con D2
+Por unidad: `0X-unidad.md` (índice, ~90 líneas) → `0X-unidad/01-…-08.md` (capítulos, 110-280 líneas) + `09-head-first.md` (cierre, ~250 líneas) → `boletines/boletin-UXX-inicial[-resuelto].md` y `-avanzado[-resuelto].md`.
 
-| Archivo | Líneas | Temas clave | RAs |
-|---------|--------|-------------|-----|
-| `src/content/docs/01-procesos-y-subprocess.md` | ~335 | Procesos, subprocess, paralela vs distribuida | RA1 |
-| `src/content/docs/02-hilos-fundamentos.md` | ~420 | Hilos, join, daemon, Timer, GIL, estados | RA2 |
-| `src/content/docs/03-sincronizacion-entre-hilos.md` | ~385 | Lock, Semaphore, Barrier, Condition, RLock | RA2 |
-| `src/content/docs/04-sockets-tcp.md` | ~360 | TCP, cliente-servidor, errores, SO_REUSEADDR | RA3 |
-| `src/content/docs/05-sockets-udp-y-protocolos.md` | ~250 | UDP, HTTP, NTP, TCP vs UDP | RA3 |
-| `src/content/docs/06-apis-rest-y-http.md` | ~370 | REST, métodos HTTP, requests, JSON | RA4a-b |
-| `src/content/docs/07-apis-comerciales.md` | ~320 | OpenWeatherMap, OpenAI, dotenv, rate limit | RA4a-b |
-| `src/content/docs/08-hash-y-cifrado-clasico.md` | ~380 | Hash, MD5, SHA, César, principios seguridad | RA5 |
-| `src/content/docs/09-cifrado-moderno.md` | ~380 | AES, RSA, híbrido, firmas, RBAC | RA5 |
-| `src/content/docs/10-servidores-concurrentes.md` | ~360 | ThreadPool, benchmark, servidor multihilo | RA4c-d |
-| `src/content/docs/11-asyncio-y-disponibilidad.md` | ~330 | asyncio, heartbeat, backoff, timeouts | RA4e-g |
+Secciones por capítulo:
+- 📬 **La idea en una frase** + 🧠 **Mini-chequeo** (respuestas en `<details>`)
+- ✅ **Resumen en 3 frases** + 🐛 **Vocabulario rápido**
+- Breadcrumb `🗺️ Estás en` + pie con navegación Anterior/Siguiente entre capítulos
+
+Secciones del índice:
+- 🗺️ **Ruta del viaje** (🚀 Proceso → 🔀 Hilo → 🔒 Sincronización → 🔌 TCP → 📡 UDP → 🌐 API REST → 🧪 APIs comerciales → 🔐 Hash → 🧬 Cifrado → 🏗️ Servidores → ⏱️ asyncio)
+- 🎯 **Objetivo de la unidad** + 🗺️ **Mapa de la unidad** (9 enlaces)
+- 📝 **Boletines** con `.ejercicio-links` + `a.elink` a los 4 boletines
+- ✅ **Criterios de evaluación** con columna "Dónde se cubre"
+- 🚪 **¿Por dónde empiezo?** con primer punto y enlace a la siguiente unidad
+
+Secciones del cierre `09-head-first.md`: ⭐ Sé el Código, 🔥 Fireside Chat, 🕵️ ¿Quién Soy?, 🤬 CONRAD VS EL MUNDO, ⚡ Laboratorio de Tortura (con pistas), 🏆 Logros, 🧠 Atrévete a Pensar, 🧩 Crucigrama de Bits, 💬 Entrevista de trabajo, 🤷 No hay preguntas tontas, 🎬 Post-Créditos ("PRÓXIMAMENTE EN UYY", salvo U11 que cierra el viaje 🏁), ✅ Criterios.
+
+**Convenciones MD:** frontmatter `title`/`description` (comillas solo si contienen `:`), sin BOM, slugs de URL en minúscula (`boletin-uXX-...`), nombres de fichero `UXX` mayúscula, enlaces internos `/ApuntesPSP/...`.
+
+| Unidad | Índice + 9 capítulos | Líneas aprox | Temas clave | RAs |
+|--------|----------------------|--------------|-------------|-----|
+| U01 Procesos y Subprocess | `01-procesos-y-subprocess.md` + carpeta | ~335 | Procesos, subprocess, paralela vs distribuida | RA1 |
+| U02 Hilos Fundamentos | `02-hilos-fundamentos.md` + carpeta | ~420 | Hilos, join, daemon, Timer, GIL, estados | RA2 |
+| U03 Sincronización entre Hilos | `03-sincronizacion-entre-hilos.md` + carpeta | ~385 | Lock, Semaphore, Barrier, Condition, RLock | RA2 |
+| U04 Sockets TCP | `04-sockets-tcp.md` + carpeta | ~360 | TCP, cliente-servidor, errores, SO_REUSEADDR | RA3 |
+| U05 Sockets UDP y Protocolos | `05-sockets-udp-y-protocolos.md` + carpeta | ~250 | UDP, HTTP, NTP, TCP vs UDP | RA3 |
+| U06 APIs REST y HTTP | `06-apis-rest-y-http.md` + carpeta | ~370 | REST, métodos HTTP, requests, JSON | RA4a-b |
+| U07 APIs Comerciales | `07-apis-comerciales.md` + carpeta | ~320 | OpenWeatherMap, OpenAI, dotenv, rate limit | RA4a-b |
+| U08 Hash y Cifrado Clásico | `08-hash-y-cifrado-clasico.md` + carpeta | ~380 | Hash, MD5, SHA, César, principios seguridad | RA5 |
+| U09 Cifrado Moderno | `09-cifrado-moderno.md` + carpeta | ~380 | AES, RSA, híbrido, firmas, RBAC | RA5 |
+| U10 Servidores Concurrentes | `10-servidores-concurrentes.md` + carpeta | ~360 | ThreadPool, benchmark, servidor multihilo | RA4c-d |
+| U11 asyncio y Disponibilidad | `11-asyncio-y-disponibilidad.md` + carpeta | ~330 | asyncio, heartbeat, backoff, timeouts | RA4e-g |
+
+**Boletines (44):** 4 por unidad en `boletines/boletin-UXX-*`: inicial (8 ejercicios), inicial-resuelto, avanzado (≥8), avanzado-resuelto. Pistas inline `**Pista:**` en los por-resolver; respuestas inline en negrita en los resueltos.
 
 **Licencia:** CC BY-SA 4.0 — Sergi Garcia Barea
+
+
+<!-- headroom:rtk-instructions -->
+# RTK (Rust Token Killer) - Token-Optimized Commands
+
+When running shell commands, **always prefix with `rtk`**. This reduces context
+usage by 60-90% with zero behavior change. If rtk has no filter for a command,
+it passes through unchanged — so it is always safe to use.
+
+## Key Commands
+```bash
+# Git (59-80% savings)
+rtk git status          rtk git diff            rtk git log
+
+# Files & Search (60-75% savings)
+rtk ls <path>           rtk read <file>         rtk grep <pattern>
+rtk find <pattern>      rtk diff <file>
+
+# Test (90-99% savings) — shows failures only
+rtk pytest tests/       rtk cargo test          rtk test <cmd>
+
+# Build & Lint (80-90% savings) — shows errors only
+rtk tsc                 rtk lint                rtk cargo build
+rtk prettier --check    rtk mypy                rtk ruff check
+
+# Analysis (70-90% savings)
+rtk err <cmd>           rtk log <file>          rtk json <file>
+rtk summary <cmd>       rtk deps                rtk env
+
+# GitHub (26-87% savings)
+rtk gh pr view <n>      rtk gh run list         rtk gh issue list
+
+# Infrastructure (85% savings)
+rtk docker ps           rtk kubectl get         rtk docker logs <c>
+
+# Package managers (70-90% savings)
+rtk pip list            rtk pnpm install        rtk npm run <script>
+```
+
+## Rules
+- In command chains, prefix each segment: `rtk git add . && rtk git commit -m "msg"`
+- For debugging, use raw command without rtk prefix
+- `rtk proxy <cmd>` runs command without filtering but tracks usage
+<!-- /headroom:rtk-instructions -->
