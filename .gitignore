@@ -43,3 +43,10 @@ diagrams/*.svg
 # Tooling local del agente (no va al repo)
 .opencode/
 .serena/
+
+# Experimentos de exportación a DOCX (pruebas puntuales, no van al repo)
+*.docx
+docx_out/
+template_fixed.docx
+pandoc_default_ref.docx
+scripts/build_*.py
