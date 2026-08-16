@@ -11,7 +11,7 @@ description: "Servidor + cliente eco, mano a mano y ejercicios resueltos 🛠️
 
 ## 📬 La idea en una frase
 
-> La práctica clásica de TCP: un **servidor eco** que devuelve al cliente exactamente lo que recibe. Es el "Hola mundo" de los sockets y la base del laboratorio del [punto 9](/ApuntesPSP/04-sockets-tcp/09-head-first).
+> La práctica clásica de TCP: un **servidor eco** que devuelve al cliente exactamente lo que recibe. Es el "Hola mundo" de los sockets y la base del laboratorio del [punto 9](/ApuntesPSP/04-sockets-tcp/09-cierre).
 
 Junta todo lo aprendido: cliente ([punto 2](/ApuntesPSP/04-sockets-tcp/02-cliente-tcp)), servidor ([punto 3](/ApuntesPSP/04-sockets-tcp/03-servidor-tcp)) y `SO_REUSEADDR` ([punto 6](/ApuntesPSP/04-sockets-tcp/06-so-reuseaddr)). Con dos terminales verás el protocolo completo en acción.
 
@@ -202,4 +202,4 @@ with socket.socket() as cli:
 
 ---
 
-📚 [Volver al índice de la unidad](/ApuntesPSP/04-sockets-tcp) · **Anterior:** [07 · Protocolos sobre TCP](/ApuntesPSP/04-sockets-tcp/07-protocolos-sobre-tcp) · **Siguiente:** [09 · Head First](/ApuntesPSP/04-sockets-tcp/09-head-first)
+📚 [Volver al índice de la unidad](/ApuntesPSP/04-sockets-tcp) · **Anterior:** [07 · Protocolos sobre TCP](/ApuntesPSP/04-sockets-tcp/07-protocolos-sobre-tcp) · **Siguiente:** [09 · Cierre](/ApuntesPSP/04-sockets-tcp/09-cierre)

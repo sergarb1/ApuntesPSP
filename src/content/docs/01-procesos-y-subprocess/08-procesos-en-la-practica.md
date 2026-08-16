@@ -251,4 +251,4 @@ Guardamos los 5 objetos `Popen` en una lista y terminamos todos menos el índice
 
 ---
 
-📚 [Volver al índice de la unidad](/ApuntesPSP/01-procesos-y-subprocess) · **Anterior:** [07 · Compatibilidad Windows / Linux](/ApuntesPSP/01-procesos-y-subprocess/07-compatibilidad-windows-linux) · **Siguiente:** [09 · Head First](/ApuntesPSP/01-procesos-y-subprocess/09-head-first)
+📚 [Volver al índice de la unidad](/ApuntesPSP/01-procesos-y-subprocess) · **Anterior:** [07 · Compatibilidad Windows / Linux](/ApuntesPSP/01-procesos-y-subprocess/07-compatibilidad-windows-linux) · **Siguiente:** [09 · Cierre](/ApuntesPSP/01-procesos-y-subprocess/09-cierre)

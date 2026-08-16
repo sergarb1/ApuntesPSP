@@ -10,13 +10,13 @@ Los ejercicios viven en 5 ficheros planos con pocos ejercicios y sin navegación
 1. Formato no navegable: sin índice de puntos ni enlace "siguiente".
 2. Ejercicios fragmentados en 5 ficheros (<8 por boletín).
 3. Nivel de entrada insuficiente para conceptos clave (socket, cliente/servidor, handshake, SO_REUSEADDR).
-4. Estilo Head First sin aplicar de forma estructurada.
+4. Estilo conversacional sin aplicar de forma estructurada.
 
 ## Requisitos
 
 - **REQ-1** Cumplir `openspec/specs/contenido-unidad/spec.md` y `contenido-boletin/spec.md`.
 - **REQ-2** 9 puntos de teoría (~120–200 líneas) con tabla/comparativa + ejemplo Python resuelto.
-- **REQ-3** Cierre Head First con todas las secciones y laboratorio con fallo intencionado.
+- **REQ-3** Cierre de unidad con todas las secciones y laboratorio con fallo intencionado.
 - **REQ-4** Todo ejercicio con solución en `<details>`.
 - **REQ-5** Boletines inicial y avanzado (≥8 ejercicios) + resueltos 1:1; pistas solo en por resolver.
 - **REQ-6** Conservar TODO el contenido factual original (socket=IP+puerto, cliente TCP connect/send/recv, servidor bind/listen/accept, 3-way handshake, errores ConnectionResetError/timeouts, SO_REUSEADDR, HTTP sobre TCP, servidor eco, be the code, ring TCP vs UDP, preguntas tontas, CEs RA3).

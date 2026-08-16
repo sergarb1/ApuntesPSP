@@ -48,7 +48,7 @@ Al terminar, serás capaz de:
 | [06 · Backoff](/ApuntesPSP/11-asyncio-y-disponibilidad/06-backoff) | Reintentos con espera exponencial (1, 2, 4, 8…) | Todos |
 | [07 · Threads vs asyncio](/ApuntesPSP/11-asyncio-y-disponibilidad/07-threads-vs-asyncio) | La comparativa definitiva de modelos de concurrencia | Todos |
 | [08 · Disponibilidad y práctica](/ApuntesPSP/11-asyncio-y-disponibilidad/08-disponibilidad-y-practica) | El monitor de servicio completo y Aprieta el lápiz | Todos |
-| [09 · Head First (cierre)](/ApuntesPSP/11-asyncio-y-disponibilidad/09-head-first) | Sé la Corrutina, Fireside, Laboratorio de Tortura… | Todos |
+| [09 · Cierre](/ApuntesPSP/11-asyncio-y-disponibilidad/09-cierre) | Sé la Corrutina, Fireside, Laboratorio de Tortura… | Todos |
 
 > 📖 **Flujo de lectura:** los 8 primeros puntos son teoría en progresión. El 9º es el aterrizaje práctico: léelo justo después del 8º y antes de abrir los boletines.
 

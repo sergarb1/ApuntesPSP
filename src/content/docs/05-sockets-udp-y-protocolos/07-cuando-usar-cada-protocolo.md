@@ -57,7 +57,7 @@ Fíjate en el patrón: **cuando el dato es valioso y debe quedar intacto, TCP; c
 
 ## 🔀 Y si quieres ambas cosas: QUIC
 
-¿Fiabilidad de TCP con velocidad de UDP? Eso existe: **QUIC**, el protocolo sobre el que corre **HTTP/3**. QUIC se construye sobre UDP (la capa de transporte es UDP) pero añade por su cuenta confirmaciones, control de congestión y cifrado. Es la "vuelta a la tortilla" que verás en el cierre del [punto 9](/ApuntesPSP/05-sockets-udp-y-protocolos/09-head-first): la industria decide cuándo incluso el "no fiable" merece una capa de fiabilidad.
+¿Fiabilidad de TCP con velocidad de UDP? Eso existe: **QUIC**, el protocolo sobre el que corre **HTTP/3**. QUIC se construye sobre UDP (la capa de transporte es UDP) pero añade por su cuenta confirmaciones, control de congestión y cifrado. Es la "vuelta a la tortilla" que verás en el cierre del [punto 9](/ApuntesPSP/05-sockets-udp-y-protocolos/09-cierre): la industria decide cuándo incluso el "no fiable" merece una capa de fiabilidad.
 
 ---
 

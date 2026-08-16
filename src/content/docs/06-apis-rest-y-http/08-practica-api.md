@@ -208,4 +208,4 @@ pedir("https://httpbin.org/status/500")                    # 500
 
 ---
 
-📚 [Volver al índice de la unidad](/ApuntesPSP/06-apis-rest-y-http) · **Anterior:** [07 · requests: POST, PUT y DELETE](/ApuntesPSP/06-apis-rest-y-http/07-requests-post) · **Siguiente:** [09 · Head First](/ApuntesPSP/06-apis-rest-y-http/09-head-first)
+📚 [Volver al índice de la unidad](/ApuntesPSP/06-apis-rest-y-http) · **Anterior:** [07 · requests: POST, PUT y DELETE](/ApuntesPSP/06-apis-rest-y-http/07-requests-post) · **Siguiente:** [09 · Cierre](/ApuntesPSP/06-apis-rest-y-http/09-cierre)

@@ -48,7 +48,7 @@ Al terminar, serás capaz de:
 | [06 · Sincronización en servidores](/ApuntesPSP/10-servidores-concurrentes/06-sincronizacion-en-servidores) | El Lock para el estado compartido entre hilos | Todos |
 | [07 · Límites y buenas prácticas](/ApuntesPSP/10-servidores-concurrentes/07-limites-y-buenas-practicas) | Cuántos hilos puedes crear y cómo hacerlo bien | Todos |
 | [08 · Servidor concurrente completo](/ApuntesPSP/10-servidores-concurrentes/08-servidor-concurrente-completo) | Todo junto: servidor, lanzador y Aprieta el lápiz | Todos |
-| [09 · Head First (cierre)](/ApuntesPSP/10-servidores-concurrentes/09-head-first) | Sé el Servidor, Fireside, Laboratorio de Tortura… | Todos |
+| [09 · Cierre](/ApuntesPSP/10-servidores-concurrentes/09-cierre) | Sé el Servidor, Fireside, Laboratorio de Tortura… | Todos |
 
 > 📖 **Flujo de lectura:** los 8 primeros puntos son teoría en progresión. El 9º es el aterrizaje práctico: léelo justo después del 8º y antes de abrir los boletines.
 

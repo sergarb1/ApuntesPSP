@@ -3,7 +3,7 @@
 ## Contexto
 
 - Unidad fuente: `src/content/docs/02-hilos-fundamentos.md` (~420 líneas) + 5 boletines planos.
-- Precedente de formato: ApuntesRedes `09-routing-dinamico/`. Estilo Head First. Emoji: 🔀. RA2.
+- Precedente de formato: ApuntesRedes `09-routing-dinamico/`. Estilo conversacional. Emoji: 🔀. RA2.
 - Slugs en minúscula (`boletin-u02-inicial`).
 
 ## Contenido a repartir
@@ -24,7 +24,7 @@ ring hilo vs proceso, preguntas tontas, Aprieta el lápiz, CEs RA2.
 | 06 | `06-gil` | GIL, hilos y CPU, cuándo sirven de verdad. |
 | 07 | `07-estados-del-hilo` | Estados (nuevo, listo, en ejecución, bloqueado, terminado), ciclo de vida. |
 | 08 | `08-hilos-en-la-practica` | Be the code (varios hilos), ring hilo vs proceso, Aprieta el lápiz. |
-| 09 | `09-head-first` | ⭐🔥🕵️🤬⚡🧠🧩💬🤷🎬, fallo intencionado, PRÓXIMAMENTE EN U03, ✅ CEs RA2. |
+| 09 | `09-cierre` | ⭐🔥🕵️🤬⚡🧠🧩💬🤷🎬, fallo intencionado, PRÓXIMAMENTE EN U03, ✅ CEs RA2. |
 
 ## Boletines
 

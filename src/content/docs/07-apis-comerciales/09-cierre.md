@@ -1,11 +1,11 @@
 ---
-title: "09 — Head First: consolida lo aprendido"
+title: "09 — Cierre: consolida lo aprendido"
 description: Sé la Petición con API key, laboratorio real y el ring final de la unidad 🧠
 ---
 
 <p><small>Sé la Petición con API key, laboratorio real y el ring final de la unidad 🧠</small></p>
 
-> 🗺️ **Estás en:** 🧪 **U07 · APIs Comerciales** → 09 · Head First
+> 🗺️ **Estás en:** 🧪 **U07 · APIs Comerciales** → 09 · Cierre
 
 ---
 

@@ -245,4 +245,4 @@ with socket.socket() as srv:
 
 ---
 
-📚 [Volver al índice de la unidad](/ApuntesPSP/10-servidores-concurrentes) · **Anterior:** [07 · Límites y buenas prácticas](/ApuntesPSP/10-servidores-concurrentes/07-limites-y-buenas-practicas) · **Siguiente:** [09 · Head First](/ApuntesPSP/10-servidores-concurrentes/09-head-first)
+📚 [Volver al índice de la unidad](/ApuntesPSP/10-servidores-concurrentes) · **Anterior:** [07 · Límites y buenas prácticas](/ApuntesPSP/10-servidores-concurrentes/07-limites-y-buenas-practicas) · **Siguiente:** [09 · Cierre](/ApuntesPSP/10-servidores-concurrentes/09-cierre)

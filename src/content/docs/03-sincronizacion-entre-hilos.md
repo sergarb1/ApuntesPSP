@@ -46,7 +46,7 @@ Al terminar, serás capaz de:
 | [06 · Condition](/ApuntesPSP/03-sincronizacion-entre-hilos/06-condition) | Esperar a que otro hilo avise: `wait` y `notify` | Todos |
 | [07 · Productor-Consumidor](/ApuntesPSP/03-sincronizacion-entre-hilos/07-productor-consumidor) | El patrón clásico con cola compartida, de la teoría al código | Todos |
 | [08 · Buenas prácticas](/ApuntesPSP/03-sincronizacion-entre-hilos/08-buenas-practicas) | Deadlocks, orden de locks, el ring final y a practicar | Todos |
-| [09 · Head First (cierre)](/ApuntesPSP/03-sincronizacion-entre-hilos/09-head-first) | Sé el Lock, Fireside, Laboratorio de Tortura, Crucigrama… | Todos |
+| [09 · Cierre](/ApuntesPSP/03-sincronizacion-entre-hilos/09-cierre) | Sé el Lock, Fireside, Laboratorio de Tortura, Crucigrama… | Todos |
 
 > 📖 **Flujo de lectura:** los 8 primeros puntos son teoría en progresión. El 9º es el aterrizaje práctico: léelo justo después del 8º y antes de abrir los boletines.
 

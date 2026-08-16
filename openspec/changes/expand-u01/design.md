@@ -4,7 +4,7 @@
 
 - Unidad fuente: `src/content/docs/01-procesos-y-subprocess.md` (~335 líneas) + 5 boletines planos.
 - Precedente de formato: `src/content/docs/09-routing-dinamico.md` en ApuntesRedes.
-- Estilo Head First; cierre en `09-head-first.md`. Emoji de unidad: 🚀. RA1.
+- Estilo conversacional; cierre en `09-cierre.md`. Emoji de unidad: 🚀. RA1.
 - Slugs en minúscula (`boletin-u01-inicial`).
 
 ## Contenido a repartir
@@ -27,7 +27,7 @@ Be the code (abrir Calc y Bloc), ring run vs Popen, preguntas tontas, Aprieta el
 | 06 | `06-comunicacion-con-procesos` | stdin/stdout, communicate, data. |
 | 07 | `07-compatibilidad-windows-linux` | Tabla Windows/Linux, rutas, comandos. |
 | 08 | `08-procesos-en-la-practica` | Be the code (abrir Calc y Bloc), ring run vs Popen, Aprieta el lápiz. |
-| 09 | `09-head-first` | ⭐🔥🕵️🤬⚡🧠🧩💬🤷🎬, fallo intencionado, PRÓXIMAMENTE EN U02, ✅ CEs RA1. |
+| 09 | `09-cierre` | ⭐🔥🕵️🤬⚡🧠🧩💬🤷🎬, fallo intencionado, PRÓXIMAMENTE EN U02, ✅ CEs RA1. |
 
 ## Boletines
 

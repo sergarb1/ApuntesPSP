@@ -46,7 +46,7 @@ Al terminar, serás capaz de:
 | [06 · requests: el GET](/ApuntesPSP/06-apis-rest-y-http/06-requests-get) | `requests.get`, parámetros de consulta, cabeceras y la respuesta | Todos |
 | [07 · requests: POST, PUT y DELETE](/ApuntesPSP/06-apis-rest-y-http/07-requests-post) | Crear, actualizar y borrar con `json=`, y manejo de errores | Todos |
 | [08 · Práctica: mini cliente de API](/ApuntesPSP/06-apis-rest-y-http/08-practica-api) | Sé el código, un cliente completo y los ejercicios del lápiz | Todos |
-| [09 · Head First (cierre)](/ApuntesPSP/06-apis-rest-y-http/09-head-first) | Sé la Petición HTTP, Fireside, Laboratorio de Tortura, Crucigrama… | Todos |
+| [09 · Cierre](/ApuntesPSP/06-apis-rest-y-http/09-cierre) | Sé la Petición HTTP, Fireside, Laboratorio de Tortura, Crucigrama… | Todos |
 
 > 📖 **Flujo de lectura:** los 8 primeros puntos son teoría en progresión. El 9º es el aterrizaje práctico: léelo justo después del 8º y antes de abrir los boletines.
 

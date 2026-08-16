@@ -3,7 +3,7 @@
 ## Contexto
 
 - Unidad fuente: `src/content/docs/03-sincronizacion-entre-hilos.md` (~385 líneas) + 5 boletines planos.
-- Precedente de formato: ApuntesRedes `09-routing-dinamico/`. Estilo Head First. Emoji: 🔒. RA2.
+- Precedente de formato: ApuntesRedes `09-routing-dinamico/`. Estilo conversacional. Emoji: 🔒. RA2.
 - Slugs en minúscula (`boletin-u03-inicial`).
 
 ## Contenido a repartir
@@ -25,7 +25,7 @@ ring Lock vs Semaphore, preguntas tontas, Aprieta el lápiz, CEs RA2.
 | 06 | `06-condition` | Condition wait/notify, cuándo usarla. |
 | 07 | `07-productor-consumidor` | Productor-consumidor con cola/lock, ejemplo completo. |
 | 08 | `08-buenas-practicas` | Deadlock, orden de locks, Aprieta el lápiz. |
-| 09 | `09-head-first` | ⭐🔥🕵️🤬⚡🧠🧩💬🤷🎬, fallo intencionado, PRÓXIMAMENTE EN U04, ✅ CEs RA2. |
+| 09 | `09-cierre` | ⭐🔥🕵️🤬⚡🧠🧩💬🤷🎬, fallo intencionado, PRÓXIMAMENTE EN U04, ✅ CEs RA2. |
 
 ## Boletines
 

@@ -276,4 +276,4 @@ Esperas: 1s, 2s, 4s.
 
 ---
 
-📚 [Volver al índice de la unidad](/ApuntesPSP/11-asyncio-y-disponibilidad) · **Anterior:** [07 · Threads vs asyncio](/ApuntesPSP/11-asyncio-y-disponibilidad/07-threads-vs-asyncio) · **Siguiente:** [09 · Head First](/ApuntesPSP/11-asyncio-y-disponibilidad/09-head-first)
+📚 [Volver al índice de la unidad](/ApuntesPSP/11-asyncio-y-disponibilidad) · **Anterior:** [07 · Threads vs asyncio](/ApuntesPSP/11-asyncio-y-disponibilidad/07-threads-vs-asyncio) · **Siguiente:** [09 · Cierre](/ApuntesPSP/11-asyncio-y-disponibilidad/09-cierre)

@@ -3,7 +3,7 @@
 ## Contexto
 
 - Unidad fuente: `src/content/docs/06-apis-rest-y-http.md` (~370 líneas) + 5 boletines planos.
-- Precedente de formato: ApuntesRedes `09-routing-dinamico/`. Estilo Head First. Emoji: 🌐. RA4a-b.
+- Precedente de formato: ApuntesRedes `09-routing-dinamico/`. Estilo conversacional. Emoji: 🌐. RA4a-b.
 - Slugs en minúscula (`boletin-u06-inicial`).
 
 ## Contenido a repartir
@@ -24,7 +24,7 @@ ring REST vs SOAP (o GET vs POST), preguntas tontas, Aprieta el lápiz, CEs RA4a
 | 06 | `06-requests-get` | requests.get, params, headers, response. |
 | 07 | `07-requests-post` | POST/PUT/DELETE con requests, json=, manejo de errores. |
 | 08 | `08-practica-api` | Mini cliente de API completo, Be the code, Aprieta el lápiz. |
-| 09 | `09-head-first` | ⭐🔥🕵️🤬⚡🧠🧩💬🤷🎬, fallo intencionado, PRÓXIMAMENTE EN U07, ✅ CEs RA4a-b. |
+| 09 | `09-cierre` | ⭐🔥🕵️🤬⚡🧠🧩💬🤷🎬, fallo intencionado, PRÓXIMAMENTE EN U07, ✅ CEs RA4a-b. |
 
 ## Boletines
 

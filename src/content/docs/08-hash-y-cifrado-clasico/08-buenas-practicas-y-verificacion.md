@@ -198,4 +198,4 @@ Sustituye `mi_script.py` por un archivo .py real de tu proyecto. Abrir en modo b
 
 ---
 
-📚 [Volver al índice de la unidad](/ApuntesPSP/08-hash-y-cifrado-clasico) · **Anterior:** [07 · Hash vs Cifrado](/ApuntesPSP/08-hash-y-cifrado-clasico/07-hash-vs-cifrado) · **Siguiente:** [09 · Head First](/ApuntesPSP/08-hash-y-cifrado-clasico/09-head-first)
+📚 [Volver al índice de la unidad](/ApuntesPSP/08-hash-y-cifrado-clasico) · **Anterior:** [07 · Hash vs Cifrado](/ApuntesPSP/08-hash-y-cifrado-clasico/07-hash-vs-cifrado) · **Siguiente:** [09 · Cierre](/ApuntesPSP/08-hash-y-cifrado-clasico/09-cierre)

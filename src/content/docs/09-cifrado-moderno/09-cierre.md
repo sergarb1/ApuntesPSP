@@ -1,11 +1,11 @@
 ---
-title: "09 — Head First: consolida lo aprendido"
+title: "09 — Cierre: consolida lo aprendido"
 description: Sé la Clave, laboratorio híbrido con firma y el cierre de la unidad 🧠
 ---
 
 <p><small>Sé la Clave, laboratorio híbrido con firma y el cierre de la unidad 🧠</small></p>
 
-> 🗺️ **Estás en:** 🧬 **U09 · Cifrado Moderno** → 09 · Head First
+> 🗺️ **Estás en:** 🧬 **U09 · Cifrado Moderno** → 09 · Cierre
 
 ---
 

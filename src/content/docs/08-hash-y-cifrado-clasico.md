@@ -45,7 +45,7 @@ Al terminar, serás capaz de:
 | [06 · Cifrado César](/ApuntesPSP/08-hash-y-cifrado-clasico/06-cifrado-cesar) | El abuelo de la criptografía, paso a paso y por fuerza bruta | Todos |
 | [07 · Hash vs Cifrado](/ApuntesPSP/08-hash-y-cifrado-clasico/07-hash-vs-cifrado) | El ring: integridad contra confidencialidad | Todos |
 | [08 · Buenas prácticas y verificación](/ApuntesPSP/08-hash-y-cifrado-clasico/08-buenas-practicas-y-verificacion) | Checksums de descargas, cuándo hash y cuándo cifrar, ejercicios | Todos |
-| [09 · Head First (cierre)](/ApuntesPSP/08-hash-y-cifrado-clasico/09-head-first) | Sé el Hash, Fireside, Laboratorio de Tortura, Crucigrama… | Todos |
+| [09 · Cierre](/ApuntesPSP/08-hash-y-cifrado-clasico/09-cierre) | Sé el Hash, Fireside, Laboratorio de Tortura, Crucigrama… | Todos |
 
 > 📖 **Flujo de lectura:** los 8 primeros puntos son teoría en progresión. El 9º es el aterrizaje práctico: léelo justo después del 8º y antes de abrir los boletines.
 

@@ -250,4 +250,4 @@ conectar_con_backoff("https://192.0.2.1")  # IP de test que nunca responde
 
 ---
 
-📚 [Volver al índice de la unidad](/ApuntesPSP/07-apis-comerciales) · **Anterior:** [07 · Seguridad y buenas prácticas](/ApuntesPSP/07-apis-comerciales/07-seguridad-y-buenas-practicas) · **Siguiente:** [09 · Head First](/ApuntesPSP/07-apis-comerciales/09-head-first)
+📚 [Volver al índice de la unidad](/ApuntesPSP/07-apis-comerciales) · **Anterior:** [07 · Seguridad y buenas prácticas](/ApuntesPSP/07-apis-comerciales/07-seguridad-y-buenas-practicas) · **Siguiente:** [09 · Cierre](/ApuntesPSP/07-apis-comerciales/09-cierre)

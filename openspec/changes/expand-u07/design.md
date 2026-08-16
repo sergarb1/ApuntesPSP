@@ -3,7 +3,7 @@
 ## Contexto
 
 - Unidad fuente: `src/content/docs/07-apis-comerciales.md` (~320 líneas) + 5 boletines planos.
-- Precedente de formato: ApuntesRedes `09-routing-dinamico/`. Estilo Head First. Emoji: 🧪. RA4a-b.
+- Precedente de formato: ApuntesRedes `09-routing-dinamico/`. Estilo conversacional. Emoji: 🧪. RA4a-b.
 - Slugs en minúscula (`boletin-u07-inicial`).
 
 ## Contenido a repartir
@@ -24,7 +24,7 @@ buenas prácticas, práctica (clima + GPT), ring, preguntas tontas, Aprieta el l
 | 06 | `06-errores-http` | 401/403/404/429/500, manejo con try/except y status_code. |
 | 07 | `07-seguridad-y-buenas-practicas` | No exponer claves, rotación, variables de entorno. |
 | 08 | `08-practica-apis-comerciales` | Mini proyecto (clima + IA), Be the code, Aprieta el lápiz. |
-| 09 | `09-head-first` | ⭐🔥🕵️🤬⚡🧠🧩💬🤷🎬, fallo intencionado, PRÓXIMAMENTE EN U08, ✅ CEs RA4a-b. |
+| 09 | `09-cierre` | ⭐🔥🕵️🤬⚡🧠🧩💬🤷🎬, fallo intencionado, PRÓXIMAMENTE EN U08, ✅ CEs RA4a-b. |
 
 ## Boletines
 

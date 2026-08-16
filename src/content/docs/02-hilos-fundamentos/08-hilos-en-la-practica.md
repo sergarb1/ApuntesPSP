@@ -275,4 +275,4 @@ Cada hilo saluda 3 veces; los mensajes se entremezclan sin orden garantizado, y 
 
 ---
 
-📚 [Volver al índice de la unidad](/ApuntesPSP/02-hilos-fundamentos) · **Anterior:** [07 · Estados del hilo](/ApuntesPSP/02-hilos-fundamentos/07-estados-del-hilo) · **Siguiente:** [09 · Head First](/ApuntesPSP/02-hilos-fundamentos/09-head-first)
+📚 [Volver al índice de la unidad](/ApuntesPSP/02-hilos-fundamentos) · **Anterior:** [07 · Estados del hilo](/ApuntesPSP/02-hilos-fundamentos/07-estados-del-hilo) · **Siguiente:** [09 · Cierre](/ApuntesPSP/02-hilos-fundamentos/09-cierre)

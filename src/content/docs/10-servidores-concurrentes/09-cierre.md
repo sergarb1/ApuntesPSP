@@ -1,11 +1,11 @@
 ---
-title: "09 — Head First: consolida lo aprendido"
+title: "09 — Cierre: consolida lo aprendido"
 description: Sé el Servidor, el ring final y el Laboratorio de Tortura 🏗️
 ---
 
 <p><small>Sé el Servidor, el ring final y el Laboratorio de Tortura 🏗️</small></p>
 
-> 🗺️ **Estás en:** 🏗️ **U10 · Servidores Concurrentes** → 09 · Head First
+> 🗺️ **Estás en:** 🏗️ **U10 · Servidores Concurrentes** → 09 · Cierre
 
 ---
 

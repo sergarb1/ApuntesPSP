@@ -1,11 +1,11 @@
 ---
-title: "09 — Head First: consolida lo aprendido"
+title: "09 — Cierre: consolida lo aprendido"
 description: Sé la Corrutina, el ring final y el último Laboratorio de Tortura 🏁
 ---
 
 <p><small>Sé la Corrutina, el ring final y el último Laboratorio de Tortura 🏁</small></p>
 
-> 🗺️ **Estás en:** ⏱️ **U11 · asyncio y Disponibilidad** → 09 · Head First
+> 🗺️ **Estás en:** ⏱️ **U11 · asyncio y Disponibilidad** → 09 · Cierre
 
 ---
 

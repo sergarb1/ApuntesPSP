@@ -327,4 +327,4 @@ El resultado es **300.000** (3 hilos × 100.000) gracias al `with lock:` que pro
 
 ---
 
-📚 [Volver al índice de la unidad](/ApuntesPSP/03-sincronizacion-entre-hilos) · **Anterior:** [07 · Productor-Consumidor](/ApuntesPSP/03-sincronizacion-entre-hilos/07-productor-consumidor) · **Siguiente:** [09 · Head First](/ApuntesPSP/03-sincronizacion-entre-hilos/09-head-first)
+📚 [Volver al índice de la unidad](/ApuntesPSP/03-sincronizacion-entre-hilos) · **Anterior:** [07 · Productor-Consumidor](/ApuntesPSP/03-sincronizacion-entre-hilos/07-productor-consumidor) · **Siguiente:** [09 · Cierre](/ApuntesPSP/03-sincronizacion-entre-hilos/09-cierre)

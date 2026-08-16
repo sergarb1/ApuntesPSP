@@ -1,11 +1,11 @@
 ---
-title: "09 — Head First: consolida lo aprendido"
+title: "09 — Cierre: consolida lo aprendido"
 description: "Sé el Datagrama, laboratorio eco UDP y el cierre de la unidad 🧠"
 ---
 
 <p><small>Sé el Datagrama, laboratorio eco UDP y el cierre de la unidad 🧠</small></p>
 
-> 🗺️ **Estás en:** 📡 **U05 · Sockets UDP y Protocolos** → 09 · Head First
+> 🗺️ **Estás en:** 📡 **U05 · Sockets UDP y Protocolos** → 09 · Cierre
 
 ---
 

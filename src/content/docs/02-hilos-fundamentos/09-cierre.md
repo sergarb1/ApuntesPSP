@@ -1,11 +1,11 @@
 ---
-title: "09 — Head First: consolida lo aprendido"
+title: "09 — Cierre: consolida lo aprendido"
 description: Sé el Hilo, el ring final y el laboratorio de la unidad 🧠
 ---
 
 <p><small>Sé el Hilo, el ring final y el laboratorio de la unidad 🧠</small></p>
 
-> 🗺️ **Estás en:** 🔀 **U02 · Hilos Fundamentos** → 09 · Head First
+> 🗺️ **Estás en:** 🔀 **U02 · Hilos Fundamentos** → 09 · Cierre
 
 ---
 

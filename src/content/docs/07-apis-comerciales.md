@@ -46,7 +46,7 @@ Al terminar, serás capaz de:
 | [06 · Errores HTTP](/ApuntesPSP/07-apis-comerciales/06-errores-http) | 401, 403, 429 y 500: manejar fallos con `raise_for_status` | Todos |
 | [07 · Seguridad y buenas prácticas](/ApuntesPSP/07-apis-comerciales/07-seguridad-y-buenas-practicas) | Rotación de claves, gitignore y no exponer secretos | Todos |
 | [08 · Práctica: APIs comerciales](/ApuntesPSP/07-apis-comerciales/08-practica-apis-comerciales) | Sé el código, el programa completo y los ejercicios del lápiz | Todos |
-| [09 · Head First (cierre)](/ApuntesPSP/07-apis-comerciales/09-head-first) | Sé la Petición, Fireside, Laboratorio de Tortura, Crucigrama… | Todos |
+| [09 · Cierre](/ApuntesPSP/07-apis-comerciales/09-cierre) | Sé la Petición, Fireside, Laboratorio de Tortura, Crucigrama… | Todos |
 
 > 📖 **Flujo de lectura:** los 8 primeros puntos son teoría en progresión. El 9º es el aterrizaje práctico: léelo justo después del 8º y antes de abrir los boletines.
 

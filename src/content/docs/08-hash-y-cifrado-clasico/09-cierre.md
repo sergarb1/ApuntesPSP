@@ -1,11 +1,11 @@
 ---
-title: "09 — Head First: consolida lo aprendido"
+title: "09 — Cierre: consolida lo aprendido"
 description: Sé el Hash, laboratorio con sal y el ring final de la unidad 🧠
 ---
 
 <p><small>Sé el Hash, laboratorio con sal y el ring final de la unidad 🧠</small></p>
 
-> 🗺️ **Estás en:** 🔐 **U08 · Hash y Cifrado Clásico** → 09 · Head First
+> 🗺️ **Estás en:** 🔐 **U08 · Hash y Cifrado Clásico** → 09 · Cierre
 
 ---
 

@@ -48,7 +48,7 @@ Al terminar, serás capaz de:
 | [06 · NTP y servidores de tiempo](/ApuntesPSP/05-sockets-udp-y-protocolos/06-ntp-y-servidores-de-tiempo) | Sincronizar relojes con UDP y el puerto 123 | Todos |
 | [07 · Cuándo usar cada protocolo](/ApuntesPSP/05-sockets-udp-y-protocolos/07-cuando-usar-cada-protocolo) | Criterios de decisión y casos reales (DNS, VoIP, streaming) | Todos |
 | [08 · Práctica eco UDP](/ApuntesPSP/05-sockets-udp-y-protocolos/08-practica-eco-udp) | Servidor + cliente eco completos y ejercicios resueltos | Todos |
-| [09 · Head First (cierre)](/ApuntesPSP/05-sockets-udp-y-protocolos/09-head-first) | Sé el Datagrama, Fireside, Laboratorio de Tortura, Crucigrama… | Todos |
+| [09 · Cierre](/ApuntesPSP/05-sockets-udp-y-protocolos/09-cierre) | Sé el Datagrama, Fireside, Laboratorio de Tortura, Crucigrama… | Todos |
 
 > 📖 **Flujo de lectura:** los 8 primeros puntos son teoría en progresión. El 9º es el aterrizaje práctico: léelo justo después del 8º y antes de abrir los boletines.
 

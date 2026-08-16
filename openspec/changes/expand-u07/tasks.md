@@ -16,9 +16,9 @@
 - [x] 2.7 `07-seguridad-y-buenas-practicas`
 - [x] 2.8 `08-practica-apis-comerciales`
 
-## 3. Cierre Head First
+## 3. Cierre de unidad
 
-- [x] 3.1 `09-head-first` con ⭐🔥🕵️🤬⚡🧠🧩💬🤷🎬, fallo intencionado, PRÓXIMAMENTE EN U08 y ✅ CEs
+- [x] 3.1 `09-cierre` con ⭐🔥🕵️🤬⚡🧠🧩💬🤷🎬, fallo intencionado, PRÓXIMAMENTE EN U08 y ✅ CEs
 
 ## 4. Boletines
 

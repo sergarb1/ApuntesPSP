@@ -16,9 +16,9 @@
 - [x] 2.7 `07-estados-del-hilo`
 - [x] 2.8 `08-hilos-en-la-practica`
 
-## 3. Cierre Head First
+## 3. Cierre de unidad
 
-- [x] 3.1 `09-head-first` con ⭐🔥🕵️🤬⚡🧠🧩💬🤷🎬, fallo intencionado, PRÓXIMAMENTE EN U03 y ✅ CEs
+- [x] 3.1 `09-cierre` con ⭐🔥🕵️🤬⚡🧠🧩💬🤷🎬, fallo intencionado, PRÓXIMAMENTE EN U03 y ✅ CEs
 
 ## 4. Boletines
 

@@ -3,7 +3,7 @@
 ## Contexto
 
 - Unidad fuente: `src/content/docs/05-sockets-udp-y-protocolos.md` (~250 líneas) + 5 boletines planos.
-- Precedente de formato: ApuntesRedes `09-routing-dinamico/`. Estilo Head First. Emoji: 📡. RA3.
+- Precedente de formato: ApuntesRedes `09-routing-dinamico/`. Estilo conversacional. Emoji: 📡. RA3.
 - Slugs en minúscula (`boletin-u05-inicial`).
 
 ## Contenido a repartir
@@ -24,7 +24,7 @@ práctica eco UDP, ring TCP vs UDP, preguntas tontas, Aprieta el lápiz, CEs RA3
 | 06 | `06-ntp-y-servidores-de-tiempo` | NTP, puerto 123, sincronización, SNTP. |
 | 07 | `07-cuando-usar-cada-protocolo` | Criterios de decisión, casos reales (DNS, VoIP, streaming). |
 | 08 | `08-practica-eco-udp` | Servidor+cliente eco UDP completo, Be the code, Aprieta el lápiz. |
-| 09 | `09-head-first` | ⭐🔥🕵️🤬⚡🧠🧩💬🤷🎬, fallo intencionado, PRÓXIMAMENTE EN U06, ✅ CEs RA3. |
+| 09 | `09-cierre` | ⭐🔥🕵️🤬⚡🧠🧩💬🤷🎬, fallo intencionado, PRÓXIMAMENTE EN U06, ✅ CEs RA3. |
 
 ## Boletines
 

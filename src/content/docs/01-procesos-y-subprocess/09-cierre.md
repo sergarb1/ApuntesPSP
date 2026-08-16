@@ -1,11 +1,11 @@
 ---
-title: "09 — Head First: consolida lo aprendido"
+title: "09 — Cierre: consolida lo aprendido"
 description: Sé el Proceso, laboratorio con subprocess y el ring final de la unidad 🧠
 ---
 
 <p><small>Sé el Proceso, laboratorio con subprocess y el ring final de la unidad 🧠</small></p>
 
-> 🗺️ **Estás en:** 🚀 **U01 · Procesos y Subprocess** → 09 · Head First
+> 🗺️ **Estás en:** 🚀 **U01 · Procesos y Subprocess** → 09 · Cierre
 
 ---
 

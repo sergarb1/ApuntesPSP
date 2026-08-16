@@ -4,7 +4,7 @@
 
 - Unidad fuente: `src/content/docs/08-hash-y-cifrado-clasico.md` (369 líneas) + 5 boletines planos con 15 ejercicios en total (inicial 1-3, intermedio 4-6, extra 1-6).
 - Precedente de formato: `src/content/docs/09-routing-dinamico.md` + `09-routing-dinamico/01-…` en ApuntesRedes (referencia canónica de estilo).
-- Estilo: Head First; secciones de cierre en `09-head-first.md`.
+- Estilo: conversacional; secciones de cierre en `09-cierre.md`.
 - Emoji de unidad: 🔐; tema: Hash y Cifrado Clásico. RA5 (parcial; AES/RSA/firmas → U09).
 - Base path: `/ApuntesPSP`. Slugs en minúscula (`boletin-u08-inicial`).
 
@@ -24,7 +24,7 @@ El fichero original incluye: principios de seguridad, hash (propiedades), MD5/SH
 | 06 | `06-cifrado-cesar` | César (historia), cifrar/descifrar, `% 26`, mayúsculas/minúsculas, Be the code paso a paso "Krod Pxqgr", fuerza bruta (25 desplazamientos). |
 | 07 | `07-hash-vs-cifrado` | 🔥 Fireside Chat / 🥊 ring Hash vs Cifrado (integridad vs confidencialidad), moraleja. |
 | 08 | `08-buenas-practicas-y-verificacion` | Verificación de integridad (checksum de descargas), cuándo hash y cuándo cifrado, Aprieta el lápiz (5 ejercicios con solución en details). |
-| 09 | `09-head-first` | ⭐ Sé el Código (mini sistema hash+sal completo), 🕵️ ¿Quién Soy?, 🤬 CONRAD VS EL MUNDO, ⚡ Laboratorio de Tortura (fallo intencionado: hash sin sal), 🧠 Atrévete a Pensar, 🧩 Crucigrama de Bits, 💬 Entrevista de trabajo, 🤷 No hay preguntas tontas, 🎬 Post-Créditos → "PRÓXIMAMENTE EN U09 (Cifrado Moderno)", ✅ CEs RA5. |
+| 09 | `09-cierre` | ⭐ Sé el Código (mini sistema hash+sal completo), 🕵️ ¿Quién Soy?, 🤬 CONRAD VS EL MUNDO, ⚡ Laboratorio de Tortura (fallo intencionado: hash sin sal), 🧠 Atrévete a Pensar, 🧩 Crucigrama de Bits, 💬 Entrevista de trabajo, 🤷 No hay preguntas tontas, 🎬 Post-Créditos → "PRÓXIMAMENTE EN U09 (Cifrado Moderno)", ✅ CEs RA5. |
 
 ## Boletines
 

@@ -13,7 +13,7 @@ entre niveles.
 1. **Formato no navegable**: todo el contenido en un solo fichero sin índice de puntos ni enlace "siguiente".
 2. **Ejercicios fragmentados**: 5 ficheros con numeraciones inconexas (inicial 1-3, intermedio 4-6, extra 1-6), ninguno alcanza los 8 ejercicios exigidos.
 3. **Nivel de entrada insuficiente**: conceptos como "sal", "tabla rainbow" o "efecto avalancha" se tratan demasiado rápido para un lector que parte de cero.
-4. **Pérdida del estilo Head First**: las secciones ⭐/🔥/🕵️/🤬/⚡/🧠/🧩/💬/🤷/🎬 no se aplican de forma estructurada.
+4. **Pérdida del estilo conversacional**: las secciones ⭐/🔥/🕵️/🤬/⚡/🧠/🧩/💬/🤷/🎬 no se aplican de forma estructurada.
 
 ## Requisitos
 
@@ -21,7 +21,7 @@ entre niveles.
 
 - **REQ-1** Nivel de entrada cero: definir hash, sal, tabla rainbow, efecto avalancha, unidireccional, checksum en su primer uso + analogía cotidiana por concepto.
 - **REQ-2** 9 puntos de teoría (~120–200 líneas cada uno) con tabla/comparativa + ejemplo Python resuelto.
-- **REQ-3** Cierre Head First con todas las secciones y laboratorio con fallo intencionado.
+- **REQ-3** Cierre de unidad con todas las secciones y laboratorio con fallo intencionado.
 - **REQ-4** Todo ejercicio con solución en `<details>`.
 - **REQ-5** Boletines inicial y avanzado (≥8 ejercicios cada uno) + resueltos 1:1; avanzado con pistas solo en la versión por resolver.
 - **REQ-6** Conservar TODO el contenido factual del fichero original (propiedades del hash, tabla MD5/SHA, ejemplo sal, César paso a paso, ring Hash vs Cifrado, Pool Puzzle, preguntas tontas, tabla CEs RA5) repartiéndolo entre los puntos.

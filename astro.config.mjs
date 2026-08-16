@@ -63,17 +63,17 @@ const boletinesReady = [
 
 // Nombres de los 9 puntos de teoría de cada unidad ampliada (nn-archivo)
 const unitPuntos = {
-  '01-procesos-y-subprocess': ['01-que-es-un-proceso', '02-estados-de-un-proceso', '03-paralela-vs-distribuida', '04-subprocess-run', '05-subprocess-popen', '06-comunicacion-con-procesos', '07-compatibilidad-windows-linux', '08-procesos-en-la-practica', '09-head-first'],
-  '02-hilos-fundamentos': ['01-de-proceso-a-hilo', '02-primer-hilo', '03-hilos-con-argumentos', '04-hilos-daemon', '05-timer', '06-gil', '07-estados-del-hilo', '08-hilos-en-la-practica', '09-head-first'],
-  '03-sincronizacion-entre-hilos': ['01-condicion-de-carrera', '02-lock', '03-rlock', '04-semaphore', '05-barrier', '06-condition', '07-productor-consumidor', '08-buenas-practicas', '09-head-first'],
-  '04-sockets-tcp': ['01-que-es-un-socket', '02-cliente-tcp', '03-servidor-tcp', '04-ciclo-de-vida-de-la-conexion', '05-errores-y-manejo', '06-so-reuseaddr', '07-protocolos-sobre-tcp', '08-servidor-eco-completo', '09-head-first'],
-  '05-sockets-udp-y-protocolos': ['01-tcp-vs-udp', '02-cliente-udp', '03-servidor-udp', '04-datagramas-y-perdida', '05-http-desde-cero', '06-ntp-y-servidores-de-tiempo', '07-cuando-usar-cada-protocolo', '08-practica-eco-udp', '09-head-first'],
-  '06-apis-rest-y-http': ['01-web-y-http', '02-metodos-http', '03-principios-rest', '04-codigos-de-estado', '05-json', '06-requests-get', '07-requests-post', '08-practica-api', '09-head-first'],
-  '07-apis-comerciales': ['01-api-keys', '02-variables-de-entorno', '03-openweathermap', '04-openai', '05-rate-limiting', '06-errores-http', '07-seguridad-y-buenas-practicas', '08-practica-apis-comerciales', '09-head-first'],
-  '08-hash-y-cifrado-clasico': ['01-principios-de-seguridad', '02-que-es-un-hash', '03-md5-sha1-sha256', '04-hash-de-contrasenas', '05-hash-con-sal', '06-cifrado-cesar', '07-hash-vs-cifrado', '08-buenas-practicas-y-verificacion', '09-head-first'],
-  '09-cifrado-moderno': ['01-cifrado-simetrico-vs-asimetrico', '02-aes', '03-modos-aes', '04-rsa', '05-firmas-digitales', '06-cifrado-hibrido', '07-rbac-y-roles', '08-practica-sistema-seguro', '09-head-first'],
-  '10-servidores-concurrentes': ['01-servidor-secuencial', '02-el-problema-de-la-espera', '03-hilo-por-cliente', '04-threadpoolexecutor', '05-benchmark', '06-sincronizacion-en-servidores', '07-limites-y-buenas-practicas', '08-servidor-concurrente-completo', '09-head-first'],
-  '11-asyncio-y-disponibilidad': ['01-event-loop', '02-corrutinas', '03-create-task-y-gather', '04-timeouts', '05-heartbeat', '06-backoff', '07-threads-vs-asyncio', '08-disponibilidad-y-practica', '09-head-first'],
+  '01-procesos-y-subprocess': ['01-que-es-un-proceso', '02-estados-de-un-proceso', '03-paralela-vs-distribuida', '04-subprocess-run', '05-subprocess-popen', '06-comunicacion-con-procesos', '07-compatibilidad-windows-linux', '08-procesos-en-la-practica', '09-cierre'],
+  '02-hilos-fundamentos': ['01-de-proceso-a-hilo', '02-primer-hilo', '03-hilos-con-argumentos', '04-hilos-daemon', '05-timer', '06-gil', '07-estados-del-hilo', '08-hilos-en-la-practica', '09-cierre'],
+  '03-sincronizacion-entre-hilos': ['01-condicion-de-carrera', '02-lock', '03-rlock', '04-semaphore', '05-barrier', '06-condition', '07-productor-consumidor', '08-buenas-practicas', '09-cierre'],
+  '04-sockets-tcp': ['01-que-es-un-socket', '02-cliente-tcp', '03-servidor-tcp', '04-ciclo-de-vida-de-la-conexion', '05-errores-y-manejo', '06-so-reuseaddr', '07-protocolos-sobre-tcp', '08-servidor-eco-completo', '09-cierre'],
+  '05-sockets-udp-y-protocolos': ['01-tcp-vs-udp', '02-cliente-udp', '03-servidor-udp', '04-datagramas-y-perdida', '05-http-desde-cero', '06-ntp-y-servidores-de-tiempo', '07-cuando-usar-cada-protocolo', '08-practica-eco-udp', '09-cierre'],
+  '06-apis-rest-y-http': ['01-web-y-http', '02-metodos-http', '03-principios-rest', '04-codigos-de-estado', '05-json', '06-requests-get', '07-requests-post', '08-practica-api', '09-cierre'],
+  '07-apis-comerciales': ['01-api-keys', '02-variables-de-entorno', '03-openweathermap', '04-openai', '05-rate-limiting', '06-errores-http', '07-seguridad-y-buenas-practicas', '08-practica-apis-comerciales', '09-cierre'],
+  '08-hash-y-cifrado-clasico': ['01-principios-de-seguridad', '02-que-es-un-hash', '03-md5-sha1-sha256', '04-hash-de-contrasenas', '05-hash-con-sal', '06-cifrado-cesar', '07-hash-vs-cifrado', '08-buenas-practicas-y-verificacion', '09-cierre'],
+  '09-cifrado-moderno': ['01-cifrado-simetrico-vs-asimetrico', '02-aes', '03-modos-aes', '04-rsa', '05-firmas-digitales', '06-cifrado-hibrido', '07-rbac-y-roles', '08-practica-sistema-seguro', '09-cierre'],
+  '10-servidores-concurrentes': ['01-servidor-secuencial', '02-el-problema-de-la-espera', '03-hilo-por-cliente', '04-threadpoolexecutor', '05-benchmark', '06-sincronizacion-en-servidores', '07-limites-y-buenas-practicas', '08-servidor-concurrente-completo', '09-cierre'],
+  '11-asyncio-y-disponibilidad': ['01-event-loop', '02-corrutinas', '03-create-task-y-gather', '04-timeouts', '05-heartbeat', '06-backoff', '07-threads-vs-asyncio', '08-disponibilidad-y-practica', '09-cierre'],
 };
 
 const titleCase = (s) => s.split(' ').map((w) => w[0].toUpperCase() + w.slice(1)).join(' ');
@@ -85,8 +85,8 @@ const expandedUnitItems = (slug) => {
     { slug, label: 'Índice' },
     ...files.map((file) => {
       const num = file.slice(0, 2);
-      const label = file === '09-head-first'
-        ? '09 · Head First'
+      const label = file === '09-cierre'
+        ? '09 · Cierre'
         : `${num} · ${titleCase(file.slice(3).replace(/-/g, ' '))}`;
       return { slug: `${slug}/${file}`, label };
     }),

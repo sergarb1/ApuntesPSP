@@ -3,7 +3,7 @@
 ## Contexto
 
 - Unidad fuente: `src/content/docs/11-asyncio-y-disponibilidad.md` (~330 líneas) + 5 boletines planos.
-- Precedente de formato: ApuntesRedes `09-routing-dinamico/`. Estilo Head First. Emoji: ⏱️. RA4e-g.
+- Precedente de formato: ApuntesRedes `09-routing-dinamico/`. Estilo conversacional. Emoji: ⏱️. RA4e-g.
 - **Última unidad**: el cierre es el final del curso (🏁), sin hook a una siguiente unidad.
 - Slugs en minúscula (`boletin-u11-inicial`).
 
@@ -25,7 +25,7 @@ de servicios y práctica, ring hilos vs asyncio, preguntas tontas, Aprieta el l�
 | 06 | `06-backoff` | Reintentos con backoff (espera creciente), por qué. |
 | 07 | `07-threads-vs-asyncio` | Tabla comparativa, cuándo usar cada uno. |
 | 08 | `08-disponibilidad-y-practica` | Disponibilidad de servicios, práctica completa, Be the code, Aprieta el lápiz. |
-| 09 | `09-head-first` | ⭐🔥🕵️🤬⚡🧠🧩💬🤷🎬, fallo intencionado, **🎬 Post-Créditos 🏁 Fin del viaje** (recorrido U01→U11) y ✅ CEs RA4e-g. |
+| 09 | `09-cierre` | ⭐🔥🕵️🤬⚡🧠🧩💬🤷🎬, fallo intencionado, **🎬 Post-Créditos 🏁 Fin del viaje** (recorrido U01→U11) y ✅ CEs RA4e-g. |
 
 ## Boletines
 

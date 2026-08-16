@@ -1,11 +1,11 @@
 ---
-title: "09 — Head First: consolida lo aprendido"
+title: "09 — Cierre: consolida lo aprendido"
 description: "Sé el Socket, laboratorio TCP y el cierre de la unidad 🧠"
 ---
 
 <p><small>Sé el Socket, laboratorio TCP y el cierre de la unidad 🧠</small></p>
 
-> 🗺️ **Estás en:** 🔌 **U04 · Sockets TCP** → 09 · Head First
+> 🗺️ **Estás en:** 🔌 **U04 · Sockets TCP** → 09 · Cierre
 
 ---
 

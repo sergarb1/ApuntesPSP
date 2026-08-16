@@ -23,7 +23,7 @@ PSP/
 │   │   ├── 01-procesos-y-subprocess.md  ← índice de la unidad (11 unidades)
 │   │   ├── 01-procesos-y-subprocess/    ← 9 capítulos por unidad
 │   │   │   ├── 01-*.md … 08-*.md        ← teoría en progresión
-│   │   │   └── 09-head-first.md         ← cierre práctico (Head First)
+│   │   │   └── 09-cierre.md             ← cierre práctico de la unidad
 │   │   ├── boletines/                   ← 44 boletines (4 × 11 unidades)
 │   │   │   ├── boletin-U01-inicial.md       ← 🟢 inicial SIN resolver
 │   │   │   ├── boletin-U01-inicial-resuelto.md ← ✅ inicial CON solución
@@ -125,7 +125,7 @@ d2 archivo.d2 ../public/diagrams/archivo.svg --pad 20
 
 Estructura "libro" por unidad (formato replicado de ApuntesRedes): índice + 9 capítulos en subcarpeta + 4 boletines en `boletines/`. Total 155 ficheros MD (~10.000+ líneas). Cada unidad indica al final qué RAs cubre.
 
-Por unidad: `0X-unidad.md` (índice, ~90 líneas) → `0X-unidad/01-…-08.md` (capítulos, 110-280 líneas) + `09-head-first.md` (cierre, ~250 líneas) → `boletines/boletin-UXX-inicial[-resuelto].md` y `-avanzado[-resuelto].md`.
+Por unidad: `0X-unidad.md` (índice, ~90 líneas) → `0X-unidad/01-…-08.md` (capítulos, 110-280 líneas) + `09-cierre.md` (cierre, ~250 líneas) → `boletines/boletin-UXX-inicial[-resuelto].md` y `-avanzado[-resuelto].md`.
 
 Secciones por capítulo:
 - 📬 **La idea en una frase** + 🧠 **Mini-chequeo** (respuestas en `<details>`)
@@ -139,7 +139,7 @@ Secciones del índice:
 - ✅ **Criterios de evaluación** con columna "Dónde se cubre"
 - 🚪 **¿Por dónde empiezo?** con primer punto y enlace a la siguiente unidad
 
-Secciones del cierre `09-head-first.md`: ⭐ Sé el Código, 🔥 Fireside Chat, 🕵️ ¿Quién Soy?, 🤬 CONRAD VS EL MUNDO, ⚡ Laboratorio de Tortura (con pistas), 🏆 Logros, 🧠 Atrévete a Pensar, 🧩 Crucigrama de Bits, 💬 Entrevista de trabajo, 🤷 No hay preguntas tontas, 🎬 Post-Créditos ("PRÓXIMAMENTE EN UYY", salvo U11 que cierra el viaje 🏁), ✅ Criterios.
+Secciones del cierre `09-cierre.md`: ⭐ Sé el Código, 🔥 Fireside Chat, 🕵️ ¿Quién Soy?, 🤬 CONRAD VS EL MUNDO, ⚡ Laboratorio de Tortura (con pistas), 🏆 Logros, 🧠 Atrévete a Pensar, 🧩 Crucigrama de Bits, 💬 Entrevista de trabajo, 🤷 No hay preguntas tontas, 🎬 Post-Créditos ("PRÓXIMAMENTE EN UYY", salvo U11 que cierra el viaje 🏁), ✅ Criterios.
 
 **Convenciones MD:** frontmatter `title`/`description` (comillas solo si contienen `:`), sin BOM, slugs de URL en minúscula (`boletin-uXX-...`), nombres de fichero `UXX` mayúscula, enlaces internos `/ApuntesPSP/...`.
 

@@ -3,7 +3,7 @@
 ## Contexto
 
 - Unidad fuente: `src/content/docs/10-servidores-concurrentes.md` (~360 líneas) + 5 boletines planos.
-- Precedente de formato: ApuntesRedes `09-routing-dinamico/`. Estilo Head First. Emoji: 🏗️. RA4c-d.
+- Precedente de formato: ApuntesRedes `09-routing-dinamico/`. Estilo conversacional. Emoji: 🏗️. RA4c-d.
 - Slugs en minúscula (`boletin-u10-inicial`).
 
 ## Contenido a repartir
@@ -26,7 +26,7 @@ Aprieta el lápiz, CEs RA4c-d.
 | 06 | `06-sincronizacion-en-servidores` | Estado compartido, Lock en el servidor. |
 | 07 | `07-limites-y-buenas-practicas` | Límites de hilos, timeouts, limpieza. |
 | 08 | `08-servidor-concurrente-completo` | servidor.py + lanzaclientes.py, Be the code, Aprieta el lápiz. |
-| 09 | `09-head-first` | ⭐🔥🕵️🤬⚡🧠🧩💬🤷🎬, fallo intencionado, PRÓXIMAMENTE EN U11, ✅ CEs RA4c-d. |
+| 09 | `09-cierre` | ⭐🔥🕵️🤬⚡🧠🧩💬🤷🎬, fallo intencionado, PRÓXIMAMENTE EN U11, ✅ CEs RA4c-d. |
 
 ## Boletines
 

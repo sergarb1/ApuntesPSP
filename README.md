@@ -40,7 +40,7 @@ PSP/
 │   ├── 01-procesos-y-subprocess.md       ← Índice de la unidad (11 unidades)
 │   ├── 01-procesos-y-subprocess/         ← 9 capítulos por unidad
 │   │   ├── 01-*.md … 08-*.md             ← Teoría en progresión
-│   │   └── 09-head-first.md              ← Cierre práctico (Head First)
+│   │   └── 09-cierre.md                   ← Cierre práctico de la unidad
 │   ├── boletines/                        ← 44 boletines (4 × 11 unidades)
 │   │   ├── boletin-U01-inicial.md        ← 🟢 Inicial SIN resolver
 │   │   ├── boletin-U01-inicial-resuelto.md ← ✅ Inicial CON solución
@@ -105,7 +105,7 @@ Cada unidad combina teoría y práctica con secciones dinámicas:
 | **✏️ Aprieta el lápiz** | Ejercicios incrustados en la teoría |
 | **🧠 Mini-chequeo** | Autoevaluación rápida con respuestas en `<details>` |
 | **📋 Criterios de evaluación** | Checklist RA en cada unidad con referencias cruzadas |
-| **🏁 Head First** | Cierre de unidad: Sé el Código, Fireside Chat, Laboratorio de Tortura, Crucigrama de Bits, Entrevista de trabajo |
+| **🏁 Cierre de unidad** | Consolidación: Sé el Código, Fireside Chat, Laboratorio de Tortura, Crucigrama de Bits, Entrevista de trabajo |
 
 Los conceptos clave se ilustran con **diagramas SVG** generados con [D2](https://d2lang.com/): estados de proceso/hilo, handshake TCP, TCP vs UDP, cifrado híbrido, etc.
 

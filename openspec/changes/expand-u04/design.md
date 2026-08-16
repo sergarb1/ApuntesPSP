@@ -3,7 +3,7 @@
 ## Contexto
 
 - Unidad fuente: `src/content/docs/04-sockets-tcp.md` (~360 líneas) + 5 boletines planos.
-- Precedente de formato: ApuntesRedes `09-routing-dinamico/`. Estilo Head First. Emoji: 🔌. RA3.
+- Precedente de formato: ApuntesRedes `09-routing-dinamico/`. Estilo conversacional. Emoji: 🔌. RA3.
 - Slugs en minúscula (`boletin-u04-inicial`).
 
 ## Contenido a repartir
@@ -26,7 +26,7 @@ tontas, Aprieta el lápiz, CEs RA3.
 | 06 | `06-so-reuseaddr` | SO_REUSEADDR, TIME_WAIT, por qué y cuándo. |
 | 07 | `07-protocolos-sobre-tcp` | HTTP desde cero con socket, byte ordering. |
 | 08 | `08-servidor-eco-completo` | Servidor eco + cliente, Be the code, Aprieta el lápiz. |
-| 09 | `09-head-first` | ⭐🔥🕵️🤬⚡🧠🧩💬🤷🎬, fallo intencionado, PRÓXIMAMENTE EN U05, ✅ CEs RA3. |
+| 09 | `09-cierre` | ⭐🔥🕵️🤬⚡🧠🧩💬🤷🎬, fallo intencionado, PRÓXIMAMENTE EN U05, ✅ CEs RA3. |
 
 ## Boletines
 

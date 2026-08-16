@@ -3,7 +3,7 @@
 ## Contexto
 
 - Unidad fuente: `src/content/docs/09-cifrado-moderno.md` (~380 líneas) + 5 boletines planos.
-- Precedente de formato: ApuntesRedes `09-routing-dinamico/`. Estilo Head First. Emoji: 🧬. RA5.
+- Precedente de formato: ApuntesRedes `09-routing-dinamico/`. Estilo conversacional. Emoji: 🧬. RA5.
 - Slugs en minúscula (`boletin-u09-inicial`).
 
 ## Contenido a repartir
@@ -25,7 +25,7 @@ sistema seguro), ring simétrico vs asimétrico, preguntas tontas, Aprieta el l�
 | 06 | `06-cifrado-hibrido` | Híbrido AES+RSA (cifrar la clave de sesión con RSA). |
 | 07 | `07-rbac-y-roles` | RBAC, roles, mínimos privilegios. |
 | 08 | `08-practica-sistema-seguro` | Mini sistema completo, Be the code, Aprieta el lápiz. |
-| 09 | `09-head-first` | ⭐🔥🕵️🤬⚡🧠🧩💬🤷🎬, fallo intencionado, PRÓXIMAMENTE EN U10, ✅ CEs RA5. |
+| 09 | `09-cierre` | ⭐🔥🕵️🤬⚡🧠🧩💬🤷🎬, fallo intencionado, PRÓXIMAMENTE EN U10, ✅ CEs RA5. |
 
 ## Boletines
 

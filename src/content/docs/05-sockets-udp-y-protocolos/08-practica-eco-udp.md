@@ -11,7 +11,7 @@ description: "Servidor + cliente eco completos y ejercicios resueltos 🛠️"
 
 ## 📬 La idea en una frase
 
-> La práctica clásica de UDP: un **servidor eco** que devuelve al cliente exactamente lo que recibe. Es el "Hola mundo" de los datagramas y la base de todo lo que verás en el laboratorio del [punto 9](/ApuntesPSP/05-sockets-udp-y-protocolos/09-head-first).
+> La práctica clásica de UDP: un **servidor eco** que devuelve al cliente exactamente lo que recibe. Es el "Hola mundo" de los datagramas y la base de todo lo que verás en el laboratorio del [punto 9](/ApuntesPSP/05-sockets-udp-y-protocolos/09-cierre).
 
 Junta todo lo aprendido: cliente UDP ([punto 2](/ApuntesPSP/05-sockets-udp-y-protocolos/02-cliente-udp)), servidor UDP ([punto 3](/ApuntesPSP/05-sockets-udp-y-protocolos/03-servidor-udp)) y la naturaleza de los datagramas ([punto 4](/ApuntesPSP/05-sockets-udp-y-protocolos/04-datagramas-y-perdida)). Con dos terminales y unos pocos bytes, verás el protocolo completo en acción.
 
@@ -200,4 +200,4 @@ UDP suele ser más rápido porque no tiene handshake ni confirmaciones por cada 
 
 ---
 
-📚 [Volver al índice de la unidad](/ApuntesPSP/05-sockets-udp-y-protocolos) · **Anterior:** [07 · Cuándo usar cada protocolo](/ApuntesPSP/05-sockets-udp-y-protocolos/07-cuando-usar-cada-protocolo) · **Siguiente:** [09 · Head First](/ApuntesPSP/05-sockets-udp-y-protocolos/09-head-first)
+📚 [Volver al índice de la unidad](/ApuntesPSP/05-sockets-udp-y-protocolos) · **Anterior:** [07 · Cuándo usar cada protocolo](/ApuntesPSP/05-sockets-udp-y-protocolos/07-cuando-usar-cada-protocolo) · **Siguiente:** [09 · Cierre](/ApuntesPSP/05-sockets-udp-y-protocolos/09-cierre)

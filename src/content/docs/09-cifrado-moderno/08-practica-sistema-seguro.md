@@ -268,4 +268,4 @@ Cada rol tiene su paquete de permisos; `puede` comprueba si la acción está en 
 
 ---
 
-📚 [Volver al índice de la unidad](/ApuntesPSP/09-cifrado-moderno) · **Anterior:** [07 · RBAC y roles](/ApuntesPSP/09-cifrado-moderno/07-rbac-y-roles) · **Siguiente:** [09 · Head First](/ApuntesPSP/09-cifrado-moderno/09-head-first)
+📚 [Volver al índice de la unidad](/ApuntesPSP/09-cifrado-moderno) · **Anterior:** [07 · RBAC y roles](/ApuntesPSP/09-cifrado-moderno/07-rbac-y-roles) · **Siguiente:** [09 · Cierre](/ApuntesPSP/09-cifrado-moderno/09-cierre)

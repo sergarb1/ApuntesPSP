@@ -6,7 +6,7 @@ context: |
   Contenido: 11 unidades didácticas (U01-U11), cada unidad ampliada como "libro":
     un fichero Markdown por punto de teoría (src/content/docs/<unidad>/<nn>-<punto>.md)
     más una página índice de unidad (src/content/docs/<unidad>.md).
-    Secciones obligatorias Head First: Sé el Código/Proceso/Hilo/Socket, Fireside Chat,
+    Secciones obligatorias de consolidación: Sé el Código/Proceso/Hilo/Socket, Fireside Chat,
     ¿Quién Soy?, CONRAD VS EL MUNDO, Laboratorio de Tortura (con fallo intencionado),
     Atrévete a Pensar, Crucigrama de Bits, Entrevista de trabajo, No hay preguntas tontas,
     Post-Créditos. Soluciones SIEMPRE en <details>.

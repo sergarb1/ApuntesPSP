@@ -45,7 +45,7 @@ Al terminar, serás capaz de:
 | [06 · Cifrado híbrido](/ApuntesPSP/09-cifrado-moderno/06-cifrado-hibrido) | AES + RSA: el método que usa HTTPS | Todos |
 | [07 · RBAC y roles](/ApuntesPSP/09-cifrado-moderno/07-rbac-y-roles) | Control de acceso basado en roles | Todos |
 | [08 · Práctica: sistema seguro](/ApuntesPSP/09-cifrado-moderno/08-practica-sistema-seguro) | Cifrar y firmar un sistema completo | Todos |
-| [09 · Head First (cierre)](/ApuntesPSP/09-cifrado-moderno/09-head-first) | Sé la Clave, Fireside, Laboratorio, Crucigrama… | Todos |
+| [09 · Cierre](/ApuntesPSP/09-cifrado-moderno/09-cierre) | Sé la Clave, Fireside, Laboratorio, Crucigrama… | Todos |
 
 > 📖 **Flujo de lectura:** los 8 primeros puntos son teoría en progresión. El 9º es el aterrizaje práctico: léelo justo después del 8º y antes de abrir los boletines.
 

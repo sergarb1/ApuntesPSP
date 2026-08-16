@@ -1,11 +1,11 @@
 ---
-title: "09 — Head First: consolida lo aprendido"
+title: "09 — Cierre: consolida lo aprendido"
 description: Sé el Lock, laboratorio con carrera y el duelo final de la unidad 🧠
 ---
 
 <p><small>Sé el Lock, laboratorio con carrera y el duelo final de la unidad 🧠</small></p>
 
-> 🗺️ **Estás en:** 🔒 **U03 · Sincronización entre Hilos** → 09 · Head First
+> 🗺️ **Estás en:** 🔒 **U03 · Sincronización entre Hilos** → 09 · Cierre
 
 ---
 
