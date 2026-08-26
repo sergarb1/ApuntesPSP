@@ -1,9 +1,9 @@
 ---
 title: "09 — Cierre: consolida lo aprendido"
-description: Sé la Clave, laboratorio híbrido con firma y el cierre de la unidad 🧠
+description: Sé la clave, laboratorio híbrido con firma y el cierre de la unidad 🧠
 ---
 
-<p><small>Sé la Clave, laboratorio híbrido con firma y el cierre de la unidad 🧠</small></p>
+<p><small>Sé la clave, laboratorio híbrido con firma y el cierre de la unidad 🧠</small></p>
 
 > 🗺️ **Estás en:** 🧬 **U09 · Cifrado Moderno** → 09 · Cierre
 
@@ -13,7 +13,7 @@ Has terminado la teoría: simétrico vs asimétrico, AES con sus modos, RSA, fir
 
 ---
 
-## ⭐ Sé la Clave
+## ⭐ Sé la clave
 
 > *Primero eres una clave simétrica: la compartes con Ana y con Bob. Luego te conviertes en un par asimétrico: una mitad pública y otra privada.*
 
@@ -55,7 +55,7 @@ Has terminado la teoría: simétrico vs asimétrico, AES con sus modos, RSA, fir
 
 ---
 
-## 🕵️ ¿Quién Soy?
+## 🕵️ ¿Quién soy?
 
 1. Soy el número aleatorio único que viaja junto al cifrado para poder descifrar.
 2. Soy el código de autenticación que detecta si el mensaje fue manipulado.
@@ -88,7 +88,7 @@ Has terminado la teoría: simétrico vs asimétrico, AES con sus modos, RSA, fir
 
 ---
 
-## ⚡ Laboratorio de Tortura: mensaje cifrado y firmado
+## ⚡ Laboratorio de tortura: mensaje cifrado y firmado
 
 > **Duración:** 45 minutos
 > **Herramienta:** Python 3 (`pip install pycryptodome`)
@@ -124,7 +124,7 @@ Has terminado la teoría: simétrico vs asimétrico, AES con sus modos, RSA, fir
 
 ---
 
-## 🧠 Atrévete a Pensar
+## 🧠 Atrévete a pensar
 
 1. ¿Por qué no se cifra todo el tráfico de Internet directamente con RSA?
 2. ¿Qué pasaría si reutilizaras el mismo nonce dos veces con la misma clave AES?
@@ -144,7 +144,7 @@ Has terminado la teoría: simétrico vs asimétrico, AES con sus modos, RSA, fir
 
 ---
 
-## 🧩 Crucigrama de Bits
+## 🧩 Crucigrama de bits
 
 ```
 Horizontal:
@@ -209,7 +209,7 @@ Generar RSA 2048 bits lleva ~1-2 segundos. AES genera clave instantáneamente. E
 
 ---
 
-## 🎬 Post-Créditos
+## 🎬 Poscréditos
 
 > *Un mensaje cifrado viaja por la red. Solo el destinatario puede leerlo.*
 

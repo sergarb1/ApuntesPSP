@@ -98,7 +98,7 @@ else:
 
 El `for` reintenta hasta 3 veces. Cada `except` captura el fallo (rechazo o timeout) y espera 2s con `time.sleep(2)`. El `break` sale si se conecta; el `else` del `for` se ejecuta solo si nunca hubo `break`.
 
-## 6. Servidor que maneja múltiples conexiones (sin hilos)
+## 6. Servidor que gestiona múltiples conexiones (sin hilos)
 
 ```python
 import socket, select

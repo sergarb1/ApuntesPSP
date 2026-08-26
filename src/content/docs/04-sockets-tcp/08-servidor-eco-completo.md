@@ -48,7 +48,7 @@ with socket.socket() as cli:
     print(cli.recv(1024).decode())
 ```
 
-**Salida** del cliente (con el servidor corriendo en otra terminal):
+**Salida** del cliente (con el servidor en ejecución en otra terminal):
 
 ```
 Prueba

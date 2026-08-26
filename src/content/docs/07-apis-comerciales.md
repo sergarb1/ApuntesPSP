@@ -10,9 +10,9 @@ nav_order: 07
 
 ---
 
-*En la U06 consumiste APIs públicas y gratuitas: sin clave, sin límites, sin miedo. Ahora toca el mundo real: las APIs comerciales te dan una **API key**, te limitan las peticiones, se caen y tienes que manejar sus errores como un adulto.*
+*En la U06 consumiste APIs públicas y gratuitas: sin clave, sin límites, sin miedo. Ahora toca el mundo real: las APIs comerciales te dan una **API key**, te limitan las peticiones, se caen y tienes que gestionar sus errores como un adulto.*
 
-En esta unidad consumirás dos de las APIs más usadas del planeta: **OpenWeatherMap** para el tiempo y **OpenAI** para el cerebro artificial. Aprenderás a guardar tus claves con seguridad en variables de entorno, a manejar rate limits y errores HTTP con elegancia, y a construir un programa completo que habla de verdad con ambas. Todo lo que viste en la [U06 · APIs REST y HTTP](/ApuntesPSP/06-apis-rest-y-http) —GET, JSON, `requests`— se viste aquí de traje de gala.
+En esta unidad consumirás dos de las APIs más usadas del planeta: **OpenWeatherMap** para el tiempo y **OpenAI** para el cerebro artificial. Aprenderás a guardar tus claves con seguridad en variables de entorno, a gestionar rate limits y errores HTTP con elegancia, y a construir un programa completo que habla de verdad con ambas. Todo lo que viste en la [U06 · APIs REST y HTTP](/ApuntesPSP/06-apis-rest-y-http) —GET, JSON, `requests`— se viste aquí de traje de gala.
 
 Esta unidad se lee como un **libro de 9 capítulos**: los 8 primeros son teoría en progresión y el 9º aterriza todo en la práctica.
 
@@ -27,7 +27,7 @@ Al terminar, serás capaz de:
 - Consumir **OpenWeatherMap**: URL, parámetros (`q`, `appid`, `units`, `lang`) y parseo de la respuesta JSON.
 - Llamar a la **API de OpenAI**: chat completions, roles de mensaje (`system`/`user`), `max_tokens` y `temperature`.
 - Distinguir los **códigos de error** de una API comercial (401, 403, 404, 429, 500).
-- Manejar **rate limits** con esperas, `raise_for_status()` y **backoff exponencial**.
+- Gestionar **rate limits** con esperas, `raise_for_status()` y **backoff exponencial**.
 - Aplicar **buenas prácticas de seguridad**: rotación de claves, gitignore y nunca exponer credenciales.
 - Construir un **programa completo** que consume OpenWeatherMap y OpenAI con las claves en `.env`.
 - Conocer **herramientas para probar APIs** (Postman, curl, httpie, Insomnia).
@@ -43,10 +43,10 @@ Al terminar, serás capaz de:
 | [03 · OpenWeatherMap](/ApuntesPSP/07-apis-comerciales/03-openweathermap) | El tiempo de tu ciudad: URL, parámetros y parseo del JSON | Todos |
 | [04 · OpenAI](/ApuntesPSP/07-apis-comerciales/04-openai) | El cerebro artificial: chat completions, mensajes y roles | Todos |
 | [05 · Rate limiting](/ApuntesPSP/07-apis-comerciales/05-rate-limiting) | Límites, cuotas y el temido 429: espera y backoff | Todos |
-| [06 · Errores HTTP](/ApuntesPSP/07-apis-comerciales/06-errores-http) | 401, 403, 429 y 500: manejar fallos con `raise_for_status` | Todos |
+| [06 · Errores HTTP](/ApuntesPSP/07-apis-comerciales/06-errores-http) | 401, 403, 429 y 500: gestionar fallos con `raise_for_status` | Todos |
 | [07 · Seguridad y buenas prácticas](/ApuntesPSP/07-apis-comerciales/07-seguridad-y-buenas-practicas) | Rotación de claves, gitignore y no exponer secretos | Todos |
 | [08 · Práctica: APIs comerciales](/ApuntesPSP/07-apis-comerciales/08-practica-apis-comerciales) | Sé el código, el programa completo y los ejercicios del lápiz | Todos |
-| [09 · Cierre](/ApuntesPSP/07-apis-comerciales/09-cierre) | Sé la Petición, Fireside, Laboratorio de Tortura, Crucigrama… | Todos |
+| [09 · Cierre](/ApuntesPSP/07-apis-comerciales/09-cierre) | Sé la petición, Fireside, Laboratorio de tortura, Crucigrama… | Todos |
 
 > 📖 **Flujo de lectura:** los 8 primeros puntos son teoría en progresión. El 9º es el aterrizaje práctico: léelo justo después del 8º y antes de abrir los boletines.
 
@@ -72,7 +72,7 @@ Al terminar, serás capaz de:
 | CE | Criterio | Dónde se cubre |
 |---|---|---|
 | a) | Utiliza APIs REST para obtener datos externos | ✅ Puntos 3-5 y 8 + ⚡ Laboratorio (punto 9) |
-| b) | Maneja peticiones HTTP y procesa respuestas JSON | ✅ Puntos 1, 5-6 y 8 + ⚡ Laboratorio (punto 9) |
+| b) | Gestiona peticiones HTTP y procesa respuestas JSON | ✅ Puntos 1, 5-6 y 8 + ⚡ Laboratorio (punto 9) |
 
 > RA4c (servidores concurrentes) y RA4d (ThreadPool) se cubren en la **U10 · Servidores Concurrentes**. RA4e-g (asyncio, disponibilidad, comparativa) se cubren en la **U11 · asyncio y disponibilidad**.
 

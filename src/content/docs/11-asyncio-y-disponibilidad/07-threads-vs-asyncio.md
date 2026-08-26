@@ -77,7 +77,7 @@ description: La comparativa definitiva de modelos de concurrencia 🥊
 <summary>🔄 Respuestas</summary>
 
 1. En threads, **el sistema operativo**; en asyncio, **el event loop** (cooperativo, en cada `await`).
-2. Por el **GIL** (Global Interpreter Lock): las corrutinas corren en un solo hilo, así que el cálculo pesado no gana nada. Para CPU-bound se usan **procesos** (TEMA 01).
+2. Por el **GIL** (Global Interpreter Lock): las corrutinas se ejecutan en un solo hilo, así que el cálculo pesado no gana nada. Para CPU-bound se usan **procesos** (TEMA 01).
 3. Con **pocos clientes** (< 100) y operaciones bloqueantes: el modelo mental de un hilo por cliente es más directo que las corrutinas.
 
 </details>

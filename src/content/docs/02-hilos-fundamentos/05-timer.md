@@ -121,7 +121,7 @@ Un detalle a recordar: el `Timer` dispara desde un **hilo aparte**. Si tu progra
 <summary>🔄 Respuestas</summary>
 
 1. **Una sola vez.** Tras el retardo ejecuta la función una vez y termina. No se repite por defecto.
-2. **No.** El Timer corre en su propio hilo; el programa principal sigue con lo suyo y recibe el aviso cuando toca.
+2. **No.** El Timer se ejecuta en su propio hilo; el programa principal sigue con lo suyo y recibe el aviso cuando toca.
 3. Cancela el Timer **antes** de que dispare, de modo que la función nunca llega a ejecutarse. Una vez disparado, `cancel()` no tiene efecto.
 
 </details>

@@ -23,7 +23,7 @@ Implementa una función `cifrar_cesar(texto, desplazamiento)` que cifre frases c
 
 ## 3. Descifrado con mayúsculas y minúsculas
 
-Implementa descifrado César que maneje tanto mayúsculas como minúsculas. Descifra `"Nkrru"` sabiendo que fue cifrado con desplazamiento 2.
+Implementa descifrado César que gestione tanto mayúsculas como minúsculas. Descifra `"Nkrru"` sabiendo que fue cifrado con desplazamiento 2.
 
 **Pista:** descifrar es cifrar con desplazamiento negativo: `cifrar_cesar(texto, -desplazamiento)`. Usa `ord('A')` o `ord('a')` según `isupper()` para preservar mayúsculas y minúsculas.
 

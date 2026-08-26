@@ -1,9 +1,9 @@
 ---
 title: "09 — Cierre: consolida lo aprendido"
-description: Sé la Petición HTTP, laboratorio real y el ring final de la unidad 🧠
+description: Sé la petición HTTP, laboratorio real y el ring final de la unidad 🧠
 ---
 
-<p><small>Sé la Petición HTTP, laboratorio real y el ring final de la unidad 🧠</small></p>
+<p><small>Sé la petición HTTP, laboratorio real y el ring final de la unidad 🧠</small></p>
 
 > 🗺️ **Estás en:** 🌐 **U06 · APIs REST y HTTP** → 09 · Cierre
 
@@ -13,7 +13,7 @@ Has terminado la teoría: API, URL, métodos HTTP, principios REST, códigos de 
 
 ---
 
-## ⭐ Sé la Petición HTTP
+## ⭐ Sé la petición HTTP
 
 > *Eres una petición HTTP. Acabas de nacer en un `requests.get()` dentro del portátil de un estudiante y tu destino es `api.github.com`. Empieza el viaje.*
 
@@ -52,7 +52,7 @@ Has terminado la teoría: API, URL, métodos HTTP, principios REST, códigos de 
 
 ---
 
-## 🕵️ ¿Quién Soy?
+## 🕵️ ¿Quién soy?
 
 1. Soy el formato de intercambio de datos que casi todas las APIs usan hoy: llaves, corchetes y comillas.
 2. No soy idempotente: si me llamas dos veces, creo dos recursos.
@@ -85,12 +85,12 @@ Has terminado la teoría: API, URL, métodos HTTP, principios REST, códigos de 
 
 ---
 
-## ⚡ Laboratorio de Tortura: mini cliente contra una API pública
+## ⚡ Laboratorio de tortura: mini cliente contra una API pública
 
 > **Duración:** 45 minutos
 > **Herramienta:** Python 3 (`requests`, pip install si hace falta) y conexión a Internet
 
-**Escenario:** construye un mini cliente que consulte dos APIs públicas de verdad: **GitHub API** y **JSONPlaceholder**. Usa todo lo de la unidad: GET con params, POST, PUT, DELETE y manejo de errores.
+**Escenario:** construye un mini cliente que consulte dos APIs públicas de verdad: **GitHub API** y **JSONPlaceholder**. Usa todo lo de la unidad: GET con params, POST, PUT, DELETE y gestión de errores.
 
 **Tareas paso a paso:**
 
@@ -117,11 +117,11 @@ Has terminado la teoría: API, URL, métodos HTTP, principios REST, códigos de 
 | 🏅 **Verb Master** | Elegir correctamente GET, POST, PUT, PATCH o DELETE para cada operación CRUD |
 | 🏅 **Status Whisperer** | Interpretar 200, 201, 400, 401, 404 y 500 sin mirar la tabla |
 | 🏅 **JSON Parsel** | Parsear una respuesta JSON a dict de Python y extraer campos con seguridad |
-| 🏅 **API Client** | Construir un mini cliente de API con GET, POST y manejo de errores |
+| 🏅 **API Client** | Construir un mini cliente de API con GET, POST y gestión de errores |
 
 ---
 
-## 🧠 Atrévete a Pensar
+## 🧠 Atrévete a pensar
 
 1. ¿Por qué POST no es idempotente y PUT sí?
 2. ¿Qué diferencia hay entre 401 y 403?
@@ -141,7 +141,7 @@ Has terminado la teoría: API, URL, métodos HTTP, principios REST, códigos de 
 
 ---
 
-## 🧩 Crucigrama de Bits
+## 🧩 Crucigrama de bits
 
 ```
 Horizontal:
@@ -173,7 +173,7 @@ Vertical:
 2. **"¿Qué diferencia hay entre GET y POST? ¿Y entre PUT y PATCH?"**
 3. **"Explica los códigos de estado: ¿qué significan 200, 201, 400, 401, 404 y 500?"**
 4. **"Escribe en Python una petición GET con parámetros a una API y procesa la respuesta JSON."**
-5. **"¿Cómo manejarías los errores de una petición HTTP en tu código?"**
+5. **"¿Cómo gestionarías los errores de una petición HTTP en tu código?"**
 
 > 💡 **Cómo encararlas:** la 1 y la 4 son las "preguntas reina". Para la 1, recorre los pilares del [punto 3](/ApuntesPSP/06-apis-rest-y-http/03-principios-rest): recursos con URL, verbos HTTP, sin estado y JSON — con la analogía del camarero del [punto 1](/ApuntesPSP/06-apis-rest-y-http/01-web-y-http). Para la 4, escribe el esqueleto del [punto 6](/ApuntesPSP/06-apis-rest-y-http/06-requests-get): `params=`, `status_code`, `resp.json()`. Si sabes contarlo fluido, ya eres medio desarrollador de APIs.
 
@@ -203,7 +203,7 @@ Hoy en día, JSON gana por goleada. XML solo se usa en entornos legacy (bancos, 
 
 ---
 
-## 🎬 Post-Créditos
+## 🎬 Poscréditos
 
 > *Tu petición GET parte de tu portátil, cruza Internet y vuelve con un JSON bajo el brazo.*
 >
@@ -221,8 +221,8 @@ Hoy en día, JSON gana por goleada. XML solo se usa en entornos legacy (bancos, 
 
 | CE | Criterio | Cubierto |
 |---|---|---|
-| a) | Utiliza APIs REST para obtener datos externos | ✅ Puntos 3, 6-8 + ⚡ Laboratorio de Tortura |
-| b) | Maneja peticiones HTTP y procesa respuestas JSON | ✅ Puntos 1-5 y 7 + ⚡ Laboratorio de Tortura |
+| a) | Utiliza APIs REST para obtener datos externos | ✅ Puntos 3, 6-8 + ⚡ Laboratorio de tortura |
+| b) | Gestiona peticiones HTTP y procesa respuestas JSON | ✅ Puntos 1-5 y 7 + ⚡ Laboratorio de tortura |
 
 > RA4c (servidores concurrentes) y RA4d (ThreadPool) se cubren en la **U10 · Servidores Concurrentes**. RA4e-g (asyncio, disponibilidad, comparativa) se cubren en la **U11 · asyncio y disponibilidad**.
 

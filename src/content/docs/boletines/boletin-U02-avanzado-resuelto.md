@@ -79,7 +79,7 @@ name: MainThread | ident: 14600 | daemon: False
 name: secundario | ident: 14601 | daemon: False
 ```
 
-La misma función devuelve datos distintos según quién la ejecute: `current_thread()` es el objeto Thread que está corriendo en ese momento. El `ident` es un número único mientras el hilo vive.
+La misma función devuelve datos distintos según quién la ejecute: `current_thread()` es el objeto Thread que se está ejecutando en ese momento. El `ident` es un número único mientras el hilo vive.
 
 ## 4. 🎯 Carrera de mensajes
 

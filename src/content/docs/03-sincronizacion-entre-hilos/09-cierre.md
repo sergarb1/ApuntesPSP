@@ -1,9 +1,9 @@
 ---
 title: "09 — Cierre: consolida lo aprendido"
-description: Sé el Lock, laboratorio con carrera y el duelo final de la unidad 🧠
+description: Sé el lock, laboratorio con carrera y el duelo final de la unidad 🧠
 ---
 
-<p><small>Sé el Lock, laboratorio con carrera y el duelo final de la unidad 🧠</small></p>
+<p><small>Sé el lock, laboratorio con carrera y el duelo final de la unidad 🧠</small></p>
 
 > 🗺️ **Estás en:** 🔒 **U03 · Sincronización entre Hilos** → 09 · Cierre
 
@@ -13,7 +13,7 @@ Has terminado la teoría: condición de carrera, Lock, RLock, Semaphore, Barrier
 
 ---
 
-## ⭐ Sé el Lock
+## ⭐ Sé el lock
 
 > *Eres un `threading.Lock` recién creado. Te han asignado proteger el contador compartido de 4 hilos. Cada hilo quiere hacer `contador += 1` 100.000 veces.*
 
@@ -55,7 +55,7 @@ Has terminado la teoría: condición de carrera, Lock, RLock, Semaphore, Barrier
 
 ---
 
-## 🕵️ ¿Quién Soy?
+## 🕵️ ¿Quién soy?
 
 1. Soy el cerrojo que deja pasar a **un solo** hilo a la sección crítica a la vez.
 2. Soy el cerrojo que el mismo hilo puede adquirir varias veces sin bloquearse.
@@ -88,7 +88,7 @@ Has terminado la teoría: condición de carrera, Lock, RLock, Semaphore, Barrier
 
 ---
 
-## ⚡ Laboratorio de Tortura: la caja común de la cooperativa
+## ⚡ Laboratorio de tortura: la caja común de la cooperativa
 
 > **Duración:** 45 minutos
 > **Herramienta:** Python 3 (`threading` y `time`, sin instalar nada)
@@ -124,7 +124,7 @@ Has terminado la teoría: condición de carrera, Lock, RLock, Semaphore, Barrier
 
 ---
 
-## 🧠 Atrévete a Pensar
+## 🧠 Atrévete a pensar
 
 1. ¿Por qué `contador += 1` con 4 hilos y sin lock casi nunca da 400.000, pero a veces sí?
 2. ¿Qué pasaría si usaras `Semaphore(3)` para proteger una sección crítica que debe ser exclusiva?
@@ -144,7 +144,7 @@ Has terminado la teoría: condición de carrera, Lock, RLock, Semaphore, Barrier
 
 ---
 
-## 🧩 Crucigrama de Bits
+## 🧩 Crucigrama de bits
 
 ```
 Horizontal:
@@ -208,7 +208,7 @@ Usa `multiprocessing.Lock`, `multiprocessing.Semaphore`, etc. Son equivalentes p
 
 ---
 
-## 🎬 Post-Créditos
+## 🎬 Poscréditos
 
 > *El contador llega a 400.000, exacto. Los 4 hilos se turnan con el Lock sin pisarse.*
 
@@ -228,8 +228,8 @@ Usa `multiprocessing.Lock`, `multiprocessing.Semaphore`, etc. Son equivalentes p
 
 | CE | Criterio | Cubierto |
 |---|---|---|
-| RA2c | Sincroniza hilos con Lock | ✅ Puntos 2, 3 y 7 + ⚡ Laboratorio de Tortura |
-| RA2d | Usa semáforos para acceso controlado | ✅ Punto 4 + ⚡ Laboratorio de Tortura |
+| RA2c | Sincroniza hilos con Lock | ✅ Puntos 2, 3 y 7 + ⚡ Laboratorio de tortura |
+| RA2d | Usa semáforos para acceso controlado | ✅ Punto 4 + ⚡ Laboratorio de tortura |
 | RA2g | Evita condiciones de carrera | ✅ Puntos 1, 2 y 8 + ⚡ Laboratorio con fallo intencionado |
 
 > RA2a, RA2b, RA2e, RA2f y RA2h se cubren en la **U02 · Hilos Fundamentos**.

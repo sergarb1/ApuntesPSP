@@ -1,9 +1,9 @@
 ---
 title: "09 — Cierre: consolida lo aprendido"
-description: Sé el Proceso, laboratorio con subprocess y el ring final de la unidad 🧠
+description: Sé el proceso, laboratorio con subprocess y el ring final de la unidad 🧠
 ---
 
-<p><small>Sé el Proceso, laboratorio con subprocess y el ring final de la unidad 🧠</small></p>
+<p><small>Sé el proceso, laboratorio con subprocess y el ring final de la unidad 🧠</small></p>
 
 > 🗺️ **Estás en:** 🚀 **U01 · Procesos y Subprocess** → 09 · Cierre
 
@@ -13,7 +13,7 @@ Has terminado la teoría: la burbuja de memoria y el PID, los cinco estados, par
 
 ---
 
-## ⭐ Sé el Proceso
+## ⭐ Sé el proceso
 
 > *Eres un proceso de Python recién lanzado con `subprocess.Popen(["python", "calcula.py"])`. Acaban de asignarte un PID: 12345.*
 
@@ -53,7 +53,7 @@ Has terminado la teoría: la burbuja de memoria y el PID, los cinco estados, par
 
 ---
 
-## 🕵️ ¿Quién Soy?
+## 🕵️ ¿Quién soy?
 
 1. Soy el identificador único que el SO asigna a cada proceso.
 2. Soy el estado en el que el proceso espera un recurso (I/O, socket, sleep).
@@ -86,7 +86,7 @@ Has terminado la teoría: la burbuja de memoria y el PID, los cinco estados, par
 
 ---
 
-## ⚡ Laboratorio de Tortura: el lanzador con cierre automático
+## ⚡ Laboratorio de tortura: el lanzador con cierre automático
 
 > **Duración:** 40 minutos
 > **Herramienta:** Python 3 (`subprocess` y `time`, sin instalar nada)
@@ -121,7 +121,7 @@ Has terminado la teoría: la burbuja de memoria y el PID, los cinco estados, par
 
 ---
 
-## 🧠 Atrévete a Pensar
+## 🧠 Atrévete a pensar
 
 1. ¿Por qué un proceso no puede compartir memoria directamente con otro?
 2. ¿Qué pasa si un proceso hijo muere y su padre nunca llama a `wait()` ni `poll()`?
@@ -142,7 +142,7 @@ Has terminado la teoría: la burbuja de memoria y el PID, los cinco estados, par
 
 ---
 
-## 🧩 Crucigrama de Bits
+## 🧩 Crucigrama de bits
 
 ```
 Horizontal:
@@ -206,7 +206,7 @@ Sí, cualquier ejecutable. Pero el **PATH** debe incluirlo o debes dar la ruta c
 
 ---
 
-## 🎬 Post-Créditos
+## 🎬 Poscréditos
 
 > *El bloc de notas y la calculadora se abren a la vez. Tres procesos independientes conviven: Python, notepad y calc.*
 
@@ -226,12 +226,12 @@ Sí, cualquier ejecutable. Pero el **PATH** debe incluirlo o debes dar la ruta c
 
 | CE | Criterio | Cubierto |
 |---|---|---|
-| a) | Reconoce las características de los procesos | ✅ Burbuja de memoria y PID (punto 1) + ⭐ Sé el Proceso |
+| a) | Reconoce las características de los procesos | ✅ Burbuja de memoria y PID (punto 1) + ⭐ Sé el proceso |
 | b) | Distingue entre computación paralela y distribuida | ✅ Punto 3 + 🔥 Fireside (punto 9) |
-| c) | Conoce los estados de un proceso | ✅ Punto 2 + ⭐ Sé el Proceso |
+| c) | Conoce los estados de un proceso | ✅ Punto 2 + ⭐ Sé el proceso |
 | d) | Identifica las diferencias clave entre proceso e hilo | → U02 (🔥 Fireside lo anticipa) |
-| e) | Crea programas con procesos (subprocess) | ✅ Puntos 4-5-8 + ⚡ Laboratorio de Tortura |
-| f) | Establece comunicación entre procesos | ✅ Punto 6 + ⚡ Laboratorio de Tortura |
+| e) | Crea programas con procesos (subprocess) | ✅ Puntos 4-5-8 + ⚡ Laboratorio de tortura |
+| f) | Establece comunicación entre procesos | ✅ Punto 6 + ⚡ Laboratorio de tortura |
 
 > RA1d (proceso vs hilo) se cubre en la **U02 · Hilos Fundamentos**. RA1g (análisis de ventajas de procesos frente a hilos) también en **U02**. RA1h (documentación) es transversal a todo el curso.
 

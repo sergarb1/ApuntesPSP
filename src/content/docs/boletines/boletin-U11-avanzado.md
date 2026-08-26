@@ -5,7 +5,7 @@ description: Ejercicios avanzados de asyncio y Disponibilidad
 
 # 💪 Boletín U11 — Avanzado
 
-> Ejercicios que requieren aplicar asyncio de forma más profunda: backoff, timeouts con respaldo, heartbeats múltiples, descargas concurrentes, servidores con latido y monitoreo de varios servicios.
+> Ejercicios que requieren aplicar asyncio de forma más profunda: backoff, timeouts con respaldo, heartbeats múltiples, descargas concurrentes, servidores con latido y monitorización de varios servicios.
 
 ---
 
@@ -39,7 +39,7 @@ Servidor asyncio que imprime "💓 Vivo — N conexiones" cada 5s.
 
 **Pista:** usa `asyncio.start_server` para el servidor TCP. Crea una corrutina `heartbeat` con un bucle infinito `while True: await asyncio.sleep(5); ...`. Lánzala con `asyncio.create_task` antes de iniciar el servidor.
 
-## 6. ⏱ Monitoreo de servidores
+## 6. ⏱ Monitorización de servidores
 
 3 servidores simulados. Un monitor asíncrono comprueba su estado cada 3s.
 

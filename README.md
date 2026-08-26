@@ -105,7 +105,7 @@ Cada unidad combina teoría y práctica con secciones dinámicas:
 | **✏️ Aprieta el lápiz** | Ejercicios incrustados en la teoría |
 | **🧠 Mini-chequeo** | Autoevaluación rápida con respuestas en `<details>` |
 | **📋 Criterios de evaluación** | Checklist RA en cada unidad con referencias cruzadas |
-| **🏁 Cierre de unidad** | Consolidación: Sé el Código, Fireside Chat, Laboratorio de Tortura, Crucigrama de Bits, Entrevista de trabajo |
+| **🏁 Cierre de unidad** | Consolidación: Sé el código, Fireside Chat, Laboratorio de tortura, Crucigrama de bits, Entrevista de trabajo |
 
 Los conceptos clave se ilustran con **diagramas SVG** generados con [D2](https://d2lang.com/): estados de proceso/hilo, handshake TCP, TCP vs UDP, cifrado híbrido, etc.
 
@@ -136,7 +136,7 @@ Boletín 💪  →  boletin-UXX-avanzado.md               (avanzado SIN resolver
 Boletín ⭐  →  boletin-UXX-avanzado-resuelto.md      (avanzado CON solución)
 ```
 
-**Total: ~180 ejercicios** repartidos en 44 boletines (≈8 iniciales + ≥8 avanzados por unidad), más los incrustados en la teoría (✏️ Aprieta el lápiz, 🧠 Mini-chequeo, ⚡ Laboratorio de Tortura).
+**Total: ~180 ejercicios** repartidos en 44 boletines (≈8 iniciales + ≥8 avanzados por unidad), más los incrustados en la teoría (✏️ Aprieta el lápiz, 🧠 Mini-chequeo, ⚡ Laboratorio de tortura).
 
 ---
 

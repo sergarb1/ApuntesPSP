@@ -116,7 +116,7 @@ for h in hilos:
     h.join()
 ```
 
-Los 5 hilos corren a la vez y sus mensajes se entremezclan sin orden predecible: el scheduler decide.
+Los 5 hilos se ejecutan a la vez y sus mensajes se entremezclan sin orden predecible: el scheduler decide.
 
 **2. Temporizador daemon**
 

@@ -37,7 +37,7 @@ Estos son los códigos que una API comercial te va a devolver en la vida real:
 
 ## 🧯 `raise_for_status()` y try/except
 
-`requests` no lanza excepción cuando recibe un 404 o un 500: te devuelve la respuesta y sigues. Para convertir los errores HTTP en excepciones manejables existe `raise_for_status()`:
+`requests` no lanza excepción cuando recibe un 404 o un 500: te devuelve la respuesta y sigues. Para convertir los errores HTTP en excepciones gestionables existe `raise_for_status()`:
 
 ```python
 import requests

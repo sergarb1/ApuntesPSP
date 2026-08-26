@@ -1,9 +1,9 @@
 ---
 title: "09 — Cierre: consolida lo aprendido"
-description: Sé el Servidor, el ring final y el Laboratorio de Tortura 🏗️
+description: Sé el servidor, el ring final y el Laboratorio de tortura 🏗️
 ---
 
-<p><small>Sé el Servidor, el ring final y el Laboratorio de Tortura 🏗️</small></p>
+<p><small>Sé el servidor, el ring final y el Laboratorio de tortura 🏗️</small></p>
 
 > 🗺️ **Estás en:** 🏗️ **U10 · Servidores Concurrentes** → 09 · Cierre
 
@@ -13,7 +13,7 @@ Has terminado la teoría: el servidor secuencial y su límite, el cliente lento 
 
 ---
 
-## ⭐ Sé el Servidor
+## ⭐ Sé el servidor
 
 > *Eres un servidor TCP en `127.0.0.1:5000` con un ThreadPoolExecutor de 5 hilos. De repente llegan 10 clientes a la vez.*
 
@@ -52,7 +52,7 @@ Has terminado la teoría: el servidor secuencial y su límite, el cliente lento 
 
 ---
 
-## 🕵️ ¿Quién Soy?
+## 🕵️ ¿Quién soy?
 
 1. Soy el `accept()` que se queda atascado mientras se procesa al cliente anterior.
 2. Soy la llamada que entrega la tarea al pool y devuelve un Future.
@@ -77,7 +77,7 @@ Has terminado la teoría: el servidor secuencial y su límite, el cliente lento 
 
 ## 🤬 CONRAD VS EL MUNDO: "un cliente lento bloquea el servidor"
 
-**CONRAD:** — "Clásico: montas un servidor secuencial, llega un cliente que tarda 30 segundos y *'el servidor se ha quedado colgado'*. Pues no: solo tiene **una ventanilla**. Mientras procesa al lento, el `accept()` no corre y toda la cola espera. Los clientes 2 al 10 ya están conectados al socket… pero nadie los atiende."
+**CONRAD:** — "Clásico: montas un servidor secuencial, llega un cliente que tarda 30 segundos y *'el servidor se ha quedado colgado'*. Pues no: solo tiene **una ventanilla**. Mientras procesa al lento, el `accept()` no se ejecuta y toda la cola espera. Los clientes 2 al 10 ya están conectados al socket… pero nadie los atiende."
 
 **CONRAD:** — "Y lo mejor: *'he puesto time.sleep(3) y las pruebas van lentas'*. ¡Pues claro! Cada cliente suma 3 segundos. Con 10 clientes, el último espera 30. **n × tiempo_por_cliente**, lo dijimos en el [punto 1](/ApuntesPSP/10-servidores-concurrentes/01-servidor-secuencial). Si quieres que todos terminen a la vez, necesitas hilos o un pool."
 
@@ -85,7 +85,7 @@ Has terminado la teoría: el servidor secuencial y su límite, el cliente lento 
 
 ---
 
-## ⚡ Laboratorio de Tortura: servidor concurrente con ThreadPool
+## ⚡ Laboratorio de tortura: servidor concurrente con ThreadPool
 
 > **Duración:** 45 minutos
 > **Herramienta:** Python 3 (solo stdlib: `socket`, `threading`, `concurrent.futures`)
@@ -121,7 +121,7 @@ Has terminado la teoría: el servidor secuencial y su límite, el cliente lento 
 
 ---
 
-## 🧠 Atrévete a Pensar
+## 🧠 Atrévete a pensar
 
 1. ¿Por qué un servidor secuencial "acepta" a los clientes pero no los atiende?
 2. ¿Qué ventaja real tiene un pool de 5 hilos frente a 5 hilos creados y destruidos por cliente?
@@ -142,7 +142,7 @@ Has terminado la teoría: el servidor secuencial y su límite, el cliente lento 
 
 ---
 
-## 🧩 Crucigrama de Bits
+## 🧩 Crucigrama de bits
 
 ```
 Horizontal:
@@ -208,7 +208,7 @@ ThreadPool con 100 hilos + cola de espera. O usa **asyncio** ([U11](/ApuntesPSP/
 
 ---
 
-## 🎬 Post-Créditos
+## 🎬 Poscréditos
 
 > *El servidor secuencial hacía esperar a todos en la cola de la ventanilla única.*
 >

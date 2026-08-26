@@ -29,7 +29,7 @@ Al terminar, serás capaz de:
 - Interpretar los códigos de estado HTTP (2xx, 3xx, 4xx y 5xx) sin mirar la tabla.
 - Leer y generar JSON, y convertirlo a diccionarios y listas de Python.
 - Hacer peticiones GET con `requests`, con parámetros de consulta y cabeceras.
-- Enviar datos con POST, PUT y DELETE usando `json=`, y manejar errores HTTP con criterio.
+- Enviar datos con POST, PUT y DELETE usando `json=`, y gestionar errores HTTP con criterio.
 - Construir un mini cliente de API completo en Python que hable con servicios reales.
 
 ---
@@ -44,9 +44,9 @@ Al terminar, serás capaz de:
 | [04 · Códigos de estado](/ApuntesPSP/06-apis-rest-y-http/04-codigos-de-estado) | 200, 201, 400, 401, 404, 500…: la señal de humo del servidor | Todos |
 | [05 · JSON](/ApuntesPSP/06-apis-rest-y-http/05-json) | El idioma de las APIs: dumps, loads y parse de respuestas | Todos |
 | [06 · requests: el GET](/ApuntesPSP/06-apis-rest-y-http/06-requests-get) | `requests.get`, parámetros de consulta, cabeceras y la respuesta | Todos |
-| [07 · requests: POST, PUT y DELETE](/ApuntesPSP/06-apis-rest-y-http/07-requests-post) | Crear, actualizar y borrar con `json=`, y manejo de errores | Todos |
+| [07 · requests: POST, PUT y DELETE](/ApuntesPSP/06-apis-rest-y-http/07-requests-post) | Crear, actualizar y borrar con `json=`, y gestión de errores | Todos |
 | [08 · Práctica: mini cliente de API](/ApuntesPSP/06-apis-rest-y-http/08-practica-api) | Sé el código, un cliente completo y los ejercicios del lápiz | Todos |
-| [09 · Cierre](/ApuntesPSP/06-apis-rest-y-http/09-cierre) | Sé la Petición HTTP, Fireside, Laboratorio de Tortura, Crucigrama… | Todos |
+| [09 · Cierre](/ApuntesPSP/06-apis-rest-y-http/09-cierre) | Sé la petición HTTP, Fireside, Laboratorio de tortura, Crucigrama… | Todos |
 
 > 📖 **Flujo de lectura:** los 8 primeros puntos son teoría en progresión. El 9º es el aterrizaje práctico: léelo justo después del 8º y antes de abrir los boletines.
 
@@ -72,7 +72,7 @@ Al terminar, serás capaz de:
 | CE | Criterio | Dónde se cubre |
 |---|---|---|
 | a) | Utiliza APIs REST para obtener datos externos | ✅ Puntos 3, 6-8 + ⚡ Laboratorio (punto 9) |
-| b) | Maneja peticiones HTTP y procesa respuestas JSON | ✅ Puntos 1-5 y 7 + ⚡ Laboratorio (punto 9) |
+| b) | Gestiona peticiones HTTP y procesa respuestas JSON | ✅ Puntos 1-5 y 7 + ⚡ Laboratorio (punto 9) |
 
 > RA4c (servidores concurrentes) y RA4d (ThreadPool) se cubren en la **U10 · Servidores Concurrentes**. RA4e-g (asyncio, disponibilidad, comparativa) se cubren en la **U11 · asyncio y disponibilidad**.
 

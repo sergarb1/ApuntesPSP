@@ -94,7 +94,7 @@ Cuando entras en una web con `https://`:
 3. El servidor la descifra con su **clave privada**: ahora ambos comparten la misma clave AES.
 4. Todo el tráfico de la sesión se cifra con **AES**, rápido, y con **firma** (via TLS) para la integridad.
 
-RSA solo se usa al principio, para repartir el secreto. El resto, a toda velocidad con AES. Así trabajan también WhatsApp, Signal, el email cifrado y las VPN.
+RSA solo se usa al principio, para repartir el secreto. El resto, a toda velocidad con AES. Así trabajan también WhatsApp, Signal, el correo cifrado y las VPN.
 
 ---
 

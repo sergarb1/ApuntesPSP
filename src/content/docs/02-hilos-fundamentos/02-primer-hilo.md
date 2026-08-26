@@ -13,7 +13,7 @@ description: Crea, lanza y espera tu primer hilo con start() y join() 🚀
 
 > Crear un hilo es escribir `threading.Thread(target=funcion)`, lanzarlo con `.start()` y esperarlo con `.join()`.
 
-Tres líneas. Eso es todo lo que necesitas para que una función se ejecute en paralelo con el resto del programa. La gracia (y la complicación) está en *cuándo* corre cada pieza.
+Tres líneas. Eso es todo lo que necesitas para que una función se ejecute en paralelo con el resto del programa. La gracia (y la complicación) está en *cuándo* se ejecuta cada pieza.
 
 ---
 
@@ -49,7 +49,7 @@ Desglose de las tres líneas clave:
 
 ## 👑 El hilo principal vs los hilos secundarios
 
-Cuando ejecutas `python programa.py`, tu código corre dentro de un hilo: el **hilo principal** (main thread). Todo lo que lanzas con `Thread()` son **hilos secundarios** que viven dentro del mismo proceso.
+Cuando ejecutas `python programa.py`, tu código se ejecuta dentro de un hilo: el **hilo principal** (main thread). Todo lo que lanzas con `Thread()` son **hilos secundarios** que viven dentro del mismo proceso.
 
 ```
    PROGRAMA (proceso)
@@ -101,7 +101,7 @@ Fíjate en el orden: el `print("Esperando al hilo...")` del principal aparece *m
 
 ## 🧰 Propiedades de un hilo
 
-Un hilo no es solo una función corriendo: es un objeto con información útil.
+Un hilo no es solo una función en ejecución: es un objeto con información útil.
 
 ```python
 import threading

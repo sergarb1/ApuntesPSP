@@ -45,7 +45,7 @@ Al terminar, serás capaz de:
 | [06 · Comunicación con procesos](/ApuntesPSP/01-procesos-y-subprocess/06-comunicacion-con-procesos) | stdin, stdout y `communicate()`: pasar datos a un proceso | Todos |
 | [07 · Compatibilidad Windows / Linux](/ApuntesPSP/01-procesos-y-subprocess/07-compatibilidad-windows-linux) | La tabla de comandos equivalentes y los trucos del shell | Todos |
 | [08 · Procesos en la práctica](/ApuntesPSP/01-procesos-y-subprocess/08-procesos-en-la-practica) | Sé el código, el ring run vs Popen y los ejercicios del lápiz | Todos |
-| [09 · Cierre](/ApuntesPSP/01-procesos-y-subprocess/09-cierre) | Sé el Proceso, Fireside, Laboratorio de Tortura, Crucigrama… | Todos |
+| [09 · Cierre](/ApuntesPSP/01-procesos-y-subprocess/09-cierre) | Sé el proceso, Fireside, Laboratorio de tortura, Crucigrama… | Todos |
 
 > 📖 **Flujo de lectura:** los 8 primeros puntos son teoría en progresión. El 9º es el aterrizaje práctico: léelo justo después del 8º y antes de abrir los boletines.
 

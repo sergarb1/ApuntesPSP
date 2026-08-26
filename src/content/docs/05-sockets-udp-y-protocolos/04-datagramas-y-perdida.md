@@ -44,7 +44,7 @@ No hay confirmación de recepción. Si un paquete se pierde, **se pierde para si
 
 ### 2. Orden no garantizado 🔀
 
-Los datagramas pueden llegar en distinto orden al que se enviaron. Sin números de secuencia, el receptor no tiene forma de reordenarlos. Por eso los protocolos que necesitan orden (web, email) usan TCP.
+Los datagramas pueden llegar en distinto orden al que se enviaron. Sin números de secuencia, el receptor no tiene forma de reordenarlos. Por eso los protocolos que necesitan orden (web, correo) usan TCP.
 
 ### 3. Duplicados 🪞
 
@@ -68,7 +68,7 @@ Porque esos tres males son el **precio de la velocidad**: sin handshake, sin con
 - Un juego online: mejor 60 paquetes por segundo aunque se pierdan algunos que un "lag" por confirmar cada movimiento.
 - DNS: una respuesta que no llega se repite; la siguiente valdrá igual.
 
-La regla de decisión completa, con sus casos reales, la tienes en el [punto 7](/ApuntesPSP/05-sockets-udp-y-protocolos/07-cuando-usar-cada-protocolo). Y cuando necesites fiabilidad **y** velocidad, la red ya inventó la solución intermedia: **QUIC**, un protocolo con las garantías de TCP pero corriendo sobre UDP (lo verás en el [punto 9](/ApuntesPSP/05-sockets-udp-y-protocolos/09-cierre)).
+La regla de decisión completa, con sus casos reales, la tienes en el [punto 7](/ApuntesPSP/05-sockets-udp-y-protocolos/07-cuando-usar-cada-protocolo). Y cuando necesites fiabilidad **y** velocidad, la red ya inventó la solución intermedia: **QUIC**, un protocolo con las garantías de TCP pero funcionando sobre UDP (lo verás en el [punto 9](/ApuntesPSP/05-sockets-udp-y-protocolos/09-cierre)).
 
 ---
 

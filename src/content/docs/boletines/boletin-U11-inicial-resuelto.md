@@ -115,7 +115,7 @@ async def main():
 asyncio.run(main())
 ```
 
-`contar()` corre "en segundo plano": mientras `main()` espera su segundo, la tarea cuenta. Se ve la alternancia de las dos corrutinas en el event loop.
+`contar()` se ejecuta "en segundo plano": mientras `main()` espera su segundo, la tarea cuenta. Se ve la alternancia de las dos corrutinas en el event loop.
 
 ## 7. Heartbeat básico
 

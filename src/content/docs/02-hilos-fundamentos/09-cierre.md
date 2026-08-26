@@ -1,9 +1,9 @@
 ---
 title: "09 — Cierre: consolida lo aprendido"
-description: Sé el Hilo, el ring final y el laboratorio de la unidad 🧠
+description: Sé el hilo, el ring final y el laboratorio de la unidad 🧠
 ---
 
-<p><small>Sé el Hilo, el ring final y el laboratorio de la unidad 🧠</small></p>
+<p><small>Sé el hilo, el ring final y el laboratorio de la unidad 🧠</small></p>
 
 > 🗺️ **Estás en:** 🔀 **U02 · Hilos Fundamentos** → 09 · Cierre
 
@@ -13,7 +13,7 @@ Has terminado la teoría: qué es un hilo, cómo se crea y se espera, argumentos
 
 ---
 
-## ⭐ Sé el Hilo
+## ⭐ Sé el hilo
 
 > *Eres un hilo llamado "hilo-1". Acabas de nacer en el programa de los viajeros del [punto 8](/ApuntesPSP/02-hilos-fundamentos/08-hilos-en-la-practica). Tu misión: recorrer 3 paradas con 0.5s de sueño entre cada una.*
 
@@ -52,7 +52,7 @@ Has terminado la teoría: qué es un hilo, cómo se crea y se espera, argumentos
 
 ---
 
-## 🕵️ ¿Quién Soy?
+## 🕵️ ¿Quién soy?
 
 1. Soy la unidad más pequeña de ejecución y comparto memoria con mis hermanos dentro de un proceso.
 2. Me llaman "main" y, sin un `join()`, puedo terminar el programa antes que los demás hilos.
@@ -85,7 +85,7 @@ Has terminado la teoría: qué es un hilo, cómo se crea y se espera, argumentos
 
 ---
 
-## ⚡ Laboratorio de Tortura: la sala de descargas
+## ⚡ Laboratorio de tortura: la sala de descargas
 
 > **Duración:** 45 minutos
 > **Herramienta:** Python 3 (`threading` y `time`, sin instalar nada)
@@ -104,7 +104,7 @@ Has terminado la teoría: qué es un hilo, cómo se crea y se espera, argumentos
 
 > **Pista 1:** `target` recibe una **referencia** a la función, no una llamada. `descargar` sin paréntesis le pasa la función; `descargar("foto.png")` la ejecuta ahí mismo (lo avisamos en el [punto 2](/ApuntesPSP/02-hilos-fundamentos/02-primer-hilo)). Si tus descargas imprimen antes del primer `start()`, ese es el bug.
 >
-> **Pista 2:** si el lote tarda ~8 segundos en vez de ~2, no hay paralelismo: los `time.sleep(2)` se están sumando porque todo corre en el hilo principal. Un `print(f"Creando {archivo}")` dentro del bucle te delata: los 4 mensajes aparecen juntos y seguidos, sin intercalarse con los `⬇️`.
+> **Pista 2:** si el lote tarda ~8 segundos en vez de ~2, no hay paralelismo: los `time.sleep(2)` se están sumando porque todo se ejecuta en el hilo principal. Un `print(f"Creando {archivo}")` dentro del bucle te delata: los 4 mensajes aparecen juntos y seguidos, sin intercalarse con los `⬇️`.
 
 ---
 
@@ -120,7 +120,7 @@ Has terminado la teoría: qué es un hilo, cómo se crea y se espera, argumentos
 
 ---
 
-## 🧠 Atrévete a Pensar
+## 🧠 Atrévete a pensar
 
 1. ¿Por qué los hilos comparten memoria y los procesos no?
 2. ¿Qué le pasa a tu programa si un hilo **no daemon** entra en un bucle infinito?
@@ -141,7 +141,7 @@ Has terminado la teoría: qué es un hilo, cómo se crea y se espera, argumentos
 
 ---
 
-## 🧩 Crucigrama de Bits
+## 🧩 Crucigrama de bits
 
 ```
 Horizontal:
@@ -207,7 +207,7 @@ En Python, no hay prioridades nativas. El scheduler del SO decide. Puedes simula
 
 ---
 
-## 🎬 Post-Créditos
+## 🎬 Poscréditos
 
 > *El hilo de Ana recorre sus tres paradas. El de Bob, más ligero, llega antes a su destino.*
 
@@ -228,9 +228,9 @@ En Python, no hay prioridades nativas. El scheduler del SO decide. Puedes simula
 | CE | Criterio | Cubierto |
 |---|---|---|
 | RA2a | Identifica la estructura de un hilo | ✅ Punto 1 + Punto 7 |
-| RA2b | Crea y lanza hilos con threading | ✅ Puntos 2-3 + ⚡ Laboratorio de Tortura |
-| RA2e | Implementa esperas con join() y sleep() | ✅ Puntos 2-4 + ⚡ Laboratorio de Tortura |
-| RA2f | Gestiona hilos daemon | ✅ Punto 4 + ⚡ Laboratorio de Tortura |
+| RA2b | Crea y lanza hilos con threading | ✅ Puntos 2-3 + ⚡ Laboratorio de tortura |
+| RA2e | Implementa esperas con join() y sleep() | ✅ Puntos 2-4 + ⚡ Laboratorio de tortura |
+| RA2f | Gestiona hilos daemon | ✅ Punto 4 + ⚡ Laboratorio de tortura |
 | RA2h | Conoce el GIL y sus limitaciones | ✅ Punto 6 + Punto 8 |
 
 > Los criterios RA2c (Lock), RA2d (semáforos) y RA2g (condiciones de carrera) se cubren en el **TEMA 03 — Sincronización entre Hilos**.

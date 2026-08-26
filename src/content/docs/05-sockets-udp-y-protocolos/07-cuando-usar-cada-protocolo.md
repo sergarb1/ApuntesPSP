@@ -43,7 +43,7 @@ Dos preguntas que te ayudan a decidir:
 | Aplicación | Protocolo | Por qué |
 |---|---|---|
 | Web (HTTP) | **TCP** | La página debe llegar completa y en orden |
-| Email (SMTP, POP3, IMAP) | **TCP** | Un mensaje a medias es inútil |
+| Correo (SMTP, POP3, IMAP) | **TCP** | Un mensaje a medias es inútil |
 | Transferencia de archivos (FTP) | **TCP** | Un byte perdido corrompe el archivo |
 | **DNS** | **UDP** | La consulta es diminuta; si se pierde, se repite |
 | **VoIP / videollamadas** (Zoom, Skype) | **UDP** | La conversación debe ir fluida; un frame perdido se tolera |
@@ -57,7 +57,7 @@ Fíjate en el patrón: **cuando el dato es valioso y debe quedar intacto, TCP; c
 
 ## 🔀 Y si quieres ambas cosas: QUIC
 
-¿Fiabilidad de TCP con velocidad de UDP? Eso existe: **QUIC**, el protocolo sobre el que corre **HTTP/3**. QUIC se construye sobre UDP (la capa de transporte es UDP) pero añade por su cuenta confirmaciones, control de congestión y cifrado. Es la "vuelta a la tortilla" que verás en el cierre del [punto 9](/ApuntesPSP/05-sockets-udp-y-protocolos/09-cierre): la industria decide cuándo incluso el "no fiable" merece una capa de fiabilidad.
+¿Fiabilidad de TCP con velocidad de UDP? Eso existe: **QUIC**, el protocolo sobre el que funciona **HTTP/3**. QUIC se construye sobre UDP (la capa de transporte es UDP) pero añade por su cuenta confirmaciones, control de congestión y cifrado. Es la "vuelta a la tortilla" que verás en el cierre del [punto 9](/ApuntesPSP/05-sockets-udp-y-protocolos/09-cierre): la industria decide cuándo incluso el "no fiable" merece una capa de fiabilidad.
 
 ---
 
@@ -81,7 +81,7 @@ Fíjate en el patrón: **cuando el dato es valioso y debe quedar intacto, TCP; c
 ## ✅ Resumen en 3 frases
 
 - La regla de decisión es una sola pregunta: ¿prefieres que llegue todo (TCP) o que llegue rápido (UDP)?
-- Los casos reales son consistentes: web/email/FTP con TCP; DNS/VoIP/streaming/juegos con UDP.
+- Los casos reales son consistentes: web/correo/FTP con TCP; DNS/VoIP/streaming/juegos con UDP.
 - Si quieres ambas cosas, QUIC (sobre HTTP/3) construye fiabilidad encima de UDP.
 
 ## 🐛 Vocabulario rápido

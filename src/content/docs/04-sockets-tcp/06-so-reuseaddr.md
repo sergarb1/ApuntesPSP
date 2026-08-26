@@ -97,4 +97,4 @@ No es un capricho: la despedida TCP necesita tiempo para garantizar que los mens
 
 ---
 
-📚 [Volver al índice de la unidad](/ApuntesPSP/04-sockets-tcp) · **Anterior:** [05 · Errores y manejo](/ApuntesPSP/04-sockets-tcp/05-errores-y-manejo) · **Siguiente:** [07 · Protocolos sobre TCP](/ApuntesPSP/04-sockets-tcp/07-protocolos-sobre-tcp)
+📚 [Volver al índice de la unidad](/ApuntesPSP/04-sockets-tcp) · **Anterior:** [05 · Errores y gestión](/ApuntesPSP/04-sockets-tcp/05-errores-y-manejo) · **Siguiente:** [07 · Protocolos sobre TCP](/ApuntesPSP/04-sockets-tcp/07-protocolos-sobre-tcp)

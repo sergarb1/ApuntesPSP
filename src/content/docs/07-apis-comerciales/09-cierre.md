@@ -1,9 +1,9 @@
 ---
 title: "09 — Cierre: consolida lo aprendido"
-description: Sé la Petición con API key, laboratorio real y el ring final de la unidad 🧠
+description: Sé la petición con API key, laboratorio real y el ring final de la unidad 🧠
 ---
 
-<p><small>Sé la Petición con API key, laboratorio real y el ring final de la unidad 🧠</small></p>
+<p><small>Sé la petición con API key, laboratorio real y el ring final de la unidad 🧠</small></p>
 
 > 🗺️ **Estás en:** 🧪 **U07 · APIs Comerciales** → 09 · Cierre
 
@@ -13,7 +13,7 @@ Has terminado la teoría: API keys, variables de entorno, OpenWeatherMap, OpenAI
 
 ---
 
-## ⭐ Sé la Petición
+## ⭐ Sé la petición
 
 > *Eres una petición HTTP con una API key. Acabas de nacer en un `requests.get()` dentro del portátil de un estudiante y tu destino es `api.openweathermap.org`. Empieza el viaje.*
 
@@ -45,7 +45,7 @@ Has terminado la teoría: API keys, variables de entorno, OpenWeatherMap, OpenAI
 
 **REST:** — ¿Y eso es bueno? Yo tengo URLs claras: `/usuarios/5`, `/productos`.
 
-**GraphQL:** — Sí, pero si quieres el nombre y el email del usuario y los títulos de sus posts, ¿cuántas peticiones necesitas?
+**GraphQL:** — Sí, pero si quieres el nombre y el correo del usuario y los títulos de sus posts, ¿cuántas peticiones necesitas?
 
 **REST:** — Dos: `/usuarios/5` y `/usuarios/5/posts`.
 
@@ -59,7 +59,7 @@ Has terminado la teoría: API keys, variables de entorno, OpenWeatherMap, OpenAI
 
 ---
 
-## 🕵️ ¿Quién Soy?
+## 🕵️ ¿Quién soy?
 
 1. Soy el carnet de identidad que la API comercial te da al registrarte.
 2. Soy el código de estado cuando te pasas del límite de peticiones.
@@ -92,7 +92,7 @@ Has terminado la teoría: API keys, variables de entorno, OpenWeatherMap, OpenAI
 
 ---
 
-## ⚡ Laboratorio de Tortura: OpenWeatherMap + OpenAI
+## ⚡ Laboratorio de tortura: OpenWeatherMap + OpenAI
 
 > **Duración:** 1 hora
 > **Herramienta:** Python 3 (`requests`, `python-dotenv`, `openai`) y conexión a Internet
@@ -105,7 +105,7 @@ Has terminado la teoría: API keys, variables de entorno, OpenWeatherMap, OpenAI
 2. **Clima de tu ciudad**: escribe `clima.py` que cargue la clave con `load_dotenv()`, haga GET a OpenWeatherMap y muestre temperatura, sensación, humedad y descripción.
 3. **Compara dos ciudades**: llama a la misma función con dos ciudades y muestra cuál está más caliente.
 4. **GPT responde**: escribe `gpt.py` que pregunte a GPT-3.5 qué es un Lock en Python con `max_tokens=100` y `temperature=0.7`.
-5. **Maneja el 401**: cambia la `appid` a una clave falsa y haz que el programa detecte el error sin reventar (comprueba `status_code`).
+5. **Gestiona el 401**: cambia la `appid` a una clave falsa y haz que el programa detecte el error sin reventar (comprueba `status_code`).
 6. **Simula un 429**: haz un bucle de 70 peticiones seguidas a OpenWeatherMap (el plan gratis permite 60/min). ¿Qué código recibes a partir de la 61?
 
 **Fallo intencionado:** en la tarea 2, en lugar de leer la clave del `.env` con `os.getenv`, escríbela a fuego en el código (`API_KEY = "TU_API_KEY"`) y haz `git add . && git commit`. La clave queda **en el historial de git para siempre**, aunque luego la borres y añadas el `.env` al `.gitignore`. Es el fallo más caro de esta unidad: el código funciona, pero acabas de regalar tu carnet de identidad.
@@ -129,7 +129,7 @@ Has terminado la teoría: API keys, variables de entorno, OpenWeatherMap, OpenAI
 
 ---
 
-## 🧠 Atrévete a Pensar
+## 🧠 Atrévete a pensar
 
 1. ¿Por qué las API keys no deben ir en la URL ni en el código?
 2. ¿Qué diferencia hay entre 401 y 403?
@@ -149,7 +149,7 @@ Has terminado la teoría: API keys, variables de entorno, OpenWeatherMap, OpenAI
 
 ---
 
-## 🧩 Crucigrama de Bits
+## 🧩 Crucigrama de bits
 
 ```
 Horizontal:
@@ -207,7 +207,7 @@ Solo si el código nunca va a GitHub. Mejor acostúmbrate a `.env` desde el prin
 
 ---
 
-## 🎬 Post-Créditos
+## 🎬 Poscréditos
 
 > *Tu petición parte con su API key cifrada por TLS y vuelve con el JSON del tiempo bajo el brazo.*
 >
@@ -225,8 +225,8 @@ Solo si el código nunca va a GitHub. Mejor acostúmbrate a `.env` desde el prin
 
 | CE | Criterio | Cubierto |
 |---|---|---|
-| a) | Utiliza APIs REST para obtener datos externos | ✅ Puntos 3-5 y 8 + ⚡ Laboratorio de Tortura |
-| b) | Maneja peticiones HTTP y procesa respuestas JSON | ✅ Puntos 1, 5-6 y 8 + ⚡ Laboratorio de Tortura |
+| a) | Utiliza APIs REST para obtener datos externos | ✅ Puntos 3-5 y 8 + ⚡ Laboratorio de tortura |
+| b) | Gestiona peticiones HTTP y procesa respuestas JSON | ✅ Puntos 1, 5-6 y 8 + ⚡ Laboratorio de tortura |
 
 > RA4c (servidores concurrentes) y RA4d (ThreadPool) se cubren en la **U10 · Servidores Concurrentes**. RA4e-g (asyncio, disponibilidad, comparativa) se cubren en la **U11 · asyncio y disponibilidad**.
 

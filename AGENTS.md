@@ -75,6 +75,56 @@ PSP/
 - Nombres de hilos con `.name = "hilo-"+str(n)`
 - En sockets: envías con `.sendall()`, recibes con `.recv(1024)`
 
+## 🗣️ Requisito lingüístico (es-ES)
+
+Todo el contenido dirigido al usuario se escribe en **español de España (es-ES)**.
+
+### Vocabulario
+
+| Evitar | Preferir |
+|--------|----------|
+| prender / prendida | encender / encendida |
+| empacar / desempacar | empaquetar / desempaquetar |
+| cómputo | procesamiento |
+| hacer click / click derecho | hacer clic / clic derecho |
+| driver (en prosa) | controlador |
+| armar (montar) | montar |
+| correr un proceso/programa/servicio | ejecutar / arrancar |
+| email (en prosa) | correo |
+| manejar/manejo (= gestionar) | gestionar/gestión |
+| monitorear / monitoreo | monitorizar / monitorización |
+| computadora | ordenador |
+| celular | móvil |
+| laptop | portátil |
+| mouse | ratón |
+
+Excepciones: `aprender`/`comprender`/`sorprender`; `manejar` como destreza; `correr` literal (personas, la metáfora de los relevos del Semaphore); `driver`/`email` dentro de código, APIs o identificadores.
+
+### Mayúsculas
+
+Estilo oracional español: solo la primera palabra y los nombres propios. Nombres de sección ya normalizados: Laboratorio de tortura, Atrévete a pensar, Crucigrama de bits, ¿Quién soy?, Sé el código/proceso/hilo…, Poscréditos. Se conservan tal cual las siglas (TCP, VLAN, GIL), marcas y los nombres ingleses deliberados (`Fireside Chat`, `Pool Puzzle`, `Be the code`) y los segmentos de marca `CONRAD VS EL MUNDO` y `PRÓXIMAMENTE EN UXX`.
+
+### Terminología
+
+Se mantienen en inglés los términos técnicos asentados (socket, timeout, software, hardware, backup, router…) y todo lo que tenga función sintáctica: comandos, flags, parámetros, APIs, variables, nombres de fichero, IPs, versiones.
+
+### Números
+
+Formato español: punto para miles (65.536), coma para decimales (2,4 GHz), espacio antes del símbolo (0,50 €). Nunca dentro de IPs, comandos, versiones ni sintaxis de protocolos.
+
+### Estilo
+
+Claro, natural, didáctico y directo, apto para FP. Trato de `tú`/`vosotros`. Sin latinamericanismos evitables, sin calcos innecesarios del inglés, sin tono burocrático.
+
+### Comprobación obligatoria (nota 1)
+
+Antes de dar por terminado cualquier contenido nuevo o modificado:
+1. revisar vocabulario es-ES;
+2. revisar mayúsculas;
+3. revisar números;
+4. comprobar que no se ha alterado código ni terminología técnica;
+5. lectura final: debe sonar natural a un profesor de España.
+
 ## Testing
 
 No hay framework de testing. Se ejecuta manualmente:
@@ -131,6 +181,7 @@ Secciones por capítulo:
 - 📬 **La idea en una frase** + 🧠 **Mini-chequeo** (respuestas en `<details>`)
 - ✅ **Resumen en 3 frases** + 🐛 **Vocabulario rápido**
 - Breadcrumb `🗺️ Estás en` + pie con navegación Anterior/Siguiente entre capítulos
+- ✍️ **Revisión es-ES (nota 1)**: vocabulario peninsular, mayúsculas oracionales y formato numérico español antes de dar el capítulo por cerrado
 
 Secciones del índice:
 - 🗺️ **Ruta del viaje** (🚀 Proceso → 🔀 Hilo → 🔒 Sincronización → 🔌 TCP → 📡 UDP → 🌐 API REST → 🧪 APIs comerciales → 🔐 Hash → 🧬 Cifrado → 🏗️ Servidores → ⏱️ asyncio)
@@ -139,9 +190,11 @@ Secciones del índice:
 - ✅ **Criterios de evaluación** con columna "Dónde se cubre"
 - 🚪 **¿Por dónde empiezo?** con primer punto y enlace a la siguiente unidad
 
-Secciones del cierre `09-cierre.md`: ⭐ Sé el Código, 🔥 Fireside Chat, 🕵️ ¿Quién Soy?, 🤬 CONRAD VS EL MUNDO, ⚡ Laboratorio de Tortura (con pistas), 🏆 Logros, 🧠 Atrévete a Pensar, 🧩 Crucigrama de Bits, 💬 Entrevista de trabajo, 🤷 No hay preguntas tontas, 🎬 Post-Créditos ("PRÓXIMAMENTE EN UYY", salvo U11 que cierra el viaje 🏁), ✅ Criterios.
+Secciones del cierre `09-cierre.md`: ⭐ Sé el código, 🔥 Fireside Chat, 🕵️ ¿Quién soy?, 🤬 CONRAD VS EL MUNDO, ⚡ Laboratorio de tortura (con pistas), 🏆 Logros, 🧠 Atrévete a pensar, 🧩 Crucigrama de bits, 💬 Entrevista de trabajo, 🤷 No hay preguntas tontas, 🎬 Poscréditos ("PRÓXIMAMENTE EN UYY", salvo U11 que cierra el viaje 🏁), ✅ Criterios.
 
 **Convenciones MD:** frontmatter `title`/`description` (comillas solo si contienen `:`), sin BOM, slugs de URL en minúscula (`boletin-uXX-...`), nombres de fichero `UXX` mayúscula, enlaces internos `/ApuntesPSP/...`.
+
+**Nota 1:** la comprobación lingüística obligatoria está definida en la sección 🗣️ Requisito lingüístico (es-ES) de este documento; aplícala a cualquier contenido nuevo o modificado.
 
 | Unidad | Índice + 9 capítulos | Líneas aprox | Temas clave | RAs |
 |--------|----------------------|--------------|-------------|-----|

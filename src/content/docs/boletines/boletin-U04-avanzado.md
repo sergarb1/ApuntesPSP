@@ -39,7 +39,7 @@ Cliente que intenta conectar, y si falla, reintenta hasta 3 veces con 2s de espe
 
 **Pista:** envuelve `socket.connect()` en un bucle `for` con `try/except`. Captura `ConnectionRefusedError` y `socket.timeout`, espera 2s con `time.sleep(2)` y reintenta.
 
-## 6. Servidor que maneja múltiples conexiones (sin hilos)
+## 6. Servidor que gestiona múltiples conexiones (sin hilos)
 
 Usa `select.select()` para atender hasta 3 clientes en un solo hilo.
 

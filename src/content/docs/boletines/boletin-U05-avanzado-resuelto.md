@@ -149,7 +149,7 @@ with socket.socket(socket.AF_INET, socket.SOCK_DGRAM) as cli:
 print(f"PONG recibido en {fin - inicio:.4f} segundos")
 ```
 
-El servidor corre en un hilo `daemon` mientras el cliente mide el tiempo de ida y vuelta. Ese tiempo es el **RTT** (round-trip time), la métrica de latencia de las redes.
+El servidor se ejecuta en un hilo `daemon` mientras el cliente mide el tiempo de ida y vuelta. Ese tiempo es el **RTT** (round-trip time), la métrica de latencia de las redes.
 
 ## 8. Broadcast UDP
 
@@ -270,7 +270,7 @@ print(f"TCP: {test_tcp():.3f}s")
 print(f"UDP: {test_udp():.3f}s")
 ```
 
-Ambos servidores corren en hilos mientras el cliente mide 100 intercambios. El servidor TCP exige `accept()` por cada conexión (handshake incluido); el UDP solo `recvfrom()` + `sendto()`. La diferencia de tiempo es el coste de la fiabilidad de TCP.
+Ambos servidores se ejecutan en hilos mientras el cliente mide 100 intercambios. El servidor TCP exige `accept()` por cada conexión (handshake incluido); el UDP solo `recvfrom()` + `sendto()`. La diferencia de tiempo es el coste de la fiabilidad de TCP.
 
 ## 12. Servidor HTTP simple
 

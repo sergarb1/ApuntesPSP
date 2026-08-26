@@ -13,7 +13,7 @@ description: El carnet de identidad de las APIs comerciales 🎫
 
 > Una **API key** es el carnet de identidad que te da la API comercial: identifica quién eres, cuánto puedes usar y quién te facturará si te pasas.
 
-Las APIs de verdad no son de mentira. Te piden API key, te limitan las peticiones, se caen y tienes que manejar sus errores como un adulto. La API key es la puerta de entrada a todo eso.
+Las APIs de verdad no son de mentira. Te piden API key, te limitan las peticiones, se caen y tienes que gestionar sus errores como un adulto. La API key es la puerta de entrada a todo eso.
 
 ---
 

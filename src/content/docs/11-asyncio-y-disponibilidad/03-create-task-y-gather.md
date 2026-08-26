@@ -117,7 +117,7 @@ asyncio.run(main())
 | create_task | Lanza una corrutina en segundo plano |
 | Task | La corrutina ya programada en el event loop |
 | Concurrencia | Varias tareas avanzan en el mismo hilo, alternándose |
-| Segundo plano | La tarea corre mientras la principal sigue su camino |
+| Segundo plano | La tarea se ejecuta mientras la principal sigue su camino |
 
 ---
 

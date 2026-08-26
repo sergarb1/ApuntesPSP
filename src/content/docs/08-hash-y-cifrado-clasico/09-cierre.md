@@ -1,9 +1,9 @@
 ---
 title: "09 — Cierre: consolida lo aprendido"
-description: Sé el Hash, laboratorio con sal y el ring final de la unidad 🧠
+description: Sé el hash, laboratorio con sal y el ring final de la unidad 🧠
 ---
 
-<p><small>Sé el Hash, laboratorio con sal y el ring final de la unidad 🧠</small></p>
+<p><small>Sé el hash, laboratorio con sal y el ring final de la unidad 🧠</small></p>
 
 > 🗺️ **Estás en:** 🔐 **U08 · Hash y Cifrado Clásico** → 09 · Cierre
 
@@ -13,7 +13,7 @@ Has terminado la teoría: huella digital, propiedades del hash, MD5/SHA-1/SHA-25
 
 ---
 
-## ⭐ Sé el Hash
+## ⭐ Sé el hash
 
 > *Eres el sistema de registro y login de una aplicación con sal. Acaba de llegar una petición: registrar a un nuevo usuario llamado "Ana" con contraseña "clave123".*
 
@@ -52,7 +52,7 @@ Has terminado la teoría: huella digital, propiedades del hash, MD5/SHA-1/SHA-25
 
 ---
 
-## 🕵️ ¿Quién Soy?
+## 🕵️ ¿Quién soy?
 
 1. Me genero con `os.urandom(16)` y soy distinto para cada usuario.
 2. Soy un diccionario precomputado de hashes de contraseñas comunes.
@@ -85,7 +85,7 @@ Has terminado la teoría: huella digital, propiedades del hash, MD5/SHA-1/SHA-25
 
 ---
 
-## ⚡ Laboratorio de Tortura: registro y login con sal
+## ⚡ Laboratorio de tortura: registro y login con sal
 
 > **Duración:** 45 minutos
 > **Herramienta:** Python 3 (`hashlib` y `os`, sin instalar nada)
@@ -119,7 +119,7 @@ Has terminado la teoría: huella digital, propiedades del hash, MD5/SHA-1/SHA-25
 
 ---
 
-## 🧠 Atrévete a Pensar
+## 🧠 Atrévete a pensar
 
 1. ¿Por qué no se puede "descifrar" un hash, y qué alternativas reales le quedan al atacante?
 2. ¿Qué pasaría si dos usuarios con la misma contraseña tuvieran el mismo hash en tu base de datos?
@@ -139,7 +139,7 @@ Has terminado la teoría: huella digital, propiedades del hash, MD5/SHA-1/SHA-25
 
 ---
 
-## 🧩 Crucigrama de Bits
+## 🧩 Crucigrama de bits
 
 ```
 Horizontal:
@@ -197,7 +197,7 @@ Para verificar **integridad**. Descargas Ubuntu, verificas su SHA256, y si coinc
 
 ---
 
-## 🎬 Post-Créditos
+## 🎬 Poscréditos
 
 > *La base de datos guarda solo hashes con sal. Nadie conoce las contraseñas, ni siquiera el servidor.*
 
@@ -218,7 +218,7 @@ Para verificar **integridad**. Descargas Ubuntu, verificas su SHA256, y si coinc
 | CE | Criterio | Cubierto |
 |---|---|---|
 | a) | Principios básicos de seguridad | ✅ Principios (punto 1) + hash vs cifrado (punto 7) |
-| c) | Implementa funciones hash (MD5, SHA) | ✅ Puntos 2-5 + ⚡ Laboratorio de Tortura |
+| c) | Implementa funciones hash (MD5, SHA) | ✅ Puntos 2-5 + ⚡ Laboratorio de tortura |
 | h) | Conoce sistemas de roles y RBAC | ✅ Mínimo privilegio (punto 1) |
 
 > RA5b (tipos de cifrado), RA5d (AES), RA5e (RSA), RA5f (firmas digitales) y RA5g (cifrado híbrido) se cubren en la **U09 · Cifrado Moderno**.

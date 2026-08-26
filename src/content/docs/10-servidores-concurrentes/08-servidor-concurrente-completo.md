@@ -110,7 +110,7 @@ python servidor.py             python lanzaclientes.py
     Recibido: Cliente-1         🏁 Todos los clientes terminaron
 ```
 
-Si el servidor fuera secuencial, el lanzador tardaría 10 × tiempo_por_cliente y las respuestas llegarían de una en una. Con el servidor concurrente, **todas responden casi a la vez**: ese es el resultado del punto [5](/ApuntesPSP/10-servidores-concurrentes/05-benchmark). Se mata el servidor con **Ctrl+C** y cada script corre en su terminal.
+Si el servidor fuera secuencial, el lanzador tardaría 10 × tiempo_por_cliente y las respuestas llegarían de una en una. Con el servidor concurrente, **todas responden casi a la vez**: ese es el resultado del punto [5](/ApuntesPSP/10-servidores-concurrentes/05-benchmark). Se mata el servidor con **Ctrl+C** y cada script se ejecuta en su terminal.
 
 ---
 

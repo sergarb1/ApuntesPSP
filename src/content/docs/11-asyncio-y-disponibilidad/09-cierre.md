@@ -1,9 +1,9 @@
 ---
 title: "09 — Cierre: consolida lo aprendido"
-description: Sé la Corrutina, el ring final y el último Laboratorio de Tortura 🏁
+description: Sé la corrutina, el ring final y el último Laboratorio de tortura 🏁
 ---
 
-<p><small>Sé la Corrutina, el ring final y el último Laboratorio de Tortura 🏁</small></p>
+<p><small>Sé la corrutina, el ring final y el último Laboratorio de tortura 🏁</small></p>
 
 > 🗺️ **Estás en:** ⏱️ **U11 · asyncio y Disponibilidad** → 09 · Cierre
 
@@ -13,7 +13,7 @@ Has terminado la teoría: el event loop, las corrutinas, gather y create_task, l
 
 ---
 
-## ⭐ Sé la Corrutina
+## ⭐ Sé la corrutina
 
 > *Eres una corrutina `monitor()` en un event loop con 2.000 corrutinas más. Tu trabajo: comprobar un servicio cada 5 segundos y avisar si cae.*
 
@@ -53,7 +53,7 @@ Has terminado la teoría: el event loop, las corrutinas, gather y create_task, l
 
 ---
 
-## 🕵️ ¿Quién Soy?
+## 🕵️ ¿Quién soy?
 
 1. Soy el gestor que decide qué corrutina se ejecuta en cada momento.
 2. Soy la función declarada con `async def` que puede pausarse.
@@ -88,7 +88,7 @@ Has terminado la teoría: el event loop, las corrutinas, gather y create_task, l
 
 ---
 
-## ⚡ Laboratorio de Tortura: el monitor de servicio definitivo
+## ⚡ Laboratorio de tortura: el monitor de servicio definitivo
 
 > **Duración:** 45 minutos
 > **Herramienta:** Python 3 (solo stdlib: `asyncio`)
@@ -125,7 +125,7 @@ Has terminado la teoría: el event loop, las corrutinas, gather y create_task, l
 
 ---
 
-## 🧠 Atrévete a Pensar
+## 🧠 Atrévete a pensar
 
 1. ¿Por qué asyncio usa un solo hilo y aún así atiende miles de conexiones?
 2. ¿Qué pasa si olvidas el `await` delante de una operación asíncrona?
@@ -139,14 +139,14 @@ Has terminado la teoría: el event loop, las corrutinas, gather y create_task, l
 1. Porque el **event loop** alterna corrutinas en cada `await`: cuando una espera (I/O, timers), otra se ejecuta. Un solo hilo repartido entre miles de corrutinas ([puntos 1-3](/ApuntesPSP/11-asyncio-y-disponibilidad/01-event-loop)).
 2. La operación **no se espera** (ni a veces se ejecuta): en el mejor caso es un fallo silencioso; en el peor, una corrutina que no hace lo que crees (por ejemplo, `asyncio.sleep(2)` sin `await` no pausa nada).
 3. **Threads** para código bloqueante de terceros y pocos clientes; **asyncio** para I/O masivo y miles de conexiones; **procesos** para CPU-bound ([punto 7](/ApuntesPSP/11-asyncio-y-disponibilidad/07-threads-vs-asyncio)).
-4. Porque produce **falsos positivos**: reporta caído un servicio que simplemente tarda un poco más de lo previsto. El timeout debe ser mayor que el tiempo real de respuesta (Laboratorio de Tortura).
+4. Porque produce **falsos positivos**: reporta caído un servicio que simplemente tarda un poco más de lo previsto. El timeout debe ser mayor que el tiempo real de respuesta (Laboratorio de tortura).
 5. Heartbeat para **comprobar** periódicamente, timeout para **cortar** lo que no responde, y backoff para **reintentar** sin machacar: el monitor del [punto 8](/ApuntesPSP/11-asyncio-y-disponibilidad/08-disponibilidad-y-practica).
 
 </details>
 
 ---
 
-## 🧩 Crucigrama de Bits
+## 🧩 Crucigrama de bits
 
 ```
 Horizontal:
@@ -213,7 +213,7 @@ La operación no se espera (ni a veces se ejecuta): la corrutina no hace lo que 
 
 ---
 
-## 🎬 Post-Créditos
+## 🎬 Poscréditos
 
 > *El servidor secuencial hacía esperar a todos en la cola de la ventanilla única.*
 >

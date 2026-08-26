@@ -41,7 +41,7 @@ a) Clasifica cada aplicación como TCP o UDP y justifica brevemente:
 
 - Web (HTTP)
 - Videollamada (Zoom)
-- Email (SMTP)
+- Correo (SMTP)
 - Juego online (Fortnite)
 - Transferencia de archivos (FTP)
 - DNS

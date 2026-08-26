@@ -99,7 +99,7 @@ description: Apuntes de Programación de Servicios y Procesos — Python. CC BY-
     <span class="ra">RA4a-b</span>
   </div>
   <a href="/ApuntesPSP/07-apis-comerciales" class="title-link">APIs Comerciales</a>
-  <p class="desc">OpenWeatherMap, OpenAI, <code>python-dotenv</code>, rate limit, manejo de errores, autenticación.</p>
+  <p class="desc">OpenWeatherMap, OpenAI, <code>python-dotenv</code>, rate limit, gestión de errores, autenticación.</p>
   <a href="/ApuntesPSP/07-apis-comerciales" class="unit-link">👉 Ver unidad 👈</a>
 </div>
 

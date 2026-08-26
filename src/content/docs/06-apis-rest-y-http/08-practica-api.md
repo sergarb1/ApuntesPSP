@@ -11,7 +11,7 @@ description: "Sé el código, un cliente completo y los ejercicios del lápiz �
 
 ## 📬 La idea en una frase
 
-> Aquí junta todo lo aprendido en un solo programa: un **mini cliente de API** que pide datos a servicios reales, los parsea y maneja los errores — y un paseo "siendo" la librería `requests`.
+> Aquí junta todo lo aprendido en un solo programa: un **mini cliente de API** que pide datos a servicios reales, los parsea y gestiona los errores — y un paseo "siendo" la librería `requests`.
 
 De aquí saldrás con un programa completo que ya habla el idioma de la web.
 
@@ -112,7 +112,7 @@ Todo lo que en la U04 hacías a mano —DNS, TCP, TLS, construir la petición—
 1. **GET a GitHub API**: obtén los datos del usuario "python" y muestra su nombre real, repos públicos y seguidores.
 2. **Parámetros de búsqueda**: busca repositorios de Python con más de 1000 estrellas usando `/search/repositories`.
 3. **POST a JSONPlaceholder**: crea un post nuevo en `jsonplaceholder.typicode.com/posts` y muestra el ID devuelto.
-4. **Manejo de errores**: haz GET a una URL que no existe (404) y una que dé error 500. Muestra mensajes adecuados.
+4. **Gestión de errores**: haz GET a una URL que no existe (404) y una que dé error 500. Muestra mensajes adecuados.
 
 <details>
 <summary>🔓 Soluciones</summary>
@@ -151,7 +151,7 @@ print(resp.status_code)          # 201 Created
 print("ID del post:", resp.json()["id"])    # 101
 ```
 
-**4. Manejo de errores**
+**4. Gestión de errores**
 
 ```python
 import requests

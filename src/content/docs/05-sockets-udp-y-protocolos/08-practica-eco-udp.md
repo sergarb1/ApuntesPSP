@@ -53,7 +53,7 @@ with socket.socket(socket.AF_INET, socket.SOCK_DGRAM) as cliente:
     print(f"El servidor me devolvió: {datos.decode()}")
 ```
 
-**Salida** del cliente (con el servidor corriendo en otra terminal):
+**Salida** del cliente (con el servidor en ejecución en otra terminal):
 ```
 El servidor me devolvió: Hola UDP, devuélveme esto
 ```
@@ -177,7 +177,7 @@ UDP suele ser más rápido porque no tiene handshake ni confirmaciones por cada 
 
 1. **`servidor.sendto(datos, direccion)`**: devuelve los mismos bytes recibidos a la dirección de origen.
 2. Con la **dirección** que devuelve `recvfrom()`: la tupla `(IP, puerto)` del cliente que mandó el datagrama.
-3. **Dos terminales separadas**: una con el servidor corriendo (queda bloqueado en `recvfrom()`) y otra ejecutando el cliente.
+3. **Dos terminales separadas**: una con el servidor en ejecución (queda bloqueado en `recvfrom()`) y otra ejecutando el cliente.
 
 </details>
 

@@ -89,7 +89,7 @@ La moraleja es obvia: si el banco tiene 10 ventanillas, 10 personas se atienden 
 <summary>🔄 Respuestas</summary>
 
 1. **8 segundos** como mínimo: el `accept()` del siguiente no se ejecuta hasta que el anterior termina (y cierra la conexión).
-2. En la atención al cliente: el `time.sleep(8)` (o el trabajo que sea) bloquea el bucle, y el `accept()` de la siguiente iteración no corre hasta que ese cliente termina.
+2. En la atención al cliente: el `time.sleep(8)` (o el trabajo que sea) bloquea el bucle, y el `accept()` de la siguiente iteración no se ejecuta hasta que ese cliente termina.
 3. La **lentitud del procesamiento**: un solo cliente lento paraliza la cola entera. Con peticiones instantáneas, hasta un secuencial da la impresión de ir bien.
 
 </details>
@@ -107,7 +107,7 @@ La moraleja es obvia: si el banco tiene 10 ventanillas, 10 personas se atienden 
 | Término | Idea general |
 |---|---|
 | Cliente lento | Conexión cuyo procesamiento tarda (cálculo, red, base de datos) |
-| Bloqueo | El `accept()` no corre hasta que termina el cliente actual |
+| Bloqueo | El `accept()` no se ejecuta hasta que termina el cliente actual |
 | Cola | Clientes ya conectados al socket que aún no se atienden |
 | Ventanilla única | Analogía del servidor secuencial |
 | Procesamiento | El trabajo que hace el servidor con cada cliente |

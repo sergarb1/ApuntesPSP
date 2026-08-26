@@ -1,9 +1,9 @@
 ---
 title: "07 — requests: POST, PUT y DELETE"
-description: "Enviar datos a la API y manejar los errores 📤"
+description: "Enviar datos a la API y gestionar los errores 📤"
 ---
 
-<p><small>Enviar datos a la API y manejar los errores 📤</small></p>
+<p><small>Enviar datos a la API y gestionar los errores 📤</small></p>
 
 > 🗺️ **Estás en:** 🌐 **U06 · APIs REST y HTTP** → 07 · requests: POST, PUT y DELETE
 
@@ -70,7 +70,7 @@ El código de estado te confirma el resultado: en REST canónico, DELETE exitoso
 
 ---
 
-## 🛡️ Manejo de errores: status_code y raise_for_status
+## 🛡️ Gestión de errores: status_code y raise_for_status
 
 Como viste en el [punto 4](/ApuntesPSP/06-apis-rest-y-http/04-codigos-de-estado), `requests` **no lanza excepción** ante un 4xx/5xx. Dos estrategias:
 
@@ -100,7 +100,7 @@ except requests.exceptions.HTTPError as e:
 
 ## 🧩 Pool Puzzle — Petición API con errores
 
-Estas líneas hacen una petición a una API y manejan errores. ¿En qué orden van?
+Estas líneas hacen una petición a una API y gestionan errores. ¿En qué orden van?
 
 ```
 a)     if respuesta.status_code == 200:
@@ -157,7 +157,7 @@ try:                                                       # h) try por si falla
 
 - `requests.post/put/delete` crean, reemplazan y borran recursos enviando el cuerpo con `json=`.
 - El resultado se lee igual que en el GET: `status_code` y `resp.json()`.
-- Los errores se manejan comprobando `status_code` o dejando que `raise_for_status()` lance la excepción.
+- Los errores se gestionan comprobando `status_code` o dejando que `raise_for_status()` lance la excepción.
 
 ## 🐛 Vocabulario rápido
 

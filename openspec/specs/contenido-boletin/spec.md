@@ -47,3 +47,15 @@ Los boletines deben tener suficiente recorrido (≥8 ejercicios por boletín) y 
 #### Scenario: Hints (pistas)
 - **WHEN** un ejercicio es complejo o admite varias aproximaciones
 - **THEN** incluye una nota de pista en el boletín por resolver (no en el resuelto) que orienta sin regalar la solución
+
+### Requirement: Lenguaje es-ES obligatorio
+
+Los enunciados y soluciones de los boletines siguen el español de España del proyecto (sección 🗣️ Requisito lingüístico de AGENTS.md).
+
+#### Scenario: Vocabulario peninsular en ejercicios
+- **WHEN** se redacta un enunciado, pista o solución
+- **THEN** no aparecen latinamericanismos evitables (`computadora`, `monitorear`, `manejar` por gestionar, etc.) ni números con formato estadounidense
+
+#### Scenario: Código intacto
+- **WHEN** el enunciado o la solución incluye código, comandos o identificadores
+- **THEN** se conservan tal cual, sin ajustes lingüísticos

@@ -46,7 +46,7 @@ Al terminar, serás capaz de:
 | [06 · El GIL](/ApuntesPSP/02-hilos-fundamentos/06-gil) | El candado de CPython: por qué los hilos no aceleran la CPU | Todos |
 | [07 · Estados del hilo](/ApuntesPSP/02-hilos-fundamentos/07-estados-del-hilo) | El ciclo de vida: nuevo, ejecutable, en ejecución, bloqueado, terminado | Todos |
 | [08 · Hilos en la práctica](/ApuntesPSP/02-hilos-fundamentos/08-hilos-en-la-practica) | Be the code, el ring Hilo vs Proceso y Aprieta el lápiz | Todos |
-| [09 · Cierre](/ApuntesPSP/02-hilos-fundamentos/09-cierre) | Sé el Hilo, Fireside, Laboratorio de Tortura, Crucigrama… | Todos |
+| [09 · Cierre](/ApuntesPSP/02-hilos-fundamentos/09-cierre) | Sé el hilo, Fireside, Laboratorio de tortura, Crucigrama… | Todos |
 
 > 📖 **Flujo de lectura:** los 8 primeros puntos son teoría en progresión. El 9º es el aterrizaje práctico: léelo justo después del 8º y antes de abrir los boletines.
 

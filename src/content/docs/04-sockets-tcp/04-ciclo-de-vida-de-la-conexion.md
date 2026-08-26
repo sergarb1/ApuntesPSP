@@ -118,4 +118,4 @@ El **ciclo de vida de la conexión** es la historia completa entre la primera `s
 
 ---
 
-📚 [Volver al índice de la unidad](/ApuntesPSP/04-sockets-tcp) · **Anterior:** [03 · Servidor TCP](/ApuntesPSP/04-sockets-tcp/03-servidor-tcp) · **Siguiente:** [05 · Errores y manejo](/ApuntesPSP/04-sockets-tcp/05-errores-y-manejo)
+📚 [Volver al índice de la unidad](/ApuntesPSP/04-sockets-tcp) · **Anterior:** [03 · Servidor TCP](/ApuntesPSP/04-sockets-tcp/03-servidor-tcp) · **Siguiente:** [05 · Errores y gestión](/ApuntesPSP/04-sockets-tcp/05-errores-y-manejo)

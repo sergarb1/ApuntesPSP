@@ -77,7 +77,7 @@ async def main():
 asyncio.run(main())
 ```
 
-Los dos latidos corren en segundo plano; `main()` espera 12s (A late 4 veces, B unas 2). Sin ese `await`, las tareas se cancelarían al acabar `main()`.
+Los dos latidos se ejecutan en segundo plano; `main()` espera 12s (A late 4 veces, B unas 2). Sin ese `await`, las tareas se cancelarían al acabar `main()`.
 
 ## 4. 🎯 Web scraper asíncrono
 
@@ -144,7 +144,7 @@ asyncio.run(main())
 
 `create_task(heartbeat())` lanza el latido antes de aceptar conexiones. Cada 5s imprime "💓 Vivo — N conexiones". Se mata con Ctrl+C.
 
-## 6. ⏱ Monitoreo de servidores
+## 6. ⏱ Monitorización de servidores
 
 ```python
 import asyncio, random

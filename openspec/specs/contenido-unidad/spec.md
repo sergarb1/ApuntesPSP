@@ -34,7 +34,7 @@ La unidad conserva las secciones de consolidación del proyecto.
 
 #### Scenario: Secciones de consolidación presentes
 - **WHEN** termina la lectura de la unidad
-- **THEN** existen páginas o apartados con: ⭐ Sé el Código (el Paquete), 🔥 Fireside Chat, 🕵️ ¿Quién Soy?, 🤬 CONRAD VS EL MUNDO, ⚡ Laboratorio de Tortura, 🧠 Atrévete a Pensar, 🧩 Crucigrama de Bits, 💬 Entrevista de trabajo, 🤷 No hay preguntas tontas y 🎬 Post-Créditos
+- **THEN** existen páginas o apartados con: ⭐ Sé el código (el Paquete), 🔥 Fireside Chat, 🕵️ ¿Quién soy?, 🤬 CONRAD VS EL MUNDO, ⚡ Laboratorio de tortura, 🧠 Atrévete a pensar, 🧩 Crucigrama de bits, 💬 Entrevista de trabajo, 🤷 No hay preguntas tontas y 🎬 Poscréditos
 
 #### Scenario: Laboratorio con fallo intencionado
 - **WHEN** se ejecuta el laboratorio de la unidad
@@ -56,9 +56,9 @@ El contenido es consistente con el resto del curso.
 - **WHEN** se usan conceptos compartidos con otras unidades (PID, hilo, socket, puerto, hash, AES, asyncio...)
 - **THEN** el término se usa con idéntico significado y ejemplos coherentes con el resto del curso
 
-#### Scenario: Post-Créditos con continuidad
+#### Scenario: Poscréditos con continuidad
 - **WHEN** se cierra la unidad
-- **THEN** la escena de Post-Créditos enlaza de forma coherente con la siguiente unidad ("PRÓXIMAMENTE EN U0X") y ambas se corresponden; la última unidad (U11) cierra con "🏁 Fin del viaje" sin hook
+- **THEN** la escena de Poscréditos enlaza de forma coherente con la siguiente unidad ("PRÓXIMAMENTE EN U0X") y ambas se corresponden; la última unidad (U11) cierra con "🏁 Fin del viaje" sin hook
 
 ### Requirement: Cobertura de criterios de evaluación
 
@@ -79,3 +79,25 @@ Cuando la unidad se amplía a varios archivos, el flujo de lectura entre puntos 
 #### Scenario: Referencias cruzadas
 - **WHEN** un punto menciona contenido de otra unidad o de otro punto
 - **THEN** hay un enlace cruzado al punto correspondiente o una indicación clara ("se verá en U0X")
+
+### Requirement: Lenguaje es-ES obligatorio
+
+Todo el texto destinado al usuario está escrito en español de España natural, sin latinamericanismos evitables ni calcos innecesarios del inglés.
+
+#### Scenario: Vocabulario peninsular
+- **WHEN** se redacta o revisa cualquier párrafo, tabla, explicación o ejercicio
+- **THEN** no aparecen formas como `computadora`, `prender/prendida`, `celular`, `laptop`, `empacar`, `cómputo`, `monitorear`, `armar` cuando significa montar, `manejar` cuando significa gestionar, ni `driver` o `email` en prosa cuando exista una alternativa española natural, ni números con formato estadounidense
+
+#### Scenario: Mayúsculas en títulos
+- **WHEN** se redacta un título o nombre de sección en español
+- **THEN** se utiliza estilo oracional: primera palabra y nombres propios en mayúscula, manteniendo las siglas y denominaciones técnicas en su forma oficial
+
+#### Scenario: Terminología técnica
+- **WHEN** se utiliza un término técnico inglés asentado
+- **THEN** se mantiene cuando sea la forma habitual en informática
+- **WHEN** exista un anglicismo evitable con una forma española natural
+- **THEN** se utiliza la forma española
+
+#### Scenario: Código y sintaxis técnica
+- **WHEN** el término aparece dentro de código, comandos, identificadores, rutas, parámetros o sintaxis de protocolos
+- **THEN** no se modifica por motivos lingüísticos

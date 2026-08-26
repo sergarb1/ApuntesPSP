@@ -125,7 +125,7 @@ Programa terminó (el hilo daemon muere conmigo)
 
 **Hilo Normal**: — ¿Y si estás en medio de algo importante cuando el main termina? Pierdes datos, dejas cosas a medias...
 
-**Hilo Daemon**: — Para eso existen los daemon bien hechos: tareas de monitoreo, limpieza, heartbeat... cosas que da igual si se cortan. Si quieres garantía de finalización, usas un hilo normal con `join()`.
+**Hilo Daemon**: — Para eso existen los daemon bien hechos: tareas de monitorización, limpieza, heartbeat... cosas que da igual si se cortan. Si quieres garantía de finalización, usas un hilo normal con `join()`.
 
 **Hilo Normal**: — Cierto. Al final, cada uno tiene su sitio. Yo para tareas críticas, tú para servicios auxiliares.
 
@@ -164,7 +164,7 @@ print("Continuamos...")
 <summary>🔄 Respuestas</summary>
 
 1. **No.** Un daemon se mata automáticamente cuando el programa principal termina. Quien impide que el programa termine es el hilo **no daemon**.
-2. Para **servicios de fondo prescindibles**: monitoreo, limpieza, heartbeat, un reloj… Si el programa acaba, da igual que se corten. Si la tarea debe completarse sí o sí, hilo normal con `join()`.
+2. Para **servicios de fondo prescindibles**: monitorización, limpieza, heartbeat, un reloj… Si el programa acaba, da igual que se corten. Si la tarea debe completarse sí o sí, hilo normal con `join()`.
 3. Espera 2 segundos como máximo y luego **continúa**, aunque el hilo siga vivo a los 5. `is_alive()` te diría que todavía se está ejecutando.
 
 </details>
@@ -173,7 +173,7 @@ print("Continuamos...")
 
 ## ✅ Resumen en 3 frases
 
-- Un hilo **daemon** corre en segundo plano y se **mata al terminar** el programa principal.
+- Un hilo **daemon** se ejecuta en segundo plano y se **mata al terminar** el programa principal.
 - Un hilo **normal** impide que el programa salga hasta completarse; por eso las tareas críticas van con `join()`.
 - Regla: daemon para servicios auxiliares prescindibles, normal para lo que debe terminarse sí o sí.
 

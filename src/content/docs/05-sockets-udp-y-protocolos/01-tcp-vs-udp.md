@@ -34,7 +34,7 @@ Esas dos filosofías definen el resto de la unidad: **fiabilidad contra velocida
 | Entrega garantizada | Sí | No |
 | Orden | Sí | No |
 | Velocidad | Más lento | Más rápido |
-| Uso típico | Web, email, FTP | Streaming, juegos, DNS |
+| Uso típico | Web, correo, FTP | Streaming, juegos, DNS |
 
 ```
         TCP                                    UDP
@@ -78,7 +78,7 @@ s_tcp = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
 
 No existe "el mejor" protocolo: existe el adecuado para cada momento.
 
-- **Elige TCP cuando no puedes permitirte perder ni un byte**: una web, un email, una transferencia de archivos. Si falta un trozo, el documento llega roto.
+- **Elige TCP cuando no puedes permitirte perder ni un byte**: una web, un correo, una transferencia de archivos. Si falta un trozo, el documento llega roto.
 - **Elige UDP cuando prefieres estar al día antes que completo**: una videollamada, un partido online, una transmisión en vivo. Mejor un frame ligeramente desfasado que esperar eternamente a que se reenvíe el anterior.
 
 Ese razonamiento lo profundizarás en el [punto 7](/ApuntesPSP/05-sockets-udp-y-protocolos/07-cuando-usar-cada-protocolo), con casos reales. De momento, quédate con la tabla y la analogía: son el corazón de la unidad.

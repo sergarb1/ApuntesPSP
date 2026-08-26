@@ -1,9 +1,9 @@
 ---
 title: "09 — Cierre: consolida lo aprendido"
-description: "Sé el Socket, laboratorio TCP y el cierre de la unidad 🧠"
+description: "Sé el socket, laboratorio TCP y el cierre de la unidad 🧠"
 ---
 
-<p><small>Sé el Socket, laboratorio TCP y el cierre de la unidad 🧠</small></p>
+<p><small>Sé el socket, laboratorio TCP y el cierre de la unidad 🧠</small></p>
 
 > 🗺️ **Estás en:** 🔌 **U04 · Sockets TCP** → 09 · Cierre
 
@@ -13,7 +13,7 @@ Has terminado la teoría: socket, cliente, servidor, handshake, errores, `SO_REU
 
 ---
 
-## ⭐ Sé el Socket
+## ⭐ Sé el socket
 
 > *Eres el socket del servidor, recién creado con `socket(AF_INET, SOCK_STREAM)`. Tu misión: escuchar, aceptar y atender a quien llame.*
 
@@ -52,7 +52,7 @@ Has terminado la teoría: socket, cliente, servidor, handshake, errores, `SO_REU
 
 ---
 
-## 🕵️ ¿Quién Soy?
+## 🕵️ ¿Quién soy?
 
 1. Soy el punto final de una conexión de red: la interfaz para enviar y recibir datos.
 2. Soy el método del cliente que estrecha la mano antes de hablar.
@@ -85,7 +85,7 @@ Has terminado la teoría: socket, cliente, servidor, handshake, errores, `SO_REU
 
 ---
 
-## ⚡ Laboratorio de Tortura: cliente y servidor TCP
+## ⚡ Laboratorio de tortura: cliente y servidor TCP
 
 > **Duración:** 45 minutos
 > **Herramienta:** Python 3 (`socket`, sin instalar nada) + dos terminales
@@ -121,7 +121,7 @@ Has terminado la teoría: socket, cliente, servidor, handshake, errores, `SO_REU
 
 ---
 
-## 🧠 Atrévete a Pensar
+## 🧠 Atrévete a pensar
 
 1. ¿Por qué el servidor hace `accept()` y no `recv()` directamente?
 2. ¿Qué pasaría si dos programas intentan `bind()` al mismo puerto a la vez?
@@ -141,7 +141,7 @@ Has terminado la teoría: socket, cliente, servidor, handshake, errores, `SO_REU
 
 ---
 
-## 🧩 Crucigrama de Bits
+## 🧩 Crucigrama de bits
 
 ```
 Horizontal:
@@ -172,7 +172,7 @@ Vertical:
 1. **"¿Qué es un socket? ¿Qué papel juegan la IP y el puerto?"**
 2. **"Escribe un servidor TCP que reciba un mensaje y lo devuelva."**
 3. **"¿Cómo funciona el three-way handshake? Explícalo con un diagrama."**
-4. **"¿Qué errores pueden ocurrir al comunicar por sockets y cómo los manejas?"**
+4. **"¿Qué errores pueden ocurrir al comunicar por sockets y cómo los gestionas?"**
 5. **"¿Qué es SO_REUSEADDR y cuándo lo necesitas?"**
 
 > 💡 **Cómo encararlas:** la 2 y la 3 son las "preguntas reina". Para la 2, escribe el servidor del [punto 3](/ApuntesPSP/04-sockets-tcp/03-servidor-tcp) sin pensarlo: `socket()` + `bind()` + `listen()` + `accept()` + `recv()` + `sendall()`. Para la 3, dibuja el SYN → SYN+ACK → ACK sobre los dos extremos y cuenta por qué hace falta el tercer mensaje. Si sabes contarlo fluido, ya eres medio desarrollador de redes.
@@ -207,7 +207,7 @@ TCP los encola. El servidor los recibe en orden. Pero si el cliente envía más 
 
 ---
 
-## 🎬 Post-Créditos
+## 🎬 Poscréditos
 
 > *Un socket TCP estrecha la mano. SYN, SYN+ACK, ACK. La llamada está en marcha.*
 
@@ -228,10 +228,10 @@ TCP los encola. El servidor los recibe en orden. Pero si el cliente envía más 
 | CE | Criterio | Cubierto |
 |---|---|---|
 | a) | Modelo de capas de red (TCP/IP) | ✅ Punto 1 + Fireside Chat |
-| c) | Crea servidores TCP | ✅ Puntos 3 y 8 + ⚡ Laboratorio de Tortura |
-| d) | Crea clientes TCP | ✅ Puntos 2 y 8 + ⚡ Laboratorio de Tortura |
+| c) | Crea servidores TCP | ✅ Puntos 3 y 8 + ⚡ Laboratorio de tortura |
+| d) | Crea clientes TCP | ✅ Puntos 2 y 8 + ⚡ Laboratorio de tortura |
 | f) | Gestiona errores de red | ✅ Punto 5 + ⚡ Laboratorio con fallo intencionado |
-| g) | Configura opciones de socket (SO_REUSEADDR, non-blocking) | ✅ Puntos 5 y 6 + ⚡ Laboratorio de Tortura |
+| g) | Configura opciones de socket (SO_REUSEADDR, non-blocking) | ✅ Puntos 5 y 6 + ⚡ Laboratorio de tortura |
 
 > RA3b (UDP), RA3e (UDP servidor/cliente) y RA3h (protocolos HTTP/NTP) se cubren en la **U05 · Sockets UDP y Protocolos**.
 

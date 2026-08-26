@@ -51,7 +51,7 @@ Cada hilo pasa por estados, igual que una persona pasa por situaciones a lo larg
 
 **Recorrido completo de un hilo típico:**
 
-1. **NUEVO** — `threading.Thread(target=fn)` crea el objeto. Todavía no corre nada.
+1. **NUEVO** — `threading.Thread(target=fn)` crea el objeto. Todavía no se ejecuta nada.
 2. **EJECUTABLE** — `h.start()` lo lanza. A partir de aquí el scheduler del sistema operativo decide *cuándo* le toca.
 3. **EJECUCIÓN** — Le toca: ejecuta su código. Puede volver a EJECUTABLE cuando el scheduler decide dar paso a otro hilo.
 4. **BLOQUEADO** — El hilo se queda esperando: un `time.sleep()`, una lectura de red, una espera de I/O o (en el TEMA 03) un lock. Cuando lo que espera se libera, vuelve a EJECUTABLE.

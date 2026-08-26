@@ -90,7 +90,7 @@ Eco puro: `sendto(datos, direccion)` reenvía al cliente **exactamente** lo que 
 
 ## 7. TCP vs UDP: clasifica
 
-a) **TCP:** Web (HTTP), Email (SMTP), Transferencia de archivos (FTP) → el dato debe llegar **completo y en orden**. **UDP:** Videollamada (Zoom), Juego online (Fortnite), DNS → la **velocidad** importa más; perder un paquete se tolera o se repite.
+a) **TCP:** Web (HTTP), Correo (SMTP), Transferencia de archivos (FTP) → el dato debe llegar **completo y en orden**. **UDP:** Videollamada (Zoom), Juego online (Fortnite), DNS → la **velocidad** importa más; perder un paquete se tolera o se repite.
 
 b)
 

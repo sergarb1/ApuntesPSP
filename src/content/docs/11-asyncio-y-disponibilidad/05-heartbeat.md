@@ -92,7 +92,7 @@ Si el latido deja de aparecer en el log... el proceso está muerto o bloqueado. 
 <summary>🔄 Respuestas</summary>
 
 1. Un **mensaje periódico** que verifica que el servidor sigue vivo. Si deja de sonar, algo falla.
-2. Porque `await heartbeat()` bloquearía el `main()` para siempre: con `create_task`, el latido corre **en segundo plano** y el servidor sigue su trabajo.
+2. Porque `await heartbeat()` bloquearía el `main()` para siempre: con `create_task`, el latido se ejecuta **en segundo plano** y el servidor sigue su trabajo.
 3. El **estado del servicio**: conexiones activas, memoria, últimos errores... Todo lo que ayude a saber si el servicio está sano.
 
 </details>

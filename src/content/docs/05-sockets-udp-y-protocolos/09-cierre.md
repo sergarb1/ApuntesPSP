@@ -1,9 +1,9 @@
 ---
 title: "09 — Cierre: consolida lo aprendido"
-description: "Sé el Datagrama, laboratorio eco UDP y el cierre de la unidad 🧠"
+description: "Sé el datagrama, laboratorio eco UDP y el cierre de la unidad 🧠"
 ---
 
-<p><small>Sé el Datagrama, laboratorio eco UDP y el cierre de la unidad 🧠</small></p>
+<p><small>Sé el datagrama, laboratorio eco UDP y el cierre de la unidad 🧠</small></p>
 
 > 🗺️ **Estás en:** 📡 **U05 · Sockets UDP y Protocolos** → 09 · Cierre
 
@@ -13,7 +13,7 @@ Has terminado la teoría: TCP vs UDP, cliente y servidor UDP, los caprichos de l
 
 ---
 
-## ⭐ Sé el Datagrama
+## ⭐ Sé el datagrama
 
 > *Eres un datagrama UDP. Te acabas de crear con un `sendto()` y vas a emprender tu viaje hacia un servidor eco.*
 
@@ -55,7 +55,7 @@ Has terminado la teoría: TCP vs UDP, cliente y servidor UDP, los caprichos de l
 
 ---
 
-## 🕵️ ¿Quién Soy?
+## 🕵️ ¿Quién soy?
 
 1. Soy el método del cliente UDP que envía el datagrama con su dirección destino.
 2. Soy el método que devuelve datos **y** la dirección de quien los mandó.
@@ -88,7 +88,7 @@ Has terminado la teoría: TCP vs UDP, cliente y servidor UDP, los caprichos de l
 
 ---
 
-## ⚡ Laboratorio de Tortura: eco UDP en dos terminales
+## ⚡ Laboratorio de tortura: eco UDP en dos terminales
 
 > **Duración:** 45 minutos
 > **Herramienta:** Python 3 (`socket`, sin instalar nada) + dos terminales
@@ -123,7 +123,7 @@ Has terminado la teoría: TCP vs UDP, cliente y servidor UDP, los caprichos de l
 
 ---
 
-## 🧠 Atrévete a Pensar
+## 🧠 Atrévete a pensar
 
 1. ¿Por qué UDP puede "perder datos" y TCP no, y por qué eso es aceptable en VoIP?
 2. ¿Qué pasaría si HTTP/1.1 se enviara por UDP en lugar de TCP?
@@ -137,13 +137,13 @@ Has terminado la teoría: TCP vs UDP, cliente y servidor UDP, los caprichos de l
 1. TCP **confirma y reenvía** cada segmento; UDP no. En VoIP, un frame perdido se salta y la conversación sigue; esperar a un reenvío la congelaría. Por eso se tolera la pérdida a cambio de fluidez.
 2. La web se rompería: sin garantía de entrega ni orden, las páginas llegarían incompletas y revueltas. El HTML debe reconstruirse byte a byte, así que necesita las garantías de TCP.
 3. Con la **dirección que entrega `recvfrom()`** (la tupla IP/puerto del cliente): cada datagrama llega con su origen pegado, y `sendto()` usa esa misma tupla para responder.
-4. QUIC evita el coste de conexión de TCP (arranque más rápido), usa cifrado por defecto y maneja por sí mismo la pérdida y el orden: **fiabilidad sin el peso de TCP**, corriendo sobre la capa ligera de UDP.
+4. QUIC evita el coste de conexión de TCP (arranque más rápido), usa cifrado por defecto y gestiona por sí mismo la pérdida y el orden: **fiabilidad sin el peso de TCP**, funcionando sobre la capa ligera de UDP.
 5. Porque **no depende de un solo paquete**: NTP manda muchas peticiones y calcula la hora estadísticamente. Si una se pierde, la siguiente vale igual: la fiabilidad sale del conjunto.
 </details>
 
 ---
 
-## 🧩 Crucigrama de Bits
+## 🧩 Crucigrama de bits
 
 ```
 Horizontal:
@@ -177,7 +177,7 @@ Vertical:
 4. **"¿Cómo obtendrías la hora exacta de Internet en Python sin librerías externas?"**
 5. **"¿Qué es QUIC y por qué se monta sobre UDP?"**
 
-> 💡 **Cómo encararlas:** la 1 y la 2 son las "preguntas reina". Para la 1, repite la moraleja del [punto 7](/ApuntesPSP/05-sockets-udp-y-protocolos/07-cuando-usar-cada-protocolo): fiabilidad contra velocidad, con los casos reales (web/email → TCP; streaming/juegos/DNS → UDP). Para la 2, escribe el servidor del [punto 3](/ApuntesPSP/05-sockets-udp-y-protocolos/03-servidor-udp) sin pensarlo: `bind()` + `recvfrom()` + `sendto()`. Si sabes contarlo fluido, ya eres medio desarrollador de redes.
+> 💡 **Cómo encararlas:** la 1 y la 2 son las "preguntas reina". Para la 1, repite la moraleja del [punto 7](/ApuntesPSP/05-sockets-udp-y-protocolos/07-cuando-usar-cada-protocolo): fiabilidad contra velocidad, con los casos reales (web/correo → TCP; streaming/juegos/DNS → UDP). Para la 2, escribe el servidor del [punto 3](/ApuntesPSP/05-sockets-udp-y-protocolos/03-servidor-udp) sin pensarlo: `bind()` + `recvfrom()` + `sendto()`. Si sabes contarlo fluido, ya eres medio desarrollador de redes.
 
 ---
 
@@ -201,7 +201,7 @@ Sí, NTP usa UDP. Pero manda muchas peticiones y calcula estadísticamente la ho
 
 ---
 
-## 🎬 Post-Créditos
+## 🎬 Poscréditos
 
 > *Un datagrama UDP sale del cliente. Sin conexión, sin confirmación, sin miedo.*
 
@@ -223,7 +223,7 @@ Sí, NTP usa UDP. Pero manda muchas peticiones y calcula estadísticamente la ho
 |---|---|---|
 | a) | Modelo de capas de red (TCP/IP) | ✅ Punto 1 |
 | b) | Identifica tipos de sockets (TCP/UDP) | ✅ Puntos 1-4 |
-| e) | Implementa servidores y clientes UDP | ✅ Puntos 2, 3 y 8 + ⚡ Laboratorio de Tortura |
+| e) | Implementa servidores y clientes UDP | ✅ Puntos 2, 3 y 8 + ⚡ Laboratorio de tortura |
 | h) | Implementa protocolos de aplicación (HTTP, NTP) | ✅ Puntos 5 y 6 + Cliente HTTP manual |
 
 > RA3c (servidor TCP), RA3d (cliente TCP), RA3f (errores) y RA3g (opciones) se cubren en la **U04 · Sockets TCP**.

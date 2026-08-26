@@ -44,11 +44,11 @@ Al terminar, serás capaz de:
 | [02 · Cliente TCP](/ApuntesPSP/04-sockets-tcp/02-cliente-tcp) | `connect()`, `sendall()` y `recv()`: el cliente que habla primero | Todos |
 | [03 · Servidor TCP](/ApuntesPSP/04-sockets-tcp/03-servidor-tcp) | `bind()`, `listen()` y `accept()`: el servidor que escucha y atiende | Todos |
 | [04 · Ciclo de vida de la conexión](/ApuntesPSP/04-sockets-tcp/04-ciclo-de-vida-de-la-conexion) | Three-way handshake y cierre de la conexión TCP | Todos |
-| [05 · Errores y manejo](/ApuntesPSP/04-sockets-tcp/05-errores-y-manejo) | `ConnectionResetError`, `BrokenPipeError`, timeouts y `try/except` | Todos |
+| [05 · Errores y gestión](/ApuntesPSP/04-sockets-tcp/05-errores-y-manejo) | `ConnectionResetError`, `BrokenPipeError`, timeouts y `try/except` | Todos |
 | [06 · SO_REUSEADDR](/ApuntesPSP/04-sockets-tcp/06-so-reuseaddr) | "Address already in use", TIME_WAIT y cómo evitarlo | Todos |
 | [07 · Protocolos sobre TCP](/ApuntesPSP/04-sockets-tcp/07-protocolos-sobre-tcp) | HTTP hablado a pelo con un socket y el orden de bytes | Todos |
 | [08 · Servidor eco completo](/ApuntesPSP/04-sockets-tcp/08-servidor-eco-completo) | Servidor + cliente eco, mano a mano TCP y ejercicios resueltos | Todos |
-| [09 · Cierre](/ApuntesPSP/04-sockets-tcp/09-cierre) | Sé el Socket, Fireside, Laboratorio de Tortura, Crucigrama… | Todos |
+| [09 · Cierre](/ApuntesPSP/04-sockets-tcp/09-cierre) | Sé el socket, Fireside, Laboratorio de tortura, Crucigrama… | Todos |
 
 > 📖 **Flujo de lectura:** los 8 primeros puntos son teoría en progresión. El 9º es el aterrizaje práctico: léelo justo después del 8º y antes de abrir los boletines.
 

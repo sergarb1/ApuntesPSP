@@ -54,7 +54,7 @@ with Pool(4) as p:  # 4 procesos en paralelo
 [1, 4, 9, 16]
 ```
 
-Los 4 procesos se reparten la lista y cada uno calcula una parte. Si tu máquina tiene 4 núcleos, los 4 corren **a la vez**.
+Los 4 procesos se reparten la lista y cada uno calcula una parte. Si tu máquina tiene 4 núcleos, los 4 se ejecutan **a la vez**.
 
 ---
 
