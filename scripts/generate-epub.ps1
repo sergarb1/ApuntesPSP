@@ -66,8 +66,7 @@ function Add-MdFile {
   $content = $content -replace '(?ms)^---.*?^---\s*', ''
   $content = $content.Trim()
   $content = $content -replace '/ApuntesPSP/cc-by-sa\.png', 'public/cc-by-sa.png'
-  $content = $content -replace '/ApuntesPSP/diagrams/', 'public/diagrams/'
-  $content = $content -replace '/diagrams/', 'public/diagrams/'
+  $content = $content -replace '(?:/ApuntesPSP)?/diagrams/', 'public/diagrams/'
 
   $level = '#' * $HeadingLevel
   $null = $sb.AppendLine("$level $title")
@@ -109,7 +108,7 @@ foreach ($u in $unitSlugs) {
         $eContent = $eContent -replace '(?ms)^---.*?^---\s*', ''
         $eContent = $eContent.Trim()
         $eContent = $eContent -replace '/ApuntesPSP/cc-by-sa\.png', 'public/cc-by-sa.png'
-        $eContent = $eContent -replace '/ApuntesPSP/diagrams/', 'public/diagrams/'
+        $eContent = $eContent -replace '(?:/ApuntesPSP)?/diagrams/', 'public/diagrams/'
         $eContent = $eContent -replace '(?m)^(#+)', '##$1'
 
         $null = $sb.AppendLine("## $eTitle")
