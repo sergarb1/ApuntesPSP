@@ -68,6 +68,8 @@ Esas dos filosofías definen el resto de la unidad: **fiabilidad contra velocida
 
 ## ⚖️ TCP vs UDP cara a cara
 
+![Diagrama comparativo de TCP contra UDP: TCP como carta certificada (conexión, fiabilidad y orden) frente a UDP como avión de papel (sin conexión y rápido)](/ApuntesPSP/diagrams/tcp-vs-udp.svg)
+
 | Característica | TCP | UDP |
 |----------------|-----|-----|
 | Conexión | Sí (handshake) | No |

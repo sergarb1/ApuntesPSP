@@ -19,6 +19,8 @@ En los [puntos 2](/ApuntesPSP/04-sockets-tcp-y-udp/02-cliente-tcp) y [3](/Apunte
 
 ## 🤝 Three-way handshake (establecer conexión)
 
+![Diagrama de secuencia del three-way handshake de TCP: SYN, SYN+ACK y ACK entre cliente y servidor hasta establecer la conexión](/ApuntesPSP/diagrams/tcp-handshake.svg)
+
 ```
 CLIENTE                    SERVIDOR
    │                          │
@@ -99,6 +101,8 @@ Con ella, el SO te deja hacer `bind()` al puerto aunque queden conexiones en `TI
 ---
 
 ## 📸 El ciclo completo, en una mirada
+
+![Diagrama del ciclo de vida de una conexión TCP en el servidor: de socket() y bind() a close(), pasando por listen(), accept() y el intercambio de datos](/ApuntesPSP/diagrams/ciclo-vida-socket.svg)
 
 ```
 socket() ──► bind() ──► listen() ──► accept() ──► recv()/send() ──► close()

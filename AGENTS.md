@@ -143,19 +143,61 @@ npm run epub             # Generar EPUB con Pandoc
 python "TEMA 01/EJEMPLOS/hilos.py"
 ```
 
-## Diagramas D2
+## Diagramas
 
-Los diagramas se crean en lenguaje [D2](https://d2lang.com/) (v0.7.1):
+Los diagramas del sitio se generan con **Excalidraw (MCP)** (antes: D2, migración completada).
+Convenciones, paleta, workflow e inventario en `docs/excalidraw-icons.md`.
+
+> Migración completada: ya no quedan fuentes D2 ni carpetas `diagrams/*.d2`; todos los SVG de
+> `public/diagrams/` tienen su fuente editable `.excalidraw` junto a ellos. Los D2 obsoletos
+> fueron sustituidos por Excalidraw y las referencias actualizadas.
+
+## Diagramas Excalidraw (MCP)
+
+Pipeline gestionado con [`mcp-excalidraw-server`](https://www.npmjs.com/package/mcp-excalidraw-server)
+(skill instalada en `.agents/skills/excalidraw-skill/` — leerla antes de dibujar).
+
+- **Puerto:** siempre `3002` (`EXPRESS_SERVER_URL=http://127.0.0.1:3002`); el 3000 y el 3001 los usan otras instancias.
+- **Ubicaciones estrictas:** SVG exportado en `public/diagrams/NOMBRE.svg`, fuente editable en
+  `public/diagrams/NOMBRE.excalidraw`, convenciones e inventario en `docs/excalidraw-icons.md`.
+- **PROHIBIDO** usar `@excalidraw/excalidraw` como componente React y **PROHIBIDO** guardar SVGs en `src/assets/` (solo `public/`).
+- **Ruta en MD:** `![alt didáctico en es-ES](/ApuntesPSP/diagrams/NOMBRE.svg)` — absoluta respecto a la base del sitio.
+
+### Workflow por diagrama (orden obligatorio)
 
 ```bash
-cd diagrams/
-d2 archivo.d2 ../public/diagrams/archivo.svg --pad 20
+# 1. Canvas en 3002 (3000/3001 reservados)
+EXPRESS_SERVER_URL=http://127.0.0.1:3002 npx mcp-excalidraw-server start
+
+# 2. El usuario abre http://127.0.0.1:3002 en el navegador (obligatorio para screenshots y SVG)
+
+# 3. Lienzo limpio y creación desde JSON temporal (los labels van con "text"; flechas con startElementId/endElementId)
+EXPRESS_SERVER_URL=http://127.0.0.1:3002 npx mcp-excalidraw-server clear --yes
+EXPRESS_SERVER_URL=http://127.0.0.1:3002 npx mcp-excalidraw-server add .tmp-excalidraw/temporal.json
+
+# 4. Iterar: describe + screenshot hasta que no haya solapes ni textos truncados
+EXPRESS_SERVER_URL=http://127.0.0.1:3002 npx mcp-excalidraw-server describe
+EXPRESS_SERVER_URL=http://127.0.0.1:3002 npx mcp-excalidraw-server screenshot --out .tmp-excalidraw/revision.png
+
+# 5. Exportar los dos artefactos
+EXPRESS_SERVER_URL=http://127.0.0.1:3002 npx mcp-excalidraw-server export --out public/diagrams/NOMBRE.excalidraw
+EXPRESS_SERVER_URL=http://127.0.0.1:3002 npx mcp-excalidraw-server screenshot --format svg --out public/diagrams/NOMBRE.svg
+
+# 6. Validar el SVG: >1 KB, viewBox con dimensiones reales y todos los textos presentes
+python scripts/check-diagramas.py   # detector de solapes texto/texto y texto/forma
+# 7. Limpiar: clear --yes y borrar el JSON temporal antes de empezar otro diagrama
 ```
 
-- Fuentes: `diagrams/*.d2`
-- SVG generados: `public/diagrams/*.svg`
-- Se referencian en MD como `![](/diagrams/archivo.svg)`
-- Instalado via winget: `winget install Terrastruct.D2`
+### Reglas de diseño pedagógico
+
+- Texto DENTRO de la forma (bound-label) para cajas de contenido; zonas de agrupación SIN texto interior (título libre en la esquina superior izquierda).
+- `fillStyle: "solid"` obligatorio; fondos claros, texto oscuro; rojo `#e03131` solo para errores/fallos.
+- Flechas: siempre `startElementId`/`endElementId`; etiqueta solo si ≤ 12 caracteres; prioridad a trazado ortogonal; gap ≥ 120 px.
+- Dimensiones base: texto ≥ 16 (títulos 24-28), formas ≥ 120x60, rejilla de 20 px.
+- No hay librerías `.excalidrawlib`: iconos abstractos con rect/ellipse + texto.
+- **Flechas opuestas entre dos cajas** (ida y vuelta): reservar dos alturas distintas
+  (p. ej. y=132 y y=168) para que sus etiquetas no se pisen en el punto medio.
+- Los avisos del verificador sobre títulos de zona sobre su propio fondo vacío son esperados (bound-label de zona → evitar).
 
 ## Sitio web (Astro + Starlight)
 

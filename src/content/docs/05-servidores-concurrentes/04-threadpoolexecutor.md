@@ -36,6 +36,8 @@ El enfoque del [punto 3](/ApuntesPSP/05-servidores-concurrentes/03-hilo-por-clie
 
 ## ⚡ El servidor con pool
 
+![Diagrama de un ThreadPoolExecutor: los clientes llegan, sus tareas esperan en una cola y un equipo fijo de diez hilos las atiende](/ApuntesPSP/diagrams/threadpool.svg)
+
 ```python
 import socket, concurrent.futures
 

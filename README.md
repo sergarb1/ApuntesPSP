@@ -52,7 +52,7 @@ PSP/
 ├── public/
 │   ├── portada.png                       ← Portada para web, PDF y EPUB
 │   ├── favicon.svg
-│   ├── diagrams/                         ← SVG generados con D2
+│   ├── diagrams/                         ← SVG + fuentes .excalidraw (MCP Excalidraw)
 │   ├── pdf/                              ← PDFs generados (ApuntesPSP.pdf)
 │   └── epub/                             ← EPUBs generados (ApuntesPSP.epub)
 │
@@ -62,9 +62,6 @@ PSP/
 │   ├── pdf-footer.html                   ← Pie con número de página
 │   ├── generate-epub.ps1                 ← Genera EPUB con Pandoc
 │   └── epub.css                          ← CSS para bloques de código en EPUB
-│
-├── diagrams/                             ← Fuentes D2
-│   └── *.d2                              ← Diagramas en lenguaje D2
 │
 ├── TEMA 00 PRESENTACION/                 ← PDFs introductorios del módulo
 ├── TEMA 00 PYTHON/                       ← Ejercicios básicos de Python

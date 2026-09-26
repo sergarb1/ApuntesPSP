@@ -17,6 +17,8 @@ description: "AES + RSA, RBAC y el sistema seguro completo 🏗️"
 
 ## 🔄 El intercambio, paso a paso
 
+![Diagrama de secuencia del cifrado híbrido entre Ana y Bob: Ana cifra con AES, envía la clave AES protegida con la RSA pública de Bob y Bob la descifra con su clave privada](/ApuntesPSP/diagrams/cifrado-hibrido.svg)
+
 ```
 🔵 Ana                          🟢 Bob
    │                               │

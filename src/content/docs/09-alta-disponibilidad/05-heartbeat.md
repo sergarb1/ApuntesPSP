@@ -19,6 +19,8 @@ description: El latido que confirma que el servicio sigue vivo 💓
 
 En un hilo, un heartbeat sería un `threading.Thread` daemon con `time.sleep`. En asyncio, es una **corrutina en segundo plano** lanzada con `create_task` (el [punto 3](/ApuntesPSP/09-alta-disponibilidad/03-create-task-y-gather)):
 
+![Diagrama del heartbeat: el servidor envía latidos periódicos al monitor y, si los latidos se detienen, salta la alerta](/ApuntesPSP/diagrams/heartbeat.svg)
+
 ```python
 import asyncio
 

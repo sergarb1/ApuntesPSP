@@ -15,6 +15,8 @@ description: El cerrojo que protege la sección crítica 🔒
 
 En el ejemplo del contador compartido, la sección crítica es `contador += 1`. Protegerla con un Lock hace que los 4 hilos se turnen: nadie puede leer mientras otro está escribiendo, y el resultado final vuelve a ser el esperado.
 
+![Diagrama del funcionamiento de un Lock: el Hilo-A entra en la sección crítica mientras el Hilo-B y el Hilo-C esperan a que libere el cerrojo](/ApuntesPSP/diagrams/lock-seccion-critica.svg)
+
 ```python
 import threading
 

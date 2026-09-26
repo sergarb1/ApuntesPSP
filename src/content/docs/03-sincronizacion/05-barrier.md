@@ -55,6 +55,8 @@ Fíjate en la salida: los 3 corredores tardan distinto en llegar a la salida (`t
 
 La aplicación más típica: un trabajo en paralelo con varias **fases**. Nadie empieza la fase 2 hasta que todos terminaron la fase 1.
 
+![Diagrama de una Barrier sincronizando tres hilos: nadie empieza la fase 2 hasta que todos han terminado la fase 1](/ApuntesPSP/diagrams/barrier-fases.svg)
+
 ```
       FASE 1               FASE 2
 Hilo-A: trabaja → wait() → trabaja → wait()

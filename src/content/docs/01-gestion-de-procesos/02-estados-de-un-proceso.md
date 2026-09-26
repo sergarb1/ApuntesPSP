@@ -19,6 +19,8 @@ El sistema operativo gestiona decenas o cientos de procesos a la vez con una sol
 
 ## 🔄 El ciclo de vida de un proceso
 
+![Diagrama de transiciones de estados de un proceso: NUEVO, LISTO, EJECUCIÓN, BLOQUEADO y TERMINADO con las flechas del planificador y las esperas de E/S](/ApuntesPSP/diagrams/procesos-estados.svg)
+
 ```
               NUEVO ──→ LISTO ──→ EJECUCIÓN ──→ TERMINADO
                           ↑          │
