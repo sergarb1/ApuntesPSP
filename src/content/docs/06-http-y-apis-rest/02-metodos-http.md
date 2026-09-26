@@ -29,6 +29,8 @@ Los métodos HTTP se corresponden con las operaciones **CRUD** de las bases de d
 
 Un mismo recurso puede "vivir" con todos los verbos. La URL no cambia: cambia el método:
 
+![Diagrama de los cinco métodos HTTP actuando sobre el mismo recurso /usuarios/5: GET lee, POST crea, PUT reemplaza, PATCH retoca y DELETE borra](/ApuntesPSP/diagrams/metodos-http.svg)
+
 ```
 GET    /usuarios        → Listar usuarios
 GET    /usuarios/5      → Obtener usuario 5

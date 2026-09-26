@@ -47,6 +47,8 @@ public class PedidoService {
 
 **IoC** (*Inversion of Control*) es el principio: el contenedor (Spring) controla la creación y lifecycle de los objetos (beans). Tú solo declaras qué necesitas.
 
+![Diagrama del contenedor IoC de Spring: crea los beans y los inyecta, desde el Repository al Service y del Service al Controller, sin que tú hagas new](/ApuntesPSP/diagrams/spring-di-contenedor.svg)
+
 ```java
 @Service
 public class TareaService {

@@ -40,6 +40,10 @@ zonas de agrupación sin texto interior (título como texto libre en la esquina)
 | barrier-fases | `public/diagrams/barrier-fases.svg` | `public/diagrams/barrier-fases.excalidraw` | UD 4 | `03-sincronizacion/05-barrier.md` | La Barrier sincronizando dos fases de trabajo entre tres hilos |
 | threadpool | `public/diagrams/threadpool.svg` | `public/diagrams/threadpool.excalidraw` | UD 6 | `05-servidores-concurrentes/04-threadpoolexecutor.md` | ThreadPoolExecutor: cola de tareas y equipo fijo de 10 hilos |
 | heartbeat | `public/diagrams/heartbeat.svg` | `public/diagrams/heartbeat.excalidraw` | UD 10 | `09-alta-disponibilidad/05-heartbeat.md` | Latidos periódicos del servidor al monitor y alerta si se detienen |
+| tipos-primitivos | `public/diagrams/tipos-primitivos.svg` | `public/diagrams/tipos-primitivos.excalidraw` | UD 1 | `00-python-basico/03-tipos-de-datos.md` | Los cinco tipos primitivos como objetos: int, float, bool, str y None |
+| metodos-http | `public/diagrams/metodos-http.svg` | `public/diagrams/metodos-http.excalidraw` | UD 7 | `06-http-y-apis-rest/02-metodos-http.md` | Los cinco métodos HTTP actuando sobre el mismo recurso /usuarios/5 |
+| rate-limit-429 | `public/diagrams/rate-limit-429.svg` | `public/diagrams/rate-limit-429.excalidraw` | UD 8 | `07-apis-comerciales/05-rate-limiting.md` | Ciclo del rate limit: petición, 429 Too Many Requests y reintento |
+| spring-di-contenedor | `public/diagrams/spring-di-contenedor.svg` | `public/diagrams/spring-di-contenedor.excalidraw` | Anexo | `10-anexo-spring-boot/03-inyeccion-de-dependencias.md` | Contenedor IoC de Spring inyectando beans del Repository al Controller |
 
 ## Cómo editar un diagrama existente
 

@@ -29,6 +29,8 @@ El **rate limit** es la cuota de peticiones que tu API key puede hacer en un int
 
 Estos límites existen por una razón sencilla: **una API no es tu base de datos**. Un bucle sin freno que pregunta el tiempo de 1.000 ciudades en un segundo es exactamente el comportamiento que quieren cortar.
 
+![Diagrama del rate limiting: tu programa dispara peticiones a la API, esta responde 429 Too Many Requests y tu programa debe esperar antes de reintentar](/ApuntesPSP/diagrams/rate-limit-429.svg)
+
 ---
 
 ## 🐢 El error 429

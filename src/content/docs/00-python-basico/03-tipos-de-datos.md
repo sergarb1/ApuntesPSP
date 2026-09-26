@@ -15,6 +15,8 @@ description: Enteros, floats, booleans, strings, None y sus operadores 🔢
 
 No necesitas declarar tipos como en C o Java. Python **adivina** el tipo cuando asignas un valor. Si escribas `x = 5`, `x` es un entero. Si luego escribes `x = "hola"`, pasa a ser un string. Eso es el **tipado dinámico**.
 
+![Diagrama de los cinco tipos primitivos de Python — int, float, bool, str y None — como objetos que cuelgan de la idea de que todo es un objeto](/ApuntesPSP/diagrams/tipos-primitivos.svg)
+
 ---
 
 ## 🔢 Números enteros (int)
