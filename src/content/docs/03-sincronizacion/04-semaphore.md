@@ -57,6 +57,8 @@ Los 5 hilos esperan, pero dentro solo hay **2 a la vez**. Cuando uno sale, entra
 
 ## ⏱️ Semáforo con timeout
 
+
+![Diagrama del Semaphore(3) como aforo: tres hilos dentro, dos esperando a que alguien haga release()](/ApuntesPSP/diagrams/semaphore-aforo.svg)
 A veces no quieres esperar eternamente: si el recurso no se libera en X segundos, el hilo se rinde. `acquire(blocking=True, timeout=N)` devuelve `True` si consiguió el recurso y `False` si pasaron los N segundos.
 
 ```python

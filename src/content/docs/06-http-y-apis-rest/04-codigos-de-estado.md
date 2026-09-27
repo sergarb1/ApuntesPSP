@@ -19,6 +19,8 @@ Es la señal de humo de la web: en tres dígitos, el servidor te dice qué ha pa
 
 ## 🎨 Las familias de códigos
 
+
+![Diagrama de las cuatro familias de códigos de estado HTTP: 2xx éxito, 3xx redirección, 4xx error del cliente y 5xx error del servidor](/ApuntesPSP/diagrams/codigos-estado.svg)
 | Familia | Significado | Ejemplos |
 |---|---|---|
 | **2xx** | Éxito | 200 OK, 201 Created, 204 No Content |

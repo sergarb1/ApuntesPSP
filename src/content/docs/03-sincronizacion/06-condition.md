@@ -52,6 +52,8 @@ El productor añade un elemento y **notifica**; el consumidor, si la cola está 
 
 ## 📚 Métodos de Condition
 
+
+![Diagrama de la Condition: productor y consumidor coordinados con wait() y notify() bajo el mismo lock](/ApuntesPSP/diagrams/condition-wait-notify.svg)
 | Método | Qué hace |
 |--------|----------|
 | `wait()` | Libera el lock y espera una notificación |

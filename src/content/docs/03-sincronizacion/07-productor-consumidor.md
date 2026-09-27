@@ -63,6 +63,9 @@ El ritmo lo marcan los `sleep()`: a veces el consumidor se adelanta, encuentra l
 
 ## 🎬 Paso a paso
 
+
+![Diagrama del patrón productor-consumidor: cola compartida entre ambos hilos, con append y notify por un lado y pop por otro](/ApuntesPSP/diagrams/productor-consumidor.svg)
+
 Veamos cómo se coordinan los dos hilos:
 
 ```

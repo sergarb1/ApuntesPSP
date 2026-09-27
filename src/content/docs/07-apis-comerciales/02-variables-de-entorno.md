@@ -19,6 +19,8 @@ Así el código queda limpio (nadie ve tus secretos al abrir el repo) y las clav
 
 ## 📁 El archivo `.env`
 
+
+![Diagrama del flujo del fichero .env: load_dotenv() lo carga en os.environ y tu código lee la clave; el .env nunca se sube al repo](/ApuntesPSP/diagrams/dotenv-flujo.svg)
 Un archivo `.env` es un fichero de texto plano en la raíz de tu proyecto donde cada línea define una variable de entorno:
 
 ```
