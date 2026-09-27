@@ -57,16 +57,6 @@ La aplicación más típica: un trabajo en paralelo con varias **fases**. Nadie 
 
 ![Diagrama de una Barrier sincronizando tres hilos: nadie empieza la fase 2 hasta que todos han terminado la fase 1](/ApuntesPSP/diagrams/barrier-fases.svg)
 
-```
-      FASE 1               FASE 2
-Hilo-A: trabaja → wait() → trabaja → wait()
-Hilo-B: trabaja → wait() → trabaja → wait()
-Hilo-C: trabaja → wait() → trabaja → wait()
-        └──────┘            └──────┘
-       todos acaban       todos acaban
-       a la vez y         a la vez y
-       pasan juntos       pasan juntos
-```
 
 Un ejemplo: descargar 3 archivos, y solo cuando los 3 estén descargados, empezar a procesarlos.
 

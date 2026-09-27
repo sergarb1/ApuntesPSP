@@ -21,23 +21,6 @@ Cada hilo pasa por estados, igual que una persona pasa por situaciones a lo larg
 
 ![Diagrama de transiciones de estados de un hilo: NUEVO, EJECUTABLE, EJECUCIÓN, BLOQUEADO y TERMINADO, con start(), yield() y las esperas de sleep() o lock](/ApuntesPSP/diagrams/hilos-estados.svg)
 
-```
-  ┌──────────────┐
-  │    NUEVO     │  ← Thread creado, no start()
-  └──────┬───────┘
-         ↓ start()
-  ┌──────────────┐
-  │  EJECUTABLE  │  ← Puede ejecutar cuando el scheduler quiera
-  └──────┬───────┘
-         ↓
-  ┌──────────────┐     ┌──────────────┐
-  │  EJECUCIÓN   │←───→│  BLOQUEADO   │
-  └──────┬───────┘     └──────────────┘
-         ↓               (sleep, I/O, lock)
-  ┌──────────────┐
-  │  TERMINADO   │  ← run() terminó
-  └──────────────┘
-```
 
 ---
 
