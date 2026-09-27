@@ -51,10 +51,10 @@ Al terminar, serás capaz de:
 > Practica con los pares del curso: empezar siempre el resuelto para ver el estilo y luego intentar el por-resolver.
 
 <div class="ejercicio-links">
-  <a href="/ApuntesPSP/boletines/boletin-u03-inicial-resuelto" class="elink">✅ Inicial resuelto</a>
   <a href="/ApuntesPSP/boletines/boletin-u03-inicial" class="elink">🟢 Inicial por resolver</a>
-  <a href="/ApuntesPSP/boletines/boletin-u03-avanzado-resuelto" class="elink">💪 Avanzado resuelto</a>
+  <a href="/ApuntesPSP/boletines/boletin-u03-inicial-resuelto" class="elink">✅ Inicial resuelto</a>
   <a href="/ApuntesPSP/boletines/boletin-u03-avanzado" class="elink">⭐ Avanzado por resolver</a>
+  <a href="/ApuntesPSP/boletines/boletin-u03-avanzado-resuelto" class="elink">💪 Avanzado resuelto</a>
 </div>
 
 ---

@@ -96,43 +96,8 @@ asyncio.run(main())
 
 La traza, paso a paso:
 
-```
-Event Loop arranca
-│
-├── 1. Ejecuta main()
-│      ├── Crea servidor TCP
-│      └── Registra atender() para nuevos clientes
-│
-├── 2. Event Loop: "Espero eventos... (I/O, timers, etc.)"
-│
-├── [Cliente-1 conecta]
-│  3. Event Loop: "¡Cliente nuevo! Ejecuto atender(cliente1)"
-│  4. atender(cliente1) empieza
-│  5. await reader.read() → "No hay datos aún"
-│  6. atender(cliente1) se pausa (cede el control)
-│
-├── [Cliente-2 conecta mientras cliente1 espera]
-│  7. Event Loop: "¡Otro cliente! Ejecuto atender(cliente2)"
-│  8. atender(cliente2) empieza
-│  9. await reader.read() → "Tampoco hay datos"
-│ 10. atender(cliente2) se pausa
-│
-├── [Cliente-1 envía datos]
-│ 11. Event Loop: "Cliente1 tiene datos → reanudo atender(cliente1)"
-│ 12. atender(cliente1) recibe los datos
-│ 13. writer.write() → escribe buffer
-│ 14. await writer.drain() → espera envío → se pausa
-│
-├── [Cliente-2 envía datos]
-│ 15. Event Loop: "Cliente2 tiene datos → reanudo atender(cliente2)"
-│ 16. atender(cliente2) recibe, responde, termina 🏁
-│
-├── [writer.drain() de cliente1 listo]
-│ 17. Event Loop: "Cliente1 puede finalizar"
-│ 18. atender(cliente1) termina 🏁
-│
-└── Event Loop sigue esperando más clientes...
-```
+
+![Diagrama del Event Loop de asyncio: un solo hilo que salta a la siguiente tarea disponible mientras las demás esperan](/ApuntesPSP/diagrams/event-loop.svg)
 
 > Nunca hay espera activa. Cuando una corrutina espera, otra aprovecha. **Un solo hilo, miles de conexiones.**
 

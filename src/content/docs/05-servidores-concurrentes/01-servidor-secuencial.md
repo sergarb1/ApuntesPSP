@@ -51,28 +51,12 @@ El bucle hace esto: acepta → procesa (los 3 segundos) → cierra → acepta de
 El clásico "Be the code" del tema. Traza mentalmente qué pasa cuando 3 clientes se conectan a la vez:
 
 **Servidor secuencial** (3 clientes a la vez):
-```
-Tiempo:  0s ──── Cliente-1 conecta
-          │     Servidor procesa cliente-1 (3s)
-         3s ──── Cliente-1 listo
-          │     Cliente-2 conectó en t=0.1s, pero espera...
-          │     Servidor procesa cliente-2 (3s)
-         6s ──── Cliente-2 listo
-          │     Cliente-3 conectó en t=0.2s, pero espera...
-          │     Servidor procesa cliente-3 (3s)
-         9s ──── Cliente-3 listo 🏁
-```
+
+![Diagrama de Gantt del servidor secuencial: tres clientes procesados uno detrás de otro en 9 segundos](/ApuntesPSP/diagrams/servidor-secuencial.svg)
 
 **Servidor concurrente** (3 clientes a la vez):
-```
-Tiempo:  0s ──── Cliente-1 conecta → hilo-1 procesa
-          │     Cliente-2 conecta → hilo-2 procesa
-          │     Cliente-3 conecta → hilo-3 procesa
-          │     (Los 3 procesan en paralelo)
-         3s ──── Cliente-1 listo 🏁
-          │     Cliente-2 listo 🏁
-          │     Cliente-3 listo 🏁
-```
+
+![Diagrama de Gantt del servidor concurrente: tres hilos procesan a la vez y los tres clientes terminan en 3 segundos](/ApuntesPSP/diagrams/servidor-concurrente.svg)
 
 > Con hilos, todos terminan a la vez. Sin hilos, el último espera 9s.
 

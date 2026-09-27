@@ -19,17 +19,8 @@ Este punto junta todo lo anterior (la tabla del [punto 1](/ApuntesPSP/04-sockets
 
 ## 🧭 El criterio: velocidad o fiabilidad
 
-```
-¿Puedo permitirme perder datos?
-        │
-        ├── NO ─────────────► TCP
-        │      (un byte perdido lo rompe todo:
-        │       archivos, web, email, transacciones)
-        │
-        └── SÍ ─────────────► UDP
-               (prefiero estar al día antes que completo:
-                voz, vídeo, juegos, DNS)
-```
+
+![Diagrama de decisión entre TCP y UDP según puedas permitirte perder datos o no](/ApuntesPSP/diagrams/criterio-tcp-udp.svg)
 
 Dos preguntas que te ayudan a decidir:
 

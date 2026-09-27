@@ -45,12 +45,16 @@ diagrams/*.svg
 .serena/
 .agents/
 
-# Experimentos de exportación a DOCX (pruebas puntuales, no van al repo)
-*.docx
-docx_out/
+# Exportación a DOCX: los DOCX por unidad sí van al repo; los PNG
+# intermedios y el MD temporal se regeneran con scripts/svg2png.mjs +
+# scripts/build_docx.py
+docx_out/pngs/
+docx_out/.tmp_docx.md
 template_fixed.docx
 pandoc_default_ref.docx
-scripts/build_*.py
+
+# Lienzo temporal de Excalidraw
+.tmp-excalidraw/
 
 # PDF comprimido local (el PDF oficial del repo es public/pdf/ApuntesPSP.pdf)
 public/pdf/ApuntesPSP-compressed.pdf

@@ -40,13 +40,17 @@ PSP/
 │   ├── pdf/                             ← PDFs generados (ApuntesPSP.pdf)
 │   └── epub/                            ← EPUBs generados (ApuntesPSP.epub)
 │
+├── docx_out/                            ← DOCX por unidad (commiteado): UD n - Apuntes.docx + UD n - Boletines.docx
+│
 ├── scripts/
 │   ├── pdf-cover.html                   ← portada del PDF (portada.png)
 │   ├── pdf-header.html                  ← header vacío (elimina hora impresión)
 │   ├── pdf-footer.html                  ← pie con número de página + línea decorativa
 │   ├── generate-pdf.ps1                 ← genera PDF con Puppeteer + servidor local
 │   ├── generate-epub.ps1                ← genera EPUB con Pandoc
-│   └── epub.css                         ← CSS para bloques de código en EPUB
+│   ├── epub.css                         ← CSS para bloques de código en EPUB
+│   ├── svg2png.mjs                      ← SVG de diagrams/ → PNG en docx_out/pngs (puppeteer)
+│   └── build_docx.py                    ← 1 DOCX de apuntes + 1 de boletines por unidad (gitignored)
 │
 ├── diagrams/                            ← fuentes D2 para diagramas SVG
 │   └── *.d2                             ← diagramas en lenguaje D2
@@ -211,6 +215,7 @@ python scripts/check-diagramas.py   # detector de solapes texto/texto y texto/fo
 - **URL:** `https://sergarb1.github.io/ApuntesPSP`
 - **Portada:** `public/portada.png` (gradiente azul, generado desde SVG vía Puppeteer, usada en web, PDF y EPUB)
 - **PDF/EPUB:** generados localmente (`npm run pdf`, `npm run epub`) y commiteados al repo; Astro los copia a `dist/` durante el build para que estén disponibles en GitHub Pages
+- **DOCX:** un DOCX de apuntes + uno de boletines por unidad, commiteados en `docx_out/`; se regeneran con `node scripts/svg2png.mjs && python scripts/build_docx.py` (los PNG intermedios van en `docx_out/pngs/`, gitignored)
 - **.gitignore:** `public/*.png` excluye PNGs genéricos pero `!public/portada.png` lo re-incluye
 
 ## Apuntes (MD por unidad)

@@ -79,10 +79,8 @@ print(f"Error (None si todo bien): {error}")
 
 **Flujo de datos:**
 
-```
-  Python ──stdin──►  proceso hijo (lee input, pasa a mayúsculas)
-  proceso hijo ──stdout──►  Python (recibe "HOLA MUNDO")
-```
+
+![Diagrama de la comunicación con pipes: Python envía datos al proceso hijo por stdin y recibe el resultado por stdout](/ApuntesPSP/diagrams/pipes-comunicacion.svg)
 
 ---
 

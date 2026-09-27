@@ -84,30 +84,8 @@ except (ValueError, TypeError):
 
 > "Sé el proceso de firma digital desde que Ana escribe hasta que Bob verifica."
 
-```
-🔵 ANA
 
-1. Tiene mensaje: "Mañana a las 8 en el café"
-2. SHA256 → 256 bits de hash
-3. Cifra hash con su RSA privada → firma digital (256 bytes)
-4. Envía a Bob: [mensaje] + [firma]
-
-🚀 Por la red viaja: "Mañana a las 8 en el café" + 256 bytes de firma
-
-🟢 BOB
-
-5. Recibe mensaje + firma
-6. Verifica con clave pública de Ana
-   → Compara hashes internamente
-
-   ┌─────────────────────────────────────┐
-   │ ¿Firma válida? → ✅ Es de Ana     │
-   │ ¿Firma inválida? → ❌ Algo va mal  │
-   └─────────────────────────────────────┘
-
-7. Si alguien modificó el mensaje: hashes diferentes → ❌
-8. Si no es de Ana: la clave pública no verifica → ❌
-```
+![Diagrama de la firma digital: Ana firma el hash con su clave privada y Bob verifica con la pública](/ApuntesPSP/diagrams/firmas.svg)
 
 ---
 

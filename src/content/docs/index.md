@@ -155,10 +155,10 @@ Cada unidad tiene **4 boletines** (40 en total): inicial y avanzado, con y sin s
     <span class="num">Unidad 1</span>
   </div>
   <div class="ejercicio-links">
-    <a href="/ApuntesPSP/boletines/boletin-u00-inicial-resuelto" class="elink">✅ Inicial resuelto</a>
     <a href="/ApuntesPSP/boletines/boletin-u00-inicial" class="elink">🟢 Inicial por resolver</a>
-    <a href="/ApuntesPSP/boletines/boletin-u00-avanzado-resuelto" class="elink">💪 Avanzado resuelto</a>
+    <a href="/ApuntesPSP/boletines/boletin-u00-inicial-resuelto" class="elink">✅ Inicial resuelto</a>
     <a href="/ApuntesPSP/boletines/boletin-u00-avanzado" class="elink">⭐ Avanzado por resolver</a>
+    <a href="/ApuntesPSP/boletines/boletin-u00-avanzado-resuelto" class="elink">💪 Avanzado resuelto</a>
   </div>
 </div>
 
@@ -167,10 +167,10 @@ Cada unidad tiene **4 boletines** (40 en total): inicial y avanzado, con y sin s
     <span class="num">Unidad 2</span>
   </div>
   <div class="ejercicio-links">
-    <a href="/ApuntesPSP/boletines/boletin-u01-inicial-resuelto" class="elink">✅ Inicial resuelto</a>
     <a href="/ApuntesPSP/boletines/boletin-u01-inicial" class="elink">🟢 Inicial por resolver</a>
-    <a href="/ApuntesPSP/boletines/boletin-u01-avanzado-resuelto" class="elink">💪 Avanzado resuelto</a>
+    <a href="/ApuntesPSP/boletines/boletin-u01-inicial-resuelto" class="elink">✅ Inicial resuelto</a>
     <a href="/ApuntesPSP/boletines/boletin-u01-avanzado" class="elink">⭐ Avanzado por resolver</a>
+    <a href="/ApuntesPSP/boletines/boletin-u01-avanzado-resuelto" class="elink">💪 Avanzado resuelto</a>
   </div>
 </div>
 
@@ -179,10 +179,10 @@ Cada unidad tiene **4 boletines** (40 en total): inicial y avanzado, con y sin s
     <span class="num">Unidad 3</span>
   </div>
   <div class="ejercicio-links">
-    <a href="/ApuntesPSP/boletines/boletin-u02-inicial-resuelto" class="elink">✅ Inicial resuelto</a>
     <a href="/ApuntesPSP/boletines/boletin-u02-inicial" class="elink">🟢 Inicial por resolver</a>
-    <a href="/ApuntesPSP/boletines/boletin-u02-avanzado-resuelto" class="elink">💪 Avanzado resuelto</a>
+    <a href="/ApuntesPSP/boletines/boletin-u02-inicial-resuelto" class="elink">✅ Inicial resuelto</a>
     <a href="/ApuntesPSP/boletines/boletin-u02-avanzado" class="elink">⭐ Avanzado por resolver</a>
+    <a href="/ApuntesPSP/boletines/boletin-u02-avanzado-resuelto" class="elink">💪 Avanzado resuelto</a>
   </div>
 </div>
 
@@ -191,10 +191,10 @@ Cada unidad tiene **4 boletines** (40 en total): inicial y avanzado, con y sin s
     <span class="num">Unidad 4</span>
   </div>
   <div class="ejercicio-links">
-    <a href="/ApuntesPSP/boletines/boletin-u03-inicial-resuelto" class="elink">✅ Inicial resuelto</a>
     <a href="/ApuntesPSP/boletines/boletin-u03-inicial" class="elink">🟢 Inicial por resolver</a>
-    <a href="/ApuntesPSP/boletines/boletin-u03-avanzado-resuelto" class="elink">💪 Avanzado resuelto</a>
+    <a href="/ApuntesPSP/boletines/boletin-u03-inicial-resuelto" class="elink">✅ Inicial resuelto</a>
     <a href="/ApuntesPSP/boletines/boletin-u03-avanzado" class="elink">⭐ Avanzado por resolver</a>
+    <a href="/ApuntesPSP/boletines/boletin-u03-avanzado-resuelto" class="elink">💪 Avanzado resuelto</a>
   </div>
 </div>
 
@@ -203,10 +203,10 @@ Cada unidad tiene **4 boletines** (40 en total): inicial y avanzado, con y sin s
     <span class="num">Unidad 5</span>
   </div>
   <div class="ejercicio-links">
-    <a href="/ApuntesPSP/boletines/boletin-u04-inicial-resuelto" class="elink">✅ Inicial resuelto</a>
     <a href="/ApuntesPSP/boletines/boletin-u04-inicial" class="elink">🟢 Inicial por resolver</a>
-    <a href="/ApuntesPSP/boletines/boletin-u04-avanzado-resuelto" class="elink">💪 Avanzado resuelto</a>
+    <a href="/ApuntesPSP/boletines/boletin-u04-inicial-resuelto" class="elink">✅ Inicial resuelto</a>
     <a href="/ApuntesPSP/boletines/boletin-u04-avanzado" class="elink">⭐ Avanzado por resolver</a>
+    <a href="/ApuntesPSP/boletines/boletin-u04-avanzado-resuelto" class="elink">💪 Avanzado resuelto</a>
   </div>
 </div>
 
@@ -215,10 +215,10 @@ Cada unidad tiene **4 boletines** (40 en total): inicial y avanzado, con y sin s
     <span class="num">Unidad 6</span>
   </div>
   <div class="ejercicio-links">
-    <a href="/ApuntesPSP/boletines/boletin-u05-inicial-resuelto" class="elink">✅ Inicial resuelto</a>
     <a href="/ApuntesPSP/boletines/boletin-u05-inicial" class="elink">🟢 Inicial por resolver</a>
-    <a href="/ApuntesPSP/boletines/boletin-u05-avanzado-resuelto" class="elink">💪 Avanzado resuelto</a>
+    <a href="/ApuntesPSP/boletines/boletin-u05-inicial-resuelto" class="elink">✅ Inicial resuelto</a>
     <a href="/ApuntesPSP/boletines/boletin-u05-avanzado" class="elink">⭐ Avanzado por resolver</a>
+    <a href="/ApuntesPSP/boletines/boletin-u05-avanzado-resuelto" class="elink">💪 Avanzado resuelto</a>
   </div>
 </div>
 
@@ -227,10 +227,10 @@ Cada unidad tiene **4 boletines** (40 en total): inicial y avanzado, con y sin s
     <span class="num">Unidad 7</span>
   </div>
   <div class="ejercicio-links">
-    <a href="/ApuntesPSP/boletines/boletin-u06-inicial-resuelto" class="elink">✅ Inicial resuelto</a>
     <a href="/ApuntesPSP/boletines/boletin-u06-inicial" class="elink">🟢 Inicial por resolver</a>
-    <a href="/ApuntesPSP/boletines/boletin-u06-avanzado-resuelto" class="elink">💪 Avanzado resuelto</a>
+    <a href="/ApuntesPSP/boletines/boletin-u06-inicial-resuelto" class="elink">✅ Inicial resuelto</a>
     <a href="/ApuntesPSP/boletines/boletin-u06-avanzado" class="elink">⭐ Avanzado por resolver</a>
+    <a href="/ApuntesPSP/boletines/boletin-u06-avanzado-resuelto" class="elink">💪 Avanzado resuelto</a>
   </div>
 </div>
 
@@ -239,10 +239,10 @@ Cada unidad tiene **4 boletines** (40 en total): inicial y avanzado, con y sin s
     <span class="num">Unidad 8</span>
   </div>
   <div class="ejercicio-links">
-    <a href="/ApuntesPSP/boletines/boletin-u07-inicial-resuelto" class="elink">✅ Inicial resuelto</a>
     <a href="/ApuntesPSP/boletines/boletin-u07-inicial" class="elink">🟢 Inicial por resolver</a>
-    <a href="/ApuntesPSP/boletines/boletin-u07-avanzado-resuelto" class="elink">💪 Avanzado resuelto</a>
+    <a href="/ApuntesPSP/boletines/boletin-u07-inicial-resuelto" class="elink">✅ Inicial resuelto</a>
     <a href="/ApuntesPSP/boletines/boletin-u07-avanzado" class="elink">⭐ Avanzado por resolver</a>
+    <a href="/ApuntesPSP/boletines/boletin-u07-avanzado-resuelto" class="elink">💪 Avanzado resuelto</a>
   </div>
 </div>
 
@@ -251,10 +251,10 @@ Cada unidad tiene **4 boletines** (40 en total): inicial y avanzado, con y sin s
     <span class="num">Unidad 9</span>
   </div>
   <div class="ejercicio-links">
-    <a href="/ApuntesPSP/boletines/boletin-u08-inicial-resuelto" class="elink">✅ Inicial resuelto</a>
     <a href="/ApuntesPSP/boletines/boletin-u08-inicial" class="elink">🟢 Inicial por resolver</a>
-    <a href="/ApuntesPSP/boletines/boletin-u08-avanzado-resuelto" class="elink">💪 Avanzado resuelto</a>
+    <a href="/ApuntesPSP/boletines/boletin-u08-inicial-resuelto" class="elink">✅ Inicial resuelto</a>
     <a href="/ApuntesPSP/boletines/boletin-u08-avanzado" class="elink">⭐ Avanzado por resolver</a>
+    <a href="/ApuntesPSP/boletines/boletin-u08-avanzado-resuelto" class="elink">💪 Avanzado resuelto</a>
   </div>
 </div>
 
@@ -263,10 +263,10 @@ Cada unidad tiene **4 boletines** (40 en total): inicial y avanzado, con y sin s
     <span class="num">Unidad 10</span>
   </div>
   <div class="ejercicio-links">
-    <a href="/ApuntesPSP/boletines/boletin-u09-inicial-resuelto" class="elink">✅ Inicial resuelto</a>
     <a href="/ApuntesPSP/boletines/boletin-u09-inicial" class="elink">🟢 Inicial por resolver</a>
-    <a href="/ApuntesPSP/boletines/boletin-u09-avanzado-resuelto" class="elink">💪 Avanzado resuelto</a>
+    <a href="/ApuntesPSP/boletines/boletin-u09-inicial-resuelto" class="elink">✅ Inicial resuelto</a>
     <a href="/ApuntesPSP/boletines/boletin-u09-avanzado" class="elink">⭐ Avanzado por resolver</a>
+    <a href="/ApuntesPSP/boletines/boletin-u09-avanzado-resuelto" class="elink">💪 Avanzado resuelto</a>
   </div>
 </div>
 

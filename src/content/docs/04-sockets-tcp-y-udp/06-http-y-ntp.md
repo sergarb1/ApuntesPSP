@@ -116,10 +116,8 @@ print(puerto)                         # 5000
 
 **NTP** (Network Time Protocol) usa UDP para sincronizar relojes: tu ordenador manda un pequeño datagrama al puerto 123 de un servidor de tiempo y recibe la hora exacta en la respuesta. Curioso: justo cuando la exactitud importa, NTP usa el protocolo "que pierde paquetes".
 
-```
-Tu ordenador ── UDP ──► pool.ntp.org:123
-Tu ordenador ◄── UDP ── pool.ntp.org:123   (hora exacta)
-```
+
+![Diagrama de NTP por UDP: el ordenador pide la hora a pool.ntp.org y recibe la hora exacta en dos datagramas](/ApuntesPSP/diagrams/ntp.svg)
 
 - **`pool.ntp.org`** es un grupo de servidores de tiempo repartidos por el mundo; cualquier petición UDP al puerto **123** te devuelve la hora.
 - NTP manda **múltiples peticiones** y cruza las respuestas para descontar la latencia y quedarse con la estimación más fiable.

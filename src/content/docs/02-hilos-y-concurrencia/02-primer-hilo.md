@@ -51,15 +51,8 @@ Desglose de las tres líneas clave:
 
 Cuando ejecutas `python programa.py`, tu código se ejecuta dentro de un hilo: el **hilo principal** (main thread). Todo lo que lanzas con `Thread()` son **hilos secundarios** que viven dentro del mismo proceso.
 
-```
-   PROGRAMA (proceso)
-   ┌─────────────────────────────────┐
-   │  🧍 Hilo principal (main)       │
-   │    │ lanza                     │
-   │    ├──▶ 🧑 hilo A (secundario) │
-   │    └──▶ 🧑 hilo B (secundario) │
-   └─────────────────────────────────┘
-```
+
+![Diagrama de un proceso con el hilo principal main lanzando los hilos secundarios A y B](/ApuntesPSP/diagrams/hilo-principal.svg)
 
 El hilo principal **no espera** a los secundarios por arte de magia: hay que decírselo con `join()`. Sin `join()`, el principal puede llegar al final de su código y su último `print` puede salir **antes** que el de los secundarios. Ojo: el intérprete **sí espera** a que terminen todos los hilos **no-daemon** antes de salir del programa; lo que pierdes sin `join()` es el **orden** de la salida, no la espera.
 

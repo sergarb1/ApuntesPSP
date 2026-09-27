@@ -78,18 +78,6 @@ Esas dos filosofías definen el resto de la unidad: **fiabilidad contra velocida
 | Velocidad | Más lento | Más rápido |
 | Uso típico | Web, correo, FTP | Streaming, juegos, DNS |
 
-```
-        TCP                                    UDP
-  ┌─────────────┐                     ┌─────────────┐
-  │ SYN ──────► │                     │             │
-  │ ◄────── SYN │   handshake         │  datagrama  │  sin conexión,
-  │      + ACK  │   antes de nada     │  ──────►    │  sin confirmación
-  │ ACK ──────► │                     │             │
-  ├─────────────┤                     ├─────────────┤
-  │ dato ─────► │  confirmado         │  paquete ─► │  fuego y olvido
-  │ ◄──── ACK   │  y en orden         │    (si llega)│
-  └─────────────┘                     └─────────────┘
-```
 
 La columna de la derecha es la que te ocupará en la segunda mitad de la unidad: tres filas de "No" que, paradójicamente, son la razón de que UDP sea tan rápido.
 
@@ -97,14 +85,8 @@ La columna de la derecha es la que te ocupará en la segunda mitad de la unidad:
 
 ## 📞 La analogía del teléfono, al detalle
 
-```
-   TELÉFONO                          SOCKET
-   ─────────                          ──────
-   Tu teléfono           ⇄            socket()
-   El número que marcas  ⇄            IP (AF_INET)
-   La extensión          ⇄            Puerto
-   La centralita         ⇄            El SO (sistema operativo)
-```
+
+![Diagrama que compara la analogía del teléfono con las llamadas de socket: socket(), IP, puerto, SO, conexión y close()](/ApuntesPSP/diagrams/telefono-socket.svg)
 
 El **SO** es la centralita: se encarga de que el paquete con tu mensaje salga de tu teléfono y llegue al teléfono correcto. Tú solo te ocupas de marcar (conectarte) y de hablar (enviar y recibir). El socket es ese teléfono: el **punto final** de la conversación.
 

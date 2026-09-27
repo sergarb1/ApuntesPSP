@@ -98,16 +98,8 @@ Descifrado: b'Mensaje secreto para Bob'
 
 **El flujo entre dos personas:**
 
-```
-🔵 ANA                               🟢 BOB
-   │ 1. Pide la pública de Bob         │
-   │◄──────────────────────────────────│
-   │ 2. Cifra con publica.encrypt()    │
-   ├───────────────────────────────────►│
-   │   texto_cifrado                    │
-   │                                   │ 3. Descifra con su privada
-   │                                   │   → "Mensaje secreto para Bob" ✅
-```
+
+![Diagrama del cifrado asimétrico RSA: Ana cifra con la pública de Bob y solo su privada descifra](/ApuntesPSP/diagrams/rsa-asimetrico.svg)
 
 - **OAEP** es el esquema de relleno de RSA: añade aleatoriedad al cifrado (el mismo mensaje cifrado dos veces da resultados distintos).
 - Nadie más puede descifrar: ni quien intercepte el tráfico, ni quien tenga la pública. Solo la **privada de Bob**.

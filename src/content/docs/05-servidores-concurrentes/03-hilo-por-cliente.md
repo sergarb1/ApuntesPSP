@@ -60,37 +60,8 @@ Dos diferencias frente al servidor secuencial del [punto 1](/ApuntesPSP/05-servi
 
 > "Sé el servidor que recibe 3 clientes a la vez. Traza cada hilo."
 
-```
-🟢 SERVIDOR PRINCIPAL
-1. Crea socket, bind(5000), listen()
-2. accept() → espera... ⏳
 
-[Cliente-1: t=0s]
-3. accept() → conn1, addr1
-4. Crea hilo-1 → start(atender, conn1)
-5. Vuelve a accept() inmediatamente
-
-[Cliente-2: t=0.1s]
-6. accept() → conn2, addr2
-7. Crea hilo-2 → start(atender, conn2)
-8. Vuelve a accept()
-
-[Cliente-3: t=0.2s]
-9. accept() → conn3, addr3
-10. Crea hilo-3 → start(atender, conn3)
-11. Vuelve a accept()
-
-AHORA 4 HILOS EJECUTANDO:
-┌─────────────┬──────────────────────────────────┐
-│ Hilo ppal   │ accept() esperando más clientes  │
-│ Hilo-1      │ recibe → procesa (2s) → responde │
-│ Hilo-2      │ recibe → procesa (2s) → responde │
-│ Hilo-3      │ recibe → procesa (2s) → responde │
-└─────────────┴──────────────────────────────────┘
-
-Los 3 clientes son atendidos en paralelo.
-A los ~2s, todos reciben respuesta. 🏁
-```
+![Diagrama del patrón hilo por cliente: cada cliente aceptado lanza su hilo y el principal vuelve a accept()](/ApuntesPSP/diagrams/hilo-por-cliente.svg)
 
 El hilo principal **nunca se detiene**: en cuanto lanza un hilo, vuelve a `accept()`. El trabajo pesado (`time.sleep(2)`) vive en los hilos secundarios, que se ejecutan en paralelo gracias al *threading* de la [U03](/ApuntesPSP/02-hilos-y-concurrencia).
 

@@ -28,22 +28,8 @@ Cada vez que ejecutas ese programa, el sistema operativo crea un proceso nuevo c
 
 Cada proceso vive en su propia **burbuja de memoria**: un espacio de direcciones aislado del resto del sistema. Dentro de esa burbuja viajan:
 
-```
-┌─────────────────────────────────────────┐
-│            BURBUJA DE MEMORIA           │
-│                                         │
-│  ┌────────────┐   ┌──────────────────┐  │
-│  │ CÓDIGO     │   │ ESTADO           │  │
-│  │ (las       │   │ (los valores de  │  │
-│  │  funciones)│   │  las variables)  │  │
-│  └────────────┘   └──────────────────┘  │
-│  ┌────────────┐   ┌──────────────────┐  │
-│  │ CONTADOR   │   │ PID              │  │
-│  │ (próxima   │   │ (identificador   │  │
-│  │  instrucción)  │  único)          │  │
-│  └────────────┘   └──────────────────┘  │
-└─────────────────────────────────────────┘
-```
+
+![Diagrama de la burbuja de memoria de un proceso: código, estado, contador de programa y PID dentro de su zona de memoria aislada](/ApuntesPSP/diagrams/proceso-memoria.svg)
 
 - **Código**: las instrucciones del programa.
 - **Estado**: los valores actuales de las variables.

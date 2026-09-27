@@ -37,17 +37,8 @@ with socket.socket() as srv:
 
 Traza la secuencia con un cliente lento en medio:
 
-```
-Tiempo:  0s ──── Cliente-1 conecta y entra a procesarse
-          │     Cliente-2 conecta (t=0.1s) → espera...
-          │     Cliente-1 tarda 3s (trabajo pesado, red lenta…)
-         3s ──── Cliente-1 listo → recién ahora se acepta a Cliente-2
-          │     Cliente-3 conecta (t=0.2s) → espera...
-          │     Cliente-2 tarda 3s
-         6s ──── Cliente-2 listo → recién ahora se acepta a Cliente-3
-          │     Cliente-3 tarda 3s
-         9s ──── Cliente-3 listo 🏁
-```
+
+![Diagrama de Gantt con un cliente lento que bloquea la cola del servidor secuencial mientras los demás esperan](/ApuntesPSP/diagrams/servidor-lento.svg)
 
 Fíjate en el detalle clave: **Cliente-2 conectó en t=0.1s** y fue atendido a las 3s. **Cliente-3 conectó en t=0.2s** y fue atendido a las 6s. No es que el servidor sea lento: es que **el trabajo del cliente anterior bloquea el `accept()`**. El cliente más rápido del mundo espera a que el más lento termine.
 

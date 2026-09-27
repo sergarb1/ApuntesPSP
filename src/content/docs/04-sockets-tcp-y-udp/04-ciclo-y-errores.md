@@ -21,17 +21,6 @@ En los [puntos 2](/ApuntesPSP/04-sockets-tcp-y-udp/02-cliente-tcp) y [3](/Apunte
 
 ![Diagrama de secuencia del three-way handshake de TCP: SYN, SYN+ACK y ACK entre cliente y servidor hasta establecer la conexión](/ApuntesPSP/diagrams/tcp-handshake.svg)
 
-```
-CLIENTE                    SERVIDOR
-   │                          │
-   ├── SYN ──────────────────►│
-   │◄── SYN + ACK ────────────┤
-   ├── ACK ──────────────────►│
-   │                          │
-   ├── Datos ────────────────►│
-   │◄── Datos ────────────────┤
-   │                          │
-```
 
 1. **SYN** (synchronize): el cliente dice *"quiero hablar contigo"*.
 2. **SYN + ACK**: el servidor contesta *"de acuerdo, y yo también quiero hablar contigo"*.
@@ -47,15 +36,8 @@ TCP garantiza que los datos lleguen **en orden** y **sin pérdidas**. A cambio, 
 
 Cuando ya no hay más que decir, la conexión se cierra con un apretón de despedida:
 
-```
-CLIENTE                    SERVIDOR
-   │                          │
-   ├── FIN ──────────────────►│
-   │◄── ACK ──────────────────┤
-   │◄── FIN ──────────────────┤
-   ├── ACK ──────────────────►│
-   │                          │
-```
+
+![Diagrama de la despedida TCP: FIN, ACK, FIN y ACK entre cliente y servidor](/ApuntesPSP/diagrams/fin-conexion.svg)
 
 1. Quien quiere cerrar envía **FIN** (*"no tengo más que enviar"*).
 2. El otro lado responde **ACK** y, cuando también termina, envía su propio **FIN**.
@@ -104,12 +86,8 @@ Con ella, el SO te deja hacer `bind()` al puerto aunque queden conexiones en `TI
 
 ![Diagrama del ciclo de vida de una conexión TCP en el servidor: de socket() y bind() a close(), pasando por listen(), accept() y el intercambio de datos](/ApuntesPSP/diagrams/ciclo-vida-socket.svg)
 
-```
-socket() ──► bind() ──► listen() ──► accept() ──► recv()/send() ──► close()
-   │                                     │             │             │
- CREAR                             SYN/SYN+ACK/   los datos      FIN/ACK
-  teléfono                           ACK (handshake)  fluyen     (despedida)
-```
+
+![Diagrama del ciclo de vida del servidor TCP: socket(), bind(), listen(), accept(), recv()/sendall() y close()](/ApuntesPSP/diagrams/ciclo-servidor.svg)
 
 El **ciclo de vida de la conexión** es la historia completa entre la primera `socket()` y el último `close()`: preparar el teléfono, estrechar la mano, hablar y colgar.
 

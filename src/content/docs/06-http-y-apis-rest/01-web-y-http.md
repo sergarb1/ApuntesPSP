@@ -51,12 +51,8 @@ Toda la web se reduce a tres piezas que ya conoces por navegar:
 
 La **URL** (*Uniform Resource Locator*) es la dirección a la que mandas la petición. Se divide en partes con significado:
 
-```
- https://api.github.com/users/python?per_page=10
- └─┬──┘ └─────┬──────┘ └────┬─────┘ └─────┬──────┘
-scheme      host          path         query params
-(https)  (api.github.com) (/users/python) (?per_page=10)
-```
+
+![Diagrama de la anatomía de una URL: scheme, host, path y query params](/ApuntesPSP/diagrams/url-anatomia.svg)
 
 | Parte | Ejemplo | Qué es |
 |---|---|---|

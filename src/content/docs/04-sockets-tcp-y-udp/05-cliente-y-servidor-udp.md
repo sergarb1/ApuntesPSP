@@ -113,11 +113,8 @@ El servidor podría recibirlos en **cualquier orden** (o no recibir alguno). La 
 3. **Duplicados** — En condiciones raras, el mismo datagrama puede llegar **dos veces**. UDP no lo detecta.
 4. **Tamaño máximo** — Un datagrama no puede ser gigante: la carga útil útil se limita a **65.535 − 8 (UDP) − 20 (IPv4) ≈ 65.507 bytes**. Si intentas enviar más, `sendto()` lanza un `OSError`.
 
-```
-Envío:     1 ──► 2 ──► 3 ──► 4 ──► 5
-                           │ (se pierde el 3)
-Recepción: 1 ──► 2 ──► 4 ──► 5        ← el 3 jamás llega
-```
+
+![Diagrama de cinco datagramas UDP donde el paquete 3 se pierde y jamás llega ni se reenvía](/ApuntesPSP/diagrams/udp-datagramas.svg)
 
 ### ¿Por qué alguien elegiría esto?
 

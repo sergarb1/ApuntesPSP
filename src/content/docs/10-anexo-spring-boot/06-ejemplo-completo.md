@@ -213,32 +213,8 @@ curl -X DELETE http://localhost:8080/api/tareas/1
 
 ## 📊 La arquitectura en capas
 
-```
-HTTP Request
-    │
-    ▼
-┌─────────────────┐
-│  Controller     │  ← Recibe HTTP, devuelve JSON
-│  (@RestController)│
-└────────┬────────┘
-         │
-         ▼
-┌─────────────────┐
-│  Service        │  ← Lógica de negocio
-│  (@Service)     │
-└────────┬────────┘
-         │
-         ▼
-┌─────────────────┐
-│  Repository     │  ← Acceso a datos
-│  (JpaRepository)│
-└────────┬────────┘
-         │
-         ▼
-┌─────────────────┐
-│  Database (H2)  │  ← Almacenamiento
-└─────────────────┘
-```
+
+![Diagrama de la arquitectura en capas de Spring Boot: Controller, Service, Repository y base de datos](/ApuntesPSP/diagrams/capas-spring.svg)
 
 **Cada capa solo depende de la inferior:** Controller → Service → Repository → Database. Eso es **separación de capas** (como MVC en Python).
 

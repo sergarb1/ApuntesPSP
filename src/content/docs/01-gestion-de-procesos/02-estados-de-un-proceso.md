@@ -21,14 +21,6 @@ El sistema operativo gestiona decenas o cientos de procesos a la vez con una sol
 
 ![Diagrama de transiciones de estados de un proceso: NUEVO, LISTO, EJECUCIÓN, BLOQUEADO y TERMINADO con las flechas del planificador y las esperas de E/S](/ApuntesPSP/diagrams/procesos-estados.svg)
 
-```
-              NUEVO ──→ LISTO ──→ EJECUCIÓN ──→ TERMINADO
-                          ↑          │
-                          │          │ (E/S, sleep)
-                          │          ↓
-                          └──────── BLOQUEADO
-```
-
 - De **LISTO** solo se puede ir a **EJECUCIÓN** (la CPU toca) y volver.
 - De **EJECUCIÓN** se va a **LISTO** (time slice), a **BLOQUEADO** (E/S) o a **TERMINADO**.
 - De **BLOQUEADO** se vuelve siempre a **LISTO** cuando la E/S termina.

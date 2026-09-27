@@ -96,10 +96,10 @@ const expandedUnitItems = (slug) => {
 const boletinItems = (slug) => {
   const nn = slug.split('-')[0];
   return [
-    { link: `/boletines/boletin-u${nn}-inicial-resuelto`, label: '✅ Inicial resuelto' },
     { link: `/boletines/boletin-u${nn}-inicial`, label: '🟢 Inicial por resolver' },
-    { link: `/boletines/boletin-u${nn}-avanzado-resuelto`, label: '💪 Avanzado resuelto' },
+    { link: `/boletines/boletin-u${nn}-inicial-resuelto`, label: '✅ Inicial resuelto' },
     { link: `/boletines/boletin-u${nn}-avanzado`, label: '📝 Avanzado por resolver' },
+    { link: `/boletines/boletin-u${nn}-avanzado-resuelto`, label: '💪 Avanzado resuelto' },
   ];
 };
 

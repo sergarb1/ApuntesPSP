@@ -19,12 +19,8 @@ description: "César, fuerza bruta y la gran pregunta: ¿hash o cifrado? 🏛️
 
 Julio César, para que sus mensajes militares no fueran leídos si caían en manos enemigas, desplazaba **cada letra 3 posiciones** en el alfabeto.
 
-```
-A B C D E F G H I J K L M N O P Q R S T U V W X Y Z
-│ │ │ │
-▼ ▼ ▼ ▼
-D E F G   (cada letra se convierte en la que está 3 posiciones más adelante)
-```
+
+![Diagrama del cifrado César: cada letra del alfabeto se desplaza tres posiciones](/ApuntesPSP/diagrams/cesar.svg)
 
 "Hola Mundo" con desplazamiento 3 → **"Krod Pxqgr"**.
 

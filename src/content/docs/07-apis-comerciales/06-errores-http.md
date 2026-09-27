@@ -59,53 +59,11 @@ resp.raise_for_status()  # Lanza una excepción HTTPError si es 4xx o 5xx
 
 Juntando los códigos, el timeout y los reintentos, la función robusta queda así:
 
-```python
-import requests
 
-def llamada_segura(url, params, max_intentos=3):
-    for intento in range(max_intentos):
-        try:
-            resp = requests.get(url, params=params, timeout=10)
-            resp.raise_for_status()  # Lanza excepción si 4xx o 5xx
-            return resp.json()
-
-        except requests.exceptions.Timeout:
-            print(f"⏱ Timeout (intento {intento+1})")
-
-        except requests.exceptions.HTTPError as e:
-            codigo = e.response.status_code
-            if codigo == 429:  # Rate limit
-                print("🐢 Demasiadas peticiones. Esperando...")
-                import time
-                time.sleep(5)
-                continue
-            elif codigo == 401:
-                print("🔑 API key inválida")
-                return None
-            else:
-                print(f"❌ HTTP {codigo}: {e.response.text}")
-                return None
-
-        except requests.exceptions.ConnectionError:
-            print(f"🔌 Error de conexión (intento {intento+1})")
-            import time
-            time.sleep(2)
-
-    return None
-```
+![Diagrama de flujo de errores al consumir una API: Timeout, 429, 401, 4xx/5xx y ConnectionError con su plan de reintento](/ApuntesPSP/diagrams/flujo-errores-api.svg)
 
 El flujo de decisión, en un vistazo:
 
-```
-requests.get(timeout=10)
-   │
-   ├─ Timeout ──────────────► reintenta (hasta max_intentos)
-   ├─ HTTPError 429 ────────► espera 5s y reintenta
-   ├─ HTTPError 401 ────────► "API key inválida" → None
-   ├─ HTTPError 4xx/5xx ────► imprime código y texto → None
-   ├─ ConnectionError ──────► espera 2s y reintenta
-   └─ OK ───────────────────► devuelve el JSON
-```
 
 ---
 

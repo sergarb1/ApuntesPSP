@@ -19,15 +19,8 @@ description: "Una clave o un par, AES con cryptography, modos de operación 🗝
 
 Todo el mundo con una llave abre la misma cerradura. El **mismo secreto** sirve para cifrar y para descifrar.
 
-```
-🔵 ANA                               🟢 BOB
-   │ 1. Cifra con la clave K           │
-   │   → texto_cifrado                 │
-   ├───────────────────────────────────►│
-   │   mensaje cifrado (la clave NO)    │
-   │                                   │ 2. Descifra con la MISMA clave K
-   │                                   │   → mensaje original ✅
-```
+
+![Diagrama del cifrado simétrico AES: Ana cifra con la clave K y Bob descifra con la misma clave; la clave nunca viaja](/ApuntesPSP/diagrams/aes-simetrico.svg)
 
 - ✅ **Rapidez:** cifra cantidades enormes en milisegundos.
 - ❌ **El problema:** ¿cómo le haces llegar la clave K a Bob sin que nadie la intercepte? Ese es el *problema de la distribución de claves*.
@@ -38,17 +31,6 @@ Todo el mundo con una llave abre la misma cerradura. El **mismo secreto** sirve 
 
 Dos claves: una **pública** (todos pueden verla) y una **privada** (solo tú).
 
-```
-🔵 ANA                               🟢 BOB
-   │ 1. Pide la clave pública de Bob   │
-   │◄──────────────────────────────────│
-   │ 2. Cifra con la clave PÚBLICA     │
-   │   de Bob                          │
-   ├───────────────────────────────────►│
-   │   mensaje cifrado                  │
-   │                                   │ 3. Descifra SOLO con su clave
-   │                                   │   PRIVADA → mensaje original ✅
-```
 
 **La regla de oro de las claves:**
 

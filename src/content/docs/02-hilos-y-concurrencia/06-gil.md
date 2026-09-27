@@ -23,12 +23,8 @@ Es la gran trampa de los hilos en Python: "¿para qué sirven si no aceleran nad
 
 ¿Por qué existe? Para proteger la memoria interna del intérprete: sin el candado, dos hilos podrían corromper las estructuras de Python al tocarlas a la vez. Python paga el precio de la seguridad con un límite: **no hay paralelismo real de CPU** entre hilos de un mismo proceso.
 
-```
-   T I E M P O  ────────────────────────────▶
-   hilo A ████████░░░░░░████████░░░░░░
-   hilo B ░░░░░░████████░░░░░░████████
-          ^^^^^^ GIL en manos de A     GIL en manos de B
-```
+
+![Diagrama de turnos del GIL: mientras el hilo A ejecuta, el hilo B espera, y al revés](/ApuntesPSP/diagrams/gil-turnos.svg)
 
 Los hilos se turnan el candado en pequeños fragmentos: parecen simultáneos (por eso los `print` se entremezclan), pero nunca ejecutan Python a la vez.
 

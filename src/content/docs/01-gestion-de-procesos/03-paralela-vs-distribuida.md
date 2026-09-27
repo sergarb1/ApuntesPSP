@@ -64,16 +64,8 @@ Los 4 procesos se reparten la lista y cada uno calcula una parte. Si tu máquina
 
 La computación distribuida lleva la idea al límite: no varias CPUs de la misma máquina, sino **máquinas completas conectadas por red**, cada una con su memoria y su CPU. Es el modelo de los clústeres, la web y los servicios en la nube.
 
-```
-        ┌────────────┐   red   ┌────────────┐
-        │ Servidor A │◄───────►│ Servidor B │
-        └────────────┘         └────────────┘
-              ▲                      ▲
-              │        red           │
-        ┌─────┴─────┐         ┌──────┴─────┐
-        │ Servidor C│         │ Servidor D │
-        └───────────┘         └────────────┘
-```
+
+![Diagrama comparativo: paralela, cuatro procesos en los núcleos de una máquina; distribuida, cuatro servidores conectados por red; y la concurrencia como turno en una sola CPU](/ApuntesPSP/diagrams/paralela-vs-distribuida.svg)
 
 Cada máquina ejecuta uno o varios procesos independientes. La distribución introduce un problema nuevo: **la comunicación por red** y **los fallos de máquina**. Eso lo verás en las unidades de sockets ([UD 5](/ApuntesPSP/04-sockets-tcp-y-udp)) y de APIs REST ([UD 7](/ApuntesPSP/06-http-y-apis-rest)).
 
