@@ -63,7 +63,10 @@ function Add-MdFile {
   $content = Get-Content $Path -Raw -Encoding UTF8
   $title = Get-FrontTitle -Content $content -Fallback ([System.IO.Path]::GetFileNameWithoutExtension($Path))
 
-  $content = $content -replace '(?ms)^---.*?^---\s*', ''
+  # Quita SOLO el frontmatter inicial (dos '---' al principio del fichero).
+  # El -replace global de PS se comía también los separadores '---' del
+  # cuerpo hasta el siguiente bloque de frontmatter, cortando capítulos.
+  $content = $content -replace '(?ms)\A---\s*\n.*?\n---\s*', ''
   $content = $content.Trim()
   $content = $content -replace '/ApuntesPSP/cc-by-sa\.png', 'public/cc-by-sa.png'
   $content = $content -replace '(?:/ApuntesPSP)?/diagrams/', 'public/diagrams/'
@@ -105,7 +108,8 @@ foreach ($u in $unitSlugs) {
         $eContent = Get-Content $bfFile -Raw -Encoding UTF8
         $eTitle = Get-FrontTitle -Content $eContent -Fallback $bfName
 
-        $eContent = $eContent -replace '(?ms)^---.*?^---\s*', ''
+        # Solo el frontmatter inicial (mismo motivo que en Add-MdFile).
+        $eContent = $eContent -replace '(?ms)\A---\s*\n.*?\n---\s*', ''
         $eContent = $eContent.Trim()
         $eContent = $eContent -replace '/ApuntesPSP/cc-by-sa\.png', 'public/cc-by-sa.png'
         $eContent = $eContent -replace '(?:/ApuntesPSP)?/diagrams/', 'public/diagrams/'
