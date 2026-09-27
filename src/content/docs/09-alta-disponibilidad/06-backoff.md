@@ -45,6 +45,8 @@ La espera sigue la secuencia **2⁰, 2¹, 2², 2³, 2⁴ = 1, 2, 4, 8, 16 segund
 
 ## 🔢 La secuencia del backoff
 
+
+![Diagrama del backoff exponencial: las esperas crecen 1, 2, 4, 8 y 16 segundos en cada reintento](/ApuntesPSP/diagrams/backoff-exponencial.svg)
 | Intento | Espera (2 ** intento) | Acumulado |
 |---|---|---|
 | 0 | 1s | 1s |

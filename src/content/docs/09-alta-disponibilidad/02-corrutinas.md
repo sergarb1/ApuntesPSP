@@ -17,6 +17,8 @@ description: async def, await y la función que sabe esperar 🌀
 
 ## 🌀 async def y await
 
+
+![Diagrama de await: la corrutina se pausa en el sleep y devuelve el control al event loop, que la retoma un segundo después](/ApuntesPSP/diagrams/corrutina-await.svg)
 La pieza básica de asyncio:
 
 ```python

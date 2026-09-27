@@ -44,6 +44,8 @@ Con `timeout=10`, un cliente mudo recibe el aviso y la conexión se cierra a los
 
 ## ⏱ wait_for con respaldo
 
+
+![Diagrama de wait_for con respaldo: la tarea lenta supera el timeout de 5 s, salta TimeoutError y el plan B toma el relevo](/ApuntesPSP/diagrams/timeout-respaldo.svg)
 El patrón del "fallback": si la tarea tarda demasiado, usas un plan B.
 
 ```python

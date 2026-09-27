@@ -17,6 +17,8 @@ description: Lanzar varias tareas "a la vez" de verdad 🚀
 
 ## 🚀 asyncio.gather: todas a la vez
 
+
+![Diagrama de gather: tres tareas A, B y C corren a la vez y el tiempo total es el de la más lenta, no la suma](/ApuntesPSP/diagrams/gather-tareas.svg)
 Del [punto 1](/ApuntesPSP/09-alta-disponibilidad/01-event-loop):
 
 ```python
