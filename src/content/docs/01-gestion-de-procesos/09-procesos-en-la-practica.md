@@ -1,11 +1,11 @@
 ﻿---
-title: 08 — Procesos en la práctica
+title: 09 — Procesos en la práctica
 description: Sé el código, el ring y los ejercicios del lápiz ✏️
 ---
 
 <p><small>Sé el código, el ring y los ejercicios del lápiz ✏️</small></p>
 
-> 🗺️ **Estás en:** 🚀 **UD 2 · Gestión de procesos** → 08 · Procesos en la práctica
+> 🗺️ **Estás en:** 🚀 **UD 2 · Gestión de procesos** → 09 · Procesos en la práctica
 
 ---
 
@@ -251,4 +251,4 @@ Guardamos los 5 objetos `Popen` en una lista y terminamos todos menos el índice
 
 ---
 
-📚 [Volver al índice de la unidad](/ApuntesPSP/01-gestion-de-procesos) · **Anterior:** [07 · Compatibilidad Windows / Linux](/ApuntesPSP/01-gestion-de-procesos/07-compatibilidad-windows-linux) · **Siguiente:** [09 · Cierre](/ApuntesPSP/01-gestion-de-procesos/09-cierre)
+📚 [Volver al índice de la unidad](/ApuntesPSP/01-gestion-de-procesos) · **Anterior:** [08 · Procesos nativos con multiprocessing](/ApuntesPSP/01-gestion-de-procesos/08-multiprocessing) · **Siguiente:** [10 · Cierre](/ApuntesPSP/01-gestion-de-procesos/10-cierre)

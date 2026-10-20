@@ -1,15 +1,15 @@
 ﻿---
-title: "09 — Cierre: consolida lo aprendido"
+title: "10 — Cierre: consolida lo aprendido"
 description: Sé el lock, laboratorio con carrera y el duelo final de la unidad 🧠
 ---
 
 <p><small>Sé el lock, laboratorio con carrera y el duelo final de la unidad 🧠</small></p>
 
-> 🗺️ **Estás en:** 🔒 **UD 4 · Sincronización** → 09 · Cierre
+> 🗺️ **Estás en:** 🔒 **UD 4 · Sincronización** → 10 · Cierre
 
 ---
 
-Has terminado la teoría: condición de carrera, Lock, RLock, Semaphore, Barrier, Condition, productor-consumidor y las reglas anti-deadlock. Este cierre es el aterrizaje: recorres lo aprendido con juegos, un laboratorio real con fallos intencionados y las preguntas que te harán en una entrevista. Léelo justo después del [punto 8](/ApuntesPSP/03-sincronizacion/08-buenas-practicas) y antes de abrir los boletines.
+Has terminado la teoría: condición de carrera, Lock, RLock, Semaphore, Barrier, Condition, productor-consumidor, las reglas anti-deadlock y el free-threaded sin GIL. Este cierre es el aterrizaje: recorres lo aprendido con juegos, un laboratorio real con fallos intencionados y las preguntas que te harán en una entrevista. Léelo justo después del [punto 9](/ApuntesPSP/03-sincronizacion/09-python-free-threaded) y antes de abrir los boletines.
 
 ---
 
@@ -220,6 +220,8 @@ Usa `multiprocessing.Lock`, `multiprocessing.Semaphore`, etc. Son equivalentes p
 
 **PRÓXIMAMENTE EN UD 5:** *Sockets TCP y UDP. Los hilos comparten memoria y ahora saben coordinarse… pero ¿y si los procesos ni siquiera comparten memoria? Tocará hablar por la red.*
 
+> 🔓 **¿Y si Python quitara la GIL?** Eso es el modo **free-threaded** (PEP 703), ya disponible en Python 3.13+ e instalado por defecto desde el 3.15. Te lo cuentamos en el [punto 9 · Python Free-Threaded](/ApuntesPSP/03-sincronizacion/09-python-free-threaded): el paralelismo de CPU es real, pero `Lock` y `queue.Queue` siguen mandando.
+
 ---
 
 ## ✅ Criterios de evaluación cubiertos (RA2)
@@ -236,4 +238,4 @@ Usa `multiprocessing.Lock`, `multiprocessing.Semaphore`, etc. Son equivalentes p
 
 ---
 
-📚 [Volver al índice de la unidad](/ApuntesPSP/03-sincronizacion) · **Anterior:** [08 · Buenas prácticas](/ApuntesPSP/03-sincronizacion/08-buenas-practicas) · **Siguiente:** **[UD 5 · Sockets TCP y UDP](/ApuntesPSP/04-sockets-tcp-y-udp)**
+📚 [Volver al índice de la unidad](/ApuntesPSP/03-sincronizacion) · **Anterior:** [09 · Python Free-Threaded](/ApuntesPSP/03-sincronizacion/09-python-free-threaded) · **Siguiente:** **[UD 5 · Sockets TCP y UDP](/ApuntesPSP/04-sockets-tcp-y-udp)**

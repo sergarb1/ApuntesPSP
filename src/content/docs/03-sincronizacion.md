@@ -27,6 +27,7 @@ Al terminar, serás capaz de:
 - Implementar el patrón **productor-consumidor** con una cola compartida.
 - Evitar **deadlocks** con buenas prácticas.
 - Decidir qué mecanismo de sincronización usar en cada situación.
+- Entender qué es el modo **free-threaded** (PEP 703) y por qué la sincronización sigue siendo obligatoria sin GIL (punto 9).
 
 ---
 
@@ -42,7 +43,8 @@ Al terminar, serás capaz de:
 | [06 · Condition](/ApuntesPSP/03-sincronizacion/06-condition) | Esperar a que otro hilo avise: `wait` y `notify` | Todos |
 | [07 · Productor-Consumidor](/ApuntesPSP/03-sincronizacion/07-productor-consumidor) | El patrón clásico con cola compartida | Todos |
 | [08 · Buenas prácticas](/ApuntesPSP/03-sincronizacion/08-buenas-practicas) | Deadlocks, orden de locks | Todos |
-| [09 · Cierre](/ApuntesPSP/03-sincronizacion/09-cierre) | Sé el lock, Fireside, Laboratorio de tortura… | Todos |
+| [09 · Python Free-Threaded](/ApuntesPSP/03-sincronizacion/09-python-free-threaded) | Python sin GIL: qué cambia y qué no (PEP 703) | Ampliación |
+| [10 · Cierre](/ApuntesPSP/03-sincronizacion/10-cierre) | Sé el lock, Fireside, Laboratorio de tortura… | Todos |
 
 ---
 
@@ -65,9 +67,9 @@ Al terminar, serás capaz de:
 
 | CE | Criterio | Dónde se cubre |
 |---|---|---|
-| RA2c | Sincroniza hilos con Lock | ✅ Puntos 2, 3 y 7 + ⚡ Laboratorio (punto 9) |
-| RA2d | Usa semáforos para acceso controlado | ✅ Punto 4 + ⚡ Laboratorio (punto 9) |
-| RA2g | Evita condiciones de carrera | ✅ Puntos 1, 2 y 8 + ⚡ Laboratorio (punto 9) |
+| RA2c | Sincroniza hilos con Lock | ✅ Puntos 2, 3 y 7 + ⚡ Laboratorio (punto 10) |
+| RA2d | Usa semáforos para acceso controlado | ✅ Punto 4 + ⚡ Laboratorio (punto 10) |
+| RA2g | Evita condiciones de carrera | ✅ Puntos 1, 2 y 8 + ⚡ Laboratorio (punto 10) |
 
 > RA2a, RA2b, RA2e, RA2f y RA2h se cubren en la **UD 3 · Hilos y concurrencia**.
 

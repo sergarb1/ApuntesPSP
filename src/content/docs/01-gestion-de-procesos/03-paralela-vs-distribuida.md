@@ -37,7 +37,7 @@ La diferencia está en el "dónde": la paralela reparte trabajo entre los núcle
 
 Imagina que tienes que freír 4 huevos. Con **una sola sartén** (una CPU), los fríes de uno en uno o alternando: eso es *concurrencia*. Con **4 sartenes** (4 CPUs), los fríes los 4 a la vez: eso es *paralelismo real*.
 
-En Python, el módulo `multiprocessing` crea procesos reales que el sistema operativo reparte entre los núcleos de tu CPU:
+En Python, el módulo `multiprocessing` crea procesos reales que el sistema operativo reparte entre los núcleos de tu CPU (lo verás a fondo en el [punto 8](/ApuntesPSP/01-gestion-de-procesos/08-multiprocessing)):
 
 ```python
 # Paralela con multiprocessing (varios CPUs)

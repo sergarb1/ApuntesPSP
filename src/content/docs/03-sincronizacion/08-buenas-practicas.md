@@ -13,7 +13,7 @@ description: Deadlocks, orden de locks, el ring final y a practicar 🛡️
 
 > Ya tienes Lock, RLock, Semaphore, Barrier y Condition. Este punto cierra la teoría con el enemigo más temido —el **deadlock**—, las reglas para evitarlo y el "ring" que enfrenta a los mecanismos para que decidas cuándo usar cada uno.
 
-Después de este punto, el cierre de la unidad (punto 9) y los boletines pondrán a prueba todo lo aprendido.
+Después de este punto, el free-threaded sin GIL (punto 9), el cierre de la unidad (punto 10) y los boletines pondrán a prueba todo lo aprendido.
 
 ---
 
@@ -327,4 +327,4 @@ El resultado es **300.000** (3 hilos × 100.000) gracias al `with lock:` que pro
 
 ---
 
-📚 [Volver al índice de la unidad](/ApuntesPSP/03-sincronizacion) · **Anterior:** [07 · Productor-Consumidor](/ApuntesPSP/03-sincronizacion/07-productor-consumidor) · **Siguiente:** [09 · Cierre](/ApuntesPSP/03-sincronizacion/09-cierre)
+📚 [Volver al índice de la unidad](/ApuntesPSP/03-sincronizacion) · **Anterior:** [07 · Productor-Consumidor](/ApuntesPSP/03-sincronizacion/07-productor-consumidor) · **Siguiente:** [09 · Python Free-Threaded](/ApuntesPSP/03-sincronizacion/09-python-free-threaded)

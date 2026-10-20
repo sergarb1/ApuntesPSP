@@ -1,15 +1,15 @@
 ﻿---
-title: "09 — Cierre: consolida lo aprendido"
+title: "10 — Cierre: consolida lo aprendido"
 description: Sé el proceso, laboratorio con subprocess y el ring final de la unidad 🧠
 ---
 
 <p><small>Sé el proceso, laboratorio con subprocess y el ring final de la unidad 🧠</small></p>
 
-> 🗺️ **Estás en:** 🚀 **UD 2 · Gestión de procesos** → 09 · Cierre
+> 🗺️ **Estás en:** 🚀 **UD 2 · Gestión de procesos** → 10 · Cierre
 
 ---
 
-Has terminado la teoría: la burbuja de memoria y el PID, los cinco estados, paralela contra distribuida, `run()`, `Popen()`, los pipes con `communicate()` y la compatibilidad Windows/Linux. Este cierre es el aterrizaje: recorres lo aprendido con juegos, un laboratorio real con fallos intencionados y las preguntas que te harán en una entrevista. Léelo justo después del [punto 8](/ApuntesPSP/01-gestion-de-procesos/08-procesos-en-la-practica) y antes de abrir los boletines.
+Has terminado la teoría: la burbuja de memoria y el PID, los cinco estados, paralela contra distribuida, `run()`, `Popen()`, los pipes con `communicate()`, la compatibilidad Windows/Linux y los procesos nativos con `multiprocessing`. Este cierre es el aterrizaje: recorres lo aprendido con juegos, un laboratorio real con fallos intencionados y las preguntas que te harán en una entrevista. Léelo justo después del [punto 9](/ApuntesPSP/01-gestion-de-procesos/09-procesos-en-la-practica) y antes de abrir los boletines.
 
 ---
 
@@ -134,7 +134,7 @@ Has terminado la teoría: la burbuja de memoria y el PID, los cinco estados, par
 
 1. Porque cada proceso vive en su **burbuja de memoria aislada** ([punto 1](/ApuntesPSP/01-gestion-de-procesos/01-que-es-un-proceso)); si compartieran memoria, un fallo de uno corrompería a todos. Por eso se comunican con **mecanismos externos**: pipes, sockets, archivos.
 2. Se queda como **zombie**: ya terminó, pero su código de retorno sigue en la tabla de procesos hasta que el padre lo recoge con `wait()` o `poll()`. El sistema lo limpia cuando el padre muere.
-3. `multiprocessing` para **paralelismo real** dentro de tu programa (repartir trabajo entre CPUs); `subprocess` para **lanzar otros programas** (apps, comandos del sistema).
+3. `multiprocessing` para **paralelismo real** dentro de tu programa (repartir trabajo entre CPUs, como en el [punto 8](/ApuntesPSP/01-gestion-de-procesos/08-multiprocessing)); `subprocess` para **lanzar otros programas** (apps, comandos del sistema).
 4. Porque `shell=True` delega en el intérprete de comandos: un dato del usuario con `;`, `&` o `|` puede **ejecutar comandos extra** (inyección). La lista de argumentos no tiene ese problema.
 5. `Popen` devuelve el control al instante: lanzas las tres y sigues trabajando mientras viven. Con `run()` tendrías que esperar a que cada una termine antes de lanzar la siguiente.
 
@@ -177,7 +177,7 @@ Vertical:
 5. **"¿Qué diferencia hay entre `run()` y `Popen()`? ¿Cuándo usarías cada uno?"**
 6. **"¿Cómo comunicarías dos procesos entre sí?"**
 
-> 💡 **Cómo encararlas:** la 4 y la 5 son las "preguntas reina". Para la 4, recorre la cadena: `subprocess.run([...], capture_output=True, text=True)` → `resultado.stdout`; si el proceso necesita datos, `Popen(stdin=PIPE, stdout=PIPE)` + `communicate(input=...)`. Para la 5, repite la moraleja del [punto 8](/ApuntesPSP/01-gestion-de-procesos/08-procesos-en-la-practica): `run()` para respuestas inmediatas, `Popen()` para segundo plano. Y para la 1 no olvides la **burbuja de memoria** y el **PID**. Si sabes contarlo fluido, ya eres medio programador de sistemas.
+> 💡 **Cómo encararlas:** la 4 y la 5 son las "preguntas reina". Para la 4, recorre la cadena: `subprocess.run([...], capture_output=True, text=True)` → `resultado.stdout`; si el proceso necesita datos, `Popen(stdin=PIPE, stdout=PIPE)` + `communicate(input=...)`. Para la 5, repite la moraleja del [punto 9](/ApuntesPSP/01-gestion-de-procesos/09-procesos-en-la-practica): `run()` para respuestas inmediatas, `Popen()` para segundo plano. Y para la 1 no olvides la **burbuja de memoria** y el **PID**. Si sabes contarlo fluido, ya eres medio programador de sistemas.
 
 ---
 
@@ -227,14 +227,14 @@ Sí, cualquier ejecutable. Pero el **PATH** debe incluirlo o debes dar la ruta c
 | CE | Criterio | Cubierto |
 |---|---|---|
 | a) | Reconoce las características de los procesos | ✅ Burbuja de memoria y PID (punto 1) + ⭐ Sé el proceso |
-| b) | Distingue entre computación paralela y distribuida | ✅ Punto 3 + 🔥 Fireside (punto 9) |
+| b) | Distingue entre computación paralela y distribuida | ✅ Punto 3 + 🔥 Fireside (punto 10) |
 | c) | Conoce los estados de un proceso | ✅ Punto 2 + ⭐ Sé el proceso |
 | d) | Identifica las diferencias clave entre proceso e hilo | → UD 3 (🔥 Fireside lo anticipa) |
-| e) | Crea programas con procesos (subprocess) | ✅ Puntos 4-5-8 + ⚡ Laboratorio de tortura |
-| f) | Establece comunicación entre procesos | ✅ Punto 6 + ⚡ Laboratorio de tortura |
+| e) | Crea programas con procesos (subprocess) | ✅ Puntos 4-5-9 + ⚡ Laboratorio de tortura |
+| f) | Establece comunicación entre procesos | ✅ Punto 6 + punto 8 (Manager y Lock) + ⚡ Laboratorio de tortura |
 
 > RA1d (proceso vs hilo) se cubre en la **UD 3 · Hilos y concurrencia**. RA1g (análisis de ventajas de procesos frente a hilos) también en **UD 3**. RA1h (documentación) es transversal a todo el curso.
 
 ---
 
-📚 [Volver al índice de la unidad](/ApuntesPSP/01-gestion-de-procesos) · **Anterior:** [08 · Procesos en la práctica](/ApuntesPSP/01-gestion-de-procesos/08-procesos-en-la-practica) · **Siguiente:** **[UD 3 · Hilos y concurrencia](/ApuntesPSP/02-hilos-y-concurrencia)**
+📚 [Volver al índice de la unidad](/ApuntesPSP/01-gestion-de-procesos) · **Anterior:** [09 · Procesos en la práctica](/ApuntesPSP/01-gestion-de-procesos/09-procesos-en-la-practica) · **Siguiente:** **[UD 3 · Hilos y concurrencia](/ApuntesPSP/02-hilos-y-concurrencia)**

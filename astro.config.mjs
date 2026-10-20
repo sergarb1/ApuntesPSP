@@ -60,12 +60,12 @@ const boletinesReady = [
   '09-alta-disponibilidad',
 ];
 
-// Nombres de los 9 puntos de teoría de cada unidad ampliada (nn-archivo)
+// Nombres de los puntos de teoría de cada unidad ampliada (nn-archivo)
 const unitPuntos = {
   '00-python-basico': ['01-introduccion', '02-comentarios', '03-tipos-de-datos', '04-variables-y-colecciones', '05-control-de-flujo', '06-funciones', '07-clases', '08-modulos-y-avanzado', '09-cierre'],
-  '01-gestion-de-procesos': ['01-que-es-un-proceso', '02-estados-de-un-proceso', '03-paralela-vs-distribuida', '04-subprocess-run', '05-subprocess-popen', '06-comunicacion-con-procesos', '07-compatibilidad-windows-linux', '08-procesos-en-la-practica', '09-cierre'],
+  '01-gestion-de-procesos': ['01-que-es-un-proceso', '02-estados-de-un-proceso', '03-paralela-vs-distribuida', '04-subprocess-run', '05-subprocess-popen', '06-comunicacion-con-procesos', '07-compatibilidad-windows-linux', '08-multiprocessing', '09-procesos-en-la-practica', '10-cierre'],
   '02-hilos-y-concurrencia': ['01-de-proceso-a-hilo', '02-primer-hilo', '03-hilos-con-argumentos', '04-hilos-daemon', '05-timer', '06-gil', '07-estados-del-hilo', '08-hilos-en-la-practica', '09-cierre'],
-  '03-sincronizacion': ['01-condicion-de-carrera', '02-lock', '03-rlock', '04-semaphore', '05-barrier', '06-condition', '07-productor-consumidor', '08-buenas-practicas', '09-cierre'],
+  '03-sincronizacion': ['01-condicion-de-carrera', '02-lock', '03-rlock', '04-semaphore', '05-barrier', '06-condition', '07-productor-consumidor', '08-buenas-practicas', '09-python-free-threaded', '10-cierre'],
   '04-sockets-tcp-y-udp': ['01-que-es-un-socket', '02-cliente-tcp', '03-servidor-tcp', '04-ciclo-y-errores', '05-cliente-y-servidor-udp', '06-http-y-ntp', '07-cuando-usar-cada-protocolo', '08-practica-eco', '09-cierre'],
   '06-http-y-apis-rest': ['01-web-y-http', '02-metodos-http', '03-principios-rest', '04-codigos-de-estado', '05-json', '06-requests-get', '07-requests-post', '08-practica-api', '09-cierre'],
   '07-apis-comerciales': ['01-api-keys', '02-variables-de-entorno', '03-openweathermap', '04-openai', '05-rate-limiting', '06-errores-http', '07-seguridad-y-buenas-practicas', '08-practica-apis-comerciales', '09-cierre'],
@@ -84,9 +84,12 @@ const expandedUnitItems = (slug) => {
     { slug, label: 'Índice' },
     ...files.map((file) => {
       const num = file.slice(0, 2);
-      const label = file === '09-cierre'
-        ? '09 · Cierre'
-        : `${num} · ${titleCase(file.slice(3).replace(/-/g, ' '))}`;
+      let label;
+      if (file.endsWith('-cierre')) {
+        label = `${num} · Cierre`;
+      } else {
+        label = `${num} · ${titleCase(file.slice(3).replace(/-/g, ' '))}`;
+      }
       return { slug: `${slug}/${file}`, label };
     }),
   ];
