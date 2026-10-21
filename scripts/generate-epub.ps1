@@ -13,12 +13,12 @@ $unitSlugs = @(
   "07-apis-comerciales",
   "08-seguridad-y-cifrado",
   "09-alta-disponibilidad",
-  "10-anexo-spring-boot"
+  "10-spring-boot"
 )
 
 $boletinesCodes = @(
   "00", "01", "02", "03", "04", "05",
-  "06", "07", "08", "09"
+  "06", "07", "08", "09", "10"
 )
 
 $boletinSections = @(

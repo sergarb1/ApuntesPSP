@@ -1,6 +1,6 @@
 # contenido-unidad — Estándar de calidad de las unidades didácticas
 
-> Barra de calidad "libro de verdad" que toda unidad (UD 1–UD 10) debe cumplir tras su ampliación. Prioridad: utilidad real para personas que parten de cero en programación de servicios y procesos.
+> Barra de calidad "libro de verdad" que toda unidad (UD 1–UD 11) debe cumplir tras su ampliación. Prioridad: utilidad real para personas que parten de cero en programación de servicios y procesos.
 
 ## ADDED Requirements
 
@@ -58,7 +58,7 @@ El contenido es consistente con el resto del curso.
 
 #### Scenario: Poscréditos con continuidad
 - **WHEN** se cierra la unidad
-- **THEN** la escena de Poscréditos enlaza de forma coherente con la siguiente unidad ("PRÓXIMAMENTE EN UD X") y ambas se corresponden; la última unidad (UD 10) cierra con "🏁 Fin del viaje" sin hook
+- **THEN** la escena de Poscréditos enlaza de forma coherente con la siguiente unidad ("PRÓXIMAMENTE EN UD X") y ambas se corresponden; la última unidad (UD 11) cierra con "🏁 Fin del viaje" sin hook
 
 ### Requirement: Cobertura de criterios de evaluación
 

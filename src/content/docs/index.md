@@ -135,18 +135,18 @@ description: Apuntes de Programación de Servicios y Procesos — Python. CC BY-
 
 <div class="unit-card">
   <div class="unit-card-header">
-    <span class="num">Anexo</span>
+    <span class="num">Unidad 11</span>
   </div>
-  <a href="/ApuntesPSP/10-anexo-spring-boot" class="title-link">Spring Boot con Java</a>
+  <a href="/ApuntesPSP/10-spring-boot" class="title-link">Spring Boot con Java</a>
   <p class="desc">Del Python al ecosistema Java: Spring Boot, DI, REST, JPA.</p>
-  <a href="/ApuntesPSP/10-anexo-spring-boot" class="unit-link">👉 Ver anexo 👈</a>
+  <a href="/ApuntesPSP/10-spring-boot" class="unit-link">👉 Ver unidad 👈</a>
 </div>
 
 </div>
 
 ## 📝 Boletines de ejercicios
 
-Cada unidad tiene **4 boletines** (40 en total): inicial y avanzado, con y sin solución.
+Cada unidad tiene **4 boletines** (44 en total): inicial y avanzado, con y sin solución.
 
 <div class="unit-grid">
 
@@ -267,6 +267,18 @@ Cada unidad tiene **4 boletines** (40 en total): inicial y avanzado, con y sin s
     <a href="/ApuntesPSP/boletines/boletin-u09-inicial-resuelto" class="elink">✅ Inicial resuelto</a>
     <a href="/ApuntesPSP/boletines/boletin-u09-avanzado" class="elink">⭐ Avanzado por resolver</a>
     <a href="/ApuntesPSP/boletines/boletin-u09-avanzado-resuelto" class="elink">💪 Avanzado resuelto</a>
+  </div>
+</div>
+
+<div class="unit-card">
+  <div class="unit-card-header">
+    <span class="num">Unidad 11</span>
+  </div>
+  <div class="ejercicio-links">
+    <a href="/ApuntesPSP/boletines/boletin-u10-inicial" class="elink">🟢 Inicial por resolver</a>
+    <a href="/ApuntesPSP/boletines/boletin-u10-inicial-resuelto" class="elink">✅ Inicial resuelto</a>
+    <a href="/ApuntesPSP/boletines/boletin-u10-avanzado" class="elink">⭐ Avanzado por resolver</a>
+    <a href="/ApuntesPSP/boletines/boletin-u10-avanzado-resuelto" class="elink">💪 Avanzado resuelto</a>
   </div>
 </div>
 

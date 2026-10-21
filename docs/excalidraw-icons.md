@@ -63,7 +63,7 @@ zonas de agrupación sin texto interior (título como texto libre en la esquina)
 | rsa-asimetrico | `public/diagrams/rsa-asimetrico.svg` | `public/diagrams/rsa-asimetrico.excalidraw` | UD 9 | `08-seguridad-y-cifrado/06-cifrado-asimetrico-rsa.md` | RSA asimétrico: cifrar con la pública de Bob y descifrar solo con su privada |
 | firmas | `public/diagrams/firmas.svg` | `public/diagrams/firmas.excalidraw` | UD 9 | `08-seguridad-y-cifrado/07-firmas-digitales.md` | Firma digital: hash firmado con la privada de Ana y verificado con la pública |
 | event-loop | `public/diagrams/event-loop.svg` | `public/diagrams/event-loop.excalidraw` | UD 10 | `09-alta-disponibilidad/08-disponibilidad-y-practica.md` | El Event Loop atendiendo clientes concurrentes con un solo hilo |
-| capas-spring | `public/diagrams/capas-spring.svg` | `public/diagrams/capas-spring.excalidraw` | Anexo | `10-anexo-spring-boot/06-ejemplo-completo.md` | La arquitectura en capas de Spring Boot: Controller → Service → Repository → BD |
+| capas-spring | `public/diagrams/capas-spring.svg` | `public/diagrams/capas-spring.excalidraw` | UD 11 | `10-spring-boot/06-ejemplo-completo.md` | La arquitectura en capas de Spring Boot: Controller → Service → Repository → BD |
 | semaphore-aforo | `public/diagrams/semaphore-aforo.svg` | `public/diagrams/semaphore-aforo.excalidraw` | UD 4 | `03-sincronizacion/04-semaphore.md` | Semaphore(3) como aforo: tres hilos dentro y dos esperando su acquire() |
 | condition-wait-notify | `public/diagrams/condition-wait-notify.svg` | `public/diagrams/condition-wait-notify.excalidraw` | UD 4 | `03-sincronizacion/06-condition.md` | La Condition: wait() y notify() entre productor y consumidor bajo el mismo lock |
 | productor-consumidor | `public/diagrams/productor-consumidor.svg` | `public/diagrams/productor-consumidor.excalidraw` | UD 4 | `03-sincronizacion/07-productor-consumidor.md` | Cola compartida entre productor y consumidor con Condition |
@@ -75,7 +75,7 @@ zonas de agrupación sin texto interior (título como texto libre en la esquina)
 | backoff-exponencial | `public/diagrams/backoff-exponencial.svg` | `public/diagrams/backoff-exponencial.excalidraw` | UD 10 | `09-alta-disponibilidad/06-backoff.md` | Las esperas del backoff crecen exponencialmente: 1, 2, 4, 8 y 16 s |
 | metodos-http | `public/diagrams/metodos-http.svg` | `public/diagrams/metodos-http.excalidraw` | UD 7 | `06-http-y-apis-rest/02-metodos-http.md` | Los cinco métodos HTTP actuando sobre el mismo recurso /usuarios/5 |
 | rate-limit-429 | `public/diagrams/rate-limit-429.svg` | `public/diagrams/rate-limit-429.excalidraw` | UD 8 | `07-apis-comerciales/05-rate-limiting.md` | Ciclo del rate limit: petición, 429 Too Many Requests y reintento |
-| spring-di-contenedor | `public/diagrams/spring-di-contenedor.svg` | `public/diagrams/spring-di-contenedor.excalidraw` | Anexo | `10-anexo-spring-boot/03-inyeccion-de-dependencias.md` | Contenedor IoC de Spring inyectando beans del Repository al Controller |
+| spring-di-contenedor | `public/diagrams/spring-di-contenedor.svg` | `public/diagrams/spring-di-contenedor.excalidraw` | UD 11 | `10-spring-boot/03-inyeccion-de-dependencias.md` | Contenedor IoC de Spring inyectando beans del Repository al Controller |
 
 ## Cómo editar un diagrama existente
 

@@ -3,7 +3,7 @@ schema: spec-driven
 context: |
   Proyecto: Apuntes PSP (Programación de Servicios y Procesos). CFGS DAM/DAW.
   Stack: Astro 7 + Starlight 0.41, castellano, GitHub Pages, base path /ApuntesPSP.
-  Contenido: 10 unidades didácticas (UD 1-UD 10) + anexo Spring Boot, cada unidad ampliada como "libro":
+  Contenido: 11 unidades didácticas (UD 1-UD 11, la última Spring Boot con Java), cada unidad ampliada como "libro":
     un fichero Markdown por punto de teoría (src/content/docs/<unidad>/<nn>-<punto>.md)
     más una página índice de unidad (src/content/docs/<unidad>.md).
     Secciones obligatorias de consolidación: Sé el Código/Proceso/Hilo/Socket, Fireside Chat,

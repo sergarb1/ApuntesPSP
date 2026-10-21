@@ -18,18 +18,18 @@ PSP/
 │
 ├── src/
 │   ├── content.config.ts                ← configuración colección Starlight
-│   ├── content/docs/                    ← 151 archivos de apuntes (MD)
+│   ├── content/docs/                    ← 155 archivos de apuntes (MD)
 │   │   ├── index.md                     ← landing page (cards, descargas, licencia)
 │   │   ├── 01-gestion-de-procesos.md  ← índice de la unidad
 │   │   ├── 01-gestion-de-procesos/    ← 10 capítulos (UD 2 y UD 4; el resto, 9)
 │   │   │   ├── 01-*.md … 08-*.md        ← teoría en progresión (UD 2: 08 = multiprocessing)
 │   │   │   └── 09-cierre.md / 10-cierre.md ← cierre práctico de la unidad
-│   │   ├── boletines/                   ← 40 boletines (4 × 10 unidades)
+│   │   ├── boletines/                   ← 44 boletines (4 × 11 unidades)
 │   │   │   ├── boletin-U00-inicial.md       ← 🟢 inicial SIN resolver
 │   │   │   ├── boletin-U00-inicial-resuelto.md ← ✅ inicial CON solución
 │   │   │   ├── boletin-U00-avanzado.md       ← 💪 avanzado SIN resolver
 │   │   │   └── boletin-U00-avanzado-resuelto.md ← ⭐ avanzado CON solución
-│   │   └── ... hasta unidad 10 + anexo
+│   │   └── ... hasta unidad 11
 │   └── styles/
 │       └── custom.css                   ← CSS premium (azul Python #306998 + teal)
 │
@@ -220,7 +220,7 @@ python scripts/check-diagramas.py   # detector de solapes texto/texto y texto/fo
 
 ## Apuntes (MD por unidad)
 
-Estructura "libro" por unidad (formato replicado de ApuntesRedes): índice + 9 capítulos en subcarpeta + 4 boletines en `boletines/` (la UD 2 tiene 10 capítulos —su 08 es multiprocessing, con el cierre en el 10— y la UD 4 idem: su 09 es Python Free-Threaded, con el cierre en el 10). Total 151 ficheros MD (~24.000 líneas). Cada unidad indica al final qué RAs cubre.
+Estructura "libro" por unidad (formato replicado de ApuntesRedes): índice + 9 capítulos en subcarpeta + 4 boletines en `boletines/` (la UD 2 tiene 10 capítulos —su 08 es multiprocessing, con el cierre en el 10— y la UD 4 idem: su 09 es Python Free-Threaded, con el cierre en el 10; la UD 11 tiene 7 capítulos). Total 155 ficheros MD (~25.000 líneas). Cada unidad indica al final qué RAs cubre.
 
 Por unidad: `0X-unidad.md` (índice, ~90 líneas) → `0X-unidad/01-…-08.md` (capítulos, 110-280 líneas) + `09-cierre.md` (cierre, ~250 líneas) → `boletines/boletin-UXX-inicial[-resuelto].md` y `-avanzado[-resuelto].md`. En la UD 2: `08-multiprocessing.md` tras el 07; en la UD 4: `09-python-free-threaded.md` tras el 08 —en ambos, `10-cierre.md` desplazado—.
 
@@ -254,9 +254,9 @@ Secciones del cierre `09-cierre.md`: ⭐ Sé el código, 🔥 Fireside Chat, �
 | UD 8 APIs comerciales | `07-apis-comerciales.md` + carpeta | ~998 | OpenWeatherMap, OpenAI, dotenv, rate limit | RA4a-b |
 | UD 9 Seguridad y cifrado | `08-seguridad-y-cifrado.md` + carpeta | ~1.500 | Hash, AES, RSA, firmas, cifrado híbrido, RBAC | RA5 |
 | UD 10 Alta disponibilidad | `09-alta-disponibilidad.md` + carpeta | ~913 | asyncio, heartbeat, backoff, timeouts | RA4e-g |
-| Anexo Spring Boot | `10-anexo-spring-boot.md` + carpeta | ~700 | Java, Spring Boot, DI, REST, JPA | — |
+| UD 11 Spring Boot | `10-spring-boot.md` + carpeta | ~700 | Java, Spring Boot, DI, REST, JPA | — |
 
-**Boletines (40):** 4 por unidad en `boletines/boletin-UXX-*`: inicial (8 ejercicios), inicial-resuelto, avanzado (≥8), avanzado-resuelto. Pistas inline `**Pista:**` en los por-resolver; respuestas inline en negrita en los resueltos. El Anexo no tiene boletines.
+**Boletines (44):** 4 por unidad en `boletines/boletin-UXX-*`: inicial (8 ejercicios), inicial-resuelto, avanzado (≥8), avanzado-resuelto. Pistas inline `**Pista:**` en los por-resolver; respuestas inline en negrita en los resueltos.
 
 **Licencia:** CC BY-SA 4.0 — Sergi Garcia Barea
 

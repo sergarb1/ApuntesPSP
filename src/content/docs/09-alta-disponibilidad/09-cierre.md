@@ -228,8 +228,14 @@ La operación no se espera (ni a veces se ejecuta): la corrutina no hace lo que 
 > *El latido confirma que el servicio sigue vivo. El timeout corta lo que se cuelga. El backoff reintenta con cabeza.*
 >
 > *El viaje ha recorrido diez hitos: 🐍 Python, 🚀 Procesos, 🔀 Hilos, 🔒 Sincronización, 🔌 Sockets, 🏗️ Servidores, 🌐 API REST, 🧪 APIs comerciales, 🔐 Seguridad y ⏱️ Alta disponibilidad.*
+>
+> *Pero aún queda una parada más: el puente hacia el ecosistema Java.*
 
-**Y con esto... ¡el viaje ha terminado! 🏁**
+---
+
+## 🎬 PRÓXIMAMENTE EN UD 11 · Spring Boot con Java
+
+Del Python al backend empresarial: **Java**, **Spring Boot**, inyección de dependencias, `@RestController` y JPA. El puente final del viaje te espera en la [UD 11 · Spring Boot](/ApuntesPSP/10-spring-boot).
 
 ---
 
@@ -247,4 +253,4 @@ La operación no se espera (ni a veces se ejecuta): la corrutina no hace lo que 
 
 ---
 
-📚 [Volver al índice de la unidad](/ApuntesPSP/09-alta-disponibilidad) · **Anterior:** [08 · Disponibilidad y práctica](/ApuntesPSP/09-alta-disponibilidad/08-disponibilidad-y-practica)
+📚 [Volver al índice de la unidad](/ApuntesPSP/09-alta-disponibilidad) · **Anterior:** [08 · Disponibilidad y práctica](/ApuntesPSP/09-alta-disponibilidad/08-disponibilidad-y-practica) · **Siguiente:** [UD 11 · Spring Boot con Java](/ApuntesPSP/10-spring-boot)
