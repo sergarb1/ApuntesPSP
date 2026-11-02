@@ -133,4 +133,4 @@ Sin ese `try/except`, el hilo de ese cliente muere con un traceback (el servidor
 
 ---
 
-📚 [Volver al índice de la unidad](/ApuntesPSP/05-servidores-concurrentes) · **Anterior:** [06 · Sincronización en servidores](/ApuntesPSP/05-servidores-concurrentes/06-sincronizacion-en-servidores) · **Siguiente:** [08 · Servidor concurrente completo](/ApuntesPSP/05-servidores-concurrentes/08-servidor-concurrente-completo)
+📚 [Volver al índice de la unidad](/ApuntesPSP/05-servidores-concurrentes) · **Anterior:** [06 · Sincronización en servidores](/ApuntesPSP/05-servidores-concurrentes/06-sincronizacion-en-servidores) · **Siguiente:** [08 · Servidor concurrente completo con hilos](/ApuntesPSP/05-servidores-concurrentes/08-servidor-concurrente-completo-con-hilos)

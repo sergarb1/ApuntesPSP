@@ -1,17 +1,17 @@
 ﻿---
-title: 08 — Servidor concurrente completo
-description: "Todo junto: servidor multihilo y su lanzador de clientes 🏗️"
+title: 08 — Servidor concurrente completo con hilos
+description: "Todo junto: servidor multihilo, cliente interactivo y lanzador de clientes 🏗️"
 ---
 
-<p><small>Todo junto: servidor multihilo y su lanzador de clientes 🏗️</small></p>
+<p><small>Todo junto: servidor multihilo, cliente interactivo y lanzador de clientes 🏗️</small></p>
 
-> 🗺️ **Estás en:** 🏗️ **UD 6 · Servidores concurrentes** → 08 · Servidor concurrente completo
+> 🗺️ **Estás en:** 🏗️ **UD 6 · Servidores concurrentes** → 08 · Servidor concurrente completo con hilos
 
 ---
 
 ## 📬 La idea en una frase
 
-> Este punto junta toda la unidad en dos scripts listos para ejecutar: un **servidor concurrente** (`servidor.py`) que atiende a cada cliente en su hilo con un contador protegido por Lock, y un **lanzador de clientes** (`lanzaclientes.py`) que lo pone a prueba con N conexiones a la vez.
+> Este punto junta toda la unidad en tres scripts listos para ejecutar: un **servidor concurrente** (`servidor.py`) que atiende a cada cliente en su hilo con un contador protegido por Lock, un **cliente interactivo** (`cliente.py`) para hablar con él a mano, y un **lanzador de clientes** (`lanzaclientes.py`) que lo pone a prueba con N conexiones a la vez.
 
 Es el "Be the code" definitivo: aquí tienes el código completo, cómo ejecutarlo en dos terminales y los ejercicios de "Aprieta el lápiz" para cerrar la teoría.
 
@@ -35,9 +35,16 @@ def atender(conn, addr):
         print(f"[+] Cliente {addr} conectado — total: {contador}")
     with conn:
         try:
-            datos = conn.recv(1024)
-            print(f"    Recibido: {datos.decode().strip()}")
-            conn.sendall(b"OK: " + datos)
+            # Bucle de mensajes: la conversación dura hasta "SALIR" o cierre
+            while True:
+                datos = conn.recv(1024)
+                if not datos:          # El cliente ha cerrado: b"" en recv
+                    break
+                mensaje = datos.decode().strip()
+                print(f"    Recibido de {addr}: {mensaje}")
+                conn.sendall(b"OK: " + datos)
+                if mensaje.upper() == "SALIR":
+                    break
         except (ConnectionResetError, BrokenPipeError, OSError):
             print(f"    Cliente {addr} se desconectó a mitad")
     with lock:
@@ -68,6 +75,53 @@ Lo que demuestra este servidor:
 - **Sincronización**: el contador global solo se toca dentro de `with lock:` (punto 6).
 - **Limpieza**: `with conn:` cierra el socket sí o sí (punto 7).
 - **Convención**: punto de entrada con `if __name__ == "__main__":` y hilos nombrados con `.name`.
+
+---
+
+## 💬 El cliente: `cliente.py`
+
+Antes de disparar clientes masivos, conviene tener un cliente "de una sola persona" con el que hablar a mano. Este cliente interactivo se registra, deja mensajes por consola y cierra limpio:
+
+```python
+import socket
+
+def cliente():
+    nombre = input("Tu nombre de usuario: ").strip() or "anónimo"
+    try:
+        with socket.socket() as s:
+            s.connect(("127.0.0.1", 5000))
+            s.sendall(f"REGISTRO:{nombre}".encode())
+            print(f"📩 {s.recv(1024).decode().strip()}")
+
+            # Bucle de conversación con el servidor
+            while True:
+                texto = input("tú> ").strip()
+                if not texto:
+                    continue
+                s.sendall(texto.encode())
+                respuesta = s.recv(1024).decode().strip()
+                print(f"servidor> {respuesta}")
+                if texto.upper() == "SALIR":
+                    print("👋 Conexión cerrada")
+                    break
+    except ConnectionRefusedError:
+        print("❌ Servidor no disponible. ¿Está arrancado en la terminal 1?")
+    except (ConnectionResetError, BrokenPipeError):
+        print("\n🛑 El servidor ha cerrado la conexión")
+
+if __name__ == "__main__":
+    cliente()
+```
+
+Traza del cliente:
+
+1. **`input()`** pide el nombre (si no hay nada, usa `"anónimo"`).
+2. **`socket()` → `connect()`** abre la conexión TCP al puerto 5000. Si el servidor no está, salta `ConnectionRefusedError` y el mensaje amable.
+3. **`sendall(f"REGISTRO:{nombre}")`** envía el registro y espera la respuesta con `recv(1024)`.
+4. **Bucle**: cada línea que escribes se envía con `sendall()` y la respuesta llega con `recv(1024)`. `SALIR` cierra desde el cliente.
+5. **`with socket`** se asegura de cerrar la conexión al salir (por cualquier vía).
+
+> 💡 `recv(1024)` devuelve `b""` (bytes vacíos) cuando el otro extremo ha cerrado: por eso el servidor comprueba `if not datos` antes de intentar decodificar. El servidor del punto 8 responde `OK: <datos>` a cualquier mensaje y cierra al recibir `SALIR`; el tratamiento de registros "de verdad" (con `manager.dict()`) aparece en el [punto 9](/ApuntesPSP/05-servidores-concurrentes/09-servidor-concurrente-completo-con-procesos).
 
 ---
 
@@ -116,7 +170,7 @@ python servidor.py             python lanzaclientes.py
     Recibido: Cliente-1         🏁 Todos los clientes terminaron
 ```
 
-Si el servidor fuera secuencial, el lanzador tardaría 10 × tiempo_por_cliente y las respuestas llegarían de una en una. Con el servidor concurrente, **todas responden casi a la vez**: ese es el resultado del punto [5](/ApuntesPSP/05-servidores-concurrentes/05-benchmark). Se mata el servidor con **Ctrl+C** y cada script se ejecuta en su terminal.
+Si el servidor fuera secuencial, el lanzador tardaría 10 × tiempo_por_cliente y las respuestas llegarían de una en una. Con el servidor concurrente, **todas responden casi a la vez**: ese es el resultado del punto [5](/ApuntesPSP/05-servidores-concurrentes/05-benchmark). En lugar del lanzador, también puedes usar la terminal 2 para arrancar `cliente.py` y hablar con el servidor a mano. Se mata el servidor con **Ctrl+C** y cada script se ejecuta en su terminal.
 
 ---
 
@@ -244,6 +298,7 @@ with socket.socket() as srv:
 | Término | Idea general |
 |---|---|
 | servidor.py | El servidor concurrente completo de la unidad |
+| cliente.py | El cliente interactivo para hablar con el servidor a mano |
 | lanzaclientes.py | El script que dispara N clientes simultáneos |
 | hilo.name | Nombre del hilo para trazarlo ("hilo-1", "hilo-2"…) |
 | if __name__ | Punto de entrada del script |
@@ -251,4 +306,4 @@ with socket.socket() as srv:
 
 ---
 
-📚 [Volver al índice de la unidad](/ApuntesPSP/05-servidores-concurrentes) · **Anterior:** [07 · Límites y buenas prácticas](/ApuntesPSP/05-servidores-concurrentes/07-limites-y-buenas-practicas) · **Siguiente:** [09 · Cierre](/ApuntesPSP/05-servidores-concurrentes/09-cierre)
+📚 [Volver al índice de la unidad](/ApuntesPSP/05-servidores-concurrentes) · **Anterior:** [07 · Límites y buenas prácticas](/ApuntesPSP/05-servidores-concurrentes/07-limites-y-buenas-practicas) · **Siguiente:** [09 · Servidor concurrente completo con procesos](/ApuntesPSP/05-servidores-concurrentes/09-servidor-concurrente-completo-con-procesos)

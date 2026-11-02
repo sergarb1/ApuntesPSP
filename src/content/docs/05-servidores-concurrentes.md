@@ -12,7 +12,7 @@ nav_order: 05
 
 Hasta ahora has construido servidores TCP que atienden **de uno en uno**: si un cliente tarda 3 segundos, los que llegan detrás esperan. En esta unidad darás el salto a la **concurrencia**: primero lanzando un **hilo por cada cliente** y después con un **ThreadPoolExecutor**, el equipo de hilos reutilizables que usa la industria.
 
-También medirás cuánto ganas con cada enfoque mediante un **benchmark**, aprenderás a proteger con **Lock** el estado compartido del servidor y cerrarás montando un servidor concurrente completo.
+También medirás cuánto ganas con cada enfoque mediante un **benchmark**, aprenderás a proteger con **Lock** el estado compartido del servidor, cerrarás montando un servidor concurrente completo y verás la alternativa con **procesos independientes**, que aíslan los fallos de cada cliente.
 
 ---
 
@@ -26,6 +26,7 @@ Al terminar, serás capaz de:
 - Medir el rendimiento de un servidor con un **benchmark**.
 - Proteger con **Lock** las variables compartidas entre los hilos del servidor.
 - Montar un **servidor concurrente completo** con su lanzador de clientes.
+- Atender clientes con **`multiprocessing.Process`**, compartiendo el estado con `manager.dict()` para lograr aislamiento de fallos.
 
 ---
 
@@ -40,8 +41,9 @@ Al terminar, serás capaz de:
 | [05 · Benchmark](/ApuntesPSP/05-servidores-concurrentes/05-benchmark) | Medir cuánto ganas con la concurrencia | Todos |
 | [06 · Sincronización en servidores](/ApuntesPSP/05-servidores-concurrentes/06-sincronizacion-en-servidores) | El Lock para el estado compartido | Todos |
 | [07 · Límites y buenas prácticas](/ApuntesPSP/05-servidores-concurrentes/07-limites-y-buenas-practicas) | Cuántos hilos puedes crear | Todos |
-| [08 · Servidor concurrente completo](/ApuntesPSP/05-servidores-concurrentes/08-servidor-concurrente-completo) | Todo junto: servidor, lanzador y ejercicios | Todos |
-| [09 · Cierre](/ApuntesPSP/05-servidores-concurrentes/09-cierre) | Sé el servidor, Fireside, Laboratorio de tortura… | Todos |
+| [08 · Servidor concurrente completo con hilos](/ApuntesPSP/05-servidores-concurrentes/08-servidor-concurrente-completo-con-hilos) | Todo junto: servidor, cliente, lanzador y ejercicios | Todos |
+| [09 · Servidor concurrente completo con procesos](/ApuntesPSP/05-servidores-concurrentes/09-servidor-concurrente-completo-con-procesos) | El mismo servidor, pero con `Process` en lugar de hilos | Todos |
+| [10 · Cierre](/ApuntesPSP/05-servidores-concurrentes/10-cierre) | Sé el servidor, Fireside, Laboratorio de tortura… | Todos |
 
 ---
 
@@ -64,8 +66,8 @@ Al terminar, serás capaz de:
 
 | CE | Criterio | Dónde se cubre |
 |---|---|---|
-| RA4c | Implementa servidores concurrentes con hilos | ✅ Puntos 1-3 y 8 + ⚡ Laboratorio (punto 9) |
-| RA4d | Gestiona pools de hilos (ThreadPoolExecutor) | ✅ Puntos 4-5 y 8 + ⚡ Laboratorio (punto 9) |
+| RA4c | Implementa servidores concurrentes con hilos | ✅ Puntos 1-3 y 8 + ⚡ Laboratorio (punto 10) |
+| RA4d | Gestiona pools de hilos (ThreadPoolExecutor) | ✅ Puntos 4-5 y 8 + ⚡ Laboratorio (punto 10) |
 
 > RA4a-b (APIs REST y comerciales) se cubren en las **UD 7 y UD 8**. RA4e-g (asyncio) se cubren en la **UD 10**.
 

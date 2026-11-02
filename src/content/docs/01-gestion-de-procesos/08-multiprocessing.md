@@ -292,4 +292,4 @@ Para la fase 3, el truco es que el hijo devuelva una lista en lugar de un entero
 
 ---
 
-📚 [Volver al índice de la unidad](/ApuntesPSP/01-gestion-de-procesos) · **Anterior:** [07 · Compatibilidad Windows / Linux](/ApuntesPSP/01-gestion-de-procesos/07-compatibilidad-windows-linux) · **Siguiente:** [09 · Procesos en la práctica](/ApuntesPSP/01-gestion-de-procesos/09-procesos-en-la-practica)
+📚 [Volver al índice de la unidad](/ApuntesPSP/01-gestion-de-procesos) · **Anterior:** [07 · Compatibilidad Windows / Linux](/ApuntesPSP/01-gestion-de-procesos/07-compatibilidad-windows-linux) · **Siguiente:** [09 · Ejemplo resuelto: estado compartido con procesos](/ApuntesPSP/01-gestion-de-procesos/09-ejemplo-resuelto-estado-compartido)

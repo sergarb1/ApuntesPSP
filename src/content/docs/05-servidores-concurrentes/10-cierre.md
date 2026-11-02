@@ -1,15 +1,15 @@
 ﻿---
-title: "09 — Cierre: consolida lo aprendido"
+title: "10 — Cierre: consolida lo aprendido"
 description: Sé el servidor, el ring final y el Laboratorio de tortura 🏗️
 ---
 
 <p><small>Sé el servidor, el ring final y el Laboratorio de tortura 🏗️</small></p>
 
-> 🗺️ **Estás en:** 🏗️ **UD 6 · Servidores concurrentes** → 09 · Cierre
+> 🗺️ **Estás en:** 🏗️ **UD 6 · Servidores concurrentes** → 10 · Cierre
 
 ---
 
-Has terminado la teoría: el servidor secuencial y su límite, el cliente lento que bloquea la cola, el hilo por cliente, el ThreadPoolExecutor, el benchmark, el Lock para el estado compartido y las buenas prácticas. Este cierre es el aterrizaje: recorres lo aprendido con juegos, un laboratorio real con fallos intencionados y las preguntas que te harán en una entrevista. Léelo justo después del [punto 8](/ApuntesPSP/05-servidores-concurrentes/08-servidor-concurrente-completo) y antes de abrir los boletines.
+Has terminado la teoría: el servidor secuencial y su límite, el cliente lento que bloquea la cola, el hilo por cliente, el ThreadPoolExecutor, el benchmark, el Lock para el estado compartido, las buenas prácticas y los dos servidores completos (con hilos y con procesos). Este cierre es el aterrizaje: recorres lo aprendido con juegos, un laboratorio real con fallos intencionados y las preguntas que te harán en una entrevista. Léelo justo después del [punto 9](/ApuntesPSP/05-servidores-concurrentes/09-servidor-concurrente-completo-con-procesos) y antes de abrir los boletines.
 
 ---
 
@@ -206,6 +206,22 @@ Sí, con `loop.run_in_executor()`. Pero empieza con uno u otro.
 
 ThreadPool con 100 hilos + cola de espera. O usa **asyncio** ([UD 10](/ApuntesPSP/09-alta-disponibilidad)) que escala mejor.
 
+> ❓ **¿Se puede atender a los clientes con procesos en vez de hilos?**
+
+Sí, y es el [punto 9](/ApuntesPSP/05-servidores-concurrentes/09-servidor-concurrente-completo-con-procesos): cada conexión la atiende un `multiprocessing.Process`. Cuesta más memoria, pero ganas **aislamiento de fallos**: si un hijo muere, el servidor sigue vivo.
+
+> ❓ **¿Y qué le pasa a mi servidor si un cliente lo hace tronar?**
+
+Con procesos, nada: el hijo muere con su burbuja y el bucle `accept()` del padre acepta al siguiente cliente. Con hilos compartidos, la excepción puede tumbar el proceso entero. Por eso la práctica pide procesos cuando prohíbe hilos.
+
+> ❓ **¿Por qué hay que cerrar `conn` en el padre?**
+
+Al pasar el socket al proceso hijo, este recibe **su propia copia**. Si el padre no cierra la suya, el canal sigue abierto en sus manos y un cliente que espere respuesta puede quedarse colgado aunque el hijo haya muerto. Tras `p.start()` va `conn.close()`.
+
+> ❓ **¿El `cliente.py` es obligatorio?**
+
+No, pero sin él solo puedes probar con el lanzador masivo. El cliente interactivo te deja hablar a mano con el servidor (registro, mensajes, `SALIR`) y ver cómo sube el contador compartido en tiempo real.
+
 ---
 
 ## 🎬 Poscréditos
@@ -232,9 +248,10 @@ ThreadPool con 100 hilos + cola de espera. O usa **asyncio** ([UD 10](/ApuntesPS
 |---|---|---|
 | c) | Implementa servidores concurrentes con hilos | ✅ Hilo por cliente (puntos 3 y 8) + ⚡ Laboratorio |
 | d) | Gestiona pools de hilos (ThreadPoolExecutor) | ✅ ThreadPool y benchmark (puntos 4-5) + ⚡ Laboratorio |
+| +) | Ampliación: atender clientes con procesos aislados | ✅ Servidor con procesos (punto 9) |
 
 > RA4a-b (APIs REST y comerciales) se cubren en las **UD 7 y UD 8**. RA4e-g (asyncio, disponibilidad, comparativa de modelos) se cubren en la **UD 10 · Alta disponibilidad**.
 
 ---
 
-📚 [Volver al índice de la unidad](/ApuntesPSP/05-servidores-concurrentes) · **Anterior:** [08 · Servidor concurrente completo](/ApuntesPSP/05-servidores-concurrentes/08-servidor-concurrente-completo) · **Siguiente:** **[UD 7 · HTTP y APIs REST](/ApuntesPSP/06-http-y-apis-rest)**
+📚 [Volver al índice de la unidad](/ApuntesPSP/05-servidores-concurrentes) · **Anterior:** [09 · Servidor concurrente completo con procesos](/ApuntesPSP/05-servidores-concurrentes/09-servidor-concurrente-completo-con-procesos) · **Siguiente:** **[UD 7 · HTTP y APIs REST](/ApuntesPSP/06-http-y-apis-rest)**

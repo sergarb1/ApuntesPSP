@@ -299,3 +299,143 @@ balanceador()
 ```
 
 El balanceador (puerto 5000) hace de **proxy**: lee del cliente, reenvía al worker elegido por **round-robin** (`indice % 2`), recibe su respuesta y la devuelve al cliente. Los workers 5001 y 5002 son servidores normales, cada uno en su hilo. Los clientes que envíen varias peticiones verán cómo se alterna la respuesta `Worker-5001`/`Worker-5002`.
+
+---
+
+## 10. Servidor con un proceso por cliente
+
+```python
+import socket
+import multiprocessing
+
+def atender(conn, addr):
+    """Proceso hijo: atiende a UN cliente con su propia memoria."""
+    with conn:
+        try:
+            datos = conn.recv(1024)
+            print(f"  [pid {multiprocessing.current_process().pid}] "
+                  f"Recibido de {addr}: {datos.decode().strip()}")
+            conn.sendall(b"OK: " + datos)
+        except (ConnectionResetError, BrokenPipeError, OSError):
+            print(f"  [pid {multiprocessing.current_process().pid}] "
+                  f"Cliente {addr} se desconectó a mitad")
+
+def servidor():
+    with socket.socket() as srv:
+        srv.setsockopt(socket.SOL_SOCKET, socket.SO_REUSEADDR, 1)
+        srv.bind(("127.0.0.1", 5000))
+        srv.listen()
+        print("🏗️  Servidor por PROCESOS escuchando en 127.0.0.1:5000")
+        while True:
+            conn, addr = srv.accept()
+            # En lugar de Thread: un proceso independiente
+            p = multiprocessing.Process(target=atender, args=(conn, addr))
+            p.start()
+            # El padre cierra SU copia: el hijo tiene la suya (evita colgones)
+            conn.close()
+
+if __name__ == "__main__":
+    servidor()
+```
+
+El cambio es minimalista —`Process` en vez de `Thread`— pero **el guard `if __name__ == "__main__":` pasa a ser obligatorio**: en Windows cada hijo vuelve a importar el script desde el principio y, sin el guard, entraría en un bucle infinito creando procesos. Fíjate en que `accept()` sigue en el padre: él reparte trabajo y nunca se bloquea leyendo datos.
+
+## 11. Contador de conexiones entre procesos
+
+```python
+import socket
+import multiprocessing
+
+def atender(conn, addr, estado, candado):
+    with conn:
+        try:
+            # Sección crítica: leer, sumar y escribir DE UNA VEZ
+            with candado:
+                estado["activas"] = estado.get("activas", 0) + 1
+                total = estado["activas"]
+            datos = conn.recv(1024)
+            conn.sendall(f"OK [{total}]: {datos}".encode())
+            with candado:
+                estado["activas"] -= 1
+        except (ConnectionResetError, BrokenPipeError, OSError):
+            print(f"    Cliente {addr} se desconectó a mitad")
+
+def servidor():
+    with multiprocessing.Manager() as manager:
+        estado = manager.dict({"activas": 0})
+        candado = multiprocessing.Lock()
+        with socket.socket() as srv:
+            srv.setsockopt(socket.SOL_SOCKET, socket.SO_REUSEADDR, 1)
+            srv.bind(("127.0.0.1", 5000))
+            srv.listen()
+            print("🏗️  Contador de conexiones entre procesos")
+            while True:
+                conn, addr = srv.accept()
+                p = multiprocessing.Process(
+                    target=atender, args=(conn, addr, estado, candado))
+                p.start()
+                conn.close()  # El padre cierra su copia; el hijo tiene la suya
+
+if __name__ == "__main__":
+    servidor()
+```
+
+Por qué no valía el contador global: cada proceso hijo **clona la memoria** al arrancar, así que su `contador += 1` afectaría solo a su copia y el total nunca subiría. El `manager.dict()` es el que sí está en todos, y el `multiprocessing.Lock()` garantiza que la lectura-suma-escritura no se pisa entre procesos. Es el mismo patrón del [punto 9 de la UD 6](/ApuntesPSP/05-servidores-concurrentes/09-servidor-concurrente-completo-con-procesos).
+
+## 12. Aislamiento de fallos
+
+```python
+import socket
+import multiprocessing
+import traceback
+
+def atender(conn, addr, estado, candado):
+    with conn:
+        try:
+            datos = conn.recv(1024)
+            mensaje = datos.decode().strip()
+
+            if mensaje == "CRASH":
+                raise ValueError("Fallo provocado a propósito")
+
+            with candado:
+                estado["atendidos"] = estado.get("atendidos", 0) + 1
+                total = estado["atendidos"]
+            conn.sendall(f"OK [{total}]: {mensaje}".encode())
+        except ValueError:
+            # El error queda DENTRO del hijo: imprimimos y morimos
+            print(f"  [pid {multiprocessing.current_process().pid}] "
+                  f"¡Excepción manejada en el hijo!")
+            traceback.print_exc()
+        except (ConnectionResetError, BrokenPipeError, OSError):
+            print(f"    Cliente {addr} se desconectó a mitad")
+
+def servidor():
+    with multiprocessing.Manager() as manager:
+        estado = manager.dict({"atendidos": 0})
+        candado = multiprocessing.Lock()
+        hijos = []
+        with socket.socket() as srv:
+            srv.setsockopt(socket.SOL_SOCKET, socket.SO_REUSEADDR, 1)
+            srv.bind(("127.0.0.1", 5000))
+            srv.listen()
+            print("🏗️  Servidor resistente a fallos")
+            while True:
+                conn, addr = srv.accept()
+                p = multiprocessing.Process(
+                    target=atender, args=(conn, addr, estado, candado))
+                p.start()
+                conn.close()  # El padre cierra su copia; el hijo tiene la suya
+                hijos.append(p)
+                # Recoger los hijos que ya terminaron (evita zombis):
+                # primero join a los muertos, luego filtrar la lista
+                for h in hijos:
+                    if not h.is_alive():
+                        h.join()
+                hijos = [h for h in hijos if h.is_alive()]
+
+if __name__ == "__main__":
+    servidor()
+```
+
+La demo: arranca el servidor, envía `CRASH` con un cliente y después otro mensaje normal. Verás el traceback **dentro del proceso hijo** y, sin embargo, el siguiente cliente recibe su `OK` con normalidad: el hijo murió, el padre no se enteró. La recogida con `is_alive()`/`join()` evita que los procesos terminados se acumulen como zombis en la tabla de procesos.

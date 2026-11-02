@@ -5,7 +5,7 @@ description: Ejercicios avanzados de Servidores Concurrentes
 
 # 💪 Boletín UD 6 — Avanzado
 
-> Ejercicios que requieren aplicar la concurrencia de forma más profunda: timeouts, contadores sincronizados, límites de clientes, colas de espera, heartbeats y hasta un balanceador de carga.
+> Ejercicios que requieren aplicar la concurrencia de forma más profunda: timeouts, contadores sincronizados, límites de clientes, colas de espera, heartbeats y hasta un balanceador de carga. Los tres últimos llevan procesos (`Process`, `Manager` y `Lock`) para atender a los clientes; verás el patrón completo en el [punto 9 de la UD 6](/ApuntesPSP/05-servidores-concurrentes/09-servidor-concurrente-completo-con-procesos).
 
 ---
 
@@ -58,3 +58,23 @@ El servidor tiene un hilo heartbeat que imprime "💓 Servidor vivo — N conexi
 Crea un "balanceador" que recibe peticiones y las distribuye entre 2 servidores workers.
 
 **Pista**: Crea dos workers en los puertos 5001 y 5002 (cada uno en su hilo). El balanceador en el puerto 5000 acepta conexiones y las reenvía al worker actual haciendo de proxy: lee del cliente, envía al worker, recibe la respuesta y la reenvía al cliente. Alterna entre workers con un índice round-robin.
+
+---
+
+## 10. Servidor con un proceso por cliente
+
+Convierte el servidor multihilo de los ejercicios anteriores en uno donde cada conexión la atienda un `multiprocessing.Process` en lugar de un hilo.
+
+**Pista**: sustituye `threading.Thread(target=atender, args=(conn, addr))` por `multiprocessing.Process(target=atender, args=(conn, addr))` y recuerda el guard `if __name__ == "__main__":` (obligatorio en Windows, porque cada hijo vuelve a importar el script). El `accept()` sigue en el proceso padre.
+
+## 11. Contador de conexiones entre procesos
+
+El contador global del ejercicio 3 ya no sirve: cada proceso hijo tiene su propia copia de la memoria. Mueve el contador a un `manager.dict()` protegido con `multiprocessing.Lock` para que todos los procesos sumen en el mismo total.
+
+**Pista**: crea `manager.dict({"activas": 0})` y `multiprocessing.Lock()` dentro del `with multiprocessing.Manager()` del padre, y pásalos como argumentos extra al `Process`. Incrementa dentro de `with candado:` antes del bucle de lectura y decrementa al salir.
+
+## 12. Aislamiento de fallos
+
+Haz que un cliente pueda provocar un error dentro del proceso hijo (por ejemplo, enviando "CRASH" para lanzar una excepción) y demuestra que el servidor **sigue vivo** atendiendo al resto. Añade la recogida de hijos para no dejar procesos zombis.
+
+**Pista**: envuelve el tratamiento del mensaje en `try/except` dentro de `atender()`; si la excepción escapa, el proceso hijo muere con su traceback pero el bucle `accept()` del padre continúa. Guarda los `Process` en una lista y repasa con `p.is_alive()` / `p.join()` de vez en cuando.

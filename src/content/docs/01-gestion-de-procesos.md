@@ -40,10 +40,11 @@ Al terminar, serás capaz de:
 | [06 · Comunicación con procesos](/ApuntesPSP/01-gestion-de-procesos/06-comunicacion-con-procesos) | stdin, stdout y `communicate()`: pasar datos a un proceso | Todos |
 | [07 · Compatibilidad Windows / Linux](/ApuntesPSP/01-gestion-de-procesos/07-compatibilidad-windows-linux) | La tabla de comandos equivalentes y los trucos del shell | Todos |
 | [08 · Procesos nativos con multiprocessing](/ApuntesPSP/01-gestion-de-procesos/08-multiprocessing) | Process, Manager y Lock: tus propias funciones en paralelo | Todos |
-| [09 · Procesos en la práctica](/ApuntesPSP/01-gestion-de-procesos/09-procesos-en-la-practica) | Sé el código, el ring run vs Popen y ejercicios | Todos |
-| [10 · Cierre](/ApuntesPSP/01-gestion-de-procesos/10-cierre) | Sé el proceso, Fireside, Laboratorio de tortura, Crucigrama… | Todos |
+| [09 · Ejemplo resuelto: estado compartido](/ApuntesPSP/01-gestion-de-procesos/09-ejemplo-resuelto-estado-compartido) | Un almacén en memoria que cuatro procesos actualizan sin pisarse | Todos |
+| [10 · Procesos en la práctica](/ApuntesPSP/01-gestion-de-procesos/10-procesos-en-la-practica) | Sé el código, el ring run vs Popen y ejercicios | Todos |
+| [11 · Cierre](/ApuntesPSP/01-gestion-de-procesos/11-cierre) | Sé el proceso, Fireside, Laboratorio de tortura, Crucigrama… | Todos |
 
-> 📖 **Flujo de lectura:** los 9 primeros puntos son teoría en progresión (el 8 dedica a `multiprocessing`). El 9º aterriza en la práctica y el 10º consolida.
+> 📖 **Flujo de lectura:** los 9 primeros puntos son teoría en progresión (el 8 dedica a `multiprocessing` y el 9 la consolida con un ejemplo resuelto). El 10º aterriza en la práctica y el 11º consolida.
 
 ---
 
@@ -70,8 +71,8 @@ Al terminar, serás capaz de:
 | b) | Distingue entre computación paralela y distribuida | ✅ Punto 3 |
 | c) | Conoce los estados de un proceso | ✅ Punto 2 |
 | d) | Identifica las diferencias clave entre proceso e hilo | → UD 3 |
-| e) | Crea programas con procesos (subprocess) | ✅ Puntos 4 y 5 + ⚡ Laboratorio (punto 10) |
-| f) | Establece comunicación entre procesos | ✅ Punto 6 + punto 8 (Manager y Lock) |
+| e) | Crea programas con procesos (subprocess) | ✅ Puntos 4 y 5 + ⚡ Laboratorio (punto 11) |
+| f) | Establece comunicación entre procesos | ✅ Punto 6 + puntos 8 y 9 (Manager y Lock) |
 
 ---
 

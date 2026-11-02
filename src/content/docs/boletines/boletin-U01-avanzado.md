@@ -5,7 +5,7 @@ description: Ejercicios avanzados de Gestión de procesos
 
 # 💪 Boletín UD 2 — Avanzado
 
-> Ejercicios que requieren aplicar los conceptos de procesos, `subprocess` y comunicación entre procesos de forma más profunda, con programas completos.
+> Ejercicios que requieren aplicar los conceptos de procesos, `subprocess` y comunicación entre procesos de forma más profunda, con programas completos. Los tres últimos llevan `multiprocessing` (`Process`, `Manager` y `Lock`).
 
 ---
 
@@ -62,3 +62,23 @@ Crea una función que ejecute un comando con timeout de 3s. Si falla, reintenta 
 Crea un programa que lance un subprocess y verifique su estado cada segundo mientras está vivo.
 
 **Pista:** `proc.poll()` devuelve `None` si el proceso sigue ejecutándose, o el código de retorno si ya terminó. Úsalo en un bucle `while proc.poll() is None` con `time.sleep(1)` dentro.
+
+---
+
+## 10. Contador compartido con candado
+
+Crea un contador que 4 procesos incrementen 100 veces cada uno. El total final debe ser siempre 400. Ejecútalo primero **sin** el candado y comprueba que el resultado es impredecible; después, protégelo con `multiprocessing.Lock`.
+
+**Pista:** usa `multiprocessing.Value('i', 0)` para el contador y `multiprocessing.Lock()`. Pasa ambos como argumentos al `target` del `Process` y protege `contador.value += 1` con `with candado:`.
+
+## 11. Almacén compartido con Manager
+
+Monta un diccionario compartido con `multiprocessing.Manager().dict()` donde 4 procesos registran pares clave-valor (por ejemplo, cada proceso añade 3 productos con su stock). Al terminar, el padre debe ver **todas** las claves de los cuatro procesos.
+
+**Pista:** crea el `manager` dentro de un bloque `with multiprocessing.Manager() as manager:` y pásale `manager.dict()` como argumento a cada `Process`. Sin `join()` a todos los hijos, el padre puede leer el diccionario antes de tiempo.
+
+## 12. Persistencia del almacén
+
+Añade al ejercicio anterior el guardado a fichero: al terminar, vuelca el `manager.dict()` a un JSON; al arrancar, recárgalo y úsalo como estado inicial para que el stock acumulado se mantenga entre ejecuciones.
+
+**Pista:** `json.dump(dict(almacen), f)` — el proxy del Manager no es un dict, hay que convertirlo con `dict(...)` antes de serializarlo. En la carga, devuelve `{}` si el fichero no existe.

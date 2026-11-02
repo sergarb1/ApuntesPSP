@@ -18,12 +18,12 @@ PSP/
 │
 ├── src/
 │   ├── content.config.ts                ← configuración colección Starlight
-│   ├── content/docs/                    ← 155 archivos de apuntes (MD)
+│   ├── content/docs/                    ← 157 archivos de apuntes (MD)
 │   │   ├── index.md                     ← landing page (cards, descargas, licencia)
 │   │   ├── 01-gestion-de-procesos.md  ← índice de la unidad
-│   │   ├── 01-gestion-de-procesos/    ← 10 capítulos (UD 2 y UD 4; el resto, 9)
-│   │   │   ├── 01-*.md … 08-*.md        ← teoría en progresión (UD 2: 08 = multiprocessing)
-│   │   │   └── 09-cierre.md / 10-cierre.md ← cierre práctico de la unidad
+│   │   ├── 01-gestion-de-procesos/    ← 11 capítulos (UD 2: ejemplo resuelto en el 09; UD 4, 9)
+│   │   │   ├── 01-*.md … 08-*.md        ← teoría en progresión (UD 2: 08 = multiprocessing, 09 = ejemplo resuelto)
+│   │   │   └── *-cierre.md              ← cierre práctico de la unidad (UD 2: 11; UD 6: 10; resto: 9)
 │   │   ├── boletines/                   ← 44 boletines (4 × 11 unidades)
 │   │   │   ├── boletin-U00-inicial.md       ← 🟢 inicial SIN resolver
 │   │   │   ├── boletin-U00-inicial-resuelto.md ← ✅ inicial CON solución
@@ -220,9 +220,9 @@ python scripts/check-diagramas.py   # detector de solapes texto/texto y texto/fo
 
 ## Apuntes (MD por unidad)
 
-Estructura "libro" por unidad (formato replicado de ApuntesRedes): índice + 9 capítulos en subcarpeta + 4 boletines en `boletines/` (la UD 2 tiene 10 capítulos —su 08 es multiprocessing, con el cierre en el 10— y la UD 4 idem: su 09 es Python Free-Threaded, con el cierre en el 10; la UD 11 tiene 7 capítulos). Total 155 ficheros MD (~25.000 líneas). Cada unidad indica al final qué RAs cubre.
+Estructura "libro" por unidad (formato replicado de ApuntesRedes): índice + 9 capítulos en subcarpeta + 4 boletines en `boletines/` (la UD 2 tiene 11 capítulos —su 08 es multiprocessing, su 09 un ejemplo resuelto, con el cierre en el 11—; la UD 4 idem: su 09 es Python Free-Threaded, con el cierre en el 10; la UD 6 tiene 10 —su 09 es el servidor con procesos, con el cierre en el 10—; la UD 11 tiene 7). Total 157 ficheros MD (~25.500 líneas). Cada unidad indica al final qué RAs cubre.
 
-Por unidad: `0X-unidad.md` (índice, ~90 líneas) → `0X-unidad/01-…-08.md` (capítulos, 110-280 líneas) + `09-cierre.md` (cierre, ~250 líneas) → `boletines/boletin-UXX-inicial[-resuelto].md` y `-avanzado[-resuelto].md`. En la UD 2: `08-multiprocessing.md` tras el 07; en la UD 4: `09-python-free-threaded.md` tras el 08 —en ambos, `10-cierre.md` desplazado—.
+Por unidad: `0X-unidad.md` (índice, ~90 líneas) → `0X-unidad/01-…-08.md` (capítulos, 110-280 líneas) + `*-cierre.md` (cierre, ~250 líneas) → `boletines/boletin-UXX-inicial[-resuelto].md` y `-avanzado[-resuelto].md`. En la UD 2: `08-multiprocessing.md` tras el 07 y `09-ejemplo-resuelto-estado-compartido.md` tras el 08; en la UD 4: `09-python-free-threaded.md` tras el 08; en la UD 6: `09-servidor-concurrente-completo-con-procesos.md` tras el `08-servidor-concurrente-completo-con-hilos.md` —en los tres, el `*-cierre.md` se desplaza—.
 
 Secciones por capítulo:
 - 📬 **La idea en una frase** + 🧠 **Mini-chequeo** (respuestas en `<details>`)
@@ -236,20 +236,20 @@ Secciones del índice:
 - ✅ **Criterios de evaluación** con columna "Dónde se cubre"
 - 🚪 **¿Por dónde empiezo?** con primer punto y enlace a la siguiente unidad
 
-Secciones del cierre `09-cierre.md`: ⭐ Sé el código, 🔥 Fireside Chat, 🕵️ ¿Quién soy?, 🤬 CONRAD VS EL MUNDO, ⚡ Laboratorio de tortura (con pistas), 🏆 Logros, 🧠 Atrévete a pensar, 🧩 Crucigrama de bits, 💬 Entrevista de trabajo, 🤷 No hay preguntas tontas, 🎬 Poscréditos ("PRÓXIMAMENTE EN UD X", salvo UD 10 que cierra el viaje 🏁), ✅ Criterios.
+Secciones del cierre `*-cierre.md`: ⭐ Sé el código, 🔥 Fireside Chat, 🕵️ ¿Quién soy?, 🤬 CONRAD VS EL MUNDO, ⚡ Laboratorio de tortura (con pistas), 🏆 Logros, 🧠 Atrévete a pensar, 🧩 Crucigrama de bits, 💬 Entrevista de trabajo, 🤷 No hay preguntas tontas, 🎬 Poscréditos ("PRÓXIMAMENTE EN UD X", salvo UD 10 que cierra el viaje 🏁), ✅ Criterios.
 
 **Convenciones MD:** frontmatter `title`/`description` (comillas solo si contienen `:`), sin BOM, slugs de URL en minúscula (`boletin-uXX-...`), nombres de fichero `UXX` mayúscula, enlaces internos `/ApuntesPSP/...`.
 
 **Nota 1:** la comprobación lingüística obligatoria está definida en la sección 🗣️ Requisito lingüístico (es-ES) de este documento; aplícala a cualquier contenido nuevo o modificado.
 
-| Unidad | Índice + 9 capítulos | Líneas aprox | Temas clave | RAs |
+| Unidad | Índice + capítulos | Líneas aprox | Temas clave | RAs |
 |--------|----------------------|--------------|-------------|-----|
 | UD 1 Python básico | `00-python-basico.md` + carpeta | ~1.200 | Tipos, flujo, funciones, clases, módulos | — |
-| UD 2 Gestión de procesos | `01-gestion-de-procesos.md` + carpeta | ~1.760 | subprocess, run, Popen, pipes, comunicación, multiprocessing | RA1 |
+| UD 2 Gestión de procesos | `01-gestion-de-procesos.md` + carpeta | ~2.000 | subprocess, run, Popen, pipes, comunicación, multiprocessing, ejemplo resuelto de estado compartido | RA1 |
 | UD 3 Hilos y concurrencia | `02-hilos-y-concurrencia.md` + carpeta | ~1.113 | threading, join, daemon, Timer, GIL, estados | RA2 |
 | UD 4 Sincronización | `03-sincronizacion.md` + carpeta | ~1.900 | Lock, Semaphore, Barrier, Condition, RLock + free-threaded (PEP 703) | RA2 |
 | UD 5 Sockets TCP y UDP | `04-sockets-tcp-y-udp.md` + carpeta | ~1.359 | TCP, UDP, cliente, servidor, HTTP, NTP | RA3 |
-| UD 6 Servidores concurrentes | `05-servidores-concurrentes.md` + carpeta | ~1.029 | socketserver, ThreadPool, benchmark | RA4c-d |
+| UD 6 Servidores concurrentes | `05-servidores-concurrentes.md` + carpeta | ~1.400 | socketserver, ThreadPool, benchmark, servidor con procesos | RA4c-d |
 | UD 7 HTTP y APIs REST | `06-http-y-apis-rest.md` + carpeta | ~938 | REST, métodos HTTP, requests, JSON | RA4a-b |
 | UD 8 APIs comerciales | `07-apis-comerciales.md` + carpeta | ~998 | OpenWeatherMap, OpenAI, dotenv, rate limit | RA4a-b |
 | UD 9 Seguridad y cifrado | `08-seguridad-y-cifrado.md` + carpeta | ~1.500 | Hash, AES, RSA, firmas, cifrado híbrido, RBAC | RA5 |

@@ -159,3 +159,137 @@ print(f"El proceso terminó con código {proceso.poll()}")
 ```
 
 `proc.poll()` devuelve `None` mientras el proceso vive y su código de retorno cuando termina. El bucle `while proc.poll() is None` vigila cada segundo hasta que muere.
+
+---
+
+## 10. Contador compartido con candado
+
+```python
+import multiprocessing
+import time
+
+def incrementar(contador, candado, veces):
+    for _ in range(veces):
+        with candado:
+            # Sección crítica: leer, simular trabajo y escribir
+            valor = contador.value
+            time.sleep(0.0001)  # Simula que el cálculo tarda
+            contador.value = valor + 1
+
+if __name__ == '__main__':
+    contador = multiprocessing.Value('i', 0)
+    candado = multiprocessing.Lock()
+    veces = 100
+
+    procesos = []
+    for i in range(4):
+        p = multiprocessing.Process(
+            target=incrementar,
+            args=(contador, candado, veces),
+            name=f"worker-{i}",
+        )
+        procesos.append(p)
+        p.start()
+
+    for p in procesos:
+        p.join()
+
+    print(f"Total: {contador.value}")  # Siempre 400
+```
+
+Sin el `with candado:` el resultado es impredecible (por ejemplo, 271, 318…): dos procesos leen el mismo valor previo y el segundo machaca el incremento del primero. Es la misma condición de carrera que con hilos, pero entre burbujas de memoria. Ojo: el `time.sleep` dentro de la sección crítica amplía la ventana del fallo para que se vea claro — quítalo y el error será más raro, pero también aparecerá.
+
+## 11. Almacén compartido con Manager
+
+```python
+import multiprocessing
+
+def registrar_stock(almacen, proceso, productos):
+    for producto, unidades in productos:
+        almacen[producto] = unidades
+        print(f"[{proceso}] {producto} = {unidades}")
+
+if __name__ == '__main__':
+    with multiprocessing.Manager() as manager:
+        almacen = manager.dict()
+
+        trabajos = {
+            "worker-1": {"manzanas": 10, "peras": 5},
+            "worker-2": {"uvas": 7},
+            "worker-3": {"naranjas": 3, "cerezas": 12},
+            "worker-4": {"kiwis": 8},
+        }
+
+        procesos = []
+        for nombre, productos in trabajos.items():
+            p = multiprocessing.Process(
+                target=registrar_stock,
+                args=(almacen, nombre, productos),
+                name=nombre,
+            )
+            procesos.append(p)
+            p.start()
+
+        # Esperar a TODOS antes de leer: si no, puede faltar trabajo
+        for p in procesos:
+            p.join()
+
+        print(f"\nAlmacén final: {dict(almacen)}")
+```
+
+Claves del ejercicio: el `manager` vive dentro de un bloque `with` (al salir se apaga el proceso servidor del Manager y el proxy deja de responder), y el `join()` a todos los hijos es imprescindible antes de leer el resultado final.
+
+## 12. Persistencia del almacén
+
+```python
+import json
+import multiprocessing
+
+def registrar_stock(almacen, proceso, productos):
+    for producto, unidades in productos:
+        almacen[producto] = almacen.get(producto, 0) + unidades
+        print(f"[{proceso}] +{unidades} {producto}")
+
+def guardar_almacen(almacen, fichero="almacen.json"):
+    # El proxy NO es un dict: hay que convertirlo con dict(...)
+    with open(fichero, "w", encoding="utf-8") as f:
+        json.dump(dict(almacen), f, ensure_ascii=False, indent=2)
+    print(f"💾 Almacenado en {fichero}")
+
+def cargar_almacen(fichero="almacen.json"):
+    try:
+        with open(fichero, encoding="utf-8") as f:
+            return json.load(f)
+    except FileNotFoundError:
+        return {}
+
+if __name__ == '__main__':
+    estado_previo = cargar_almacen()
+    print(f"📥 Estado previo: {estado_previo}")
+
+    with multiprocessing.Manager() as manager:
+        almacen = manager.dict(estado_previo)  # Arranca desde el JSON
+
+        trabajos = {
+            "worker-1": {"manzanas": 10},
+            "worker-2": {"uvas": 7},
+        }
+
+        procesos = []
+        for nombre, productos in trabajos.items():
+            p = multiprocessing.Process(
+                target=registrar_stock,
+                args=(almacen, nombre, productos),
+                name=nombre,
+            )
+            procesos.append(p)
+            p.start()
+
+        for p in procesos:
+            p.join()
+
+        print(f"\nTotal del turno: {dict(almacen)}")
+        guardar_almacen(almacen)
+```
+
+Ejecútalo dos veces seguidas: la primera arranca de `{}` y guarda `{"manzanas": 10, "uvas": 7}`; la segunda **arranca de ahí** y suma, quedando `{"manzanas": 20, "uvas": 14}`. Esa es la persistencia: el JSON conecta dos turnos de procesos. El patrón completo, explicado paso a paso, está en el [punto 9 de la UD 2](/ApuntesPSP/01-gestion-de-procesos/09-ejemplo-resuelto-estado-compartido).

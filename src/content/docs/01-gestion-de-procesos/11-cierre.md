@@ -1,15 +1,15 @@
 ﻿---
-title: "10 — Cierre: consolida lo aprendido"
+title: "11 — Cierre: consolida lo aprendido"
 description: Sé el proceso, laboratorio con subprocess y el ring final de la unidad 🧠
 ---
 
 <p><small>Sé el proceso, laboratorio con subprocess y el ring final de la unidad 🧠</small></p>
 
-> 🗺️ **Estás en:** 🚀 **UD 2 · Gestión de procesos** → 10 · Cierre
+> 🗺️ **Estás en:** 🚀 **UD 2 · Gestión de procesos** → 11 · Cierre
 
 ---
 
-Has terminado la teoría: la burbuja de memoria y el PID, los cinco estados, paralela contra distribuida, `run()`, `Popen()`, los pipes con `communicate()`, la compatibilidad Windows/Linux y los procesos nativos con `multiprocessing`. Este cierre es el aterrizaje: recorres lo aprendido con juegos, un laboratorio real con fallos intencionados y las preguntas que te harán en una entrevista. Léelo justo después del [punto 9](/ApuntesPSP/01-gestion-de-procesos/09-procesos-en-la-practica) y antes de abrir los boletines.
+Has terminado la teoría: la burbuja de memoria y el PID, los cinco estados, paralela contra distribuida, `run()`, `Popen()`, los pipes con `communicate()`, la compatibilidad Windows/Linux, los procesos nativos con `multiprocessing` y el ejemplo resuelto de estado compartido. Este cierre es el aterrizaje: recorres lo aprendido con juegos, un laboratorio real con fallos intencionados y las preguntas que te harán en una entrevista. Léelo justo después del [punto 10](/ApuntesPSP/01-gestion-de-procesos/10-procesos-en-la-practica) y antes de abrir los boletines.
 
 ---
 
@@ -177,7 +177,7 @@ Vertical:
 5. **"¿Qué diferencia hay entre `run()` y `Popen()`? ¿Cuándo usarías cada uno?"**
 6. **"¿Cómo comunicarías dos procesos entre sí?"**
 
-> 💡 **Cómo encararlas:** la 4 y la 5 son las "preguntas reina". Para la 4, recorre la cadena: `subprocess.run([...], capture_output=True, text=True)` → `resultado.stdout`; si el proceso necesita datos, `Popen(stdin=PIPE, stdout=PIPE)` + `communicate(input=...)`. Para la 5, repite la moraleja del [punto 9](/ApuntesPSP/01-gestion-de-procesos/09-procesos-en-la-practica): `run()` para respuestas inmediatas, `Popen()` para segundo plano. Y para la 1 no olvides la **burbuja de memoria** y el **PID**. Si sabes contarlo fluido, ya eres medio programador de sistemas.
+> 💡 **Cómo encararlas:** la 4 y la 5 son las "preguntas reina". Para la 4, recorre la cadena: `subprocess.run([...], capture_output=True, text=True)` → `resultado.stdout`; si el proceso necesita datos, `Popen(stdin=PIPE, stdout=PIPE)` + `communicate(input=...)`. Para la 5, repite la moraleja del [punto 10](/ApuntesPSP/01-gestion-de-procesos/10-procesos-en-la-practica): `run()` para respuestas inmediatas, `Popen()` para segundo plano. Y para la 1 no olvides la **burbuja de memoria** y el **PID**. Si sabes contarlo fluido, ya eres medio programador de sistemas.
 
 ---
 
@@ -187,13 +187,13 @@ Vertical:
 
 Depende de la **memoria RAM**. Cada proceso ocupa memoria. En Windows puedes verlos en el Administrador de tareas.
 
-> ❓ **¿Qué pasa si un proceso hijo muere?**
+> ❓ **¿Qué ocurre si un proceso hijo termina pero el padre nunca consulta su estado?**
 
-El proceso padre puede enterarse con `proceso.wait()` o `proceso.poll()`. Si no, el hijo se convierte en **zombie** (ocupa una entrada en la tabla de procesos).
+El hijo se convierte en un **proceso zombie**. Ha liberado su memoria RAM, pero conserva su entrada en la tabla de procesos del SO a la espera de que el padre lea su código de salida mediante `wait()`, `poll()` o `join()`.
 
-> ❓ **¿Y si el padre muere antes que el hijo?**
+> ❓ **¿Y si el proceso padre muere repentinamente antes que sus hijos?**
 
-Los hijos se convierten en **huérfanos**. En Windows, el sistema los gestiona. En Linux, `init` los adopta.
+Los procesos hijos se convierten en **huérfanos**. En sistemas Linux/POSIX son adoptados automáticamente por el proceso raíz `init` (PID 1) o `systemd`, que se encarga de recoger sus estados cuando finalicen. En Windows, el propio sistema se encarga de ellos.
 
 > ❓ **`run()` vs `Popen()` — ¿cuándo usar cada uno?**
 
@@ -203,6 +203,26 @@ Los hijos se convierten en **huérfanos**. En Windows, el sistema los gestiona. 
 > ❓ **¿Puedo lanzar cualquier programa?**
 
 Sí, cualquier ejecutable. Pero el **PATH** debe incluirlo o debes dar la ruta completa.
+
+> ❓ **¿Por qué no vale un dict normal entre procesos?**
+
+Porque los procesos **no comparten memoria**: cada uno clona las variables al arrancar. Un dict normal sería como tener cinco cuadernos distintos en vez de uno compartido. `manager.dict()` vive en el proceso del Manager y todos hablan con él por mensajes ([punto 9](/ApuntesPSP/01-gestion-de-procesos/09-ejemplo-resuelto-estado-compartido)).
+
+> ❓ **¿Y si me olvido de poner el candado?**
+
+A veces funciona… hasta que no. Es la condición de carrera: dos procesos leen el mismo valor previo y el segundo machaca al primero. Prueba a quitar el `with candado:` y ejecuta tres o cuatro veces: nunca sabrás qué escritura se pierde.
+
+> ❓ **¿Los datos sobreviven si apago el programa?**
+
+No de serie: el `manager.dict()` vive en memoria. Para que sobrevivan, volcándolos a un fichero (`json.dump(dict(almacen), f)`) al terminar y recargándolo al arrancar. Fíjate en que hay que convertir el proxy a dict con `dict(...)` antes de serializarlo.
+
+> ❓ **¿Cuántos procesos lanzo a la vez?**
+
+Como mucho, tantos como **núcleos** de CPU tengas (uno por núcleo es el punto de partida). Si lanzas más, el planificador se dedica a cambiar de proceso en vez de a trabajar.
+
+> ❓ **Si `multiprocessing` duplica la memoria al crear un proceso, ¿es muy costoso para el sistema?**
+
+Sí: crear procesos es considerablemente más pesado en memoria y en tiempo de CPU (overhead) que crear hilos. Por eso, en sistemas de alta producción se suelen usar **pools de procesos** (`ProcessPoolExecutor`) para reutilizar los ya creados en lugar de instanciar y destruir procesos constantemente.
 
 ---
 
@@ -227,7 +247,7 @@ Sí, cualquier ejecutable. Pero el **PATH** debe incluirlo o debes dar la ruta c
 | CE | Criterio | Cubierto |
 |---|---|---|
 | a) | Reconoce las características de los procesos | ✅ Burbuja de memoria y PID (punto 1) + ⭐ Sé el proceso |
-| b) | Distingue entre computación paralela y distribuida | ✅ Punto 3 + 🔥 Fireside (punto 10) |
+| b) | Distingue entre computación paralela y distribuida | ✅ Punto 3 + 🔥 Fireside (punto 11) |
 | c) | Conoce los estados de un proceso | ✅ Punto 2 + ⭐ Sé el proceso |
 | d) | Identifica las diferencias clave entre proceso e hilo | → UD 3 (🔥 Fireside lo anticipa) |
 | e) | Crea programas con procesos (subprocess) | ✅ Puntos 4-5-9 + ⚡ Laboratorio de tortura |
@@ -237,4 +257,4 @@ Sí, cualquier ejecutable. Pero el **PATH** debe incluirlo o debes dar la ruta c
 
 ---
 
-📚 [Volver al índice de la unidad](/ApuntesPSP/01-gestion-de-procesos) · **Anterior:** [09 · Procesos en la práctica](/ApuntesPSP/01-gestion-de-procesos/09-procesos-en-la-practica) · **Siguiente:** **[UD 3 · Hilos y concurrencia](/ApuntesPSP/02-hilos-y-concurrencia)**
+📚 [Volver al índice de la unidad](/ApuntesPSP/01-gestion-de-procesos) · **Anterior:** [10 · Procesos en la práctica](/ApuntesPSP/01-gestion-de-procesos/10-procesos-en-la-practica) · **Siguiente:** **[UD 3 · Hilos y concurrencia](/ApuntesPSP/02-hilos-y-concurrencia)**
