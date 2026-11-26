@@ -1,5 +1,5 @@
-﻿---
-title: U08 — APIs Comerciales
+---
+title: U08 — APIs comerciales
 description: Consumir OpenWeatherMap y OpenAI con claves y cuidado 🧪
 nav_order: 07
 ---

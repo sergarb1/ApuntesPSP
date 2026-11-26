@@ -1,11 +1,11 @@
-﻿---
+---
 title: "09 — Cierre: consolida lo aprendido"
 description: Sé la petición con API key, laboratorio real y el ring final de la unidad 🧠
 ---
 
 <p><small>Sé la petición con API key, laboratorio real y el ring final de la unidad 🧠</small></p>
 
-> 🗺️ **Estás en:** 🧪 **UD 8 · APIs Comerciales** → 09 · Cierre
+> 🗺️ **Estás en:** 🧪 **UD 8 · APIs comerciales** → 09 · Cierre
 
 ---
 

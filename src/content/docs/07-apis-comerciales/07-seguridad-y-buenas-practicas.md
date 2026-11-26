@@ -1,11 +1,11 @@
-﻿---
+---
 title: 07 — Seguridad y buenas prácticas
 description: Protege tus claves como si fueran la llave de tu casa 🔐
 ---
 
 <p><small>Protege tus claves como si fueran la llave de tu casa 🔐</small></p>
 
-> 🗺️ **Estás en:** 🧪 **UD 8 · APIs Comerciales** → 07 · Seguridad y buenas prácticas
+> 🗺️ **Estás en:** 🧪 **UD 8 · APIs comerciales** → 07 · Seguridad y buenas prácticas
 
 ---
 

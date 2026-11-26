@@ -1,11 +1,11 @@
-﻿---
+---
 title: "08 — Práctica: APIs comerciales"
 description: "Sé el código, el programa completo y los ejercicios del lápiz 🛠️"
 ---
 
 <p><small>Sé el código, el programa completo y los ejercicios del lápiz 🛠️</small></p>
 
-> 🗺️ **Estás en:** 🧪 **UD 8 · APIs Comerciales** → 08 · Práctica: APIs comerciales
+> 🗺️ **Estás en:** 🧪 **UD 8 · APIs comerciales** → 08 · Práctica: APIs comerciales
 
 ---
 

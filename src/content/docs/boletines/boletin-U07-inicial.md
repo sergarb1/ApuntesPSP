@@ -1,6 +1,6 @@
 ---
 title: Boletín UD 8 — Inicial
-description: Ejercicios básicos de APIs Comerciales
+description: Ejercicios básicos de APIs comerciales
 ---
 
 # 📝 Boletín UD 8 — Inicial

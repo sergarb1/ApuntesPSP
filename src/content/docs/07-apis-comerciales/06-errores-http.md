@@ -1,11 +1,11 @@
-﻿---
+---
 title: 06 — Errores HTTP
 description: "401, 403, 429, 500: el servidor te está hablando ⚠️"
 ---
 
 <p><small>401, 403, 429, 500: el servidor te está hablando ⚠️</small></p>
 
-> 🗺️ **Estás en:** 🧪 **UD 8 · APIs Comerciales** → 06 · Errores HTTP
+> 🗺️ **Estás en:** 🧪 **UD 8 · APIs comerciales** → 06 · Errores HTTP
 
 ---
 

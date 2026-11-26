@@ -1,6 +1,6 @@
-﻿---
+---
 title: Boletín UD 8 — Avanzado (Resuelto)
-description: Soluciones de los ejercicios avanzados de APIs Comerciales
+description: Soluciones de los ejercicios avanzados de APIs comerciales
 ---
 
 # 💪 Boletín UD 8 — Avanzado (Resuelto)

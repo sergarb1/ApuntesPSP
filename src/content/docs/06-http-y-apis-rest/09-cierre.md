@@ -1,4 +1,4 @@
-﻿---
+---
 title: "09 — Cierre: consolida lo aprendido"
 description: Sé la petición HTTP, laboratorio real y el ring final de la unidad 🧠
 ---
@@ -230,4 +230,4 @@ Hoy en día, JSON gana por goleada. XML solo se usa en entornos legacy (bancos, 
 
 ---
 
-📚 [Volver al índice de la unidad](/ApuntesPSP/06-http-y-apis-rest) · **Anterior:** [08 · Práctica: mini cliente de API](/ApuntesPSP/06-http-y-apis-rest/08-practica-api) · **Siguiente:** **[UD 8 · APIs Comerciales](/ApuntesPSP/07-apis-comerciales)**
+📚 [Volver al índice de la unidad](/ApuntesPSP/06-http-y-apis-rest) · **Anterior:** [08 · Práctica: mini cliente de API](/ApuntesPSP/06-http-y-apis-rest/08-practica-api) · **Siguiente:** **[UD 8 · APIs comerciales](/ApuntesPSP/07-apis-comerciales)**

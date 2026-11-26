@@ -1,6 +1,6 @@
-﻿---
+---
 title: Boletín UD 8 — Inicial (Resuelto)
-description: Soluciones de los ejercicios básicos de APIs Comerciales
+description: Soluciones de los ejercicios básicos de APIs comerciales
 ---
 
 # ✅ Boletín UD 8 — Inicial (Resuelto)

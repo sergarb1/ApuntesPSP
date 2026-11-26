@@ -1,5 +1,8 @@
 import { defineConfig } from 'astro/config';
 import starlight from '@astrojs/starlight';
+import { readFileSync } from 'node:fs';
+import path from 'node:path';
+import { fileURLToPath } from 'node:url';
 
 const emojis = ['🐍', '🚀', '🔀', '🔒', '🔌', '🏗️', '🌐', '🧪', '🔐', '⏱️', '☕'];
 
@@ -25,7 +28,7 @@ const unitLabels = [
   'Sockets TCP y UDP',
   'Servidores concurrentes',
   'HTTP y APIs REST',
-  'APIs Comerciales',
+  'APIs comerciales',
   'Seguridad y cifrado',
   'Alta disponibilidad',
   'Spring Boot con Java',
@@ -76,7 +79,26 @@ const unitPuntos = {
   '10-spring-boot': ['01-java-para-python', '02-introduccion-spring-boot', '03-inyeccion-de-dependencias', '04-restcontroller-y-apis', '05-jpa-y-bases-de-datos', '06-ejemplo-completo', '07-cierre'],
 };
 
-const titleCase = (s) => s.split(' ').map((w) => w[0].toUpperCase() + w.slice(1)).join(' ');
+const docsDir = path.resolve(path.dirname(fileURLToPath(import.meta.url)), 'src/content/docs');
+
+// Mayúscula solo a la primera letra de la frase (castellano), sin tocar siglas ni nombres propios.
+const sentenceCase = (s) => s.charAt(0).toUpperCase() + s.slice(1);
+
+// Título real del punto, leído del frontmatter del propio .md (respeta HTTP, OpenAI, JSON, GIL…)
+const tituloPunto = (slug, file) => {
+  try {
+    const md = readFileSync(path.join(docsDir, slug, `${file}.md`), 'utf8');
+    const m = md.match(/^title:\s*(.+)$/m);
+    if (m) {
+      const t = m[1].trim().replace(/^["']|["']$/g, '');
+      const sinNumero = t.replace(/^\d+\s*[—–-]\s*/, '').trim();
+      if (sinNumero) return sinNumero;
+    }
+  } catch (e) {
+    // si el fichero no se puede leer, se usa el respaldo de abajo
+  }
+  return sentenceCase(file.slice(3).replace(/-/g, ' '));
+};
 
 // Items del grupo de una unidad ampliada: índice + sus puntos
 const expandedUnitItems = (slug) => {
@@ -89,7 +111,7 @@ const expandedUnitItems = (slug) => {
       if (file.endsWith('-cierre')) {
         label = `${num} · Cierre`;
       } else {
-        label = `${num} · ${titleCase(file.slice(3).replace(/-/g, ' '))}`;
+        label = `${num} · ${tituloPunto(slug, file)}`;
       }
       return { slug: `${slug}/${file}`, label };
     }),

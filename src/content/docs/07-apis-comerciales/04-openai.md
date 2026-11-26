@@ -1,11 +1,11 @@
-﻿---
+---
 title: 04 — OpenAI
 description: El cerebro artificial al alcance de una API 🤖
 ---
 
 <p><small>El cerebro artificial al alcance de una API 🤖</small></p>
 
-> 🗺️ **Estás en:** 🧪 **UD 8 · APIs Comerciales** → 04 · OpenAI
+> 🗺️ **Estás en:** 🧪 **UD 8 · APIs comerciales** → 04 · OpenAI
 
 ---
 

@@ -1,6 +1,6 @@
-﻿---
+---
 title: Boletín UD 8 — Avanzado
-description: Ejercicios avanzados de APIs Comerciales
+description: Ejercicios avanzados de APIs comerciales
 ---
 
 # 💪 Boletín UD 8 — Avanzado

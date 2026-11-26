@@ -1,4 +1,4 @@
-﻿---
+---
 title: U07 — APIs REST y HTTP
 description: "Hablar con la web: REST, métodos HTTP y JSON 🌐"
 nav_order: 06
@@ -10,7 +10,7 @@ nav_order: 06
 
 *En la U05 y la U06 montaste sockets y hablaste con procesos en la misma máquina. Ahora toca hablar con el mundo: la web entera se apoya en HTTP, y las APIs REST son la manera moderna de pedirle datos a cualquier servicio.*
 
-Cuando tu aplicación quiere saber el tiempo, traducir un texto o buscar repositorios en GitHub, no monta un socket a mano: llama a una **API**. Esta unidad te enseña el idioma de esa conversación: qué es una API, cómo funciona HTTP, qué métodos existen (GET, POST, PUT, DELETE), qué significan los códigos de estado, cómo se lee **JSON** y cómo usar la librería `requests` de Python para hacer peticiones reales contra servicios públicos. El siguiente tema, [U08 · APIs Comerciales](/ApuntesPSP/07-apis-comerciales), tomará el relevo con APIs de pago como OpenWeatherMap y OpenAI.
+Cuando tu aplicación quiere saber el tiempo, traducir un texto o buscar repositorios en GitHub, no monta un socket a mano: llama a una **API**. Esta unidad te enseña el idioma de esa conversación: qué es una API, cómo funciona HTTP, qué métodos existen (GET, POST, PUT, DELETE), qué significan los códigos de estado, cómo se lee **JSON** y cómo usar la librería `requests` de Python para hacer peticiones reales contra servicios públicos. El siguiente tema, [U08 · APIs comerciales](/ApuntesPSP/07-apis-comerciales), tomará el relevo con APIs de pago como OpenWeatherMap y OpenAI.
 
 Esta unidad se lee como un **libro de 9 capítulos**: los 8 primeros son teoría en progresión y el 9º aterriza todo en la práctica.
 
@@ -83,4 +83,4 @@ Al terminar, serás capaz de:
 ¿Ya sabes qué es una API y solo necesitas `requests` o el JSON? Ve directo al [punto 5](/ApuntesPSP/06-http-y-apis-rest/05-json) y al [punto 6](/ApuntesPSP/06-http-y-apis-rest/06-requests-get). Si vienes de cero en la web, no te saltes los puntos 1 a 4: URL, métodos y códigos de estado son el idioma que vas a hablar toda la unidad.
 
 **📍 Primer punto:** [01 · Web y HTTP](/ApuntesPSP/06-http-y-apis-rest/01-web-y-http)  
-**⏭️ Al acabar la unidad, continúa en [U08 · APIs Comerciales](/ApuntesPSP/07-apis-comerciales).**
+**⏭️ Al acabar la unidad, continúa en [U08 · APIs comerciales](/ApuntesPSP/07-apis-comerciales).**
