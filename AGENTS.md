@@ -18,12 +18,12 @@ PSP/
 │
 ├── src/
 │   ├── content.config.ts                ← configuración colección Starlight
-│   ├── content/docs/                    ← 157 archivos de apuntes (MD)
+│   ├── content/docs/                    ← 158 archivos de apuntes (MD)
 │   │   ├── index.md                     ← landing page (cards, descargas, licencia)
 │   │   ├── 01-gestion-de-procesos.md  ← índice de la unidad
 │   │   ├── 01-gestion-de-procesos/    ← 11 capítulos (UD 2: ejemplo resuelto en el 09; UD 4, 9)
 │   │   │   ├── 01-*.md … 08-*.md        ← teoría en progresión (UD 2: 08 = multiprocessing, 09 = ejemplo resuelto)
-│   │   │   └── *-cierre.md              ← cierre práctico de la unidad (UD 2: 11; UD 6: 10; resto: 9)
+│   │   │   └── *-cierre.md              ← cierre práctico de la unidad (UD 2: 11; UD 4, 6 y 8: 10; resto: 9)
 │   │   ├── boletines/                   ← 44 boletines (4 × 11 unidades)
 │   │   │   ├── boletin-U00-inicial.md       ← 🟢 inicial SIN resolver
 │   │   │   ├── boletin-U00-inicial-resuelto.md ← ✅ inicial CON solución
@@ -37,6 +37,7 @@ PSP/
 │   ├── portada.png                      ← portada para web, PDF y EPUB
 │   ├── favicon.svg
 │   ├── diagrams/                        ← SVG generados automáticamente
+│   ├── ejemplos/                        ← imágenes de los ejemplos (p. ej. Rick y Morty, PNG)
 │   ├── pdf/                             ← PDFs generados (ApuntesPSP.pdf)
 │   └── epub/                            ← EPUBs generados (ApuntesPSP.epub)
 │
@@ -216,13 +217,13 @@ python scripts/check-diagramas.py   # detector de solapes texto/texto y texto/fo
 - **Portada:** `public/portada.png` (gradiente azul, generado desde SVG vía Puppeteer, usada en web, PDF y EPUB)
 - **PDF/EPUB:** generados localmente (`npm run pdf`, `npm run epub`) y commiteados al repo; Astro los copia a `dist/` durante el build para que estén disponibles en GitHub Pages
 - **DOCX:** un DOCX de apuntes + uno de boletines por unidad, commiteados en `docx_out/`; se regeneran con `node scripts/svg2png.mjs && python scripts/build_docx.py` (los PNG intermedios van en `docx_out/pngs/`, gitignored)
-- **.gitignore:** `public/*.png` excluye PNGs genéricos pero `!public/portada.png` lo re-incluye
+- **.gitignore:** `public/*.png` excluye PNGs genéricos pero `!public/portada.png` y `!public/ejemplos/**/*.png` lo re-incluyen
 
 ## Apuntes (MD por unidad)
 
-Estructura "libro" por unidad (formato replicado de ApuntesRedes): índice + 9 capítulos en subcarpeta + 4 boletines en `boletines/` (la UD 2 tiene 11 capítulos —su 08 es multiprocessing, su 09 un ejemplo resuelto, con el cierre en el 11—; la UD 4 idem: su 09 es Python Free-Threaded, con el cierre en el 10; la UD 6 tiene 10 —su 09 es el servidor con procesos, con el cierre en el 10—; la UD 11 tiene 7). Total 157 ficheros MD (~25.500 líneas). Cada unidad indica al final qué RAs cubre.
+Estructura "libro" por unidad (formato replicado de ApuntesRedes): índice + 9 capítulos en subcarpeta + 4 boletines en `boletines/` (la UD 2 tiene 11 capítulos —su 08 es multiprocessing, su 09 un ejemplo resuelto, con el cierre en el 11—; la UD 4 idem: su 09 es Python Free-Threaded, con el cierre en el 10; la UD 6 tiene 10 —su 09 es el servidor con procesos, con el cierre en el 10—; la UD 8 tiene 10 —su 09 es el ejemplo completo de la API de Rick y Morty, con el cierre en el 10—; la UD 11 tiene 7). Total 158 ficheros MD (~26.000 líneas). Cada unidad indica al final qué RAs cubre.
 
-Por unidad: `0X-unidad.md` (índice, ~90 líneas) → `0X-unidad/01-…-08.md` (capítulos, 110-280 líneas) + `*-cierre.md` (cierre, ~250 líneas) → `boletines/boletin-UXX-inicial[-resuelto].md` y `-avanzado[-resuelto].md`. En la UD 2: `08-multiprocessing.md` tras el 07 y `09-ejemplo-resuelto-estado-compartido.md` tras el 08; en la UD 4: `09-python-free-threaded.md` tras el 08; en la UD 6: `09-servidor-concurrente-completo-con-procesos.md` tras el `08-servidor-concurrente-completo-con-hilos.md` —en los tres, el `*-cierre.md` se desplaza—.
+Por unidad: `0X-unidad.md` (índice, ~90 líneas) → `0X-unidad/01-…-08.md` (capítulos, 110-280 líneas) + `*-cierre.md` (cierre, ~250 líneas) → `boletines/boletin-UXX-inicial[-resuelto].md` y `-avanzado[-resuelto].md`. En la UD 2: `08-multiprocessing.md` tras el 07 y `09-ejemplo-resuelto-estado-compartido.md` tras el 08; en la UD 4: `09-python-free-threaded.md` tras el 08; en la UD 6: `09-servidor-concurrente-completo-con-procesos.md` tras el `08-servidor-concurrente-completo-con-hilos.md`; en la UD 8: `09-ejemplo-completo-rick-y-morty.md` tras el `08-practica-apis-comerciales.md` —en los cuatro, el `*-cierre.md` se desplaza—.
 
 Secciones por capítulo:
 - 📬 **La idea en una frase** + 🧠 **Mini-chequeo** (respuestas en `<details>`)
@@ -231,7 +232,7 @@ Secciones por capítulo:
 - ✍️ **Revisión es-ES (nota 1)**: vocabulario peninsular, mayúsculas oracionales y formato numérico español antes de dar el capítulo por cerrado
 
 Secciones del índice:
-- 🎯 **Objetivo de la unidad** + 🗺️ **Mapa de la unidad** (9 enlaces; 10 en UD 2 y UD 4)
+- 🎯 **Objetivo de la unidad** + 🗺️ **Mapa de la unidad** (9 enlaces; 10 en UD 2, 4, 6 y 8)
 - 📝 **Boletines** con `.ejercicio-links` + `a.elink` a los 4 boletines
 - ✅ **Criterios de evaluación** con columna "Dónde se cubre"
 - 🚪 **¿Por dónde empiezo?** con primer punto y enlace a la siguiente unidad
@@ -239,6 +240,8 @@ Secciones del índice:
 Secciones del cierre `*-cierre.md`: ⭐ Sé el código, 🔥 Fireside Chat, 🕵️ ¿Quién soy?, 🤬 CONRAD VS EL MUNDO, ⚡ Laboratorio de tortura (con pistas), 🏆 Logros, 🧠 Atrévete a pensar, 🧩 Crucigrama de bits, 💬 Entrevista de trabajo, 🤷 No hay preguntas tontas, 🎬 Poscréditos ("PRÓXIMAMENTE EN UD X", salvo UD 10 que cierra el viaje 🏁), ✅ Criterios.
 
 **Convenciones MD:** frontmatter `title`/`description` (comillas solo si contienen `:`), sin BOM, slugs de URL en minúscula (`boletin-uXX-...`), nombres de fichero `UXX` mayúscula, enlaces internos `/ApuntesPSP/...`.
+
+**Al añadir o renumerar capítulos** hay que actualizar también `unitPuntos` en `astro.config.mjs` (el sidebar de Starlight lee de ahí) y la navegación Anterior/Siguiente de los capítulos vecinos; si hay imágenes nuevas en `public/ejemplos/`, comprobar la excepción en `.gitignore` y el reescritor de rutas de `scripts/build_docx.py` y `scripts/generate-epub.ps1`.
 
 **Nota 1:** la comprobación lingüística obligatoria está definida en la sección 🗣️ Requisito lingüístico (es-ES) de este documento; aplícala a cualquier contenido nuevo o modificado.
 
@@ -251,7 +254,7 @@ Secciones del cierre `*-cierre.md`: ⭐ Sé el código, 🔥 Fireside Chat, 🕵
 | UD 5 Sockets TCP y UDP | `04-sockets-tcp-y-udp.md` + carpeta | ~1.359 | TCP, UDP, cliente, servidor, HTTP, NTP | RA3 |
 | UD 6 Servidores concurrentes | `05-servidores-concurrentes.md` + carpeta | ~1.400 | socketserver, ThreadPool, benchmark, servidor con procesos | RA4c-d |
 | UD 7 HTTP y APIs REST | `06-http-y-apis-rest.md` + carpeta | ~938 | REST, métodos HTTP, requests, JSON | RA4a-b |
-| UD 8 APIs comerciales | `07-apis-comerciales.md` + carpeta | ~998 | OpenWeatherMap, OpenAI, dotenv, rate limit | RA4a-b |
+| UD 8 APIs comerciales | `07-apis-comerciales.md` + carpeta | ~1.300 | OpenWeatherMap, OpenAI, dotenv, rate limit, ejemplo Rick y Morty + Pillow | RA4a-b |
 | UD 9 Seguridad y cifrado | `08-seguridad-y-cifrado.md` + carpeta | ~1.500 | Hash, AES, RSA, firmas, cifrado híbrido, RBAC | RA5 |
 | UD 10 Alta disponibilidad | `09-alta-disponibilidad.md` + carpeta | ~913 | asyncio, heartbeat, backoff, timeouts | RA4e-g |
 | UD 11 Spring Boot | `10-spring-boot.md` + carpeta | ~700 | Java, Spring Boot, DI, REST, JPA | — |

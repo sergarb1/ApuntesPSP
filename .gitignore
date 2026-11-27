@@ -36,6 +36,8 @@ split_exercises.py
 public/*.png
 *.png
 !public/portada.png
+# Imágenes de los ejemplos (p. ej. Rick y Morty) sí van al repo
+!public/ejemplos/**/*.png
 
 # D2 SVG output in source dir (should only be in public/diagrams/)
 diagrams/*.svg

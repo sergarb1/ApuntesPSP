@@ -77,6 +77,8 @@ BOLETINES_SECCIONES = ["inicial", "inicial-resuelto",
 
 IMG_RE = re.compile(
     r"!\[([^\]]*)\]\((?:/ApuntesPSP)?/diagrams/([^)/]+)\.svg\)")
+# Imágenes de ejemplo (p. ej. los PNG de Rick y Morty en public/ejemplos/)
+EJEMPLOS_RE = re.compile(r"!\[([^\]]*)\]\(/ApuntesPSP/(ejemplos/[^)]+\.png)\)")
 
 AVISO_NO_PNG = "DIAGRAMA_NO_DISPONIBLE"
 
@@ -95,7 +97,17 @@ def reescribe_imagenes(md, mapa):
             print(f"  AVISO: sin PNG para {nombre}")
             return f"`[{AVISO_NO_PNG}: {nombre}]`"
         return f"![{alt}]({png.as_posix()})"
-    return IMG_RE.sub(sust, md)
+
+    def sust_ejemplos(m):
+        alt, ruta = m.group(1), m.group(2)
+        destino = ROOT / "public" / ruta
+        if not destino.exists():
+            print(f"  AVISO: falta imagen {ruta}")
+            return f"`[{AVISO_NO_PNG}: {ruta}]`"
+        return f"![{alt}]({destino.as_posix()})"
+
+    md = IMG_RE.sub(sust, md)
+    return EJEMPLOS_RE.sub(sust_ejemplos, md)
 
 
 def quita_frontmatter(md):
@@ -146,7 +158,7 @@ def limpia_nombre(nombre):
 # ---------- composición de documentos ----------
 
 def docx_apuntes(unidad, ud, mapa):
-    """Une índice + 9 capítulos en un único MD (H1 por documento)."""
+    """Une índice + capítulos en un único MD (H1 por documento)."""
     partes = []
     indice = SRC / f"{unidad}.md"
     if indice.exists():

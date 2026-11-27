@@ -57,12 +57,9 @@ resp.raise_for_status()  # Lanza una excepción HTTPError si es 4xx o 5xx
 
 ## 🛡️ Una llamada segura de verdad
 
-Juntando los códigos, el timeout y los reintentos, la función robusta queda así:
-
+Juntando los códigos, el timeout y los reintentos, **`llamada_segura()` decide qué hace ante cada respuesta**: reintenta con espera ante un timeout o un 429, se rinde ante un error de autenticación y solo entonces deja pasar el resultado. El flujo de decisión, en un vistazo:
 
 ![Diagrama de flujo de errores al consumir una API: Timeout, 429, 401, 4xx/5xx y ConnectionError con su plan de reintento](/ApuntesPSP/diagrams/flujo-errores-api.svg)
-
-El flujo de decisión, en un vistazo:
 
 
 ---

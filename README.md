@@ -35,7 +35,7 @@ PSP/
 ├── package.json / astro.config.mjs       ← Config Astro + Starlight
 ├── .github/workflows/deploy.yml          ← GitHub Actions → gh-pages
 │
-├── src/content/docs/                     ← 155 archivos de apuntes (MD)
+├── src/content/docs/                     ← 158 archivos de apuntes (MD)
 │   ├── index.md                          ← Landing page con cards y descargas
 │   ├── 01-gestion-de-procesos.md       ← Índice de la unidad (11 unidades)
 │   ├── 01-gestion-de-procesos/         ← 9 capítulos por unidad
@@ -81,7 +81,7 @@ PSP/
 | **UD 5** — Sockets TCP y UDP | socket, cliente/servidor TCP y UDP, HTTP desde cero, NTP | **RA3** |
 | **UD 6** — Servidores concurrentes | ThreadPoolExecutor, benchmark, servidor multihilo | **RA4c-d** |
 | **UD 7** — HTTP y APIs REST | REST, GET/POST/PUT/DELETE, requests, JSON, códigos de estado | **RA4a-b** |
-| **UD 8** — APIs Comerciales | API Key, dotenv, OpenWeatherMap, OpenAI, rate limiting, backoff | **RA4a-b** |
+| **UD 8** — APIs Comerciales | API Key, dotenv, OpenWeatherMap, OpenAI, rate limiting, backoff, ejemplo Rick y Morty + Pillow | **RA4a-b** |
 | **UD 9** — Seguridad y cifrado | MD5, SHA, sal, César, AES, RSA, firmas, RBAC | **RA5** |
 | **UD 10** — Alta disponibilidad | asyncio, corrutinas, heartbeat, backoff, timeouts | **RA4e-g** |
 | **UD 11** — Spring Boot | Del Python al ecosistema Java: DI, REST, JPA | — |
