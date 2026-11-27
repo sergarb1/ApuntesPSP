@@ -27,7 +27,7 @@ for (const f of svgs) {
   });
   await page.setContent(
     `<html><body style="margin:0">${svg}</body></html>`,
-    { waitUntil: "networkidle0" },
+    { waitUntil: "load", timeout: 120000 },
   );
   const png = await page.screenshot();
   const destino = join(OUT, f.replace(/\.svg$/, ".png"));

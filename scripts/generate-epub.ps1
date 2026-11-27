@@ -136,7 +136,7 @@ $cssPath = Join-Path $PSScriptRoot "epub.css"
 $pandoc = Get-ChildItem -Recurse -Filter "pandoc.exe" -Path "$env:LOCALAPPDATA\Microsoft\WinGet\Packages" -ErrorAction SilentlyContinue | Select-Object -First 1 -ExpandProperty FullName
 if (-not $pandoc) { $pandoc = "pandoc" }
 try {
-  & $pandoc $tempMd --from markdown --to epub3 --toc --toc-depth=3 --epub-cover-image="$coverPath" --syntax-highlighting pygments --css $cssPath -o $outPath
+  & $pandoc $tempMd --from markdown --to epub3 --toc --toc-depth=3 --epub-cover-image="$coverPath" --highlight-style pygments --css $cssPath -o $outPath
   if ($LASTEXITCODE -eq 0) { Write-Host "OK: $outPath" } else { Write-Host "FAIL" }
 } finally {
   Remove-Item $tempMd -Force -ErrorAction SilentlyContinue
