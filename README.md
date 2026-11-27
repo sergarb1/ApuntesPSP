@@ -46,7 +46,7 @@ PSP/
 │   │   ├── boletin-U00-inicial-resuelto.md ← ✅ Inicial CON solución
 │   │   ├── boletin-U00-avanzado.md       ← 💪 Avanzado SIN resolver
 │   │   └── boletin-U00-avanzado-resuelto.md ← ⭐ Avanzado CON solución
-│   └── … hasta unidad 11
+│   └── … hasta unidad 12
 │
 ├── src/styles/custom.css                 ← CSS premium (gradientes, cards, animaciones)
 ├── public/
@@ -82,9 +82,9 @@ PSP/
 | **UD 6** — Servidores concurrentes | ThreadPoolExecutor, benchmark, servidor multihilo | **RA4c-d** |
 | **UD 7** — HTTP y APIs REST | REST, GET/POST/PUT/DELETE, requests, JSON, códigos de estado | **RA4a-b** |
 | **UD 8** — APIs Comerciales | API Key, dotenv, OpenWeatherMap, OpenAI, rate limiting, backoff, ejemplo Rick y Morty + Pillow | **RA4a-b** |
-| **UD 9** — Seguridad y cifrado | MD5, SHA, sal, César, AES, RSA, firmas, RBAC | **RA5** |
-| **UD 10** — Alta disponibilidad | asyncio, corrutinas, heartbeat, backoff, timeouts | **RA4e-g** |
-| **UD 11** — Spring Boot | Del Python al ecosistema Java: DI, REST, JPA | — |
+| **UD 10** — Seguridad y cifrado | MD5, SHA, sal, César, AES, RSA, firmas, RBAC | **RA5** |
+| **UD 11** — Alta disponibilidad | asyncio, corrutinas, heartbeat, backoff, timeouts | **RA4e-g** |
+| **UD 12** — Spring Boot | Del Python al ecosistema Java: DI, REST, JPA | — |
 
 ---
 

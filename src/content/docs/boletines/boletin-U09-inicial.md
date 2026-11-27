@@ -1,50 +1,58 @@
 ﻿---
 title: Boletín UD 10 — Inicial
-description: Ejercicios básicos de Alta disponibilidad
+description: Ejercicios básicos de Seguridad y cifrado
 ---
 
 # 📝 Boletín UD 10 — Inicial
 
-> Ejercicios básicos para afianzar los conceptos de asyncio: corrutinas, el event loop, gather, las tareas en segundo plano y los primeros mecanismos de disponibilidad.
+> Ejercicios básicos para afianzar los conceptos de hash (MD5, SHA), César y el cifrado moderno (AES, RSA) de la unidad UD 10.
 
 ---
 
-## 1. Mensaje diferido
+## 1. SHA1 de tu nombre
 
-Crea una corrutina `async def preparar()` que imprima "Preparando...", espere 2 segundos con `await asyncio.sleep(2)`, e imprima "¡Listo!". Ejecútala con `asyncio.run()`.
+Calcula el hash SHA1 de tu nombre (en minúsculas) usando `hashlib.sha1()`. Muestra el resultado en hexadecimal con `.hexdigest()`.
 
-## 2. Saludo y despedida
+**Pista:** recuerda que `hashlib` espera bytes: escribe tu nombre como `b"sergi"` o con `.encode()`.
 
-Crea dos corrutinas: `saludar()` (espera 0.5s y dice "Hola") y `despedirse()` (espera 1s y dice "Adiós"). Ejecuta ambas con `asyncio.gather`.
+## 2. MD5 de una frase
 
-## 3. Temporizador
+Calcula el hash MD5 de la frase `"Python es genial"`. Muestra el resultado en hexadecimal.
 
-Crea una corrutina que imprima "tic" cada 2 segundos, 4 veces. Usa `asyncio.sleep(2)` dentro de un bucle `for`.
+## 3. Longitud de los hashes de "Hola mundo"
 
-## 4. Corrutina que devuelve
+Calcula MD5, SHA1 y SHA256 de `"Hola mundo"` y escribe cuántos caracteres hexadecimales devuelve cada uno.
 
-Crea una corrutina `sumar(a, b)` que espere 1 segundo y devuelva `a + b`. Lánzala y muestra el resultado.
+## 4. Cifrado César sencillo
 
-**Pista:** llamar a una corrutina no ejecuta su cuerpo: devuelve un objeto corrutina. Para obtener el resultado usa `await sumar(3, 4)` dentro de una corrutina `main()` y ejecuta con `asyncio.run(main())`.
+Implementa una función `cifrar_cesar(texto, desplazamiento)` y cifra `"Hola"` con desplazamiento 3. ¿Qué texto obtienes?
 
-## 5. Tres tareas a la vez
+## 5. Determinismo del hash
 
-Crea 3 corrutinas que esperen 1, 2 y 3 segundos. Lánzalas con `asyncio.gather` y mide el tiempo total con `time.time()`. ¿Cuánto dura en vez de 6 segundos?
+Calcula dos veces el SHA256 de `"clave123"` y compáralos. ¿Son iguales? ¿Qué propiedad del hash te lo garantiza?
 
-**Pista:** con `gather` el total es el de la tarea más lenta (3s), no la suma. Guarda `inicio = time.time()` antes del `gather` y resta después.
+**Pista:** un hash es **determinista**: misma entrada → mismo hash, siempre.
 
-## 6. Tarea en segundo plano
+## 6. Nonce y tag
 
-Crea una corrutina `contar()` que imprima un número cada 0.5s (hasta 4). Lánzala con `asyncio.create_task` desde una corrutina `main()` que haga `await asyncio.sleep(1)` y luego imprima "main sigue". ¿Qué se imprime mientras tanto?
+Cifra `b"Hola mundo con AES"` usando AES modo EAX (librería `pycryptodome`). Imprime por pantalla las longitudes del nonce y del tag (en bytes).
 
-## 7. Heartbeat básico
+**Pista:** `cifrador.nonce` y `tag` son objetos bytes: `len(cifrador.nonce)` y `len(tag)`. El nonce del modo EAX suele medir 16 bytes.
 
-Crea una corrutina heartbeat que imprima "💓 vivo" cada 2 segundos. Lánzala con `create_task` desde `main()` y deja que `main()` espere 5 segundos antes de terminar.
+## 7. AES: cifrar y descifrar completo
 
-**Pista:** el heartbeat es un `while True` con `await asyncio.sleep(2)`. `main()` debe esperar (`await asyncio.sleep(5)`) o la tarea de fondo muere con él.
+Cifra `b"El cifrado simetrico es rapido"` con AES (EAX), y descifralo a continuación. Muestra el nonce, el tag y el mensaje original.
 
-## 8. Timeout básico
+**Pista:** usa `encrypt_and_digest` para cifrar y `AES.new(clave, AES.MODE_EAX, nonce=cifrador.nonce).decrypt(texto_cifrado)` para descifrar.
 
-Crea una corrutina `lenta()` que tarde 8 segundos y devuelva "Hecho". Usa `asyncio.wait_for` con timeout de 3s y muestra qué excepción salta y qué imprime tu `except`.
+## 8. Simétrico vs asimétrico
 
-**Pista:** `asyncio.wait_for(lenta(), timeout=3)` lanza `asyncio.TimeoutError` al pasar los 3 segundos y cancela la corrutina lenta.
+Responde razonadamente:
+
+a) ¿Cuántas claves usa el cifrado simétrico? ¿Y el asimétrico?
+b) ¿Con qué clave cifras un mensaje para que solo Bob lo lea?
+c) ¿Por qué RSA no sirve para cifrar un archivo grande?
+
+---
+
+📚 [Volver a la unidad](/ApuntesPSP/09-seguridad-y-cifrado) · Resuelto: [✅ Boletín UD 10 — Inicial (Resuelto)](/ApuntesPSP/boletines/boletin-u09-inicial-resuelto)

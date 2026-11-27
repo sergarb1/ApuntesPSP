@@ -1,309 +1,269 @@
----
+﻿---
 title: Boletín UD 11 — Avanzado (Resuelto)
-description: Soluciones de los ejercicios avanzados de Spring Boot y Java
+description: Soluciones de los ejercicios avanzados de Alta disponibilidad
 ---
 
 # 💪 Boletín UD 11 — Avanzado (Resuelto)
 
 ---
 
-## 1. 🏗️ Servicio entre controlador y repositorio
+## 1. Backoff exponencial
 
-```java
-@Service
-public class TareaService {
+```python
+import asyncio
 
-    private final TareaRepository repository;
+async def conectar(intentos=4):
+    for i in range(intentos):
+        espera = 2 ** i                 # 1, 2, 4, 8
+        try:
+            print(f"Intento {i+1}...")
+            raise ConnectionRefusedError # Simular error
+        except ConnectionRefusedError:
+            print(f"  Fallo: espero {espera}s")
+            await asyncio.sleep(espera)
+    print("Servicio no disponible")
 
-    public TareaService(TareaRepository repository) {
-        this.repository = repository;
-    }
-
-    public Tarea crearTarea(String titulo) {
-        if (titulo == null || titulo.isBlank()) {
-            throw new IllegalArgumentException("El título no puede estar vacío");
-        }
-        Tarea t = new Tarea();
-        t.setTitulo(titulo);
-        t.setCompletada(false);
-        return repository.save(t);
-    }
-}
+asyncio.run(conectar())
 ```
 
-```java
-@RestController
-@RequestMapping("/api/tareas")
-public class TareaController {
+Backoff exponencial: 1s, 2s, 4s, 8s. El último intento falla y se imprime "Servicio no disponible".
 
-    private final TareaService service;
+## 2. Timeout con respaldo
 
-    public TareaController(TareaService service) {
-        this.service = service;
-    }
+```python
+import asyncio
 
-    @PostMapping
-    public Tarea crear(@RequestBody Tarea tarea) {
-        return service.crearTarea(tarea.getTitulo());
-    }
-}
+async def lenta():
+    await asyncio.sleep(8)
+    return "Resultado real"
+
+async def respaldo():
+    return "Resultado en caché"
+
+async def main():
+    try:
+        r = await asyncio.wait_for(lenta(), timeout=5)
+        print(r)
+    except asyncio.TimeoutError:
+        r = await respaldo()
+        print(r)
+
+asyncio.run(main())
 ```
 
-**Inyección por constructor** (la recomendada por Spring): el atributo es `final` y Spring inyecta el bean automáticamente, sin `@Autowired`.
+A los 5s salta `TimeoutError`; el `except` ejecuta la corrutina de respaldo que devuelve "Resultado en caché".
 
-## 2. 📋 Consultas personalizadas JPA
+## 3. Dos heartbeats
 
-```java
-public interface ProductoRepository extends JpaRepository<Producto, Long> {
+```python
+import asyncio
 
-    List<Producto> findByPrecioLessThan(double precio);
+async def hb_a():
+    while True:
+        print("💓 A")
+        await asyncio.sleep(3)
 
-    List<Producto> findByNombreContaining(String texto);
-}
+async def hb_b():
+    while True:
+        print("💓 B")
+        await asyncio.sleep(5)
+
+async def main():
+    asyncio.create_task(hb_a())
+    asyncio.create_task(hb_b())
+    await asyncio.sleep(12)   # da tiempo a que latan
+    print("main terminó")
+
+asyncio.run(main())
 ```
 
-Spring Data deriva el SQL del nombre del método: `findByPrecioLessThan` → `SELECT * FROM producto WHERE precio < ?`. `Containing` → `WHERE nombre LIKE %?%`. No se escribe una línea de SQL.
+Los dos latidos se ejecutan en segundo plano; `main()` espera 12s (A late 4 veces, B unas 3). Sin ese `await`, las tareas se cancelarían al acabar `main()`.
 
-## 3. ✅ Validación con anotaciones
+## 4. 🎯 Web scraper asíncrono
 
-```java
-@Entity
-public class Producto {
+```python
+import asyncio, httpx, time
 
-    @NotBlank(message = "El nombre es obligatorio")
-    private String nombre;
+URLS = ["https://httpbin.org/get"] * 5
 
-    @Positive(message = "El precio debe ser positivo")
-    private double precio;
-}
+async def descargar(url):
+    async with httpx.AsyncClient() as cliente:
+        r = await cliente.get(url)
+        return r.status_code
+
+async def main_async():
+    tareas = [descargar(u) for u in URLS]
+    resultados = await asyncio.gather(*tareas)
+    print("Resultados:", resultados)
+
+inicio = time.time()
+asyncio.run(main_async())
+print(f"Versión asíncrona: {time.time() - inicio:.2f}s")
+
+# Versión síncrona equivalente para comparar:
+inicio = time.time()
+with httpx.Client() as cliente:
+    for u in URLS:
+        cliente.get(u)
+print(f"Versión síncrona:   {time.time() - inicio:.2f}s")
 ```
 
-```java
-@PostMapping("/productos")
-public ResponseEntity<Producto> crear(@Valid @RequestBody Producto p) {
-    return ResponseEntity.status(HttpStatus.CREATED).body(repository.save(p));
-}
+`gather(*tareas)` lanza las 5 descargas a la vez: la versión asíncrona tarda lo que la más lenta, la síncrona la suma de todas.
+
+## 5. 🔍 Servidor asyncio con heartbeat
+
+```python
+import asyncio
+
+conexiones = 0
+
+async def atender(reader, writer):
+    global conexiones
+    conexiones += 1
+    datos = await reader.read(1024)
+    writer.write(b"OK: " + datos)
+    await writer.drain()
+    writer.close()
+    await writer.wait_closed()
+    conexiones -= 1
+
+async def heartbeat():
+    while True:
+        print(f"💓 Vivo — {conexiones} conexiones")
+        await asyncio.sleep(5)
+
+async def main():
+    asyncio.create_task(heartbeat())          # latido en segundo plano
+    servidor = await asyncio.start_server(atender, "127.0.0.1", 5000)
+    print("🚀 Servidor ASYNCIO en 127.0.0.1:5000")
+    async with servidor:
+        await servidor.serve_forever()
+
+asyncio.run(main())
 ```
 
-Con `spring-boot-starter-validation`, `@Valid` dispara la validación; si falla, Spring devuelve **400 Bad Request** con el detalle de cada campo en el cuerpo. No hace falta capturar nada a mano.
+`create_task(heartbeat())` lanza el latido antes de aceptar conexiones. Cada 5s imprime "💓 Vivo — N conexiones". Se mata con Ctrl+C.
 
-## 4. 🧪 Primer test con JUnit
+## 6. ⏱ Monitorización de servidores
 
-```java
-@ExtendWith(MockitoExtension.class)
-class TareaServiceTest {
+```python
+import asyncio, random
 
-    @Mock
-    TareaRepository repository;
+estados = {"Server-A": True, "Server-B": True, "Server-C": True}
 
-    @InjectMocks
-    TareaService service;
+async def servidor_simulado(nombre):
+    """Cambia su estado aleatoriamente cada 5-15s."""
+    while True:
+        await asyncio.sleep(random.randint(5, 15))
+        estados[nombre] = random.choice([True, False])
+        print(f"  [{nombre}] cambia a {'ARRIBA' if estados[nombre] else 'CAÍDO'}")
 
-    @Test
-    void crearTareaTituloValidoAsignaId() {
-        Tarea guardada = new Tarea();
-        guardada.setId(1L);
-        when(repository.save(any(Tarea.class))).thenReturn(guardada);
+async def monitor():
+    while True:
+        await asyncio.sleep(3)
+        caidos = [n for n, ok in estados.items() if not ok]
+        if caidos:
+            print(f"🩺 Caídos: {', '.join(caidos)}")
+        else:
+            print("🩺 Todo en pie")
 
-        Tarea resultado = service.crearTarea("Estudiar PSP");
+async def main():
+    for nombre in estados:
+        asyncio.create_task(servidor_simulado(nombre))
+    await monitor()          # el monitor corre para siempre
 
-        assertEquals(1L, resultado.getId());
-        verify(repository).save(any(Tarea.class));
-    }
-
-    @Test
-    void crearTareaTituloVacioLanzaExcepcion() {
-        assertThrows(IllegalArgumentException.class,
-                () -> service.crearTarea(""));
-    }
-}
+asyncio.run(main())
 ```
 
-`@Mock` crea un doble del repositorio, `@InjectMocks` lo mete en el servicio. `verify` comprueba que se llamó a `save`.
+Cada servidor simulado cambia su estado de forma aleatoria; el monitor lee el diccionario cada 3s y reporta los caídos. Es el heartbeat del [punto 8](/ApuntesPSP/10-alta-disponibilidad/08-disponibilidad-y-practica) aplicado a varios servicios a la vez.
 
-## 5. 🔍 Test de integración del controlador
+## 7. 🧩 Semáforo asyncio
 
-```java
-@SpringBootTest
-@AutoConfigureMockMvc
-class TareaControllerTest {
+```python
+import asyncio, httpx, time
 
-    @Autowired
-    MockMvc mockMvc;
+sem = asyncio.Semaphore(3)          # solo 3 a la vez
 
-    @Test
-    void listarTareasResponde200Json() throws Exception {
-        mockMvc.perform(get("/api/tareas"))
-               .andExpect(status().isOk())
-               .andExpect(content().contentType(MediaType.APPLICATION_JSON));
-    }
-}
+async def descargar(n):
+    async with sem:                 # reserva un hueco del semáforo
+        async with httpx.AsyncClient() as cliente:
+            r = await cliente.get(f"https://httpbin.org/delay/{n}")
+            return r.status_code
+
+async def main():
+    tareas = [descargar(n) for n in range(1, 7)]   # 6 descargas
+    resultados = await asyncio.gather(*tareas)
+    print("Resultados:", resultados)
+
+inicio = time.time()
+asyncio.run(main())
+print(f"Tiempo total: {time.time() - inicio:.2f}s")
 ```
 
-`@SpringBootTest` levanta el contexto completo (con BD de prueba) y `MockMvc` simula peticiones HTTP reales sin abrir puerto.
+`async with sem:` garantiza que como máximo 3 corrutinas ejecutan el bloque a la vez; las otras 3 esperan su turno.
 
-## 6. ❌ Gestión de errores centralizada
+## 8. 🎭 Timeout con fallback
 
-```java
-public class TareaNoEncontradaException extends RuntimeException {
-    public TareaNoEncontradaException(Long id) {
-        super("Tarea no encontrada: " + id);
-    }
-}
+```python
+import asyncio
+
+async def descargar_principal():
+    await asyncio.sleep(5)          # servidor lento
+    return "Datos del principal"
+
+async def descargar_respaldo():
+    await asyncio.sleep(1)
+    return "Datos del respaldo"
+
+async def main():
+    try:
+        r = await asyncio.wait_for(descargar_principal(), timeout=2)
+    except asyncio.TimeoutError:
+        r = await descargar_respaldo()
+    print(r)
+
+asyncio.run(main())
 ```
 
-```java
-@RestControllerAdvice
-public class GestorErrores {
+A los 2s salta `TimeoutError` y el `except` ejecuta la corrutina de respaldo. La disponibilidad gana: siempre se devuelve una respuesta, aunque venga del servidor de backup.
 
-    @ExceptionHandler(TareaNoEncontradaException.class)
-    @ResponseStatus(HttpStatus.NOT_FOUND)
-    public Map<String, String> noEncontrada(TareaNoEncontradaException e) {
-        return Map.of("error", "404", "mensaje", e.getMessage());
-    }
-}
+## 9. 🏗️ Chat asíncrono
+
+```python
+import asyncio
+
+clientes = set()
+
+async def broadcast(mensaje, emisor=None):
+    for writer in list(clientes):       # copia: permite eliminar al iterar
+        if writer != emisor:
+            writer.write(mensaje)
+            await writer.drain()
+
+async def gestionar(reader, writer):
+    clientes.add(writer)
+    print(f"Cliente conectado ({len(clientes)} en total)")
+    try:
+        while True:
+            try:
+                datos = await asyncio.wait_for(reader.read(1024), timeout=60)
+            except asyncio.TimeoutError:
+                break                    # desconexión silenciosa
+            if not datos:
+                break
+            await broadcast(b"[" + writer.get_extra_info("peername")[0].encode() + b"] " + datos, emisor=writer)
+    finally:
+        clientes.discard(writer)
+        writer.close()
+        await writer.wait_closed()
+
+async def main():
+    servidor = await asyncio.start_server(gestionar, "127.0.0.1", 6000)
+    print("💬 Chat ASYNCIO en 127.0.0.1:6000")
+    async with servidor:
+        await servidor.serve_forever()
+
+asyncio.run(main())
 ```
 
-`@RestControllerAdvice` aplica a todos los controladores. En el controlador: `throw new TareaNoEncontradaException(id)` y el cliente recibe 404 con JSON de error.
-
-## 7. 🗃️ Migración con Flyway
-
-```sql
--- V1__crear_tabla_productos.sql
-CREATE TABLE productos (
-    id BIGINT AUTO_INCREMENT PRIMARY KEY,
-    nombre VARCHAR(255) NOT NULL,
-    precio DOUBLE NOT NULL
-);
-```
-
-```properties
-# application.properties
-spring.datasource.url=jdbc:h2:mem:testdb
-spring.flyway.enabled=true
-```
-
-Flyway ejecuta al arrancar cada `V<n>__descripcion.sql` por orden y guarda en su propia tabla qué migraciones ya corrieron. Si cambias un fichero ya ejecutado, lanza error al arrancar.
-
-## 8. 🔐 Seguridad básica con Spring Security
-
-```java
-@Configuration
-@EnableWebSecurity
-public class SeguridadConfig {
-
-    @Bean
-    SecurityFilterChain filtrar(HttpSecurity http) throws Exception {
-        http.csrf(csrf -> csrf.disable())
-            .authorizeHttpRequests(auth -> auth.anyRequest().authenticated())
-            .addFilterBefore(new ApiKeyFilter(),
-                    UsernamePasswordAuthenticationFilter.class);
-        http.httpBasic(Customizer.withDefaults());
-        return http.build();
-    }
-}
-```
-
-```java
-public class ApiKeyFilter extends OncePerRequestFilter {
-
-    @Override
-    protected void doFilterInternal(HttpServletRequest req,
-            HttpServletResponse res, FilterChain chain)
-            throws ServletException, IOException {
-
-        String clave = req.getHeader("X-Api-Key");
-        if ("secreta".equals(clave)) {
-            chain.doFilter(req, res);
-        } else {
-            res.setStatus(HttpServletResponse.SC_UNAUTHORIZED);
-        }
-    }
-}
-```
-
-El filtro se ejecuta antes de la cadena de autenticación: sin la cabecera correcta, **401**. CSRF se desactiva porque una API sin sesiones no lo necesita.
-
-## 9. 📦 Paginación en la API
-
-```java
-@GetMapping("/productos")
-public Page<Producto> listar(@RequestParam int page,
-                             @RequestParam int size) {
-    Pageable pageable = PageRequest.of(page, size);
-    return repository.findAll(pageable);
-}
-```
-
-`JpaRepository` ya extiende `PagingAndSortingRepository`. La respuesta incluye `content` (los elementos) más `totalPages`, `totalElements` y `number`. Llamada: `GET /api/productos?page=0&size=10`.
-
-## 10. 🚀 Mini-proyecto completo
-
-```java
-@Entity
-public class Tarea {
-    @Id @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Long id;
-    private String titulo;
-    private boolean completada;
-
-    @ManyToOne
-    private Categoria categoria;
-}
-```
-
-```java
-@Entity
-public class Categoria {
-    @Id @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Long id;
-    private String nombre;
-
-    @OneToMany(mappedBy = "categoria", cascade = CascadeType.ALL)
-    private List<Tarea> tareas;
-}
-```
-
-```java
-@Service
-public class TareaService {
-
-    private final TareaRepository tareas;
-    private final CategoriaRepository categorias;
-
-    public TareaService(TareaRepository tareas,
-                        CategoriaRepository categorias) {
-        this.tareas = tareas;
-        this.categorias = categorias;
-    }
-
-    @Transactional
-    public Tarea moverATarea(Long categoriaId, Tarea tarea) {
-        Categoria cat = categorias.findById(categoriaId)
-                .orElseThrow(() ->
-                    new TareaNoEncontradaException(categoriaId));
-        tarea.setCategoria(cat);
-        return tareas.save(tarea);
-    }
-}
-```
-
-```java
-@RestController
-@RequestMapping("/api/categorias")
-public class CategoriaController {
-
-    private final TareaRepository tareas;
-
-    public CategoriaController(TareaRepository tareas) {
-        this.tareas = tareas;
-    }
-
-    @GetMapping("/{id}/tareas")
-    public List<Tarea> tareasDe(@PathVariable Long id) {
-        return tareas.findByCategoriaId(id);
-    }
-}
-```
-
-En el repositorio: `List<Tarea> findByCategoriaId(Long categoriaId);`. `@Transactional` garantiza que crear y relacionar se hace en una sola transacción; `cascade = ALL` propaga el borrado a las tareas hijas.
+`broadcast` reenvía a todos los clientes menos al emisor. `wait_for(..., timeout=60)` detecta desconexiones: si un cliente no envía nada en 60s, se cierra su conexión y se quita del conjunto.

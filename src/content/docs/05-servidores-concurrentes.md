@@ -69,7 +69,7 @@ Al terminar, serás capaz de:
 | RA4c | Implementa servidores concurrentes con hilos | ✅ Puntos 1-3 y 8 + ⚡ Laboratorio (punto 10) |
 | RA4d | Gestiona pools de hilos (ThreadPoolExecutor) | ✅ Puntos 4-5 y 8 + ⚡ Laboratorio (punto 10) |
 
-> RA4a-b (APIs REST y comerciales) se cubren en las **UD 7 y UD 8**. RA4e-g (asyncio) se cubren en la **UD 10**.
+> RA4a-b (APIs REST y comerciales) se cubren en las **UD 7 y UD 8**. RA4e-g (asyncio) se cubren en la **UD 11**.
 
 ---
 

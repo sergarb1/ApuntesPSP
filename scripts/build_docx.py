@@ -33,9 +33,9 @@ UNIDADES = [
     "05-servidores-concurrentes",
     "06-http-y-apis-rest",
     "07-apis-comerciales",
-    "08-seguridad-y-cifrado",
-    "09-alta-disponibilidad",
-    "10-spring-boot",
+    "09-seguridad-y-cifrado",
+    "10-alta-disponibilidad",
+    "11-spring-boot",
 ]
 
 # Etiqueta "UD n" de cada unidad.
@@ -48,9 +48,9 @@ UD_NUM = {
     "05-servidores-concurrentes": "UD 6",
     "06-http-y-apis-rest": "UD 7",
     "07-apis-comerciales": "UD 8",
-    "08-seguridad-y-cifrado": "UD 9",
-    "09-alta-disponibilidad": "UD 10",
-    "10-spring-boot": "UD 11",
+    "09-seguridad-y-cifrado": "UD 10",
+    "10-alta-disponibilidad": "UD 11",
+    "11-spring-boot": "UD 12",
 }
 
 # Nombre corto de carpeta por unidad (es-ES, sin tildes en disco).
@@ -63,14 +63,14 @@ NOMBRES_UNIDAD = {
     "05-servidores-concurrentes": "Servidores concurrentes",
     "06-http-y-apis-rest": "HTTP y APIs REST",
     "07-apis-comerciales": "APIs comerciales",
-    "08-seguridad-y-cifrado": "Seguridad y cifrado",
-    "09-alta-disponibilidad": "Alta disponibilidad",
-    "10-spring-boot": "Spring Boot",
+    "09-seguridad-y-cifrado": "Seguridad y cifrado",
+    "10-alta-disponibilidad": "Alta disponibilidad",
+    "11-spring-boot": "Spring Boot",
 }
 
-# Códigos U00..U10 que tienen boletines.
+# Códigos U00..U11 que tienen boletines.
 BOLETINES_CODIGOS = {"00", "01", "02", "03", "04", "05",
-                     "06", "07", "08", "09", "10"}
+                     "06", "07", "09", "10", "11"}
 # Orden didáctico dentro del DOCX de boletines.
 BOLETINES_SECCIONES = ["inicial", "inicial-resuelto",
                        "avanzado", "avanzado-resuelto"]

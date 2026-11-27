@@ -15,9 +15,9 @@ const unitSlugs = [
   '05-servidores-concurrentes',
   '06-http-y-apis-rest',
   '07-apis-comerciales',
-  '08-seguridad-y-cifrado',
-  '09-alta-disponibilidad',
-  '10-spring-boot',
+  '09-seguridad-y-cifrado',
+  '10-alta-disponibilidad',
+  '11-spring-boot',
 ];
 
 const unitLabels = [
@@ -44,9 +44,9 @@ const unidadesExpandidas = {
   '05-servidores-concurrentes': true,
   '06-http-y-apis-rest': true,
   '07-apis-comerciales': true,
-  '08-seguridad-y-cifrado': true,
-  '09-alta-disponibilidad': true,
-  '10-spring-boot': true,
+  '09-seguridad-y-cifrado': true,
+  '10-alta-disponibilidad': true,
+  '11-spring-boot': true,
 };
 
 // Unidades con boletines publicados en src/content/docs/boletines/
@@ -59,9 +59,9 @@ const boletinesReady = [
   '05-servidores-concurrentes',
   '06-http-y-apis-rest',
   '07-apis-comerciales',
-  '08-seguridad-y-cifrado',
-  '09-alta-disponibilidad',
-  '10-spring-boot',
+  '09-seguridad-y-cifrado',
+  '10-alta-disponibilidad',
+  '11-spring-boot',
 ];
 
 // Nombres de los puntos de teoría de cada unidad ampliada (nn-archivo)
@@ -73,10 +73,10 @@ const unitPuntos = {
   '04-sockets-tcp-y-udp': ['01-que-es-un-socket', '02-cliente-tcp', '03-servidor-tcp', '04-ciclo-y-errores', '05-cliente-y-servidor-udp', '06-http-y-ntp', '07-cuando-usar-cada-protocolo', '08-practica-eco', '09-cierre'],
   '06-http-y-apis-rest': ['01-web-y-http', '02-metodos-http', '03-principios-rest', '04-codigos-de-estado', '05-json', '06-requests-get', '07-requests-post', '08-practica-api', '09-cierre'],
   '07-apis-comerciales': ['01-api-keys', '02-variables-de-entorno', '03-openweathermap', '04-openai', '05-rate-limiting', '06-errores-http', '07-seguridad-y-buenas-practicas', '08-practica-apis-comerciales', '09-ejemplo-completo-rick-y-morty', '10-cierre'],
-  '08-seguridad-y-cifrado': ['01-principios-de-seguridad', '02-hash-y-huellas-digitales', '03-contrasenas-seguras', '04-cifrado-clasico', '05-cifrado-simetrico-aes', '06-cifrado-asimetrico-rsa', '07-firmas-digitales', '08-cifrado-hibrido-y-practica', '09-cierre'],
+  '09-seguridad-y-cifrado': ['01-principios-de-seguridad', '02-hash-y-huellas-digitales', '03-contrasenas-seguras', '04-cifrado-clasico', '05-cifrado-simetrico-aes', '06-cifrado-asimetrico-rsa', '07-firmas-digitales', '08-cifrado-hibrido-y-practica', '09-cierre'],
   '05-servidores-concurrentes': ['01-servidor-secuencial', '02-el-problema-de-la-espera', '03-hilo-por-cliente', '04-threadpoolexecutor', '05-benchmark', '06-sincronizacion-en-servidores', '07-limites-y-buenas-practicas', '08-servidor-concurrente-completo-con-hilos', '09-servidor-concurrente-completo-con-procesos', '10-cierre'],
-  '09-alta-disponibilidad': ['01-event-loop', '02-corrutinas', '03-create-task-y-gather', '04-timeouts', '05-heartbeat', '06-backoff', '07-threads-vs-asyncio', '08-disponibilidad-y-practica', '09-cierre'],
-  '10-spring-boot': ['01-java-para-python', '02-introduccion-spring-boot', '03-inyeccion-de-dependencias', '04-restcontroller-y-apis', '05-jpa-y-bases-de-datos', '06-ejemplo-completo', '07-cierre'],
+  '10-alta-disponibilidad': ['01-event-loop', '02-corrutinas', '03-create-task-y-gather', '04-timeouts', '05-heartbeat', '06-backoff', '07-threads-vs-asyncio', '08-disponibilidad-y-practica', '09-cierre'],
+  '11-spring-boot': ['01-java-para-python', '02-introduccion-spring-boot', '03-inyeccion-de-dependencias', '04-restcontroller-y-apis', '05-jpa-y-bases-de-datos', '06-ejemplo-completo', '07-cierre'],
 };
 
 const docsDir = path.resolve(path.dirname(fileURLToPath(import.meta.url)), 'src/content/docs');
@@ -138,8 +138,10 @@ const boletinItems = (slug) => {
   ];
 };
 
+const unitNum = (slug) => Number(slug.slice(0, 2)) + 1;
+
 const unitsSidebar = unitSlugs.map((slug, i) => {
-  const label = `${emojis[i]} ${i + 1}. ${unitLabels[i]}`;
+  const label = `${emojis[i]} ${unitNum(slug)}. ${unitLabels[i]}`;
   if (unidadesExpandidas[slug]) {
     return { label, collapsed: true, items: expandedUnitItems(slug) };
   }
@@ -151,7 +153,7 @@ const boletinesSidebar = boletinesReady.length > 0
       {
         label: '📝 Boletines',
         items: boletinesReady.map((slug, i) => ({
-          label: `${emojis[i]} Unidad ${i + 1}`,
+          label: `${emojis[i]} Unidad ${unitNum(slug)}`,
           collapsed: true,
           items: boletinItems(slug),
         })),

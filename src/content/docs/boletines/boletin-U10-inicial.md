@@ -1,60 +1,50 @@
----
+﻿---
 title: Boletín UD 11 — Inicial
-description: Ejercicios básicos de Spring Boot y Java
+description: Ejercicios básicos de Alta disponibilidad
 ---
 
 # 📝 Boletín UD 11 — Inicial
 
-> Ejercicios básicos para afianzar el puente Python → Java: tipos, clases, inyección de dependencias, controladores REST y JPA. En este boletín escribes **Java**, no Python.
+> Ejercicios básicos para afianzar los conceptos de asyncio: corrutinas, el event loop, gather, las tareas en segundo plano y los primeros mecanismos de disponibilidad.
 
 ---
 
-## 1. Hola, Java
+## 1. Mensaje diferido
 
-Crea una clase `Saludo` con un `main` que imprima "Hola, PSP desde Java".
+Crea una corrutina `async def preparar()` que imprima "Preparando...", espere 2 segundos con `await asyncio.sleep(2)`, e imprima "¡Listo!". Ejecútala con `asyncio.run()`.
 
-**Pista:** en Java todo vive dentro de una clase: `public class Saludo { public static void main(String[] args) { ... } }`.
+## 2. Saludo y despedida
 
-## 2. Variables y tipos
+Crea dos corrutinas: `saludar()` (espera 0.5s y dice "Hola") y `despedirse()` (espera 1s y dice "Adiós"). Ejecuta ambas con `asyncio.gather`.
 
-Declara e imprime: un `int` con la nota media, un `double` con tu altura en metros, un `boolean` si has aprobado y un `String` con tu nombre. Usa `System.out.println`.
+## 3. Temporizador
 
-**Pista:** en Java cada tipo tiene tamaño fijo (`int` 32 bits, `double` doble precisión) y no se declaran con `=` inferido salvo con `var`.
+Crea una corrutina que imprima "tic" cada 2 segundos, 4 veces. Usa `asyncio.sleep(2)` dentro de un bucle `for`.
 
-## 3. Lista de la compra
+## 4. Corrutina que devuelve
 
-Crea una `ArrayList<String>` con 4 productos, añade un quinto con `add`, imprime la lista completa y cuántos elementos tiene con `size()`.
+Crea una corrutina `sumar(a, b)` que espere 1 segundo y devuelva `a + b`. Lánzala y muestra el resultado.
 
-**Pista:** `List<String> compra = new ArrayList<>();` — las colecciones se declaran con la interfaz, no con la clase concreta.
+**Pista:** llamar a una corrutina no ejecuta su cuerpo: devuelve un objeto corrutina. Para obtener el resultado usa `await sumar(3, 4)` dentro de una corrutina `main()` y ejecuta con `asyncio.run(main())`.
 
-## 4. Clase `Alumno`
+## 5. Tres tareas a la vez
 
-Crea la clase `Alumno` con atributos `nombre` y `nota`, un constructor con ambos parámetros y un método `String aprobado()` que devuelva "SUSPENSO" si nota < 5 y "APROBADO" si no. Crea dos objetos y muéstralos.
+Crea 3 corrutinas que esperen 1, 2 y 3 segundos. Lánzalas con `asyncio.gather` y mide el tiempo total con `time.time()`. ¿Cuánto dura en vez de 6 segundos?
 
-**Pista:** `public String aprobado() { return nota < 5 ? "SUSPENSO" : "APROBADO"; }` — el operador ternario funciona como en Python.
+**Pista:** con `gather` el total es el de la tarea más lenta (3s), no la suma. Guarda `inicio = time.time()` antes del `gather` y resta después.
 
-## 5. Tu primer `@RestController`
+## 6. Tarea en segundo plano
 
-Crea un controlador `SaludoController` con un `@GetMapping("/saludo")` que devuelva el texto "Hola desde Spring". ¿Qué anotación marca la clase como controlador REST?
+Crea una corrutina `contar()` que imprima un número cada 0.5s (hasta 4). Lánzala con `asyncio.create_task` desde una corrutina `main()` que haga `await asyncio.sleep(1)` y luego imprima "main sigue". ¿Qué se imprime mientras tanto?
 
-**Pista:** `@RestController` (equivale a `@Controller` + `@ResponseBody`: devuelve datos, no vistas).
+## 7. Heartbeat básico
 
-## 6. Parámetro en la ruta
+Crea una corrutina heartbeat que imprima "💓 vivo" cada 2 segundos. Lánzala con `create_task` desde `main()` y deja que `main()` espere 5 segundos antes de terminar.
 
-Añade al controlador un `@GetMapping("/saludo/{nombre}")` que reciba el nombre de la ruta y devuelva "Hola, {nombre}". Usa `@PathVariable`.
+**Pista:** el heartbeat es un `while True` con `await asyncio.sleep(2)`. `main()` debe esperar (`await asyncio.sleep(5)`) o la tarea de fondo muere con él.
 
-**Pista:** el método recibe `@PathVariable String nombre` y Spring lo enlaza con `{nombre}` de la ruta.
+## 8. Timeout básico
 
-## 7. JSON de respuesta
+Crea una corrutina `lenta()` que tarde 8 segundos y devuelva "Hecho". Usa `asyncio.wait_for` con timeout de 3s y muestra qué excepción salta y qué imprime tu `except`.
 
-Crea la clase `Tarea` con campos `id` (long) y `titulo` (String), con constructor y getters. Devuélvela desde un `@GetMapping("/tarea")`. ¿Qué biblioteca convierte el objeto a JSON?
-
-**Pista:** Spring incluye **Jackson**, que serializa los objetos a JSON automáticamente al devolverlos desde un `@RestController`.
-
-## 8. Entidad JPA mínima
-
-Crea la entidad `Producto` (campos `id`, `nombre`, `precio`) con las anotaciones `@Entity` y `@Id`. Indica qué anotación marca la clave primaria y cuál hace que la tabla se genere con ID autoincremental.
-
-**Pista:** `@Id` marca la clave primaria; `@GeneratedValue(strategy = GenerationType.IDENTITY)` la hace autoincremental (como `INTEGER PRIMARY KEY AUTOINCREMENT` en SQLite).
-
-**Pista extra:** recuerda que Spring necesita `spring-boot-starter-data-jpa` en el `pom.xml` y una BD (H2 en memoria vale) en `application.properties`.
+**Pista:** `asyncio.wait_for(lenta(), timeout=3)` lanza `asyncio.TimeoutError` al pasar los 3 segundos y cancela la corrutina lenta.

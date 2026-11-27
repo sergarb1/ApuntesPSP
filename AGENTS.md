@@ -29,7 +29,7 @@ PSP/
 │   │   │   ├── boletin-U00-inicial-resuelto.md ← ✅ inicial CON solución
 │   │   │   ├── boletin-U00-avanzado.md       ← 💪 avanzado SIN resolver
 │   │   │   └── boletin-U00-avanzado-resuelto.md ← ⭐ avanzado CON solución
-│   │   └── ... hasta unidad 11
+│   │   └── ... hasta unidad 12
 │   └── styles/
 │       └── custom.css                   ← CSS premium (azul Python #306998 + teal)
 │
@@ -221,7 +221,7 @@ python scripts/check-diagramas.py   # detector de solapes texto/texto y texto/fo
 
 ## Apuntes (MD por unidad)
 
-Estructura "libro" por unidad (formato replicado de ApuntesRedes): índice + 9 capítulos en subcarpeta + 4 boletines en `boletines/` (la UD 2 tiene 11 capítulos —su 08 es multiprocessing, su 09 un ejemplo resuelto, con el cierre en el 11—; la UD 4 idem: su 09 es Python Free-Threaded, con el cierre en el 10; la UD 6 tiene 10 —su 09 es el servidor con procesos, con el cierre en el 10—; la UD 8 tiene 10 —su 09 es el ejemplo completo de Rick y Morty (API gratuita sin registro), con el cierre en el 10—; la UD 11 tiene 7). Total 160 ficheros MD (~26.000 líneas). Cada unidad indica al final qué RAs cubre.
+Estructura "libro" por unidad (formato replicado de ApuntesRedes): índice + 9 capítulos en subcarpeta + 4 boletines en `boletines/` (la UD 2 tiene 11 capítulos —su 08 es multiprocessing, su 09 un ejemplo resuelto, con el cierre en el 11—; la UD 4 idem: su 09 es Python Free-Threaded, con el cierre en el 10; la UD 6 tiene 10 —su 09 es el servidor con procesos, con el cierre en el 10—; la UD 8 tiene 10 —su 09 es el ejemplo completo de Rick y Morty (API gratuita sin registro), con el cierre en el 10—; la UD 12 tiene 7). Total 160 ficheros MD (~26.000 líneas). Cada unidad indica al final qué RAs cubre.
 
 Por unidad: `0X-unidad.md` (índice, ~90 líneas) → `0X-unidad/01-…-08.md` (capítulos, 110-280 líneas) + `*-cierre.md` (cierre, ~250 líneas) → `boletines/boletin-UXX-inicial[-resuelto].md` y `-avanzado[-resuelto].md`. En la UD 2: `08-multiprocessing.md` tras el 07 y `09-ejemplo-resuelto-estado-compartido.md` tras el 08; en la UD 4: `09-python-free-threaded.md` tras el 08; en la UD 6: `09-servidor-concurrente-completo-con-procesos.md` tras el `08-servidor-concurrente-completo-con-hilos.md`; en la UD 8: `09-ejemplo-completo-rick-y-morty.md` tras el `08-practica-apis-comerciales.md` —en los cuatro, el `*-cierre.md` se desplaza—.
 
@@ -237,7 +237,7 @@ Secciones del índice:
 - ✅ **Criterios de evaluación** con columna "Dónde se cubre"
 - 🚪 **¿Por dónde empiezo?** con primer punto y enlace a la siguiente unidad
 
-Secciones del cierre `*-cierre.md`: ⭐ Sé el código, 🔥 Fireside Chat, 🕵️ ¿Quién soy?, 🤬 CONRAD VS EL MUNDO, ⚡ Laboratorio de tortura (con pistas), 🏆 Logros, 🧠 Atrévete a pensar, 🧩 Crucigrama de bits, 💬 Entrevista de trabajo, 🤷 No hay preguntas tontas, 🎬 Poscréditos ("PRÓXIMAMENTE EN UD X", salvo UD 10 que cierra el viaje 🏁), ✅ Criterios.
+Secciones del cierre `*-cierre.md`: ⭐ Sé el código, 🔥 Fireside Chat, 🕵️ ¿Quién soy?, 🤬 CONRAD VS EL MUNDO, ⚡ Laboratorio de tortura (con pistas), 🏆 Logros, 🧠 Atrévete a pensar, 🧩 Crucigrama de bits, 💬 Entrevista de trabajo, 🤷 No hay preguntas tontas, 🎬 Poscréditos ("PRÓXIMAMENTE EN UD X", salvo UD 12 que cierra el viaje 🏁), ✅ Criterios.
 
 **Convenciones MD:** frontmatter `title`/`description` (comillas solo si contienen `:`), sin BOM, slugs de URL en minúscula (`boletin-uXX-...`), nombres de fichero `UXX` mayúscula, enlaces internos `/ApuntesPSP/...`.
 
@@ -255,9 +255,9 @@ Secciones del cierre `*-cierre.md`: ⭐ Sé el código, 🔥 Fireside Chat, 🕵
 | UD 6 Servidores concurrentes | `05-servidores-concurrentes.md` + carpeta | ~1.400 | socketserver, ThreadPool, benchmark, servidor con procesos | RA4c-d |
 | UD 7 HTTP y APIs REST | `06-http-y-apis-rest.md` + carpeta | ~938 | REST, métodos HTTP, requests, JSON | RA4a-b |
 | UD 8 APIs comerciales | `07-apis-comerciales.md` + carpeta | ~1.300 | OpenWeatherMap, OpenAI, dotenv, rate limit, ejemplo Rick y Morty + Pillow | RA4a-b |
-| UD 9 Seguridad y cifrado | `08-seguridad-y-cifrado.md` + carpeta | ~1.500 | Hash, AES, RSA, firmas, cifrado híbrido, RBAC | RA5 |
-| UD 10 Alta disponibilidad | `09-alta-disponibilidad.md` + carpeta | ~913 | asyncio, heartbeat, backoff, timeouts | RA4e-g |
-| UD 11 Spring Boot | `10-spring-boot.md` + carpeta | ~700 | Java, Spring Boot, DI, REST, JPA | — |
+| UD 10 Seguridad y cifrado | `09-seguridad-y-cifrado.md` + carpeta | ~1.500 | Hash, AES, RSA, firmas, cifrado híbrido, RBAC | RA5 |
+| UD 11 Alta disponibilidad | `10-alta-disponibilidad.md` + carpeta | ~913 | asyncio, heartbeat, backoff, timeouts | RA4e-g |
+| UD 12 Spring Boot | `11-spring-boot.md` + carpeta | ~700 | Java, Spring Boot, DI, REST, JPA | — |
 
 **Boletines (46):** 4 por unidad en `boletines/boletin-UXX-*`: inicial (8 ejercicios), inicial-resuelto, avanzado (≥8), avanzado-resuelto. La UD 8 añade un par extra `boletin-U07-rick-morty[-resuelto]` (10 retos de modificación del ejemplo del punto 09), enlazado desde el índice de la unidad, la landing y el sidebar vía `boletinesExtra` en `astro.config.mjs`. Pistas inline `**Pista:**` en los por-resolver; respuestas inline en negrita en los resueltos.
 

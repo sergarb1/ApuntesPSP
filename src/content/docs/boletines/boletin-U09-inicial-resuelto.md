@@ -1,159 +1,125 @@
 ﻿---
 title: Boletín UD 10 — Inicial (Resuelto)
-description: Soluciones de los ejercicios básicos de Alta disponibilidad
+description: Soluciones de los ejercicios básicos de Seguridad y cifrado
 ---
 
 # ✅ Boletín UD 10 — Inicial (Resuelto)
 
+> Los ejercicios 6 y 7 necesitan `pycryptodome`: `pip install pycryptodome`.
+
 ---
 
-## 1. Mensaje diferido
+## 1. SHA1 de tu nombre
 
 ```python
-import asyncio
-
-async def preparar():
-    print("Preparando...")
-    await asyncio.sleep(2)
-    print("¡Listo!")
-
-asyncio.run(preparar())
+import hashlib
+print(hashlib.sha1(b"sergi").hexdigest())
+# 52a431556910f83a3d65e1e7c3772f5d44011eb3
 ```
 
-`await asyncio.sleep(2)` pausa la corrutina 2 segundos; `asyncio.run()` crea el event loop.
+Con tu nombre (en minúsculas), por ejemplo `b"ana"`, obtendrías su hash SHA1 de **40 caracteres** hexadecimales (160 bits).
 
-## 2. Saludo y despedida
+## 2. MD5 de una frase
 
 ```python
-import asyncio
-
-async def saludar():
-    await asyncio.sleep(0.5)
-    print("Hola")
-
-async def despedirse():
-    await asyncio.sleep(1)
-    print("Adiós")
-
-async def main():
-    await asyncio.gather(saludar(), despedirse())
-
-asyncio.run(main())
+import hashlib
+print(hashlib.md5("Python es genial".encode()).hexdigest())
+# 1bdf047b34a4890934fc36d12b464f2c
 ```
 
-`gather` ejecuta ambas "a la vez": el total es ~1s (la más lenta), no 1.5s.
+MD5 devuelve **32 caracteres** hexadecimales (128 bits).
 
-## 3. Temporizador
+## 3. Longitud de los hashes de "Hola mundo"
 
 ```python
-import asyncio
-
-async def tic():
-    for i in range(4):
-        print("tic")
-        await asyncio.sleep(2)
-
-asyncio.run(tic())
+import hashlib
+texto = b"Hola mundo"
+print(f"MD5:    {len(hashlib.md5(texto).hexdigest())} chars (128 bits)")
+print(f"SHA1:   {len(hashlib.sha1(texto).hexdigest())} chars (160 bits)")
+print(f"SHA256: {len(hashlib.sha256(texto).hexdigest())} chars (256 bits)")
 ```
 
-4 "tic" espaciados 2 segundos. Un `asyncio.sleep` dentro de un `for`.
+MD5 → **32**, SHA1 → **40**, SHA256 → **64** caracteres hexadecimales. La longitud es **fija** para cada algoritmo, da igual el tamaño de la entrada.
 
-## 4. Corrutina que devuelve
+## 4. Cifrado César sencillo
 
 ```python
-import asyncio
+def cifrar_cesar(texto, desplazamiento):
+    resultado = ""
+    for caracter in texto:
+        if caracter.isalpha():
+            base = ord('A') if caracter.isupper() else ord('a')
+            resultado += chr((ord(caracter) - base + desplazamiento) % 26 + base)
+        else:
+            resultado += caracter
+    return resultado
 
-async def sumar(a, b):
-    await asyncio.sleep(1)
-    return a + b
-
-async def main():
-    resultado = await sumar(3, 4)
-    print(resultado)
-
-asyncio.run(main())
+print(cifrar_cesar("Hola", 3))  # "Krod"
 ```
 
-Para obtener el valor hace falta `await`: sin él tendrías un objeto corrutina, no el resultado.
+Cada letra avanza 3 posiciones: **H→K, o→r, l→o, a→d**. Resultado: **Krod**.
 
-## 5. Tres tareas a la vez
+## 5. Determinismo del hash
 
 ```python
-import asyncio, time
-
-async def tarea(nombre, segundos):
-    await asyncio.sleep(segundos)
-    print(f"  {nombre} terminó")
-
-async def main():
-    inicio = time.time()
-    await asyncio.gather(
-        tarea("A", 1), tarea("B", 2), tarea("C", 3)
-    )
-    print(f"Tiempo total: {time.time() - inicio:.2f}s")
-
-asyncio.run(main())
+import hashlib
+h1 = hashlib.sha256(b"clave123").hexdigest()
+h2 = hashlib.sha256(b"clave123").hexdigest()
+print(f"Primera:  {h1}")
+print(f"Segunda:  {h2}")
+print(f"¿Iguales? {h1 == h2}")  # True
 ```
 
-**~3 segundos**, el de la tarea más lenta. `gather` las lanza concurrentemente: los tiempos no se suman.
+Son **iguales**: el hash es **determinista** ([punto 2](/ApuntesPSP/09-seguridad-y-cifrado/02-hash-y-huellas-digitales)). Misma entrada → mismo hash, siempre. Esa propiedad es la que hace posible el login por comparación de hashes del [punto 4](/ApuntesPSP/09-seguridad-y-cifrado/03-contrasenas-seguras).
 
-## 6. Tarea en segundo plano
+## 6. Nonce y tag
 
 ```python
-import asyncio
+from Crypto.Cipher import AES
+from Crypto.Random import get_random_bytes
 
-async def contar():
-    for i in range(1, 5):
-        print(f"  contar: {i}")
-        await asyncio.sleep(0.5)
+clave = get_random_bytes(32)
+cifrador = AES.new(clave, AES.MODE_EAX)
+texto_cifrado, tag = cifrador.encrypt_and_digest(b"Hola mundo con AES")
 
-async def main():
-    asyncio.create_task(contar())   # en segundo plano
-    await asyncio.sleep(1)
-    print("main sigue")
-
-asyncio.run(main())
+print(f"Longitud nonce: {len(cifrador.nonce)} bytes")
+print(f"Longitud tag:   {len(tag)} bytes")
+print(f"Longitud cifrado: {len(texto_cifrado)} bytes")
 ```
 
-`contar()` se ejecuta "en segundo plano": mientras `main()` espera su segundo, la tarea cuenta. Se ve la alternancia de las dos corrutinas en el event loop.
+En modo EAX el **nonce** mide **16 bytes** y el **tag** también **16 bytes**. Los tres (nonce, tag y cifrado) viajan juntos; la clave no ([punto 2](/ApuntesPSP/09-seguridad-y-cifrado/05-cifrado-simetrico-aes)).
 
-## 7. Heartbeat básico
+## 7. AES: cifrar y descifrar completo
 
 ```python
-import asyncio
+from Crypto.Cipher import AES
+from Crypto.Random import get_random_bytes
 
-async def heartbeat():
-    while True:
-        print("💓 vivo")
-        await asyncio.sleep(2)
+clave = get_random_bytes(32)
+mensaje = b"El cifrado simetrico es rapido"
 
-async def main():
-    asyncio.create_task(heartbeat())
-    await asyncio.sleep(5)
-    print("main terminó")
+cifrador = AES.new(clave, AES.MODE_EAX)
+texto_cifrado, tag = cifrador.encrypt_and_digest(mensaje)
 
-asyncio.run(main())
+print(f"Nonce: {cifrador.nonce.hex()}")
+print(f"Tag:   {tag.hex()}")
+print(f"Cifrado: {texto_cifrado.hex()}")
+
+descifrador = AES.new(clave, AES.MODE_EAX, nonce=cifrador.nonce)
+original = descifrador.decrypt(texto_cifrado)
+print(f"Original: {original.decode()}")
 ```
 
-`create_task` lanza el latido en segundo plano; `main()` espera 5s y lo deja latir tres veces antes de terminar. Si `main()` no esperara, la tarea moriría con él.
+El nonce y el tag se envían junto al cifrado; el receptor los usa con la misma clave para descifrar y verificar la integridad ([punto 2](/ApuntesPSP/09-seguridad-y-cifrado/05-cifrado-simetrico-aes)).
 
-## 8. Timeout básico
+## 8. Simétrico vs asimétrico
 
-```python
-import asyncio
+a) El simétrico usa **una sola clave** (misma para cifrar y descifrar). El asimétrico usa **dos**: pública + privada.
 
-async def lenta():
-    await asyncio.sleep(8)
-    return "Hecho"
+b) Con la clave **pública de Bob**. Solo su clave privada puede descifrarlo.
 
-async def main():
-    try:
-        r = await asyncio.wait_for(lenta(), timeout=3)
-        print(r)
-    except asyncio.TimeoutError:
-        print("Timeout!")
+c) Por su **límite de tamaño** (~190 bytes con claves de 2048 bits) y su **velocidad** (~1 MB/s). Para volúmenes grandes se usa AES (o el cifrado híbrido del [punto 6](/ApuntesPSP/09-seguridad-y-cifrado/08-cifrado-hibrido-y-practica)).
 
-asyncio.run(main())
-```
+---
 
-`wait_for` corta a los 3s: salta `asyncio.TimeoutError`, la corrutina `lenta()` se cancela y el programa imprime "Timeout!".
+📚 [Volver a la unidad](/ApuntesPSP/09-seguridad-y-cifrado) · Por resolver: [📝 Boletín UD 10 — Inicial](/ApuntesPSP/boletines/boletin-u09-inicial)

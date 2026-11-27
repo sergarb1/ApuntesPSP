@@ -1,70 +1,64 @@
----
+﻿---
 title: Boletín UD 11 — Avanzado
-description: Ejercicios avanzados de Spring Boot y Java
+description: Ejercicios avanzados de Alta disponibilidad
 ---
 
 # 💪 Boletín UD 11 — Avanzado
 
-> Ejercicios que requieren aplicar Spring Boot de forma más profunda: servicios, validación, JPA con consultas, testing, seguridad básica, gestión de errores y un mini-proyecto por capas completo.
+> Ejercicios que requieren aplicar asyncio de forma más profunda: backoff, timeouts con respaldo, heartbeats múltiples, descargas concurrentes, servidores con latido y monitorización de varios servicios.
 
 ---
 
-## 1. 🏗️ Servicio entre controlador y repositorio
+## 1. Backoff exponencial
 
-Crea la API de tareas del punto 6 de la unidad completa por capas: `TareaController` → `TareaService` → `TareaRepository`. El servicio añade la lógica: si el título está vacío, lanza `IllegalArgumentException`.
+Crea una función asíncrona `conectar()` que intente conectarse 4 veces con backoff (1s, 2s, 4s, 8s). Simula el fallo lanzando `ConnectionRefusedError`. Si falla, imprime "Servicio no disponible".
 
-**Pista:** `@Service` en la clase de servicio y `@Autowired` (o constructor injection) para inyectar el repositorio en el servicio y el servicio en el controlador.
+**Pista:** `espera = 2 ** intento`. Envuelve cada intento en `try/except ConnectionRefusedError`, espera con `await asyncio.sleep(espera)` y pasa al siguiente.
 
-## 2. 📋 Consultas personalizadas JPA
+## 2. Timeout con respaldo
 
-Con la entidad `Producto`, crea en el `ProductoRepository` dos consultas: `findByPrecioLessThan(double precio)` y `findByNombreContaining(String texto)`.
+Crea una corrutina `lenta()` que tarde 8 segundos. Usa `asyncio.wait_for` con timeout de 5s. Si salta `TimeoutError`, ejecuta una corrutina de respaldo que devuelva "Resultado en caché".
 
-**Pista:** Spring Data deriva la consulta del nombre del método: `LessThan` → `WHERE precio < ?`, `Containing` → `WHERE nombre LIKE %?%`. No hace falta escribir SQL.
+**Pista:** `asyncio.wait_for(lenta(), timeout=5)` lanza `TimeoutError`; en el `except` haz `await respaldo()`.
 
-## 3. ✅ Validación con anotaciones
+## 3. Dos heartbeats
 
-Añade a `Producto` las anotaciones de validación: `@NotBlank` en `nombre` y `@Positive` en `precio`. En el controlador recibe el objeto con `@Valid` y devuelve un error 400 si no cumple.
+Crea dos corrutinas heartbeat: `hb_a()` imprime "💓 A" cada 3s, `hb_b()` imprime "💓 B" cada 5s. La función main las lanza con `asyncio.create_task` y espera 12 segundos.
 
-**Pista:** necesitas `spring-boot-starter-validation`. `@Valid` en el parámetro del método dispara la validación; Spring devuelve 400 automáticamente con el detalle en el cuerpo.
+**Pista:** dos `create_task` y luego `await asyncio.sleep(12)` para que `main()` no las cancele antes de tiempo.
 
-## 4. 🧪 Primer test con JUnit
+## 4. 🎯 Web scraper asíncrono
 
-Escribe un test unitario para `TareaService`: verifica que `crearTarea()` con título válido devuelve una tarea con ID asignada y que con título vacío lanza `IllegalArgumentException`.
+Descarga 5 URLs a la vez con asyncio y httpx. Compara el tiempo con una versión síncrona.
 
-**Pista:** usa `@ExtendWith(MockExtension.class)` + `@Mock TareaRepository` + `@InjectMocks TareaService`. Con `assertThrows(IllegalArgumentException.class, () -> service.crearTarea(""))` compruebas la excepción.
+**Pista:** usa `httpx.AsyncClient` dentro de cada corrutina. Crea una lista de tareas con `[descargar(u) for u in urls]` y ejecútalas con `asyncio.gather(*tareas)`. Mide el tiempo total con `time.time()`.
 
-## 5. 🔍 Test de integración del controlador
+## 5. 🔍 Servidor asyncio con heartbeat
 
-Crea un test de integración de la API con `@SpringBootTest` + `@AutoConfigureMockMvc` que haga un `GET /api/tareas` y compruebe que responde 200 y que el cuerpo es un JSON con tipo `application/json`.
+Servidor asyncio que imprime "💓 Vivo — N conexiones" cada 5s.
 
-**Pista:** inyecta `MockMvc`, usa `mockMvc.perform(get("/api/tareas")).andExpect(status().isOk()).andExpect(content().contentType(MediaType.APPLICATION_JSON))`.
+**Pista:** usa `asyncio.start_server` para el servidor TCP. Crea una corrutina `heartbeat` con un bucle infinito `while True: await asyncio.sleep(5); ...`. Lánzala con `asyncio.create_task` antes de iniciar el servidor.
 
-## 6. ❌ Gestión de errores centralizada
+## 6. ⏱ Monitorización de servidores
 
-Crea una clase `@RestControllerAdvice` que capture `TareaNoEncontradaException` y devuelva un 404 con un cuerpo JSON del tipo `{"error": "...", "mensaje": "..."}`. Lanza esa excepción desde el controlador cuando el ID no exista.
+3 servidores simulados. Un monitor asíncrono comprueba su estado cada 3s.
 
-**Pista:** `@RestControllerAdvice` es el equivalente global a un gestor de excepciones; un método con `@ExceptionHandler(TareaNoEncontradaException.class)` + `@ResponseStatus(HttpStatus.NOT_FOUND)` devuelve el cuerpo de error.
+**Pista:** usa un diccionario `estados = {"Server-A": True, ...}`. Cada servidor es una corrutina que cambia su estado aleatoriamente cada ~5-15s. El monitor lee el diccionario cada 3s y reporta servidores caídos.
 
-## 7. 🗃️ Migración con Flyway
+## 7. 🧩 Semáforo asyncio
 
-Crea una migración `V1__crear_tabla_productos.sql` en `src/main/resources/db/migration` con la tabla `productos` (id, nombre, precio) y configura Spring para usar H2 con Flyway.
+Limita a 3 descargas simultáneas usando `asyncio.Semaphore`.
 
-**Pista:** añade `spring-boot-starter-flyway`. Flyway ejecuta al arrancar los ficheros `V<n>__descripcion.sql` en orden; el doble guion bajo separa el número de la descripción.
+**Pista:** crea `sem = asyncio.Semaphore(3)`. Dentro de la función de descarga, usa `async with sem:` para que solo 3 corrutinas puedan ejecutar el bloque a la vez. Usa `httpbin.org/delay/{n}` para simular descargas lentas.
 
-## 8. 🔐 Seguridad básica con Spring Security
+## 8. 🎭 Timeout con fallback
 
-Protege el endpoint `/api/tareas`: solo acepta peticiones con cabecera `X-Api-Key: secreta`. Si falta o es incorrecta, responde 401.
+Intenta descargar de un servidor principal. Si tarda más de 2s, usa un servidor de respaldo.
 
-**Pista:** crea una clase que extienda `SecurityFilterChain` (o un filtro `OncePerRequestFilter`) y comprueba la cabecera antes de dejar pasar la petición. Recuerda desactivar CSRF para APIs sin sesiones.
+**Pista:** envuelve la llamada a la corrutina principal con `asyncio.wait_for(descargar_principal(), timeout=2)`. Captura `asyncio.TimeoutError` y en el `except` ejecuta la corrutina de respaldo.
 
-## 9. 📦 Paginación en la API
+## 9. 🏗️ Chat asíncrono
 
-Modifica `GET /api/productos` para que devuelva una página: acepta los parámetros `page` y `size` y devuelve `Page<Producto>`.
+Crea un servidor de chat con asyncio que reenvíe mensajes a todos los clientes conectados.
 
-**Pista:** el repositorio debe extender `PagingAndSortingRepository` (o `JpaRepository`, que ya lo hace). Cambia el parámetro del método por `Pageable pageable` y Spring lo arma desde la query string.
-
-## 10. 🚀 Mini-proyecto completo
-
-Extiende la API de tareas con: relación `Tarea` → `Categoria` (OneToMany), endpoint `GET /api/categorias/{id}/tareas`, borrado en cascada y un test de integración que recorra el CRUD completo.
-
-**Pista:** `@ManyToOne` en Tarea y `@OneToMany(mappedBy = "categoria")` en Categoria. Usa `@Transactional` en el servicio para las operaciones que tocan varias tablas. El test usa `@BeforeEach` para crear datos y `@Sql` si prefieres fijarlos en un script.
+**Pista:** mantén un conjunto `clientes` con los objetos `writer` de cada conexión. Crea una función `broadcast(mensaje, emisor=None)` que itere sobre una copia del conjunto y envíe a todos excepto al emisor. Usa `asyncio.wait_for(reader.read(1024), timeout=60)` para detectar desconexiones.

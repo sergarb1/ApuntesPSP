@@ -80,7 +80,7 @@ No hay una fórmula mágica, pero estas reglas de oro ayudan:
 | CPU intensivo (cálculo puro) | Nº de núcleos de la CPU |
 | I/O intensivo (red, discos, APIs) | Más hilos que núcleos (los hilos esperan mucho en I/O) |
 
-> 💡 En [UD 10 · asyncio](/ApuntesPSP/09-alta-disponibilidad) verás que la concurrencia por I/O se puede hacer aún más ligera, sin hilos. De momento, el pool es la opción sensata.
+> 💡 En [UD 11 · asyncio](/ApuntesPSP/10-alta-disponibilidad) verás que la concurrencia por I/O se puede hacer aún más ligera, sin hilos. De momento, el pool es la opción sensata.
 
 ---
 

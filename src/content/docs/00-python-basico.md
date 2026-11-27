@@ -74,7 +74,7 @@ Esta unidad es **prerequisito** del módulo PSP. No corresponde a ningún RA dir
 | — | Crea y usa clases con atributos y métodos | ✅ Punto 7 |
 | — | Importa módulos y gestiona paquetes externos | ✅ Punto 8 |
 
-> Estos conocimientos son **necesarios** para todas las unidades del módulo (UD 1–UD 10).
+> Estos conocimientos son **necesarios** para todas las unidades del módulo (UD 1–UD 11).
 
 ---
 

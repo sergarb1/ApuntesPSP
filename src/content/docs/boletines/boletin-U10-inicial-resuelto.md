@@ -1,173 +1,159 @@
----
+﻿---
 title: Boletín UD 11 — Inicial (Resuelto)
-description: Soluciones de los ejercicios básicos de Spring Boot y Java
+description: Soluciones de los ejercicios básicos de Alta disponibilidad
 ---
 
 # ✅ Boletín UD 11 — Inicial (Resuelto)
 
 ---
 
-## 1. Hola, Java
+## 1. Mensaje diferido
 
-```java
-public class Saludo {
-    public static void main(String[] args) {
-        System.out.println("Hola, PSP desde Java");
-    }
-}
+```python
+import asyncio
+
+async def preparar():
+    print("Preparando...")
+    await asyncio.sleep(2)
+    print("¡Listo!")
+
+asyncio.run(preparar())
 ```
 
-En Java todo vive dentro de una clase; `main` debe ser `public static void`. Se compila con `javac Saludo.java` y se ejecuta con `java Saludo`.
+`await asyncio.sleep(2)` pausa la corrutina 2 segundos; `asyncio.run()` crea el event loop.
 
-## 2. Variables y tipos
+## 2. Saludo y despedida
 
-```java
-public class Tipos {
-    public static void main(String[] args) {
-        int notaMedia = 7;
-        double altura = 1.75;
-        boolean aprobado = true;
-        String nombre = "Sergi";
+```python
+import asyncio
 
-        System.out.println("Nota: " + notaMedia);
-        System.out.println("Altura: " + altura);
-        System.out.println("Aprobado: " + aprobado);
-        System.out.println("Nombre: " + nombre);
-    }
-}
+async def saludar():
+    await asyncio.sleep(0.5)
+    print("Hola")
+
+async def despedirse():
+    await asyncio.sleep(1)
+    print("Adiós")
+
+async def main():
+    await asyncio.gather(saludar(), despedirse())
+
+asyncio.run(main())
 ```
 
-En Java los tipos tienen tamaño fijo y no se infieren (salvo `var`). La concatenación de strings se hace con `+`.
+`gather` ejecuta ambas "a la vez": el total es ~1s (la más lenta), no 1.5s.
 
-## 3. Lista de la compra
+## 3. Temporizador
 
-```java
-import java.util.ArrayList;
-import java.util.List;
+```python
+import asyncio
 
-public class Compra {
-    public static void main(String[] args) {
-        List<String> compra = new ArrayList<>();
-        compra.add("Pan");
-        compra.add("Leche");
-        compra.add("Huevos");
-        compra.add("Café");
-        compra.add("Arroz");
+async def tic():
+    for i in range(4):
+        print("tic")
+        await asyncio.sleep(2)
 
-        System.out.println(compra);
-        System.out.println("Elementos: " + compra.size());
-    }
-}
+asyncio.run(tic())
 ```
 
-Se declara con la interfaz (`List`) y se instancia con la clase (`ArrayList`). `size()` es el equivalente a `len()` de Python.
+4 "tic" espaciados 2 segundos. Un `asyncio.sleep` dentro de un `for`.
 
-## 4. Clase `Alumno`
+## 4. Corrutina que devuelve
 
-```java
-public class Alumno {
-    String nombre;
-    double nota;
+```python
+import asyncio
 
-    public Alumno(String nombre, double nota) {
-        this.nombre = nombre;
-        this.nota = nota;
-    }
+async def sumar(a, b):
+    await asyncio.sleep(1)
+    return a + b
 
-    public String aprobado() {
-        return nota < 5 ? "SUSPENSO" : "APROBADO";
-    }
+async def main():
+    resultado = await sumar(3, 4)
+    print(resultado)
 
-    public static void main(String[] args) {
-        Alumno a1 = new Alumno("Ana", 8.5);
-        Alumno a2 = new Alumno("Luis", 4.2);
-        System.out.println(a1.nombre + ": " + a1.aprobado());
-        System.out.println(a2.nombre + ": " + a2.aprobado());
-    }
-}
+asyncio.run(main())
 ```
 
-`this.nombre` distingue el atributo del parámetro. El operador ternario funciona igual que en Python.
+Para obtener el valor hace falta `await`: sin él tendrías un objeto corrutina, no el resultado.
 
-## 5. Tu primer `@RestController`
+## 5. Tres tareas a la vez
 
-```java
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.RestController;
+```python
+import asyncio, time
 
-@RestController
-public class SaludoController {
+async def tarea(nombre, segundos):
+    await asyncio.sleep(segundos)
+    print(f"  {nombre} terminó")
 
-    @GetMapping("/saludo")
-    public String saludo() {
-        return "Hola desde Spring";
-    }
-}
+async def main():
+    inicio = time.time()
+    await asyncio.gather(
+        tarea("A", 1), tarea("B", 2), tarea("C", 3)
+    )
+    print(f"Tiempo total: {time.time() - inicio:.2f}s")
+
+asyncio.run(main())
 ```
 
-La anotación de la clase es **`@RestController`**: combina `@Controller` (componente web) y `@ResponseBody` (el valor devuelto se serializa, no es una vista).
+**~3 segundos**, el de la tarea más lenta. `gather` las lanza concurrentemente: los tiempos no se suman.
 
-## 6. Parámetro en la ruta
+## 6. Tarea en segundo plano
 
-```java
-@GetMapping("/saludo/{nombre}")
-public String saludoNombre(@PathVariable String nombre) {
-    return "Hola, " + nombre;
-}
+```python
+import asyncio
+
+async def contar():
+    for i in range(1, 5):
+        print(f"  contar: {i}")
+        await asyncio.sleep(0.5)
+
+async def main():
+    asyncio.create_task(contar())   # en segundo plano
+    await asyncio.sleep(1)
+    print("main sigue")
+
+asyncio.run(main())
 ```
 
-`@PathVariable` enlaza el trozo `{nombre}` de la ruta con el parámetro del método. `GET /saludo/Ana` devuelve "Hola, Ana".
+`contar()` se ejecuta "en segundo plano": mientras `main()` espera su segundo, la tarea cuenta. Se ve la alternancia de las dos corrutinas en el event loop.
 
-## 7. JSON de respuesta
+## 7. Heartbeat básico
 
-```java
-public class Tarea {
-    private long id;
-    private String titulo;
+```python
+import asyncio
 
-    public Tarea(long id, String titulo) {
-        this.id = id;
-        this.titulo = titulo;
-    }
+async def heartbeat():
+    while True:
+        print("💓 vivo")
+        await asyncio.sleep(2)
 
-    public long getId() { return id; }
-    public String getTitulo() { return titulo; }
-}
+async def main():
+    asyncio.create_task(heartbeat())
+    await asyncio.sleep(5)
+    print("main terminó")
+
+asyncio.run(main())
 ```
 
-```java
-@GetMapping("/tarea")
-public Tarea tarea() {
-    return new Tarea(1, "Estudiar PSP");
-}
+`create_task` lanza el latido en segundo plano; `main()` espera 5s y lo deja latir tres veces antes de terminar. Si `main()` no esperara, la tarea moriría con él.
+
+## 8. Timeout básico
+
+```python
+import asyncio
+
+async def lenta():
+    await asyncio.sleep(8)
+    return "Hecho"
+
+async def main():
+    try:
+        r = await asyncio.wait_for(lenta(), timeout=3)
+        print(r)
+    except asyncio.TimeoutError:
+        print("Timeout!")
+
+asyncio.run(main())
 ```
 
-La biblioteca es **Jackson**, incluida en `spring-boot-starter-web`. Serializa el objeto usando los getters: `{"id":1,"titulo":"Estudiar PSP"}`.
-
-## 8. Entidad JPA mínima
-
-```java
-import jakarta.persistence.Entity;
-import jakarta.persistence.GeneratedValue;
-import jakarta.persistence.GenerationType;
-import jakarta.persistence.Id;
-
-@Entity
-public class Producto {
-
-    @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Long id;
-
-    private String nombre;
-    private double precio;
-
-    // Constructores, getters y setters
-}
-```
-
-- **`@Entity`**: la clase es una entidad persistente (una tabla).
-- **`@Id`**: marca la clave primaria.
-- **`@GeneratedValue(IDENTITY)`**: la BD genera el ID autoincremental.
-
-Spring necesita `spring-boot-starter-data-jpa` en el `pom.xml` y una BD configurada (H2 en memoria vale con `spring.datasource.url=jdbc:h2:mem:testdb`).
+`wait_for` corta a los 3s: salta `asyncio.TimeoutError`, la corrutina `lenta()` se cancela y el programa imprime "Timeout!".

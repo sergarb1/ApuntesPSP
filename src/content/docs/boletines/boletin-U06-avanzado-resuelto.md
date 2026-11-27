@@ -125,7 +125,7 @@ for nombre, url in apis.items():
     print(f"{nombre}: {ms:.0f} ms")
 ```
 
-`time.time()` antes y después de cada `requests.get()` te da los milisegundos. La más rápida cambia según la red del momento, pero siempre es la que menos distancia recorre y mejor responde. Es la comparativa que luego usarás en la [UD 10](/ApuntesPSP/09-alta-disponibilidad) con asyncio.
+`time.time()` antes y después de cada `requests.get()` te da los milisegundos. La más rápida cambia según la red del momento, pero siempre es la que menos distancia recorre y mejor responde. Es la comparativa que luego usarás en la [UD 11](/ApuntesPSP/10-alta-disponibilidad) con asyncio.
 
 ## 9. 🏗️ Cliente de API con caché
 

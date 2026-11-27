@@ -250,7 +250,7 @@ with socket.socket() as srv:
         threading.Thread(target=atender, args=(conn, addr)).start()
 ```
 
-El hilo heartbeat es **daemon** (muere con el servidor) y cada 5s imprime el estado leyendo el contador bajo Lock. Es la semilla del *heartbeat* de disponibilidad que ampliarás en la [UD 10 · asyncio](/ApuntesPSP/09-alta-disponibilidad).
+El hilo heartbeat es **daemon** (muere con el servidor) y cada 5s imprime el estado leyendo el contador bajo Lock. Es la semilla del *heartbeat* de disponibilidad que ampliarás en la [UD 11 · asyncio](/ApuntesPSP/10-alta-disponibilidad).
 
 ## 9. Balanceador de carga simple
 

@@ -115,31 +115,31 @@ description: Apuntes de Programación de Servicios y Procesos — Python. CC BY-
 
 <div class="unit-card">
   <div class="unit-card-header">
-    <span class="num">Unidad 9</span>
+    <span class="num">Unidad 10</span>
     <span class="ra">RA5</span>
   </div>
-  <a href="/ApuntesPSP/08-seguridad-y-cifrado" class="title-link">Seguridad y cifrado con Python</a>
+  <a href="/ApuntesPSP/09-seguridad-y-cifrado" class="title-link">Seguridad y cifrado con Python</a>
   <p class="desc">Hash, contraseñas con sal, AES, RSA, cifrado híbrido, firmas digitales, RBAC.</p>
-  <a href="/ApuntesPSP/08-seguridad-y-cifrado" class="unit-link">👉 Ver unidad 👈</a>
-</div>
-
-<div class="unit-card">
-  <div class="unit-card-header">
-    <span class="num">Unidad 10</span>
-    <span class="ra">RA4e-g</span>
-  </div>
-  <a href="/ApuntesPSP/09-alta-disponibilidad" class="title-link">Alta disponibilidad</a>
-  <p class="desc"><code>asyncio</code>, <code>async</code>/<code>await</code>, heartbeat, reintentos con backoff, timeouts, alta disponibilidad.</p>
-  <a href="/ApuntesPSP/09-alta-disponibilidad" class="unit-link">👉 Ver unidad 👈</a>
+  <a href="/ApuntesPSP/09-seguridad-y-cifrado" class="unit-link">👉 Ver unidad 👈</a>
 </div>
 
 <div class="unit-card">
   <div class="unit-card-header">
     <span class="num">Unidad 11</span>
+    <span class="ra">RA4e-g</span>
   </div>
-  <a href="/ApuntesPSP/10-spring-boot" class="title-link">Spring Boot con Java</a>
+  <a href="/ApuntesPSP/10-alta-disponibilidad" class="title-link">Alta disponibilidad</a>
+  <p class="desc"><code>asyncio</code>, <code>async</code>/<code>await</code>, heartbeat, reintentos con backoff, timeouts, alta disponibilidad.</p>
+  <a href="/ApuntesPSP/10-alta-disponibilidad" class="unit-link">👉 Ver unidad 👈</a>
+</div>
+
+<div class="unit-card">
+  <div class="unit-card-header">
+    <span class="num">Unidad 12</span>
+  </div>
+  <a href="/ApuntesPSP/11-spring-boot" class="title-link">Spring Boot con Java</a>
   <p class="desc">Del Python al ecosistema Java: Spring Boot, DI, REST, JPA.</p>
-  <a href="/ApuntesPSP/10-spring-boot" class="unit-link">👉 Ver unidad 👈</a>
+  <a href="/ApuntesPSP/11-spring-boot" class="unit-link">👉 Ver unidad 👈</a>
 </div>
 
 </div>
@@ -250,18 +250,6 @@ Cada unidad tiene **4 boletines** (46 en total): inicial y avanzado, con y sin s
 
 <div class="unit-card">
   <div class="unit-card-header">
-    <span class="num">Unidad 9</span>
-  </div>
-  <div class="ejercicio-links">
-    <a href="/ApuntesPSP/boletines/boletin-u08-inicial" class="elink">🟢 Inicial por resolver</a>
-    <a href="/ApuntesPSP/boletines/boletin-u08-inicial-resuelto" class="elink">✅ Inicial resuelto</a>
-    <a href="/ApuntesPSP/boletines/boletin-u08-avanzado" class="elink">⭐ Avanzado por resolver</a>
-    <a href="/ApuntesPSP/boletines/boletin-u08-avanzado-resuelto" class="elink">💪 Avanzado resuelto</a>
-  </div>
-</div>
-
-<div class="unit-card">
-  <div class="unit-card-header">
     <span class="num">Unidad 10</span>
   </div>
   <div class="ejercicio-links">
@@ -281,6 +269,18 @@ Cada unidad tiene **4 boletines** (46 en total): inicial y avanzado, con y sin s
     <a href="/ApuntesPSP/boletines/boletin-u10-inicial-resuelto" class="elink">✅ Inicial resuelto</a>
     <a href="/ApuntesPSP/boletines/boletin-u10-avanzado" class="elink">⭐ Avanzado por resolver</a>
     <a href="/ApuntesPSP/boletines/boletin-u10-avanzado-resuelto" class="elink">💪 Avanzado resuelto</a>
+  </div>
+</div>
+
+<div class="unit-card">
+  <div class="unit-card-header">
+    <span class="num">Unidad 12</span>
+  </div>
+  <div class="ejercicio-links">
+    <a href="/ApuntesPSP/boletines/boletin-u11-inicial" class="elink">🟢 Inicial por resolver</a>
+    <a href="/ApuntesPSP/boletines/boletin-u11-inicial-resuelto" class="elink">✅ Inicial resuelto</a>
+    <a href="/ApuntesPSP/boletines/boletin-u11-avanzado" class="elink">⭐ Avanzado por resolver</a>
+    <a href="/ApuntesPSP/boletines/boletin-u11-avanzado-resuelto" class="elink">💪 Avanzado resuelto</a>
   </div>
 </div>
 

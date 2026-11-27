@@ -215,7 +215,7 @@ Solo si el código nunca va a GitHub. Mejor acostúmbrate a `.env` desde el prin
 >
 > *Y las claves se quedaron en el `.env`, lejos de GitHub, donde deben vivir.*
 
-**PRÓXIMAMENTE EN UD 9:** *Seguridad y cifrado. Las contraseñas que no se pueden leer: hash, AES, RSA y las firmas digitales.*
+**PRÓXIMAMENTE EN UD 10:** *Seguridad y cifrado. Las contraseñas que no se pueden leer: hash, AES, RSA y las firmas digitales.*
 
 ---
 
@@ -228,8 +228,8 @@ Solo si el código nunca va a GitHub. Mejor acostúmbrate a `.env` desde el prin
 | a) | Utiliza APIs REST para obtener datos externos | ✅ Puntos 3-5 y 8 + ⚡ Laboratorio de tortura |
 | b) | Gestiona peticiones HTTP y procesa respuestas JSON | ✅ Puntos 1, 5-6 y 8 + ⚡ Laboratorio de tortura |
 
-> RA4c (Servidores concurrentes) y RA4d (ThreadPool) se cubren en la **UD 6 · Servidores concurrentes**. RA4e-g (asyncio, disponibilidad, comparativa) se cubren en la **UD 10 · Alta disponibilidad**.
+> RA4c (Servidores concurrentes) y RA4d (ThreadPool) se cubren en la **UD 6 · Servidores concurrentes**. RA4e-g (asyncio, disponibilidad, comparativa) se cubren en la **UD 11 · Alta disponibilidad**.
 
 ---
 
-📚 [Volver al índice de la unidad](/ApuntesPSP/07-apis-comerciales) · **Anterior:** [09 · Ejemplo completo: Rick y Morty (API gratuita sin registro)](/ApuntesPSP/07-apis-comerciales/09-ejemplo-completo-rick-y-morty) · **Siguiente:** **[UD 9 · Seguridad y cifrado](/ApuntesPSP/08-seguridad-y-cifrado)**
+📚 [Volver al índice de la unidad](/ApuntesPSP/07-apis-comerciales) · **Anterior:** [09 · Ejemplo completo: Rick y Morty (API gratuita sin registro)](/ApuntesPSP/07-apis-comerciales/09-ejemplo-completo-rick-y-morty) · **Siguiente:** **[UD 10 · Seguridad y cifrado](/ApuntesPSP/09-seguridad-y-cifrado)**

@@ -28,7 +28,7 @@ Has terminado la teoría: el servidor secuencial y su límite, el cliente lento 
 
 **Nunca se crea un hilo nuevo.** El servidor tiene exactamente 5 hilos y una cola: el sistema no se ahoga.
 
-> 💡 **Ahora tú:** ¿y si llegaran 10.000 conexiones? El pool las iría encolando y sirviendo de a 5. Tardarían más, pero el servidor **sobreviviría**. Y para 10.000 conexiones, la solución de la [UD 10 · asyncio](/ApuntesPSP/09-alta-disponibilidad) sería todavía más ligera.
+> 💡 **Ahora tú:** ¿y si llegaran 10.000 conexiones? El pool las iría encolando y sirviendo de a 5. Tardarían más, pero el servidor **sobreviviría**. Y para 10.000 conexiones, la solución de la [UD 11 · asyncio](/ApuntesPSP/10-alta-disponibilidad) sería todavía más ligera.
 
 ---
 
@@ -204,7 +204,7 @@ Sí, con `loop.run_in_executor()`. Pero empieza con uno u otro.
 
 > ❓ **¿Y si el servidor recibe 10.000 conexiones?**
 
-ThreadPool con 100 hilos + cola de espera. O usa **asyncio** ([UD 10](/ApuntesPSP/09-alta-disponibilidad)) que escala mejor.
+ThreadPool con 100 hilos + cola de espera. O usa **asyncio** ([UD 11](/ApuntesPSP/10-alta-disponibilidad)) que escala mejor.
 
 > ❓ **¿Se puede atender a los clientes con procesos en vez de hilos?**
 
@@ -250,7 +250,7 @@ No, pero sin él solo puedes probar con el lanzador masivo. El cliente interacti
 | d) | Gestiona pools de hilos (ThreadPoolExecutor) | ✅ ThreadPool y benchmark (puntos 4-5) + ⚡ Laboratorio |
 | +) | Ampliación: atender clientes con procesos aislados | ✅ Servidor con procesos (punto 9) |
 
-> RA4a-b (APIs REST y comerciales) se cubren en las **UD 7 y UD 8**. RA4e-g (asyncio, disponibilidad, comparativa de modelos) se cubren en la **UD 10 · Alta disponibilidad**.
+> RA4a-b (APIs REST y comerciales) se cubren en las **UD 7 y UD 8**. RA4e-g (asyncio, disponibilidad, comparativa de modelos) se cubren en la **UD 11 · Alta disponibilidad**.
 
 ---
 
