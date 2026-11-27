@@ -5,7 +5,7 @@ description: "API gratuita sin registro: cliente completo, errores y sus imágen
 
 <p><small>API gratuita sin registro: cliente completo, errores y sus imágenes con Pillow 🛸</small></p>
 
-> 🗺️ **Estás en:** 🧪 **UD 8 · APIs comerciales** → 09 · Ejemplo completo: Rick y Morty (API gratuita sin registro)
+> 🗺️ **Estás en:** 🌐 **UD 7 · HTTP y APIs REST** → 09 · Ejemplo completo: Rick y Morty (API gratuita sin registro)
 
 ---
 
@@ -81,14 +81,14 @@ def pedir(sesion, url, params=None):
         if resp.status_code != 429:
             resp.raise_for_status()          # 401, 500... → excepción de verdad
             return resp.json()
-        espera = min(2 ** intento, 30)       # 429 → backoff del punto 05
+        espera = min(2 ** intento, 30)       # 429 → backoff como en la UD 8
         print(f"  429 → espero {espera} s")
         time.sleep(espera)
     raise RuntimeError("La API sigue devolviendo 429 Too Many Requests")
 ```
 
 - **404 → `None`:** es el «no hay nada aquí» de la API; quien llama decide qué hacer.
-- **429 → espera y reintenta:** aunque no pide clave, esta API también se protege si vas demasiado rápido. El backoff exponencial ya lo viste en el [punto 05](/ApuntesPSP/07-apis-comerciales/05-rate-limiting).
+- **429 → espera y reintenta:** aunque no pide clave, esta API también se protege si vas demasiado rápido. El backoff exponencial ya lo viste en la [UD 8 · Rate limiting](/ApuntesPSP/07-apis-comerciales/05-rate-limiting).
 - **El resto → `raise_for_status()`:** un 500 o un 401 inesperado debe romper el programa con un mensaje claro, no devolver medio JSON.
 ### Paso 2 — Traer una página
 
@@ -472,4 +472,4 @@ episodio: Pilot → 19 personajes
 
 ---
 
-📚 [Volver al índice de la unidad](/ApuntesPSP/07-apis-comerciales) · **Anterior:** [08 · Práctica: APIs comerciales](/ApuntesPSP/07-apis-comerciales/08-practica-apis-comerciales) · **Siguiente:** [10 · Cierre](/ApuntesPSP/07-apis-comerciales/10-cierre)
+📚 [Volver al índice de la unidad](/ApuntesPSP/06-http-y-apis-rest) · **Anterior:** [08 · Práctica: mini cliente de API](/ApuntesPSP/06-http-y-apis-rest/08-practica-api) · **Siguiente:** [10 · Cierre](/ApuntesPSP/06-http-y-apis-rest/10-cierre)

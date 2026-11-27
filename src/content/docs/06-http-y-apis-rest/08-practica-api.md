@@ -208,4 +208,4 @@ pedir("https://httpbin.org/status/500")                    # 500
 
 ---
 
-📚 [Volver al índice de la unidad](/ApuntesPSP/06-http-y-apis-rest) · **Anterior:** [07 · requests: POST, PUT y DELETE](/ApuntesPSP/06-http-y-apis-rest/07-requests-post) · **Siguiente:** [09 · Cierre](/ApuntesPSP/06-http-y-apis-rest/09-cierre)
+📚 [Volver al índice de la unidad](/ApuntesPSP/06-http-y-apis-rest) · **Anterior:** [07 · requests: POST, PUT y DELETE](/ApuntesPSP/06-http-y-apis-rest/07-requests-post) · **Siguiente:** [09 · Ejemplo completo: Rick y Morty (API gratuita sin registro)](/ApuntesPSP/06-http-y-apis-rest/09-ejemplo-completo-rick-y-morty)

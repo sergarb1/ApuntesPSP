@@ -1,9 +1,9 @@
 ---
-title: Boletín UD 8 — Modifica el ejemplo (Rick y Morty) (Resuelto)
+title: Boletín UD 7 — Modifica el ejemplo (Rick y Morty) (Resuelto)
 description: Soluciones de los 10 retos sobre el cliente de Rick y Morty
 ---
 
-# ✅ Boletín UD 8 — Modifica el ejemplo (Rick y Morty) (Resuelto)
+# ✅ Boletín UD 7 — Modifica el ejemplo (Rick y Morty) (Resuelto)
 
 > Soluciones de los 10 retos. Cada una indica **dónde tocar** en `rickmorty.py` (punto 09) y el código clave. Ejecuta el programa tras cada cambio para comprobarlo.
 

@@ -80,7 +80,7 @@ Al terminar, serás capaz de:
 
 ## 🚪 ¿Por dónde empiezo?
 
-¿Vienes de la UD 8 y dominas APIs? Empieza por el [punto 1](/ApuntesPSP/09-seguridad-y-cifrado/01-principios-de-seguridad), que sienta los cimientos.
+¿Vienes de la UD 9 y acabas de montar tu API? Perfecto: ahora toca protegerla. Empieza por el [punto 1](/ApuntesPSP/09-seguridad-y-cifrado/01-principios-de-seguridad), que sienta los cimientos.
 
 ¿Ya sabes qué es un hash? Saltar a los [puntos 4](/ApuntesPSP/09-seguridad-y-cifrado/04-cifrado-clasico), [5](/ApuntesPSP/09-seguridad-y-cifrado/05-cifrado-simetrico-aes) o [6](/ApuntesPSP/09-seguridad-y-cifrado/06-cifrado-asimetrico-rsa).
 

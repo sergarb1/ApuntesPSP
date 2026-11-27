@@ -18,13 +18,13 @@ PSP/
 │
 ├── src/
 │   ├── content.config.ts                ← configuración colección Starlight
-│   ├── content/docs/                    ← 160 archivos de apuntes (MD)
+│   ├── content/docs/                    ← 170 archivos de apuntes (MD)
 │   │   ├── index.md                     ← landing page (cards, descargas, licencia)
 │   │   ├── 01-gestion-de-procesos.md  ← índice de la unidad
 │   │   ├── 01-gestion-de-procesos/    ← 11 capítulos (UD 2: ejemplo resuelto en el 09; UD 4, 9)
 │   │   │   ├── 01-*.md … 08-*.md        ← teoría en progresión (UD 2: 08 = multiprocessing, 09 = ejemplo resuelto)
-│   │   │   └── *-cierre.md              ← cierre práctico de la unidad (UD 2: 11; UD 4, 6 y 8: 10; resto: 9)
-│   │   ├── boletines/                   ← 46 boletines (4 × 11 unidades + 2 extra UD 8)
+│   │   │   └── *-cierre.md              ← cierre práctico de la unidad (UD 2: 11; UD 4, 6, 7 y 9: 10; resto: 9)
+│   │   ├── boletines/                   ← 50 boletines (4 × 12 unidades + 2 extra UD 7)
 │   │   │   ├── boletin-U00-inicial.md       ← 🟢 inicial SIN resolver
 │   │   │   ├── boletin-U00-inicial-resuelto.md ← ✅ inicial CON solución
 │   │   │   ├── boletin-U00-avanzado.md       ← 💪 avanzado SIN resolver
@@ -221,9 +221,9 @@ python scripts/check-diagramas.py   # detector de solapes texto/texto y texto/fo
 
 ## Apuntes (MD por unidad)
 
-Estructura "libro" por unidad (formato replicado de ApuntesRedes): índice + 9 capítulos en subcarpeta + 4 boletines en `boletines/` (la UD 2 tiene 11 capítulos —su 08 es multiprocessing, su 09 un ejemplo resuelto, con el cierre en el 11—; la UD 4 idem: su 09 es Python Free-Threaded, con el cierre en el 10; la UD 6 tiene 10 —su 09 es el servidor con procesos, con el cierre en el 10—; la UD 8 tiene 10 —su 09 es el ejemplo completo de Rick y Morty (API gratuita sin registro), con el cierre en el 10—; la UD 12 tiene 7). Total 160 ficheros MD (~26.000 líneas). Cada unidad indica al final qué RAs cubre.
+Estructura "libro" por unidad (formato replicado de ApuntesRedes): índice + 9 capítulos en subcarpeta + 4 boletines en `boletines/` (la UD 2 tiene 11 capítulos —su 08 es multiprocessing, su 09 un ejemplo resuelto, con el cierre en el 11—; la UD 4 idem: su 09 es Python Free-Threaded, con el cierre en el 10; la UD 6 tiene 10 —su 09 es el servidor con procesos, con el cierre en el 10—; la UD 7 tiene 10 —su 09 es el ejemplo completo de Rick y Morty (API gratuita sin registro), con el cierre en el 10—; la UD 9 tiene 10 —su 09 es la API completa de videojuegos con FastAPI y SQLite, con el cierre en el 10—; la UD 12 tiene 7). Total 170 ficheros MD (~28.500 líneas). Cada unidad indica al final qué RAs cubre.
 
-Por unidad: `0X-unidad.md` (índice, ~90 líneas) → `0X-unidad/01-…-08.md` (capítulos, 110-280 líneas) + `*-cierre.md` (cierre, ~250 líneas) → `boletines/boletin-UXX-inicial[-resuelto].md` y `-avanzado[-resuelto].md`. En la UD 2: `08-multiprocessing.md` tras el 07 y `09-ejemplo-resuelto-estado-compartido.md` tras el 08; en la UD 4: `09-python-free-threaded.md` tras el 08; en la UD 6: `09-servidor-concurrente-completo-con-procesos.md` tras el `08-servidor-concurrente-completo-con-hilos.md`; en la UD 8: `09-ejemplo-completo-rick-y-morty.md` tras el `08-practica-apis-comerciales.md` —en los cuatro, el `*-cierre.md` se desplaza—.
+Por unidad: `0X-unidad.md` (índice, ~90 líneas) → `0X-unidad/01-…-08.md` (capítulos, 110-280 líneas) + `*-cierre.md` (cierre, ~250 líneas) → `boletines/boletin-UXX-inicial[-resuelto].md` y `-avanzado[-resuelto].md`. En la UD 2: `08-multiprocessing.md` tras el 07 y `09-ejemplo-resuelto-estado-compartido.md` tras el 08; en la UD 4: `09-python-free-threaded.md` tras el 08; en la UD 6: `09-servidor-concurrente-completo-con-procesos.md` tras el `08-servidor-concurrente-completo-con-hilos.md`; en la UD 7: `09-ejemplo-completo-rick-y-morty.md` tras el `08-practica-api.md`; en la UD 9: `09-ejemplo-completo-api-de-videojuegos.md` tras el `08-seguridad-y-despliegue.md` —en los cinco, el `*-cierre.md` se desplaza—.
 
 Secciones por capítulo:
 - 📬 **La idea en una frase** + 🧠 **Mini-chequeo** (respuestas en `<details>`)
@@ -232,7 +232,7 @@ Secciones por capítulo:
 - ✍️ **Revisión es-ES (nota 1)**: vocabulario peninsular, mayúsculas oracionales y formato numérico español antes de dar el capítulo por cerrado
 
 Secciones del índice:
-- 🎯 **Objetivo de la unidad** + 🗺️ **Mapa de la unidad** (9 enlaces; 10 en UD 2, 4, 6 y 8)
+- 🎯 **Objetivo de la unidad** + 🗺️ **Mapa de la unidad** (9 enlaces; 10 en UD 2, 4, 6, 7 y 9)
 - 📝 **Boletines** con `.ejercicio-links` + `a.elink` a los 4 boletines
 - ✅ **Criterios de evaluación** con columna "Dónde se cubre"
 - 🚪 **¿Por dónde empiezo?** con primer punto y enlace a la siguiente unidad
@@ -253,13 +253,14 @@ Secciones del cierre `*-cierre.md`: ⭐ Sé el código, 🔥 Fireside Chat, 🕵
 | UD 4 Sincronización | `03-sincronizacion.md` + carpeta | ~1.900 | Lock, Semaphore, Barrier, Condition, RLock + free-threaded (PEP 703) | RA2 |
 | UD 5 Sockets TCP y UDP | `04-sockets-tcp-y-udp.md` + carpeta | ~1.359 | TCP, UDP, cliente, servidor, HTTP, NTP | RA3 |
 | UD 6 Servidores concurrentes | `05-servidores-concurrentes.md` + carpeta | ~1.400 | socketserver, ThreadPool, benchmark, servidor con procesos | RA4c-d |
-| UD 7 HTTP y APIs REST | `06-http-y-apis-rest.md` + carpeta | ~938 | REST, métodos HTTP, requests, JSON | RA4a-b |
-| UD 8 APIs comerciales | `07-apis-comerciales.md` + carpeta | ~1.300 | OpenWeatherMap, OpenAI, dotenv, rate limit, ejemplo Rick y Morty + Pillow | RA4a-b |
+| UD 7 HTTP y APIs REST | `06-http-y-apis-rest.md` + carpeta | ~1.900 | REST, métodos HTTP, requests, JSON, ejemplo Rick y Morty + Pillow | RA4a-b |
+| UD 8 APIs comerciales | `07-apis-comerciales.md` + carpeta | ~1.300 | OpenWeatherMap, OpenAI, dotenv, rate limit | RA4a-b |
+| UD 9 FastAPI | `08-fastapi.md` + carpeta | ~2.400 | Rutas, Pydantic, SQLite, filtros, `/docs`, pruebas, API key, API de videojuegos | RA4a-c |
 | UD 10 Seguridad y cifrado | `09-seguridad-y-cifrado.md` + carpeta | ~1.500 | Hash, AES, RSA, firmas, cifrado híbrido, RBAC | RA5 |
 | UD 11 Alta disponibilidad | `10-alta-disponibilidad.md` + carpeta | ~913 | asyncio, heartbeat, backoff, timeouts | RA4e-g |
 | UD 12 Spring Boot | `11-spring-boot.md` + carpeta | ~700 | Java, Spring Boot, DI, REST, JPA | — |
 
-**Boletines (46):** 4 por unidad en `boletines/boletin-UXX-*`: inicial (8 ejercicios), inicial-resuelto, avanzado (≥8), avanzado-resuelto. La UD 8 añade un par extra `boletin-U07-rick-morty[-resuelto]` (10 retos de modificación del ejemplo del punto 09), enlazado desde el índice de la unidad, la landing y el sidebar vía `boletinesExtra` en `astro.config.mjs`. Pistas inline `**Pista:**` en los por-resolver; respuestas inline en negrita en los resueltos.
+**Boletines (50):** 4 por unidad en `boletines/boletin-UXX-*`: inicial (8 ejercicios), inicial-resuelto, avanzado (≥8), avanzado-resuelto. La UD 7 añade un par extra `boletin-U06-rick-morty[-resuelto]` (10 retos de modificación del ejemplo del punto 09), enlazado desde el índice de la unidad, la landing y el sidebar vía `boletinesExtra` en `astro.config.mjs`. Pistas inline `**Pista:**` en los por-resolver; respuestas inline en negrita en los resueltos.
 
 **Licencia:** CC BY-SA 4.0 — Sergi Garcia Barea
 

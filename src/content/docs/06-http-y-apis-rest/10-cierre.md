@@ -1,15 +1,15 @@
 ---
-title: "09 — Cierre: consolida lo aprendido"
+title: "10 — Cierre: consolida lo aprendido"
 description: Sé la petición HTTP, laboratorio real y el ring final de la unidad 🧠
 ---
 
 <p><small>Sé la petición HTTP, laboratorio real y el ring final de la unidad 🧠</small></p>
 
-> 🗺️ **Estás en:** 🌐 **UD 7 · HTTP y APIs REST** → 09 · Cierre
+> 🗺️ **Estás en:** 🌐 **UD 7 · HTTP y APIs REST** → 10 · Cierre
 
 ---
 
-Has terminado la teoría: API, URL, métodos HTTP, principios REST, códigos de estado, JSON, `requests` con GET y con POST/PUT/DELETE, y el mini cliente completo. Este cierre es el aterrizaje: recorres lo aprendido con juegos, un laboratorio real contra una API pública con fallos intencionados y las preguntas que te harán en una entrevista. Léelo justo después del [punto 8](/ApuntesPSP/06-http-y-apis-rest/08-practica-api) y antes de abrir los boletines.
+Has terminado la teoría: API, URL, métodos HTTP, principios REST, códigos de estado, JSON, `requests` con GET y con POST/PUT/DELETE, el mini cliente completo y el [ejemplo de Rick y Morty](/ApuntesPSP/06-http-y-apis-rest/09-ejemplo-completo-rick-y-morty). Este cierre es el aterrizaje: recorres lo aprendido con juegos, un laboratorio real contra una API pública con fallos intencionados y las preguntas que te harán en una entrevista. Léelo justo después del [punto 9](/ApuntesPSP/06-http-y-apis-rest/09-ejemplo-completo-rick-y-morty) y antes de abrir los boletines.
 
 ---
 
@@ -223,11 +223,11 @@ Hoy en día, JSON gana por goleada. XML solo se usa en entornos legacy (bancos, 
 
 | CE | Criterio | Cubierto |
 |---|---|---|
-| a) | Utiliza APIs REST para obtener datos externos | ✅ Puntos 3, 6-8 + ⚡ Laboratorio de tortura |
-| b) | Gestiona peticiones HTTP y procesa respuestas JSON | ✅ Puntos 1-5 y 7 + ⚡ Laboratorio de tortura |
+| a) | Utiliza APIs REST para obtener datos externos | ✅ Puntos 3, 6-9 + ⚡ Laboratorio de tortura |
+| b) | Gestiona peticiones HTTP y procesa respuestas JSON | ✅ Puntos 1-5, 7 y 9 + ⚡ Laboratorio de tortura |
 
 > RA4c (Servidores concurrentes) y RA4d (ThreadPool) se cubren en la **UD 6 · Servidores concurrentes**. RA4e-g (asyncio, disponibilidad, comparativa) se cubren en la **UD 11 · Alta disponibilidad**.
 
 ---
 
-📚 [Volver al índice de la unidad](/ApuntesPSP/06-http-y-apis-rest) · **Anterior:** [08 · Práctica: mini cliente de API](/ApuntesPSP/06-http-y-apis-rest/08-practica-api) · **Siguiente:** **[UD 8 · APIs comerciales](/ApuntesPSP/07-apis-comerciales)**
+📚 [Volver al índice de la unidad](/ApuntesPSP/06-http-y-apis-rest) · **Anterior:** [09 · Ejemplo completo: Rick y Morty (API gratuita sin registro)](/ApuntesPSP/06-http-y-apis-rest/09-ejemplo-completo-rick-y-morty) · **Siguiente:** **[UD 8 · APIs comerciales](/ApuntesPSP/07-apis-comerciales)**

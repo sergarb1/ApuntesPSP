@@ -1,15 +1,15 @@
 ---
-title: "10 — Cierre: consolida lo aprendido"
+title: "09 — Cierre: consolida lo aprendido"
 description: Sé la petición con API key, laboratorio real y el ring final de la unidad 🧠
 ---
 
 <p><small>Sé la petición con API key, laboratorio real y el ring final de la unidad 🧠</small></p>
 
-> 🗺️ **Estás en:** 🧪 **UD 8 · APIs comerciales** → 10 · Cierre
+> 🗺️ **Estás en:** 🧪 **UD 8 · APIs comerciales** → 09 · Cierre
 
 ---
 
-Has terminado la teoría: API keys, variables de entorno, OpenWeatherMap, OpenAI, rate limits, errores HTTP, seguridad, el programa completo y el [ejemplo de Rick y Morty](/ApuntesPSP/07-apis-comerciales/09-ejemplo-completo-rick-y-morty). Este cierre es el aterrizaje: recorres lo aprendido con juegos, un laboratorio real contra dos APIs de verdad con fallos intencionados y las preguntas que te harán en una entrevista. Léelo justo después del [punto 9](/ApuntesPSP/07-apis-comerciales/09-ejemplo-completo-rick-y-morty) y antes de abrir los boletines.
+Has terminado la teoría: API keys, variables de entorno, OpenWeatherMap, OpenAI, rate limits, errores HTTP, seguridad y el programa completo. Este cierre es el aterrizaje: recorres lo aprendido con juegos, un laboratorio real contra dos APIs de verdad con fallos intencionados y las preguntas que te harán en una entrevista. Léelo justo después del [punto 8](/ApuntesPSP/07-apis-comerciales/08-practica-apis-comerciales) y antes de abrir los boletines.
 
 ---
 
@@ -215,7 +215,7 @@ Solo si el código nunca va a GitHub. Mejor acostúmbrate a `.env` desde el prin
 >
 > *Y las claves se quedaron en el `.env`, lejos de GitHub, donde deben vivir.*
 
-**PRÓXIMAMENTE EN UD 10:** *Seguridad y cifrado. Las contraseñas que no se pueden leer: hash, AES, RSA y las firmas digitales.*
+**PRÓXIMAMENTE EN UD 9:** *FastAPI. Has consumido APIs de todo el mundo; ahora construyes la tuya: rutas, validación, base de datos y documentación automática en una tarde.*
 
 ---
 
@@ -232,4 +232,4 @@ Solo si el código nunca va a GitHub. Mejor acostúmbrate a `.env` desde el prin
 
 ---
 
-📚 [Volver al índice de la unidad](/ApuntesPSP/07-apis-comerciales) · **Anterior:** [09 · Ejemplo completo: Rick y Morty (API gratuita sin registro)](/ApuntesPSP/07-apis-comerciales/09-ejemplo-completo-rick-y-morty) · **Siguiente:** **[UD 10 · Seguridad y cifrado](/ApuntesPSP/09-seguridad-y-cifrado)**
+📚 [Volver al índice de la unidad](/ApuntesPSP/07-apis-comerciales) · **Anterior:** [08 · Práctica: APIs comerciales](/ApuntesPSP/07-apis-comerciales/08-practica-apis-comerciales) · **Siguiente:** **[UD 9 · FastAPI](/ApuntesPSP/08-fastapi)**

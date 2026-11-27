@@ -1,11 +1,11 @@
 ---
-title: Boletín UD 8 — Modifica el ejemplo (Rick y Morty)
+title: Boletín UD 7 — Modifica el ejemplo (Rick y Morty)
 description: 10 retos para modificar el cliente de Rick y Morty del punto 09
 ---
 
-# 📝 Boletín UD 8 — Modifica el ejemplo (Rick y Morty)
+# 📝 Boletín UD 7 — Modifica el ejemplo (Rick y Morty)
 
-> Diez retos para **modificar el programa** del [punto 09 · Ejemplo completo: Rick y Morty (API gratuita sin registro)](/ApuntesPSP/07-apis-comerciales/09-ejemplo-completo-rick-y-morty). Copia `rickmorty.py`, aplica cada cambio por separado y comprueba el resultado ejecutándolo. La API es gratuita y no necesita registro: solo `requests` y `Pillow`.
+> Diez retos para **modificar el programa** del [punto 09 · Ejemplo completo: Rick y Morty (API gratuita sin registro)](/ApuntesPSP/06-http-y-apis-rest/09-ejemplo-completo-rick-y-morty). Copia `rickmorty.py`, aplica cada cambio por separado y comprueba el resultado ejecutándolo. La API es gratuita y no necesita registro: solo `requests` y `Pillow`.
 
 ---
 

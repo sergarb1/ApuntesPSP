@@ -115,6 +115,16 @@ description: Apuntes de Programación de Servicios y Procesos — Python. CC BY-
 
 <div class="unit-card">
   <div class="unit-card-header">
+    <span class="num">Unidad 9</span>
+    <span class="ra">RA4a-c</span>
+  </div>
+  <a href="/ApuntesPSP/08-fastapi" class="title-link">FastAPI</a>
+  <p class="desc">Crea tu propia API REST: rutas, Pydantic, SQLite, filtros, documentación automática y pruebas.</p>
+  <a href="/ApuntesPSP/08-fastapi" class="unit-link">👉 Ver unidad 👈</a>
+</div>
+
+<div class="unit-card">
+  <div class="unit-card-header">
     <span class="num">Unidad 10</span>
     <span class="ra">RA5</span>
   </div>
@@ -146,7 +156,7 @@ description: Apuntes de Programación de Servicios y Procesos — Python. CC BY-
 
 ## 📝 Boletines de ejercicios
 
-Cada unidad tiene **4 boletines** (46 en total): inicial y avanzado, con y sin solución. La UD 8 añade además un par de retos para modificar el ejemplo de Rick y Morty.
+Cada unidad tiene **4 boletines** (50 en total): inicial y avanzado, con y sin solución. La UD 7 añade además un par de retos para modificar el ejemplo de Rick y Morty.
 
 <div class="unit-grid">
 
@@ -231,6 +241,8 @@ Cada unidad tiene **4 boletines** (46 en total): inicial y avanzado, con y sin s
     <a href="/ApuntesPSP/boletines/boletin-u06-inicial-resuelto" class="elink">✅ Inicial resuelto</a>
     <a href="/ApuntesPSP/boletines/boletin-u06-avanzado" class="elink">⭐ Avanzado por resolver</a>
     <a href="/ApuntesPSP/boletines/boletin-u06-avanzado-resuelto" class="elink">💪 Avanzado resuelto</a>
+    <a href="/ApuntesPSP/boletines/boletin-u06-rick-morty" class="elink">🛸 Modifica el ejemplo</a>
+    <a href="/ApuntesPSP/boletines/boletin-u06-rick-morty-resuelto" class="elink">🛸 Modifica el ejemplo (resuelto)</a>
   </div>
 </div>
 
@@ -243,8 +255,18 @@ Cada unidad tiene **4 boletines** (46 en total): inicial y avanzado, con y sin s
     <a href="/ApuntesPSP/boletines/boletin-u07-inicial-resuelto" class="elink">✅ Inicial resuelto</a>
     <a href="/ApuntesPSP/boletines/boletin-u07-avanzado" class="elink">⭐ Avanzado por resolver</a>
     <a href="/ApuntesPSP/boletines/boletin-u07-avanzado-resuelto" class="elink">💪 Avanzado resuelto</a>
-    <a href="/ApuntesPSP/boletines/boletin-u07-rick-morty" class="elink">🛸 Modifica el ejemplo</a>
-    <a href="/ApuntesPSP/boletines/boletin-u07-rick-morty-resuelto" class="elink">🛸 Modifica el ejemplo (resuelto)</a>
+  </div>
+</div>
+
+<div class="unit-card">
+  <div class="unit-card-header">
+    <span class="num">Unidad 9</span>
+  </div>
+  <div class="ejercicio-links">
+    <a href="/ApuntesPSP/boletines/boletin-u08-inicial" class="elink">🟢 Inicial por resolver</a>
+    <a href="/ApuntesPSP/boletines/boletin-u08-inicial-resuelto" class="elink">✅ Inicial resuelto</a>
+    <a href="/ApuntesPSP/boletines/boletin-u08-avanzado" class="elink">⭐ Avanzado por resolver</a>
+    <a href="/ApuntesPSP/boletines/boletin-u08-avanzado-resuelto" class="elink">💪 Avanzado resuelto</a>
   </div>
 </div>
 

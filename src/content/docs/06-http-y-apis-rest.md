@@ -12,7 +12,7 @@ nav_order: 06
 
 Cuando tu aplicación quiere saber el tiempo, traducir un texto o buscar repositorios en GitHub, no monta un socket a mano: llama a una **API**. Esta unidad te enseña el idioma de esa conversación: qué es una API, cómo funciona HTTP, qué métodos existen (GET, POST, PUT, DELETE), qué significan los códigos de estado, cómo se lee **JSON** y cómo usar la librería `requests` de Python para hacer peticiones reales contra servicios públicos. El siguiente tema, [U08 · APIs comerciales](/ApuntesPSP/07-apis-comerciales), tomará el relevo con APIs de pago como OpenWeatherMap y OpenAI.
 
-Esta unidad se lee como un **libro de 9 capítulos**: los 8 primeros son teoría en progresión y el 9º aterriza todo en la práctica.
+Esta unidad se lee como un **libro de 10 capítulos**: los 8 primeros son teoría en progresión, el 9º junta todo en un ejemplo completo con una API gratuita sin registro y el 10º aterriza todo en la práctica.
 
 ---
 
@@ -29,6 +29,7 @@ Al terminar, serás capaz de:
 - Hacer peticiones GET con `requests`, con parámetros de consulta y cabeceras.
 - Enviar datos con POST, PUT y DELETE usando `json=`, y gestionar errores HTTP con criterio.
 - Construir un mini cliente de API completo en Python que hable con servicios reales.
+- Montar un **cliente completo sin API key** (paginación, filtros y errores) y **ver sus imágenes en pantalla con Pillow**.
 
 ---
 
@@ -44,9 +45,10 @@ Al terminar, serás capaz de:
 | [06 · requests: el GET](/ApuntesPSP/06-http-y-apis-rest/06-requests-get) | `requests.get`, parámetros de consulta, cabeceras y la respuesta | Todos |
 | [07 · requests: POST, PUT y DELETE](/ApuntesPSP/06-http-y-apis-rest/07-requests-post) | Crear, actualizar y borrar con `json=`, y gestión de errores | Todos |
 | [08 · Práctica: mini cliente de API](/ApuntesPSP/06-http-y-apis-rest/08-practica-api) | Sé el código, un cliente completo y los ejercicios del lápiz | Todos |
-| [09 · Cierre](/ApuntesPSP/06-http-y-apis-rest/09-cierre) | Sé la petición HTTP, Fireside, Laboratorio de tortura, Crucigrama… | Todos |
+| [09 · Ejemplo completo: Rick y Morty (API gratuita sin registro)](/ApuntesPSP/06-http-y-apis-rest/09-ejemplo-completo-rick-y-morty) | Una API gratuita y sin registro, de principio a fin, y sus imágenes con Pillow | Todos |
+| [10 · Cierre](/ApuntesPSP/06-http-y-apis-rest/10-cierre) | Sé la petición HTTP, Fireside, Laboratorio de tortura, Crucigrama… | Todos |
 
-> 📖 **Flujo de lectura:** los 8 primeros puntos son teoría en progresión. El 9º es el aterrizaje práctico: léelo justo después del 8º y antes de abrir los boletines.
+> 📖 **Flujo de lectura:** los 8 primeros puntos son teoría en progresión. El 9º junta todo en un ejemplo completo (sin API key) y el 10º es el aterrizaje práctico: léelos justo después del 8º y antes de abrir los boletines.
 
 ---
 
@@ -59,7 +61,11 @@ Al terminar, serás capaz de:
   <a href="/ApuntesPSP/boletines/boletin-u06-inicial-resuelto" class="elink">✅ Inicial resuelto</a>
   <a href="/ApuntesPSP/boletines/boletin-u06-avanzado" class="elink">⭐ Avanzado por resolver</a>
   <a href="/ApuntesPSP/boletines/boletin-u06-avanzado-resuelto" class="elink">💪 Avanzado resuelto</a>
+  <a href="/ApuntesPSP/boletines/boletin-u06-rick-morty" class="elink">🛸 Modifica el ejemplo</a>
+  <a href="/ApuntesPSP/boletines/boletin-u06-rick-morty-resuelto" class="elink">🛸 Modifica el ejemplo (resuelto)</a>
 </div>
+
+> 💡 **Extra:** además de los 4 boletines de siempre, la UD 7 tiene un par de retos para **modificar el programa** del [punto 09 · Rick y Morty (API gratuita sin registro)](/ApuntesPSP/06-http-y-apis-rest/09-ejemplo-completo-rick-y-morty).
 
 ---
 
@@ -69,8 +75,8 @@ Al terminar, serás capaz de:
 
 | CE | Criterio | Dónde se cubre |
 |---|---|---|
-| a) | Utiliza APIs REST para obtener datos externos | ✅ Puntos 3, 6-8 + ⚡ Laboratorio (punto 9) |
-| b) | Gestiona peticiones HTTP y procesa respuestas JSON | ✅ Puntos 1-5 y 7 + ⚡ Laboratorio (punto 9) |
+| a) | Utiliza APIs REST para obtener datos externos | ✅ Puntos 3, 6-9 + ⚡ Laboratorio (punto 10) |
+| b) | Gestiona peticiones HTTP y procesa respuestas JSON | ✅ Puntos 1-5, 7 y 9 + ⚡ Laboratorio (punto 10) |
 
 > RA4c (Servidores concurrentes) y RA4d (ThreadPool) se cubren en la **UD 6 · Servidores concurrentes**. RA4e-g (asyncio, disponibilidad, comparativa) se cubren en la **UD 11 · Alta disponibilidad**.
 

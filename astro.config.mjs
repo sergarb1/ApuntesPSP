@@ -4,7 +4,7 @@ import { readFileSync } from 'node:fs';
 import path from 'node:path';
 import { fileURLToPath } from 'node:url';
 
-const emojis = ['🐍', '🚀', '🔀', '🔒', '🔌', '🏗️', '🌐', '🧪', '🔐', '⏱️', '☕'];
+const emojis = ['🐍', '🚀', '🔀', '🔒', '🔌', '🏗️', '🌐', '🧪', '🧩', '🔐', '⏱️', '☕'];
 
 const unitSlugs = [
   '00-python-basico',
@@ -15,6 +15,7 @@ const unitSlugs = [
   '05-servidores-concurrentes',
   '06-http-y-apis-rest',
   '07-apis-comerciales',
+  '08-fastapi',
   '09-seguridad-y-cifrado',
   '10-alta-disponibilidad',
   '11-spring-boot',
@@ -29,6 +30,7 @@ const unitLabels = [
   'Servidores concurrentes',
   'HTTP y APIs REST',
   'APIs comerciales',
+  'FastAPI',
   'Seguridad y cifrado',
   'Alta disponibilidad',
   'Spring Boot con Java',
@@ -44,6 +46,7 @@ const unidadesExpandidas = {
   '05-servidores-concurrentes': true,
   '06-http-y-apis-rest': true,
   '07-apis-comerciales': true,
+  '08-fastapi': true,
   '09-seguridad-y-cifrado': true,
   '10-alta-disponibilidad': true,
   '11-spring-boot': true,
@@ -59,6 +62,7 @@ const boletinesReady = [
   '05-servidores-concurrentes',
   '06-http-y-apis-rest',
   '07-apis-comerciales',
+  '08-fastapi',
   '09-seguridad-y-cifrado',
   '10-alta-disponibilidad',
   '11-spring-boot',
@@ -71,8 +75,9 @@ const unitPuntos = {
   '02-hilos-y-concurrencia': ['01-de-proceso-a-hilo', '02-primer-hilo', '03-hilos-con-argumentos', '04-hilos-daemon', '05-timer', '06-gil', '07-estados-del-hilo', '08-hilos-en-la-practica', '09-cierre'],
   '03-sincronizacion': ['01-condicion-de-carrera', '02-lock', '03-rlock', '04-semaphore', '05-barrier', '06-condition', '07-productor-consumidor', '08-buenas-practicas', '09-python-free-threaded', '10-cierre'],
   '04-sockets-tcp-y-udp': ['01-que-es-un-socket', '02-cliente-tcp', '03-servidor-tcp', '04-ciclo-y-errores', '05-cliente-y-servidor-udp', '06-http-y-ntp', '07-cuando-usar-cada-protocolo', '08-practica-eco', '09-cierre'],
-  '06-http-y-apis-rest': ['01-web-y-http', '02-metodos-http', '03-principios-rest', '04-codigos-de-estado', '05-json', '06-requests-get', '07-requests-post', '08-practica-api', '09-cierre'],
-  '07-apis-comerciales': ['01-api-keys', '02-variables-de-entorno', '03-openweathermap', '04-openai', '05-rate-limiting', '06-errores-http', '07-seguridad-y-buenas-practicas', '08-practica-apis-comerciales', '09-ejemplo-completo-rick-y-morty', '10-cierre'],
+  '06-http-y-apis-rest': ['01-web-y-http', '02-metodos-http', '03-principios-rest', '04-codigos-de-estado', '05-json', '06-requests-get', '07-requests-post', '08-practica-api', '09-ejemplo-completo-rick-y-morty', '10-cierre'],
+  '07-apis-comerciales': ['01-api-keys', '02-variables-de-entorno', '03-openweathermap', '04-openai', '05-rate-limiting', '06-errores-http', '07-seguridad-y-buenas-practicas', '08-practica-apis-comerciales', '09-cierre'],
+  '08-fastapi': ['01-que-es-fastapi', '02-primera-aplicacion-y-rutas', '03-modelos-pydantic', '04-metodos-http-y-codigos', '05-persistencia-sqlite', '06-filtros-y-paginacion', '07-documentacion-y-pruebas', '08-seguridad-y-despliegue', '09-ejemplo-completo-api-de-videojuegos', '10-cierre'],
   '09-seguridad-y-cifrado': ['01-principios-de-seguridad', '02-hash-y-huellas-digitales', '03-contrasenas-seguras', '04-cifrado-clasico', '05-cifrado-simetrico-aes', '06-cifrado-asimetrico-rsa', '07-firmas-digitales', '08-cifrado-hibrido-y-practica', '09-cierre'],
   '05-servidores-concurrentes': ['01-servidor-secuencial', '02-el-problema-de-la-espera', '03-hilo-por-cliente', '04-threadpoolexecutor', '05-benchmark', '06-sincronizacion-en-servidores', '07-limites-y-buenas-practicas', '08-servidor-concurrente-completo-con-hilos', '09-servidor-concurrente-completo-con-procesos', '10-cierre'],
   '10-alta-disponibilidad': ['01-event-loop', '02-corrutinas', '03-create-task-y-gather', '04-timeouts', '05-heartbeat', '06-backoff', '07-threads-vs-asyncio', '08-disponibilidad-y-practica', '09-cierre'],
@@ -120,9 +125,9 @@ const expandedUnitItems = (slug) => {
 
 // Boletines extra más allá del cuarteto inicial/avanzado de cada unidad
 const boletinesExtra = {
-  '07-apis-comerciales': [
-    { link: '/boletines/boletin-u07-rick-morty', label: '🛸 Modifica el ejemplo' },
-    { link: '/boletines/boletin-u07-rick-morty-resuelto', label: '🛸 Modifica el ejemplo (resuelto)' },
+  '06-http-y-apis-rest': [
+    { link: '/boletines/boletin-u06-rick-morty', label: '🛸 Modifica el ejemplo' },
+    { link: '/boletines/boletin-u06-rick-morty-resuelto', label: '🛸 Modifica el ejemplo (resuelto)' },
   ],
 };
 
