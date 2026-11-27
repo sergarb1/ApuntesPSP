@@ -1,11 +1,11 @@
 ---
-title: "09 — Ejemplo completo: la API de Rick y Morty"
-description: "Cliente sin API key, paginación, errores y sus imágenes con Pillow 🛸"
+title: "09 — Ejemplo completo: Rick y Morty (API gratuita sin registro)"
+description: "API gratuita sin registro: cliente completo, errores y sus imágenes con Pillow 🛸"
 ---
 
-<p><small>Cliente sin API key, paginación, errores y sus imágenes con Pillow 🛸</small></p>
+<p><small>API gratuita sin registro: cliente completo, errores y sus imágenes con Pillow 🛸</small></p>
 
-> 🗺️ **Estás en:** 🧪 **UD 8 · APIs comerciales** → 09 · Ejemplo completo: la API de Rick y Morty
+> 🗺️ **Estás en:** 🧪 **UD 8 · APIs comerciales** → 09 · Ejemplo completo: Rick y Morty (API gratuita sin registro)
 
 ---
 

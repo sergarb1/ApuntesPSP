@@ -12,7 +12,7 @@ nav_order: 07
 
 En esta unidad consumirás dos de las APIs más usadas del planeta: **OpenWeatherMap** para el tiempo y **OpenAI** para el cerebro artificial. Aprenderás a guardar tus claves con seguridad en variables de entorno, a gestionar rate limits y errores HTTP con elegancia, y a construir un programa completo que habla de verdad con ambas. Todo lo que viste en la [UD 7 · HTTP y APIs REST](/ApuntesPSP/06-http-y-apis-rest) —GET, JSON, `requests`— se viste aquí de traje de gala.
 
-Esta unidad se lee como un **libro de 10 capítulos**: los 8 primeros son teoría en progresión, el 9º es un ejemplo completo de principio a fin y el 10º aterriza todo en la práctica.
+Esta unidad se lee como un **libro de 10 capítulos**: los 8 primeros son teoría en progresión, el 9º junta todo en un ejemplo completo con una API gratuita sin registro y el 10º aterriza todo en la práctica.
 
 ---
 
@@ -45,7 +45,7 @@ Al terminar, serás capaz de:
 | [06 · Errores HTTP](/ApuntesPSP/07-apis-comerciales/06-errores-http) | 401, 403, 429 y 500: gestionar fallos con `raise_for_status` | Todos |
 | [07 · Seguridad y buenas prácticas](/ApuntesPSP/07-apis-comerciales/07-seguridad-y-buenas-practicas) | Rotación de claves, gitignore y no exponer secretos | Todos |
 | [08 · Práctica: APIs comerciales](/ApuntesPSP/07-apis-comerciales/08-practica-apis-comerciales) | Sé el código, el programa completo y los ejercicios del lápiz | Todos |
-| [09 · Ejemplo completo: Rick y Morty](/ApuntesPSP/07-apis-comerciales/09-ejemplo-completo-rick-y-morty) | Una API sin clave de principio a fin y sus imágenes con Pillow | Todos |
+| [09 · Ejemplo completo: Rick y Morty (API gratuita sin registro)](/ApuntesPSP/07-apis-comerciales/09-ejemplo-completo-rick-y-morty) | Una API gratuita y sin registro, de principio a fin, y sus imágenes con Pillow | Todos |
 | [10 · Cierre](/ApuntesPSP/07-apis-comerciales/10-cierre) | Sé la petición, Fireside, Laboratorio de tortura, Crucigrama… | Todos |
 
 > 📖 **Flujo de lectura:** los 8 primeros puntos son teoría en progresión. El 9º junta todo en un ejemplo completo (sin API key) y el 10º es el aterrizaje práctico: léelos justo después del 8º y antes de abrir los boletines.

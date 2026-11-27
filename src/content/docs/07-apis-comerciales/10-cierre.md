@@ -232,4 +232,4 @@ Solo si el código nunca va a GitHub. Mejor acostúmbrate a `.env` desde el prin
 
 ---
 
-📚 [Volver al índice de la unidad](/ApuntesPSP/07-apis-comerciales) · **Anterior:** [09 · Ejemplo completo: Rick y Morty](/ApuntesPSP/07-apis-comerciales/09-ejemplo-completo-rick-y-morty) · **Siguiente:** **[UD 9 · Seguridad y cifrado](/ApuntesPSP/08-seguridad-y-cifrado)**
+📚 [Volver al índice de la unidad](/ApuntesPSP/07-apis-comerciales) · **Anterior:** [09 · Ejemplo completo: Rick y Morty (API gratuita sin registro)](/ApuntesPSP/07-apis-comerciales/09-ejemplo-completo-rick-y-morty) · **Siguiente:** **[UD 9 · Seguridad y cifrado](/ApuntesPSP/08-seguridad-y-cifrado)**
