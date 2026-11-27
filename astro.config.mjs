@@ -118,7 +118,15 @@ const expandedUnitItems = (slug) => {
   ];
 };
 
-// Grupo de boletines de una unidad (4 ficheros)
+// Boletines extra más allá del cuarteto inicial/avanzado de cada unidad
+const boletinesExtra = {
+  '07-apis-comerciales': [
+    { link: '/boletines/boletin-u07-rick-morty', label: '🛸 Modifica el ejemplo' },
+    { link: '/boletines/boletin-u07-rick-morty-resuelto', label: '🛸 Modifica el ejemplo (resuelto)' },
+  ],
+};
+
+// Grupo de boletines de una unidad (4 ficheros + extras de boletinesExtra)
 const boletinItems = (slug) => {
   const nn = slug.split('-')[0];
   return [
@@ -126,6 +134,7 @@ const boletinItems = (slug) => {
     { link: `/boletines/boletin-u${nn}-inicial-resuelto`, label: '✅ Inicial resuelto' },
     { link: `/boletines/boletin-u${nn}-avanzado`, label: '📝 Avanzado por resolver' },
     { link: `/boletines/boletin-u${nn}-avanzado-resuelto`, label: '💪 Avanzado resuelto' },
+    ...(boletinesExtra[slug] ?? []),
   ];
 };
 

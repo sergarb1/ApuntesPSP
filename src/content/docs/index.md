@@ -146,7 +146,7 @@ description: Apuntes de Programación de Servicios y Procesos — Python. CC BY-
 
 ## 📝 Boletines de ejercicios
 
-Cada unidad tiene **4 boletines** (44 en total): inicial y avanzado, con y sin solución.
+Cada unidad tiene **4 boletines** (46 en total): inicial y avanzado, con y sin solución. La UD 8 añade además un par de retos para modificar el ejemplo de Rick y Morty.
 
 <div class="unit-grid">
 
@@ -243,6 +243,8 @@ Cada unidad tiene **4 boletines** (44 en total): inicial y avanzado, con y sin s
     <a href="/ApuntesPSP/boletines/boletin-u07-inicial-resuelto" class="elink">✅ Inicial resuelto</a>
     <a href="/ApuntesPSP/boletines/boletin-u07-avanzado" class="elink">⭐ Avanzado por resolver</a>
     <a href="/ApuntesPSP/boletines/boletin-u07-avanzado-resuelto" class="elink">💪 Avanzado resuelto</a>
+    <a href="/ApuntesPSP/boletines/boletin-u07-rick-morty" class="elink">🛸 Modifica el ejemplo</a>
+    <a href="/ApuntesPSP/boletines/boletin-u07-rick-morty-resuelto" class="elink">🛸 Modifica el ejemplo (resuelto)</a>
   </div>
 </div>
 

@@ -61,7 +61,11 @@ Al terminar, serás capaz de:
   <a href="/ApuntesPSP/boletines/boletin-u07-inicial-resuelto" class="elink">✅ Inicial resuelto</a>
   <a href="/ApuntesPSP/boletines/boletin-u07-avanzado" class="elink">⭐ Avanzado por resolver</a>
   <a href="/ApuntesPSP/boletines/boletin-u07-avanzado-resuelto" class="elink">💪 Avanzado resuelto</a>
+  <a href="/ApuntesPSP/boletines/boletin-u07-rick-morty" class="elink">🛸 Modifica el ejemplo</a>
+  <a href="/ApuntesPSP/boletines/boletin-u07-rick-morty-resuelto" class="elink">🛸 Modifica el ejemplo (resuelto)</a>
 </div>
+
+> 💡 **Extra:** además de los 4 boletines de siempre, la UD 8 tiene un par de retos para **modificar el programa** del [punto 09 · Rick y Morty (API gratuita sin registro)](/ApuntesPSP/07-apis-comerciales/09-ejemplo-completo-rick-y-morty).
 
 ---
 

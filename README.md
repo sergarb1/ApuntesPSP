@@ -35,13 +35,13 @@ PSP/
 ├── package.json / astro.config.mjs       ← Config Astro + Starlight
 ├── .github/workflows/deploy.yml          ← GitHub Actions → gh-pages
 │
-├── src/content/docs/                     ← 158 archivos de apuntes (MD)
+├── src/content/docs/                     ← 160 archivos de apuntes (MD)
 │   ├── index.md                          ← Landing page con cards y descargas
 │   ├── 01-gestion-de-procesos.md       ← Índice de la unidad (11 unidades)
 │   ├── 01-gestion-de-procesos/         ← 9 capítulos por unidad
 │   │   ├── 01-*.md … 08-*.md             ← Teoría en progresión
 │   │   └── 09-cierre.md                   ← Cierre práctico de la unidad
-│   ├── boletines/                        ← 44 boletines (4 × 11 unidades)
+│   ├── boletines/                        ← 46 boletines (4 × 11 unidades + 2 extra UD 8)
 │   │   ├── boletin-U00-inicial.md        ← 🟢 Inicial SIN resolver
 │   │   ├── boletin-U00-inicial-resuelto.md ← ✅ Inicial CON solución
 │   │   ├── boletin-U00-avanzado.md       ← 💪 Avanzado SIN resolver
@@ -124,16 +124,17 @@ Los conceptos clave se ilustran con **diagramas SVG** generados con [D2](https:/
 
 ## 📦 Progresión de ejercicios por unidad
 
-Cada unidad tiene **4 boletines** (44 boletines en total) en `src/content/docs/boletines/`:
+Cada unidad tiene **4 boletines** (46 boletines en total) en `src/content/docs/boletines/`:
 
 ```
 Boletín 🟢  →  boletin-UXX-inicial.md               (inicial SIN resolver)
 Boletín ✅  →  boletin-UXX-inicial-resuelto.md       (inicial CON solución)
 Boletín 💪  →  boletin-UXX-avanzado.md               (avanzado SIN resolver, con pistas)
 Boletín ⭐  →  boletin-UXX-avanzado-resuelto.md      (avanzado CON solución)
+Boletín 🛸  →  boletin-U07-rick-morty[-resuelto].md  (extra UD 8: modifica el ejemplo)
 ```
 
-**Total: ~176 ejercicios** repartidos en 44 boletines (≈8 iniciales + ≥8 avanzados por unidad), más los incrustados en la teoría (✏️ Aprieta el lápiz, 🧠 Mini-chequeo, ⚡ Laboratorio de tortura).
+**Total: ~186 ejercicios** repartidos en 46 boletines (≈8 iniciales + ≥8 avanzados por unidad + 10 retos extra en la UD 8), más los incrustados en la teoría (✏️ Aprieta el lápiz, 🧠 Mini-chequeo, ⚡ Laboratorio de tortura).
 
 ---
 

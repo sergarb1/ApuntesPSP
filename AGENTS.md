@@ -11,20 +11,20 @@
 
 ```
 PSP/
-├── AGENTS.md / README.md                ← documentación del repo
+├── AGENTS.md / README.md / HANDOFF.md  ← documentación del repo (HANDOFF = traspaso de sesión entre LLM)
 ├── package.json / astro.config.mjs / tsconfig.json
 ├── .nojekyll
 ├── .github/workflows/deploy.yml         ← GitHub Actions → gh-pages
 │
 ├── src/
 │   ├── content.config.ts                ← configuración colección Starlight
-│   ├── content/docs/                    ← 158 archivos de apuntes (MD)
+│   ├── content/docs/                    ← 160 archivos de apuntes (MD)
 │   │   ├── index.md                     ← landing page (cards, descargas, licencia)
 │   │   ├── 01-gestion-de-procesos.md  ← índice de la unidad
 │   │   ├── 01-gestion-de-procesos/    ← 11 capítulos (UD 2: ejemplo resuelto en el 09; UD 4, 9)
 │   │   │   ├── 01-*.md … 08-*.md        ← teoría en progresión (UD 2: 08 = multiprocessing, 09 = ejemplo resuelto)
 │   │   │   └── *-cierre.md              ← cierre práctico de la unidad (UD 2: 11; UD 4, 6 y 8: 10; resto: 9)
-│   │   ├── boletines/                   ← 44 boletines (4 × 11 unidades)
+│   │   ├── boletines/                   ← 46 boletines (4 × 11 unidades + 2 extra UD 8)
 │   │   │   ├── boletin-U00-inicial.md       ← 🟢 inicial SIN resolver
 │   │   │   ├── boletin-U00-inicial-resuelto.md ← ✅ inicial CON solución
 │   │   │   ├── boletin-U00-avanzado.md       ← 💪 avanzado SIN resolver
@@ -221,7 +221,7 @@ python scripts/check-diagramas.py   # detector de solapes texto/texto y texto/fo
 
 ## Apuntes (MD por unidad)
 
-Estructura "libro" por unidad (formato replicado de ApuntesRedes): índice + 9 capítulos en subcarpeta + 4 boletines en `boletines/` (la UD 2 tiene 11 capítulos —su 08 es multiprocessing, su 09 un ejemplo resuelto, con el cierre en el 11—; la UD 4 idem: su 09 es Python Free-Threaded, con el cierre en el 10; la UD 6 tiene 10 —su 09 es el servidor con procesos, con el cierre en el 10—; la UD 8 tiene 10 —su 09 es el ejemplo completo de Rick y Morty (API gratuita sin registro), con el cierre en el 10—; la UD 11 tiene 7). Total 158 ficheros MD (~26.000 líneas). Cada unidad indica al final qué RAs cubre.
+Estructura "libro" por unidad (formato replicado de ApuntesRedes): índice + 9 capítulos en subcarpeta + 4 boletines en `boletines/` (la UD 2 tiene 11 capítulos —su 08 es multiprocessing, su 09 un ejemplo resuelto, con el cierre en el 11—; la UD 4 idem: su 09 es Python Free-Threaded, con el cierre en el 10; la UD 6 tiene 10 —su 09 es el servidor con procesos, con el cierre en el 10—; la UD 8 tiene 10 —su 09 es el ejemplo completo de Rick y Morty (API gratuita sin registro), con el cierre en el 10—; la UD 11 tiene 7). Total 160 ficheros MD (~26.000 líneas). Cada unidad indica al final qué RAs cubre.
 
 Por unidad: `0X-unidad.md` (índice, ~90 líneas) → `0X-unidad/01-…-08.md` (capítulos, 110-280 líneas) + `*-cierre.md` (cierre, ~250 líneas) → `boletines/boletin-UXX-inicial[-resuelto].md` y `-avanzado[-resuelto].md`. En la UD 2: `08-multiprocessing.md` tras el 07 y `09-ejemplo-resuelto-estado-compartido.md` tras el 08; en la UD 4: `09-python-free-threaded.md` tras el 08; en la UD 6: `09-servidor-concurrente-completo-con-procesos.md` tras el `08-servidor-concurrente-completo-con-hilos.md`; en la UD 8: `09-ejemplo-completo-rick-y-morty.md` tras el `08-practica-apis-comerciales.md` —en los cuatro, el `*-cierre.md` se desplaza—.
 
@@ -259,7 +259,7 @@ Secciones del cierre `*-cierre.md`: ⭐ Sé el código, 🔥 Fireside Chat, 🕵
 | UD 10 Alta disponibilidad | `09-alta-disponibilidad.md` + carpeta | ~913 | asyncio, heartbeat, backoff, timeouts | RA4e-g |
 | UD 11 Spring Boot | `10-spring-boot.md` + carpeta | ~700 | Java, Spring Boot, DI, REST, JPA | — |
 
-**Boletines (44):** 4 por unidad en `boletines/boletin-UXX-*`: inicial (8 ejercicios), inicial-resuelto, avanzado (≥8), avanzado-resuelto. Pistas inline `**Pista:**` en los por-resolver; respuestas inline en negrita en los resueltos.
+**Boletines (46):** 4 por unidad en `boletines/boletin-UXX-*`: inicial (8 ejercicios), inicial-resuelto, avanzado (≥8), avanzado-resuelto. La UD 8 añade un par extra `boletin-U07-rick-morty[-resuelto]` (10 retos de modificación del ejemplo del punto 09), enlazado desde el índice de la unidad, la landing y el sidebar vía `boletinesExtra` en `astro.config.mjs`. Pistas inline `**Pista:**` en los por-resolver; respuestas inline en negrita en los resueltos.
 
 **Licencia:** CC BY-SA 4.0 — Sergi Garcia Barea
 
