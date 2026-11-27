@@ -3,7 +3,7 @@
 > Documento de traspaso para cualquier LLM que continúe esta sesión.
 > **Actualízalo en cada paso grande** (cada commit de la cola) para que el relevo
 > siempre sepa qué está hecho, qué falta y con qué reglas se trabaja.
-> Última actualización: 2026-07-07 (boletín extra de Rick y Morty commiteado).
+> Última actualización: 2026-07-07 (ejemplo FastAPI verificado 10/10; siguiente: renumeración Opción A).
 
 ## 🎯 Encargo global (aprobado con «adelante a todo»)
 
@@ -11,8 +11,8 @@ Cola de trabajo, en este orden:
 
 1. ✅ **Título del capítulo 09 de la UD 8** con «API gratuita sin registro» — hecho y pushado.
 2. ✅ **`rickmorty.py` didáctico** (comentarios + ideas para ampliar) en la carpeta del ejemplo — hecho.
-3. 🔄 **Carpeta `EjemploFastAPIVideojuegos`** (fuera del repo) — *en curso*.
-4. ⬜ **Opción A: renumerar** UD 9→10, 10→11, 11→12 y liberar el hueco UD 9.
+3. ✅ **Carpeta `EjemploFastAPIVideojuegos`** (fuera del repo) — hecho y verificado (10/10).
+4. 🔄 **Opción A: renumerar** UD 9→10, 10→11, 11→12 y liberar el hueco UD 9 — *siguiente paso*.
 5. ⬜ **Nueva unidad UD 9 FastAPI**: índice + 10 capítulos + 4 boletines (incluye el ejemplo de videojuegos; actividades «no evaluables» que lo modifiquen).
 6. ⬜ **Config/index/README/AGENTS** con la unidad nueva.
 7. ⬜ **Build final, verificación y commit/push**.
@@ -21,7 +21,7 @@ Cola de trabajo, en este orden:
 
 - **`408b7c6`** — Capítulo 09 Rick y Morty: capítulo nuevo, cierre→10, diagrama `flujo-errores-api`, frase 🛡️, 2 PNG en `public/ejemplos/rick-morty/`, gitignore `!public/ejemplos/**/*.png`, `build_docx.py`/`generate-epub.ps1`, índice, `unitPuntos`, AGENTS, README.
 - **`8edb0cf`** — Título del punto 09 → `09 — Ejemplo completo: Rick y Morty (API gratuita sin registro)` en: frontmatter (title+description), breadcrumb `<small>`, fila del mapa e intro de `07-apis-comerciales.md`, footers de `08-…` y `10-cierre.md`, frase de AGENTS.
-- **(commit de este tramo)** — Boletín extra de Rick y Morty:
+- **`5ee80e2`** — Boletín extra de Rick y Morty:
   - `src/content/docs/boletines/boletin-U07-rick-morty.md` (10 retos, `**Pista:**`)
   - `src/content/docs/boletines/boletin-U07-rick-morty-resuelto.md` (soluciones)
   - `astro.config.mjs`: `boletinesExtra` + `boletinItems()` extensibles
@@ -31,11 +31,7 @@ Cola de trabajo, en este orden:
 ## 📁 Artefactos fuera del repo
 
 - `/home/sergi/Escritorio/EjemploClienteRickYMorty/` — `rickmorty.py` (326 líneas, comentarios didácticos e ideas 💡/🚀), `requirements.txt`, `README.md`, `.gitignore`. Verificado: `py_compile` + ejecución completa (826 personajes, PNGs).
-- `/home/sergi/Escritorio/EjemploFastAPIVideojuegos/` — **creada, sin archivos aún**. Especificación decidida:
-  - `main.py` (FastAPI + stdlib `sqlite3`, sin ORM), `poblar.py` (crea y siembra la BD), `cliente.py` (pruebas con `requests`), `requirements.txt` (`fastapi`, `uvicorn[standard]`, `requests`), `README.md`, `.gitignore` (`venv/`, `__pycache__/`, `*.db`).
-  - BD `videojuegos.db`: `consolas(id, nombre, fabricante, anio)` + `juegos(id, titulo, anio, genero, consola_id FK)`; ~9 consolas retro + ~36 juegos.
-  - Endpoints: `GET /`, `GET /consolas`, `GET /consolas/{id}` (404), `GET /juegos?consola=&genero=`, `GET /juegos/{id}` (404), `POST /juegos` (Pydantic → 201/422/404 si la consola no existe).
-  - Verificar end-to-end: `python3 -m venv venv && venv/bin/pip install -r requirements.txt`, `python3 poblar.py`, `venv/bin/uvicorn main:app` (puerto 8000), probar `cliente.py`, matar el servidor.
+- `/home/sergi/Escritorio/EjemploFastAPIVideojuegos/` — **hecho y verificado 10/10** (`cliente.py` contra `uvicorn`, puerto 8000). Contiene `main.py` (FastAPI + `sqlite3`, endpoints GET/consolas, consolas/{id}, juegos con filtros, juegos/{id}, POST /juegos → 201/422/404, DELETE), `poblar.py` (BD `videojuegos.db`: 9 consolas + 36 juegos), `cliente.py`, `requirements.txt`, `README.md`, `.gitignore`. **Este contenido es el que irá dentro de la nueva unidad UD 9** (paso 5).
 
 ## 📋 Plan pendiente detallado
 
